@@ -18,6 +18,7 @@
 	</head>
 <body>
 
+	<div class="container">
 		<header class="header">
 			<div class="wrapper">
 				<a href="index.html" class="logo">
@@ -66,11 +67,13 @@
 			</div>
 			<span class="light-line"></span>
 		</header>
+		
 		<div class="page-title">
 			<div class="wrapper">
 				<h1>Our team</h1>
 			</div>
 		</div>
+		
 		<div class="content">
 			<div class="wrapper">
 				<p>
@@ -79,7 +82,7 @@
 				<p>
 					This is not our job. These are our lives. Knowledge is our thirst and dedication our lifestyle.
 				</p>
-				<div class="employee">
+				<div class="employee-block">
 					<div class="img-wrap">
 						<img src="assets/img/content/team-1.jpg" alt="" />
 					</div>
@@ -118,7 +121,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="employee">
+				<div class="employee-block">
 					<div class="info">
 						<h2>Matija Doe</h2>
 						<span class="position">Software architect</span>
@@ -157,7 +160,7 @@
 						<img src="assets/img/content/team-1.jpg" alt="" />
 					</div>
 				</div>
-				<div class="employee">
+				<div class="employee-block">
 					<div class="img-wrap">
 						<img src="assets/img/content/team-1.jpg" alt="" />
 					</div>
@@ -198,6 +201,7 @@
 				</div>
 			</div>
 		</div>
+		
 		<footer class="footer">
 			<section class="top">
 				<img src="assets/img/star-texture.png" alt=""/>
@@ -287,7 +291,7 @@
 				</div>
 			</div>
 		</footer>
-
+	</div>
 
 <!-- javascript -->
 
@@ -295,29 +299,7 @@
 <script type="text/javascript">window.jQuery || document.write("<script src='assets/scripts/main/jquery-1.8.3.min.js'>\x3C/script>")</script>
 <script type="text/javascript" src="assets/scripts/libs/classie.js"></script>
 <script type="text/javascript" src="assets/scripts/libs/stepsForm.js"></script>
-
 <script type="text/javascript" src="assets/scripts/main/default.js"></script>
-<script>
-	var theForm = document.getElementById( 'theForm' );
-
-	new stepsForm( theForm, {
-		onSubmit : function( form ) {
-			// hide form
-			classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
-
-			/*
-			form.submit()
-			or
-			AJAX request (maybe show loading indicator while we don't have an answer..)
-			*/
-
-			// let's just simulate something...
-			var messageEl = theForm.querySelector( '.final-message' );
-			messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
-			classie.addClass( messageEl, 'show' );
-		}
-	} );
-</script>
  <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->

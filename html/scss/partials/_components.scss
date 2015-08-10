@@ -1,0 +1,100 @@
+/*----------  components
+------------------------------------------------------------------------------*/
+
+.romb {
+	@include rotate(-45);
+}
+
+.blue-romb {
+	background: #1595bf url('../img/blue-bg.png') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+	@include transition(all 0.5s ease-in-out);
+	.icon-img {
+		// @include vertical-align;
+		width: 100%;
+	}
+	&:hover {
+		background: #141b23;
+		// @include box-shadow(-5px 5px 12px rgba(0,0,0,.45));
+	}
+}
+
+.reset-inner {
+	@include rotate(45);
+	display: inline-block;
+}
+
+.badge {
+	background-color: $blue-light;
+	color: $white;
+	width: 56px;
+	height: 56px;
+	text-align: center;
+	.reset-inner {
+		display: block;
+		font-size: 35px;
+		font-family: $bold-font;
+		position: relative;
+		right: -2px;
+    	top: 4px;
+	}
+}
+
+.social {
+	li {
+		float: left;
+		a {
+			display: inline-block;
+		}
+	}
+}
+
+.social-links {
+	@include base-float;
+	li {
+		float: left;
+		margin-right: 20px;
+		a {
+			display: inline-block;
+			padding: 0 2px;
+			&.facebook .ico {
+				@include sprite(facebook-black);
+			}
+			&.linked .ico {
+				@include sprite(linked-black);
+			}
+			&.gplus .ico {
+				@include sprite(gplus-black);
+				margin-top: 3px;
+			}
+			&.twitter .ico {
+				@include sprite(twitter-black);
+				margin-top: 2px;
+			}
+			&:hover {
+				&.facebook .ico {
+					@include sprite(facebook-black-hover);
+				}
+				&.linked .ico {
+					@include sprite(linked-black-hover);
+				}
+				&.gplus .ico {
+					@include sprite(gplus-black-hover);
+				}
+				&.twitter .ico {
+					@include sprite(twitter-black-hover);
+				}
+			}
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.light-line {
+	@include base-float;
+	height: 2px;
+	@include opacity(0.08);
+}
