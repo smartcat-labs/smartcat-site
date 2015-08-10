@@ -2580,7 +2580,9 @@ html[xmlns] .slides {
     margin-bottom: 52px; }
     .service-list li .img-box {
       float: left;
-      width: 25.34611288604899%; }
+      width: 25.34611288604899%;
+      padding: 25px 38px 0 59px;
+      position: relative; }
     .service-list li .text {
       float: left;
       width: 74.65388711395101%; }
