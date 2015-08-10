@@ -1,0 +1,35 @@
+/*----------  button
+------------------------------------------------------------------------------*/
+
+.btn {
+	height: 66px;
+	line-height: 66px;
+	color: #efefef;
+	text-transform: uppercase;
+	background: #141b23;
+	display: inline-block;
+	font-size: 14px;
+	&.arrow {
+		min-width: 240px;
+		padding: 0 25px;
+		position: relative;
+		span {
+			line-height: 18px;
+			display: inline-block;
+			height: 18px;
+			margin: auto;
+ 			position: relative;
+ 			left: 50%;
+ 			margin-left: -25%;
+		}
+		.ico {
+			@include sprite(ico-arrow-link);
+			margin: 0 0 -3px 20px;
+			@include opacity(0);
+		}
+		&:hover .ico {
+			@include opacity(1);
+		}
+	}
+}
+

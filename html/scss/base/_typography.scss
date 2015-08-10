@@ -1,0 +1,114 @@
+/*----------  Typography
+------------------------------------------------------------------------------*/
+@include font-face('DINPro-Regular',
+	font-files('DINPro-Regular_gdi.ttf',
+	'DINPro-Regular_gdi.svg#DINPro-Regular',
+	'DINPro-Regular_gdi.woff',
+	'DINPro-Regular_gdi.eot?#iefix'),
+    'DINPro-Regular_gdi.eot', normal, normal
+);
+
+@include font-face('DINPro-Bold',
+	font-files('DINPro-Bold_gdi.ttf',
+	'DINPro-Bold_gdi.svg#DINPro-Bold',
+	'DINPro-Bold_gdi.woff',
+	'DINPro-Bold_gdi.eot?#iefix'),
+    'DINPro-Bold_gdi.eot', normal, normal
+);
+
+@include font-face('DINPro-Light',
+	font-files('DINPro-Light_gdi.ttf',
+	'DINPro-Light_gdi.svg#DINPro-Light',
+	'DINPro-Light_gdi.woff',
+	'DINPro-Light_gdi.eot?#iefix'),
+    'DINPro-Light_gdi.eot', normal, normal
+);
+
+@include font-face('NeutraText-Bold',
+	font-files('NeutraText-Bold_gdi.ttf',
+	'NeutraText-Bold_gdi.svg#NeutraText-Bold',
+	'NeutraText-Bold_gdi.woff',
+	'NeutraText-Bold_gdi.eot?#iefix'),
+    'NeutraText-Bold_gdi.eot', normal, normal
+);
+
+@include font-face('NeutraTextTF-Book',
+	font-files('NeutraTextTF-Book_gdi.ttf',
+	'NeutraTextTF-Book_gdi.svg#NeutraTextTF-Book',
+	'NeutraTextTF-Book_gdi.woff',
+	'NeutraTextTF-Book_gdi.eot?#iefix'),
+    'NeutraTextTF-Book_gdi.eot', normal, normal
+);
+
+@include font-face('NeutraText-Light',
+	font-files('NeutraText-Light_gdi.ttf',
+	'NeutraText-Light_gdi.svg#NeutraText-Light',
+	'NeutraText-Light_gdi.woff',
+	'NeutraText-Light_gdi.eot?#iefix'),
+    'NeutraText-Light_gdi.eot', normal, normal
+);
+
+@include font-face('Times-Italic',
+	font-files('Times-Italic_gdi.ttf',
+	'Times-Italic_gdi.svg#Times-Italic',
+	'Times-Italic_gdi.woff',
+	'Times-Italic_gdi.eot?#iefix'),
+    'Times-Italic_gdi.eot', normal, normal
+);
+
+$din-font: 'DINPro-Regular';
+$din-font-bold: 'DINPro-Bold';
+$din-font-light: 'DINPro-Light';
+$bold-font: 'NeutraText-Bold';
+$neutra: 'NeutraTextTF-Book';
+$neutra-light: 'NeutraText-Light';
+$italic: 'Times-Italic';
+
+h1 {
+	font-size: 48px;
+	text-transform: uppercase;
+	color: $blue-dark;
+}
+
+h2 {
+	font-family: 'NeutraText-Bold';
+}
+
+h3 {
+	
+}
+
+h4 {
+	
+}
+
+h5 {
+	
+}
+
+h6 {
+	
+}
+
+p {
+	font-size: 16px;
+	line-height: 24px;
+	color: $grey-light;
+	margin-bottom: 20px;
+}
+
+blockquote {
+	font-family: $italic;
+}
+
+.rte-content {
+	blockquote {
+		@include base-float;
+		padding: 40px;
+		margin: 10px 0;
+		background: transparent url(../img/quote-img.png) no-repeat left top;
+		font-size: 15px;
+		line-height: 24px;
+		color: #7d7d7d;
+	}
+}

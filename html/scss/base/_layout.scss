@@ -1,0 +1,92 @@
+/*----------  layout
+------------------------------------------------------------------------------*/
+
+html, body {
+	height: 100%;
+	@include font-smoothing(antialiased);
+	-moz-osx-font-smoothing: grayscale;
+}
+body {
+	font-family: $din-font;
+	font-size: 12px;
+}
+.wrapper {
+	max-width: 1278px;
+	margin: 0 auto;
+	overflow: hidden;
+	&.o-visible {
+		overflow: visible;
+	}
+}
+
+section {
+	@include base-float;
+	h2 {
+		font-size: 48px;
+		line-height: 50px;
+	}
+}
+
+.content {
+	@include base-float;
+	padding: 100px 0 60px;
+	.main {
+		width: 73.47417840375587%;
+		float: left;
+	}
+	.sidebar {
+		width: 20.2660406885759%;
+		float: right;
+		margin-left: 6.25978090766823%;
+		.widget {
+			@include base-float;
+			margin-bottom: 65px;
+		}
+	}
+}
+
+.page-title {
+	@include base-float;
+	border-bottom: 1px solid #c9cacc;
+	h1 {
+		font-size: 48px;
+		line-height: 48px;
+		padding: 46px 0;
+		font-family: $din-font-light;
+		margin-bottom: 0;
+	}
+}
+
+.title {
+	@include base-float;
+	position: relative;
+	padding-right: 40px;
+	h2 {
+		font-size: 50px;
+		line-height: 54px;
+		margin-bottom: 20px;
+	}
+	.go-back {
+		position: absolute;
+		display: inline-block;
+		right: 0;
+		top: 25px;
+		text-transform: uppercase;
+		font-size: 12px;
+		line-height: 12px;
+		color: $blue-dark;
+		padding-left: 17px;
+		background: transparent url(../img/icons/ico-back-btn.png) no-repeat left 1px;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.date {
+		display: block;
+		text-transform: uppercase;
+		color: #7d7d7d;
+		margin-bottom: 12px;
+		font-size: 18px;
+		line-height: 18px;
+	}
+}
