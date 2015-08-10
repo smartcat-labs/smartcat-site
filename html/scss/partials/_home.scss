@@ -167,74 +167,81 @@
 	.wrapper {
 		overflow: visible;
 	}
-	.one-four {
+	.one-fourth {
 		width: 24.4%;
-		float: left;
-		.romb-wrap {
+		float: left;	
+	}
+	.one-third {
+		width: 32.3%;
+		float: left;	
+	}
+	.romb-wrap {
+		@include base-float;
+		margin: 40px 0 80px;
+		padding: 0 10.1% 0 18.75%;
+	}
+	.top {
+		@include base-float;
+		z-index: 5;
+		position: relative;
+		.box-title {
 			@include base-float;
-			margin: 40px 0 80px;
-			padding: 0 10.1% 0 18.75%;
-		}
-		.top {
-			@include base-float;
-			z-index: 5;
 			position: relative;
-			.box-title {
-				@include base-float;
-				position: relative;
-				bottom: -1px;
-				h4 {
-					background: #141b23;
-					text-transform: uppercase;
-					font-size: 17px;
-					line-height: 30px;
-					color: $white;
-					display: inline-block;
-					margin-bottom: 0;
-					padding: 0 8px 1px;
-				}
-			}
-			.img-wrap {
-				@include base-float;
-				position: relative;
-				z-index: 5;
-				background: #1595bf url(../img/blue-bg.png) no-repeat center center;
-				background-size: cover;
-				text-align: center;
-				@include transition (all 0.5s ease-in-out);
-				.icon-img {
-					// @include vertical-align;
-					width: 100%;
-				}
-			}
-			&:hover {
-				z-index: 30;
-				.img-wrap {
-					background: #141b23;
-					width: 110%;
-					height: 110%;
-					z-index: 30;
-					@include box-shadow(-5px 5px 12px rgba(0,0,0,.45));
-				}
-				.box-title h4 {
-					color: #00a1e4;
-				}
+			bottom: -1px;
+			h4 {
+				background: #141b23;
+				text-transform: uppercase;
+				font-size: 17px;
+				line-height: 30px;
+				color: $white;
+				display: inline-block;
+				margin-bottom: 0;
+				padding: 0 8px 1px;
 			}
 		}
-		.text {
+		.img-wrap {
 			@include base-float;
-			padding-left: 16%;
+			position: relative;
+			z-index: 5;
+			background: #1595bf url(../img/blue-bg.png) no-repeat center center;
+			background-size: cover;
 			text-align: center;
+			@include transition (all 0.5s ease-in-out);
+			.icon-img {
+				// @include vertical-align;
+				width: 100%;
+			}
 		}
-		@include breakpoint(desktop){
+		&:hover {
+			z-index: 30;
+			.img-wrap {
+				background: #141b23;
+				width: 110%;
+				height: 110%;
+				z-index: 30;
+				@include box-shadow(-5px 5px 12px rgba(0,0,0,.45));
+			}
+			.box-title h4 {
+				color: #00a1e4;
+			}
+		}
+	}
+	.text {
+		@include base-float;
+		padding-left: 16%;
+		text-align: center;
+	}
+	@include breakpoint(desktop-large){
+		.one-fourth,
+		.one-third {
 			position: relative;
 			height: 520px;
-			.text {
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				right: 0;
-			}
+		}
+		.text {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
 		}
 	}
 }

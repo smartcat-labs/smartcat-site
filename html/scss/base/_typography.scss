@@ -180,6 +180,15 @@ blockquote {
 }
 
 .rte-content {
+	p {
+		strong {
+			font-weight: normal;
+			font-family: $din-font-bold;
+		}
+		a {
+			color: $blue-light;
+		}
+	}
 	blockquote {
 		@include base-float;
 		padding: 40px;
