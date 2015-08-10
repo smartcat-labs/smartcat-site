@@ -5,7 +5,7 @@
 	background: $blue-dark;
 	@include base-float;
 	.top,
-	.contact,
+	.contact-block,
 	.bottom {
 		@include base-float;
 	}

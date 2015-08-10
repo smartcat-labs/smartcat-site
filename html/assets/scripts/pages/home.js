@@ -5,7 +5,7 @@ $(document).ready(function () {
         controlNav: false,
         itemMargin: 20,
         slideshow: false,
-        move: 1,                   //{NEW} Integer: Minimum number of carousel items that should be visible. Items will resize fluidly when below this.
+        move: 1,                   
 		itemWidth : 260,
             minItems : 2,
             maxItems : 4

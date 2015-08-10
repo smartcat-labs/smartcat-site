@@ -18,11 +18,9 @@ body {
 		overflow: visible;
 	}
 }
-
 .container {
 	overflow-x: hidden;
 }
-
 .full-width {
 	@include base-float;
 	h2 {

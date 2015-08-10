@@ -34,7 +34,6 @@ new stepsForm( theForm, {
 	onSubmit : function( form ) {
 		// hide form
 		classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
-
 		/*
 		form.submit()
 		or
