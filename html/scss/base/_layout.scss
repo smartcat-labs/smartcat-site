@@ -19,7 +19,11 @@ body {
 	}
 }
 
-section {
+.container {
+	overflow-x: hidden;
+}
+
+.full-width {
 	@include base-float;
 	h2 {
 		font-size: 48px;

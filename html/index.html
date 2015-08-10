@@ -18,6 +18,7 @@
 	</head>
 <body>
 
+	<div class="container">
 		<header class="header home">
 			<div class="wrapper">
 				<a href="index.html" class="logo">
@@ -67,7 +68,7 @@
 			<span class="light-line"></span>
 		</header>
 
-		<section class="home-slider">
+		<section class="full-width home-slider">
 			<div class="tp-banner-container">
 				<div class="tp-banner" >
 					<ul>
@@ -176,7 +177,7 @@
 			</div>
 		</section>
 
-		<section class="what-we-do">
+		<section class="full-width what-we-do">
 			<div class="wrapper">
 				<h2><i class="ico title-ico"></i>What we do</h2>
 				<div class="one-four">
@@ -249,7 +250,8 @@
 				</div>
 			</div>	
 		</section>
-		<section class="about-us">
+		
+		<section class="full-width about-us">
 			<div class="wrapper">
 				<h2><i class="ico title-ico"></i>About us</h2>
 				<p>
@@ -264,7 +266,8 @@
 				</a>
 			</div>
 		</section>
-		<section class="process">
+		
+		<section class="full-width process">
 			<div class="wrapper">
 				<h2><i class="ico title-ico"></i>Our process</h2>
 				<ul>
@@ -301,7 +304,8 @@
 				</ul>
 			</div>
 		</section>
-		<section class="testimonials">
+		
+		<section class="full-width testimonials">
 			<div class="wrapper">
 				<h2>What people say about us</h2>
 				<blockquote>
@@ -310,7 +314,8 @@
 				<span class="author">Steve Anderson</span>
 			</div>
 		</section>
-		<section class="carusel-block">
+		
+		<section class="full-width carusel-block">
 			<div class="wrapper">
 				<h2>Partner network</h2>
 				<div class="flexslider">
@@ -364,6 +369,7 @@
 				</div>
 			</div>
 		</section>
+		
 		<footer class="footer">
 			<section class="top">
 				<img src="assets/img/star-texture.png" alt=""/>
@@ -453,10 +459,9 @@
 						</li>
 					</ul>
 				</div>
-			</div>
-			
+			</div>			
 		</footer>
-
+	</div>
 
 <!-- javascript -->
 
@@ -469,27 +474,6 @@
 <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 <script type="text/javascript" src="assets/scripts/pages/home.js"></script>
 <script type="text/javascript" src="assets/scripts/main/default.js"></script>
-<script>
-	var theForm = document.getElementById( 'theForm' );
-
-	new stepsForm( theForm, {
-		onSubmit : function( form ) {
-			// hide form
-			classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
-
-			/*
-			form.submit()
-			or
-			AJAX request (maybe show loading indicator while we don't have an answer..)
-			*/
-
-			// let's just simulate something...
-			var messageEl = theForm.querySelector( '.final-message' );
-			messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
-			classie.addClass( messageEl, 'show' );
-		}
-	} );
-</script>
  <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
