@@ -1021,8 +1021,7 @@ input[type=text]::-ms-clear {
     padding: 86px 0 100px;
     text-align: center;
     height: 328px;
-    position: relative;
-    overflow: hidden; }
+    position: relative; }
     .footer .top img {
       position: absolute;
       top: 0;
