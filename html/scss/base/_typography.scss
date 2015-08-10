@@ -94,6 +94,37 @@ blockquote {
 	font-family: $italic;
 }
 
+.read-more-link {
+	font-size: 14px;
+	text-transform: uppercase;
+	color: $black;
+	i {
+		display: inline-block;
+		@include sprite (ico-arrow-link-black);
+		position: relative;
+		top: 3px;
+		margin-left: 20px;
+	}
+	&:hover {
+		color: $blue-light;
+		@include transition(color 0.3s);
+		i {
+			@include sprite (ico-arrow-link-blue);
+		}
+	}
+	@include breakpoint(phone) {
+		background: $black;
+		color: $white;
+		height: 40px;
+		line-height: 40px;
+		padding: 0 40px;
+		display: inline-block;
+		i {
+			display: none;
+		}
+	}
+}
+
 .rte-content {
 	blockquote {
 		@include base-float;

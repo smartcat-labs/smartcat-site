@@ -532,7 +532,7 @@
 	}
 }
 
-/*----------  Technologies page
+/*----------  technologies page
 ------------------------------------------------------------------------------*/
 .one-half-list {
 	@include base-float;
@@ -665,10 +665,20 @@
 	}
 }
 
-/*----------  Services page
+/*----------  services page
 ------------------------------------------------------------------------------*/
 .service-list {
 	@include base-float;
+	h2 {
+		font-size: 38px;
+		a {
+			color: $black;
+			&:hover {
+				color: $blue-light;
+				@include transition(color 0.3s);
+			}
+		}
+	}
 	li {
 		@include base-float;
 		margin-bottom: 52px;
