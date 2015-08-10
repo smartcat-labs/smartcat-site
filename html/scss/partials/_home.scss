@@ -105,6 +105,12 @@
 		color: $blue-light;
 		margin-bottom: 20px;
 	}
+	@include breakpoint(phone) {
+		padding: 45px 30px;
+	}
+	@include breakpoint(tablet) {
+		padding: 60px 25px;
+	}
 }
 
 /*---------- carousel section

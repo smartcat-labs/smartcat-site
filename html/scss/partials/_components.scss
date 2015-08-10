@@ -91,6 +91,13 @@
 			margin-right: 0;
 		}
 	}
+	@include breakpoint(phone) {
+		padding: 0 30px;
+		li {
+			width: 25%;
+			margin-right: 0;
+		}
+	}
 }
 
 .light-line {

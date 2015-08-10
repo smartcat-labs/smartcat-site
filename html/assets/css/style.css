@@ -375,6 +375,54 @@ p {
 blockquote {
   font-family: "Times-Italic"; }
 
+.page-title {
+  width: 100%;
+  float: left;
+  border-bottom: 1px solid #c9cacc; }
+  .page-title h1 {
+    font-size: 48px;
+    line-height: 48px;
+    padding: 46px 0;
+    font-family: "DINPro-Light";
+    margin-bottom: 0; }
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .page-title {
+      text-align: center; }
+      .page-title h1 {
+        font-size: 24px;
+        line-height: 24px;
+        padding: 23px 0; } }
+
+.title {
+  width: 100%;
+  float: left;
+  position: relative;
+  padding-right: 40px; }
+  .title h2 {
+    font-size: 50px;
+    line-height: 54px;
+    margin-bottom: 20px; }
+  .title .go-back {
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    top: 25px;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 12px;
+    color: #141b23;
+    padding-left: 17px;
+    background: transparent url(../img/icons/ico-back-btn.png) no-repeat left 1px; }
+    .title .go-back:hover {
+      text-decoration: underline; }
+  .title .date {
+    display: block;
+    text-transform: uppercase;
+    color: #7d7d7d;
+    margin-bottom: 12px;
+    font-size: 18px;
+    line-height: 18px; }
+
 .read-more-link {
   font-size: 14px;
   text-transform: uppercase;
@@ -411,7 +459,7 @@ blockquote {
           width: 70px; } }
   @media only screen and (min-width: 320px) and (max-width: 767px) {
     .read-more-link {
-      background: #000;
+      background: #141b23;
       color: #fff;
       height: 40px;
       line-height: 40px;
@@ -450,6 +498,9 @@ body {
   overflow: hidden; }
   .wrapper.o-visible {
     overflow: visible; }
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .wrapper.centered {
+      text-align: center; } }
 
 .container {
   overflow-x: hidden; }
@@ -476,47 +527,18 @@ body {
       width: 100%;
       float: left;
       margin-bottom: 65px; }
-
-.page-title {
-  width: 100%;
-  float: left;
-  border-bottom: 1px solid #c9cacc; }
-  .page-title h1 {
-    font-size: 48px;
-    line-height: 48px;
-    padding: 46px 0;
-    font-family: "DINPro-Light";
-    margin-bottom: 0; }
-
-.title {
-  width: 100%;
-  float: left;
-  position: relative;
-  padding-right: 40px; }
-  .title h2 {
-    font-size: 50px;
-    line-height: 54px;
-    margin-bottom: 20px; }
-  .title .go-back {
-    position: absolute;
-    display: inline-block;
-    right: 0;
-    top: 25px;
-    text-transform: uppercase;
-    font-size: 12px;
-    line-height: 12px;
-    color: #141b23;
-    padding-left: 17px;
-    background: transparent url(../img/icons/ico-back-btn.png) no-repeat left 1px; }
-    .title .go-back:hover {
-      text-decoration: underline; }
-  .title .date {
-    display: block;
-    text-transform: uppercase;
-    color: #7d7d7d;
-    margin-bottom: 12px;
-    font-size: 18px;
-    line-height: 18px; }
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .content {
+      padding: 35px 30px; }
+      .content .main {
+        width: 100%; }
+        .content .main.centered {
+          text-align: center; }
+      .content .sidebar {
+        display: none; } }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .content {
+      padding: 75px 25px 35px; } }
 
 /*----------  layout
 ------------------------------------------------------------------------------*/
@@ -994,6 +1016,12 @@ textarea {
             width: 20px; } }
     .social-links li:last-child {
       margin-right: 0; }
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .social-links {
+      padding: 0 30px; }
+      .social-links li {
+        width: 25%;
+        margin-right: 0; } }
 
 .light-line {
   width: 100%;
@@ -1087,6 +1115,12 @@ textarea {
     font-weight: bold;
     color: #00a1e4;
     margin-bottom: 20px; }
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .contact-block {
+      padding: 45px 30px; } }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .contact-block {
+      padding: 60px 25px; } }
 
 /*---------- carousel section
 ------------------------------------------------------------------------------*/
@@ -1196,7 +1230,7 @@ textarea {
       float: left;
       padding-left: 16%;
       text-align: center; }
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (min-width: 1025px) and (max-width: 1280px) {
       .what-we-do-block .one-four {
         position: relative;
         height: 520px; }
@@ -1727,66 +1761,114 @@ html[xmlns] .slides {
     width: 35.15625%;
     margin: 58px 5.078125% 0;
     float: left; }
-    .employee-block .info h2 {
-      font-size: 50px;
-      line-height: 50px;
-      margin-bottom: 5px; }
-    .employee-block .info .position {
-      color: #00a1e4;
-      font-size: 24px;
-      display: block;
-      margin-bottom: 20px; }
-    .employee-block .info p {
-      margin-bottom: 40px; }
-    .employee-block .info .contact-box {
-      width: 100%;
+  .employee-block h2 {
+    font-size: 50px;
+    line-height: 50px;
+    margin-bottom: 5px; }
+  .employee-block .position {
+    color: #00a1e4;
+    font-size: 24px;
+    display: block;
+    margin-bottom: 20px; }
+  .employee-block p {
+    margin-bottom: 40px; }
+  .employee-block blockquote {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 35px; }
+  .employee-block .contact-box {
+    width: 100%;
+    float: left;
+    margin-bottom: 40px;
+    height: 50px; }
+    .employee-block .contact-box a {
+      width: 50%;
       float: left;
-      margin-bottom: 40px;
-      border: 1px solid #141b23;
-      height: 50px; }
-      .employee-block .info .contact-box a {
-        width: 50%;
-        float: left;
-        line-height: 48px;
-        display: block;
-        text-align: center;
-        text-transform: uppercase; }
-        .employee-block .info .contact-box a .ico {
-          margin: 0 10px -3px 0; }
-        .employee-block .info .contact-box a.mail {
-          background: #141b23;
-          color: #fff; }
-          .employee-block .info .contact-box a.mail .ico {
-            background: url('../img/icons-s86e2dfe1f9.png') no-repeat 0 -546px;
-            height: 15px;
-            width: 20px; }
-            @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
-              .employee-block .info .contact-box a.mail .ico {
-                background: url('../img/icons2x-sd1e3093e0c.png') no-repeat 0 -402px;
-                background-size: 71px 758.5px;
-                height: 15px;
-                width: 20px; } }
-        .employee-block .info .contact-box a.phone {
-          background: #fff;
-          color: #141b23; }
-          .employee-block .info .contact-box a.phone .ico {
-            background: url('../img/icons-s86e2dfe1f9.png') no-repeat 0 -609px;
-            height: 14px;
-            width: 13px; }
-            @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
-              .employee-block .info .contact-box a.phone .ico {
-                background: url('../img/icons2x-sd1e3093e0c.png') no-repeat 0 -445px;
-                background-size: 71px 758.5px;
-                height: 14px;
-                width: 13px; } }
-    .employee-block .info blockquote {
-      font-size: 16px;
-      line-height: 24px;
-      margin-bottom: 35px; }
+      line-height: 48px;
+      display: block;
+      text-align: center;
+      text-transform: uppercase;
+      border: 1px solid #141b23; }
+      .employee-block .contact-box a .ico {
+        margin: 0 10px -3px 0; }
+      .employee-block .contact-box a.mail {
+        background: #141b23;
+        color: #fff;
+        float: left; }
+        .employee-block .contact-box a.mail .ico {
+          background: url('../img/icons-s86e2dfe1f9.png') no-repeat 0 -546px;
+          height: 15px;
+          width: 20px; }
+          @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
+            .employee-block .contact-box a.mail .ico {
+              background: url('../img/icons2x-sd1e3093e0c.png') no-repeat 0 -402px;
+              background-size: 71px 758.5px;
+              height: 15px;
+              width: 20px; } }
+      .employee-block .contact-box a.phone {
+        background: #fff;
+        color: #141b23;
+        float: right; }
+        .employee-block .contact-box a.phone .ico {
+          background: url('../img/icons-s86e2dfe1f9.png') no-repeat 0 -609px;
+          height: 14px;
+          width: 13px; }
+          @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
+            .employee-block .contact-box a.phone .ico {
+              background: url('../img/icons2x-sd1e3093e0c.png') no-repeat 0 -445px;
+              background-size: 71px 758.5px;
+              height: 14px;
+              width: 13px; } }
   .employee-block:first-of-type {
     margin-top: 20px; }
   .employee-block:last-of-type {
     margin-bottom: 25px; }
+  .employee-block.right-aligned .img-wrap {
+    float: right; }
+  .employee-block.right-aligned .info {
+    float: left; }
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .employee-block {
+      border-bottom: 1px solid #efefef;
+      padding-bottom: 20px;
+      margin-bottom: 20px; }
+      .employee-block:last-of-type {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border: none; }
+      .employee-block .img-wrap,
+      .employee-block .info {
+        float: left !important; }
+      .employee-block .img-wrap {
+        width: 100%;
+        margin-bottom: 20px; }
+      .employee-block .info {
+        width: 100%;
+        margin: 0; }
+      .employee-block h2 {
+        font-size: 25px;
+        line-height: 25px; }
+      .employee-block p {
+        margin-bottom: 25px; }
+      .employee-block .position {
+        font-size: 12px;
+        margin-bottom: 10px; }
+      .employee-block .contact-box {
+        height: auto;
+        text-align: center; }
+        .employee-block .contact-box a {
+          border: none; }
+          .employee-block .contact-box a.mail {
+            position: relative;
+            left: 50%;
+            -moz-transform: translate(-50%, 0);
+            -ms-transform: translate(-50%, 0);
+            -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+            padding: 0 20px;
+            width: auto; }
+          .employee-block .contact-box a.phone {
+            width: 100%; } }
 
 /*----------Sidebar
 ------------------------------------------------------------------------------*/
@@ -2224,7 +2306,7 @@ html[xmlns] .slides {
       .one-half-list li .text p {
         padding-top: 17px;
         max-width: 95%; }
-    @media only screen and (min-width: 1024px) {
+    @media only screen and (min-width: 1025px) and (max-width: 1280px) {
       .one-half-list li .text .contact-box {
         display: none; } }
 
@@ -2279,9 +2361,32 @@ html[xmlns] .slides {
     margin-bottom: 52px; }
     .service-list li .img-box {
       float: left;
-      width: 25.34611288604899%;
-      padding: 25px 38px 0 59px;
+      width: 195px;
+      padding: 30px 20px 0 30px;
       position: relative; }
     .service-list li .text {
-      float: left;
-      width: 74.65388711395101%; }
+      float: right;
+      width: calc(100% - 240px); }
+    .service-list li.right-aligned .img-box {
+      float: right; }
+    .service-list li.right-aligned .text {
+      float: left; }
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .service-list {
+      margin-top: 50px; }
+      .service-list h2 {
+        font-size: 19px;
+        line-height: 22px;
+        margin-bottom: 15px; }
+      .service-list p {
+        font-size: 15px; }
+      .service-list li {
+        margin-bottom: 70px; }
+        .service-list li .img-box {
+          float: none !important;
+          width: 150px;
+          margin: 0 auto 50px auto;
+          padding: 0; }
+        .service-list li .text {
+          float: left !important;
+          width: 100%; } }
