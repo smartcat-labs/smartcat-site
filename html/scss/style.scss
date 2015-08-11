@@ -778,6 +778,11 @@
 			}
 		}
 	}
+	&.project-list {
+		.text {
+			width: 100%;
+		}
+	}
 	@include breakpoint(phone) {
 		margin-top: 50px;
 		h2 {
@@ -799,6 +804,112 @@
 			.text {
 				float: left !important;
 				width: 100%;
+			}
+		}
+	}
+}
+
+/*----------  contact page
+------------------------------------------------------------------------------*/
+
+.contact-questions {
+	li {
+		overflow: visible;
+		margin-left: 4px;
+	}
+	margin-top: -5px;
+	input {
+		width: 100%;
+		height: 56px;
+		margin-top: 11px;
+	}
+	span {
+		font-size: 16px;
+		font-family: $din-font-bold;
+		color: $blue-dark;
+	}
+	.main-questions {
+		overflow: auto;
+		li {
+			width: 32.1%;
+			float: left; 
+			margin-right: 17px;
+			padding-bottom: 0 !important;
+			margin-left: 0 !important;
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+
+	}
+}
+.contact-who-block {
+	overflow: visible;
+	padding: 35px 5px;
+	p {
+		font-family: $din-font-bold;
+		color: $blue-dark;
+	}
+	.one-contact {
+		width: 24%;
+		float: left;
+		.contact-romb-wrap {
+			width: 100%;
+		    float: left;
+		    margin: 30px 58px 36px;
+		    .contact-who {
+		    	width: auto;
+			    float: left;
+			    z-index: 5;
+			    position: relative;
+			    margin: 25px 25px 50px 3px;
+			    border: 1px solid $gray-lighter;
+			    .img-wrap {
+					@include base-float;
+					width: 155px;
+					height: 155px;
+					position: relative;
+					z-index: 5;
+					background: #1595bf url(../img/contact-blue-bg.png) no-repeat center center;
+					background-size: cover;
+					text-align: center;
+					margin: 13px;
+					img {
+						width: 137px;
+					    height: 146px;
+					    position: relative;
+					    top: 11px;
+					    right: 11px;
+					}
+				}
+		    }
+		    .contact-who-name {
+		    	    width: 100%;
+					float: left;
+					margin-left: -17%;
+					text-align: center;
+		    }
+		    &.contact-office-img {
+		    	.img-wrap {
+		    		background: $gray-bg-darker;
+					img {
+						width: 106px;
+					    height: 106px;
+					    top: 21px;
+					    right: 0px;
+					}
+		    	}
+				
+			}
+		}
+		&:first-of-type {
+			.contact-romb-wrap {
+				margin-left: 68px;
+			}
+		}
+		&.selected-contact {
+			.contact-who {
+				border: 1px solid $blue-light;
 			}
 		}
 	}
