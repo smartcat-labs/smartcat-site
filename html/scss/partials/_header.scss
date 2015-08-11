@@ -22,7 +22,7 @@
 	}
 	.social,
 	.phone,
-	.main-nav {
+	.menu-wrapper {
 		float: right;
 		margin-top: 42px;
 	}
@@ -42,6 +42,43 @@
 			}
 		}
 	}
+	.close-menu {
+		position: absolute;
+		top: 19px;
+		right: 30px;
+		.ico {
+			@include sprite(ico-close-nav);
+			padding: 5px;
+
+		}
+	}
+	.search-box {
+		@include base-float;
+		position: relative;
+		input[type="text"] {
+			@include base-float;
+			border: none;
+			outline: none;
+			height: 42px;
+			line-height: 42px;
+			padding: 0 40px 0 12px;
+			
+			font-size: 15px;
+			color: $blue-dark;
+		}
+		.search-btn {
+			position: absolute;
+			top: 1px;
+			right: 0;
+			text-align: center;
+			width: 40px;
+			height: 40px;
+			.ico {
+				@include sprite(ico-search-mobile);
+				margin-top: 12px;
+			}
+		}
+	}
 	&.home {
 		background: none;
 		position: absolute;
@@ -50,8 +87,9 @@
 		right: 0;
 		z-index: 500;
 	}
-	@include breakpoint(desktop){
-		.menu-btn {
+	@include breakpoint(desktop-large){
+		.menu-btn,
+		.search-box {
 			display: none;
 		}
 	}
@@ -62,10 +100,9 @@
 		.wrapper {
 			padding: 0 20px;
 		}
-		.phone {
-			display: none;
-		}
-		.menu-btn {
+		.menu-btn,
+		.phone,
+		.search-box {
 			display: none;
 		}
 	}
@@ -75,7 +112,7 @@
 		}
 		.phone,
 		.social,
-		.main-nav {
+		.menu-wrapper {
 			display: none;
 		}
 		.wrapper {
@@ -84,13 +121,12 @@
 		.menu-btn {
 			float: right;
 			display: block;
-			margin-top: 23px;
+			margin-top: 30px;
 			.ico {
 				@include sprite(ico-menu);
 			}
 		}
-		.main-nav {
-			display: block;
+		.menu-wrapper {
 			margin: 0;
 			background: $blue-dark;
 			position: fixed;
@@ -98,14 +134,28 @@
 			bottom: 0;
 			left: 0;
 			right: 0;
-			ul {
-				padding-top: 100px;
+			.main-nav {
 				height: 100%;
 				overflow: auto;
+				@include base-float;
+				    padding: 0 30px 50px;
+			}
+			ul {
+				padding-top: 100px;
+				margin-bottom: 38px;
 				li {
 					width: 100%;
 					text-align: center;
 					margin-bottom: 18px;
+					a {
+						font-size: 20px;
+						.ico {
+							float: none;
+							margin-top: 0;
+							margin-bottom: -3px;
+						}
+					}
+
 				}
 			}
 		}
@@ -129,8 +179,14 @@
 				color: #e6e7e8;
 				text-transform: uppercase;
 				font-size: 14px;
-				&:hover {
+				&:hover,
+				&.active {
 					color: $blue-light;
+				}
+				.ico {
+					float: left;
+					margin-right: 5px;
+					margin-top: 2px;
 				}
 			}
 			&:last-child {

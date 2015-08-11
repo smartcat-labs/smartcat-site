@@ -9,6 +9,9 @@ html, body {
 body {
 	font-family: $din-font;
 	font-size: 12px;
+	&.fixed {
+		position: fixed;
+	}
 }
 .wrapper {
 	max-width: 1278px;

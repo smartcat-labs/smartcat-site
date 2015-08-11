@@ -37,6 +37,14 @@
 	&.arrow-acc-down {
 		@include sprite(arrow-acc-down);
 	}
+	&.cat {
+		@include sprite(ico-cat);
+	}
+	@include breakpoint(phone){
+		&.cat {
+			@include sprite(ico-cat-mobile);
+		}
+	}
 }
 
 

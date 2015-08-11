@@ -25,7 +25,20 @@ $(document).ready(function () {
 		});
 	}
 
+	// Mobile navigation
+	$(".close-menu").click(function () {
+		$(".menu-wrapper").slideUp();
+		$("body").removeClass("fixed");
+	});	
+
+	$(".menu-btn").click(function () {
+		$(".menu-wrapper").slideDown();
+		$("body").addClass("fixed");
+	});
+
 });
+
+
 
 
 var theForm = document.getElementById( 'theForm' );
