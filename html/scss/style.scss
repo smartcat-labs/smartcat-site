@@ -755,7 +755,7 @@
 
 /*----------  services page
 ------------------------------------------------------------------------------*/
-.service-list {
+.items-list {
 	@include base-float;
 	margin-top: 40px;
 	h2 {
@@ -796,7 +796,7 @@
 			}
 		}
 	}
-	&.project-list {
+	&.full {
 		.text {
 			width: 100%;
 		}
