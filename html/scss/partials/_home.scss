@@ -179,6 +179,7 @@
 		display: none;
 		a {
 			color: $black;
+			@include transition(color 0.3s);
 			&:hover {
 				color: $blue-light;
 			}
@@ -263,6 +264,9 @@
 			font-size: 19px;
 			line-height: 20px;
 		}
+		h3 {
+			display: none;
+		}
 		.btn {
 			height: 40px;
 			line-height: 40px;
@@ -303,6 +307,20 @@
 				}
 				.text {
 					float: left;
+				}
+			}
+		}
+		.one-third {
+			.romb-wrap {
+				width: 160px;
+				margin: 40px 0 40px 5px;
+			}
+			.text {
+				width: calc(100% - 200px);
+			}
+			&.right-aligned {
+				.romb-wrap {
+					margin: 40px 5px 40px 0;
 				}
 			}
 		}
