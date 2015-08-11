@@ -40,6 +40,9 @@
 				p {
 					color: #2f2f2f;
 				}
+				.ico {
+					@include sprite(ico-arrow-more-h);
+				}
 			}
 		}
 	}
@@ -164,6 +167,17 @@
 ------------------------------------------------------------------------------*/
 .what-we-do-block {
 	padding: 100px 0;
+	h3 {
+		font-size: 20px;
+		line-height: 22px;
+		font-family: $bold-font;
+		margin-bottom: 20px;
+	}	
+	.ico.arrow-more {
+		&:hover {
+			@include sprite(ico-arrow-more-h);
+		}
+	}
 	.wrapper {
 		overflow: visible;
 	}
@@ -173,7 +187,7 @@
 	}
 	.one-third {
 		width: 32.3%;
-		float: left;	
+		float: left;
 	}
 	.romb-wrap {
 		@include base-float;
@@ -232,10 +246,13 @@
 		text-align: center;
 	}
 	@include breakpoint(desktop-large){
-		.one-fourth,
-		.one-third {
+		.one-fourth {
 			position: relative;
 			height: 520px;
+		}
+		.one-third {
+			position: relative;
+			height: 470px;
 		}
 		.text {
 			position: absolute;

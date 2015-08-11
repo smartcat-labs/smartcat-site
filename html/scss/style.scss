@@ -54,28 +54,33 @@
 ------------------------------------------------------------------------------*/
 .employee-block {
 	@include base-float;
+	&:first-of-type {
+		margin-top: 50px;	
+	}
+	&:last-of-type {
+		margin-bottom: 25px;
+	}
 	.img-wrap {
-		width: 54.6875%;
+		width: 700px;
 		float: left;
 		img {
 			width: 100%;
 		}
 	}
 	.info {
-		width: 35.15625%;
-		margin: 58px 5.078125% 0;
-		float: left;
+		width: calc(100% - 775px);
+		margin-top: 55px;
+		float: right;
 	}	
 	h2 {
 		font-size: 50px;
 		line-height: 50px;
-		margin-bottom: 5px;
 	}
 	.position {
 		color: $blue-light;
 		font-size: 24px;
 		display: block;
-		margin-bottom: 20px;
+		margin-bottom: 18px;
 	}
 	p {
 		margin-bottom: 40px;
@@ -84,6 +89,8 @@
 		font-size: 16px;
 		line-height: 24px;
 		margin-bottom: 35px;
+		@include base-float;
+		color: $grey-light;
 	}
 	.contact-box {
 		@include base-float;
@@ -97,14 +104,13 @@
 			text-align: center;
 			text-transform: uppercase;
 			border: 1px solid #141b23;
-			.ico {
-				margin: 0 10px -3px 0;
-			}
 			&.mail {
 				background: #141b23;
 				color: $white;
 				float: left;
+				font-size: 14px;
 				.ico {
+					margin: 0 10px -3px 0;
 					@include sprite(ico-mail-white);
 				}
 			}
@@ -112,17 +118,14 @@
 				background: $white;
 				color: #141b23;
 				float: right;
+				font-size: 17px;
+				font-family: $din-font-bold;
 				.ico {
 					@include sprite(ico-phone-black);
+					margin-right: 10px;
 				}
 			}
 		}
-	}
-	&:first-of-type {
-		margin-top: 20px;	
-	}
-	&:last-of-type {
-		margin-bottom: 25px;
 	}
 	&.right-aligned {
 		.img-wrap {
@@ -130,6 +133,9 @@
 		}
 		.info {
 			float: left;
+		    width: calc(100% - 706px);
+			padding-left: 60px;
+			margin-top: 105px;
 		}
 	}
 	@include breakpoint(phone) {
@@ -726,8 +732,10 @@
 ------------------------------------------------------------------------------*/
 .service-list {
 	@include base-float;
+	margin-top: 40px;
 	h2 {
 		font-size: 38px;
+		margin-bottom: 13px;
 		a {
 			color: $black;
 			&:hover {
@@ -736,22 +744,27 @@
 			}
 		}
 	}
+	p {
+		margin-bottom: 26px;
+	}
 	li {
 		@include base-float;
 		margin-bottom: 52px;
 		.img-box {
 			float: left;
 			width: 195px;
-			padding: 30px 20px 0 30px;
+			padding: 40px 32px 0 23px;
 			position: relative;
+			margin-left: 6px;
 		}
 		.text {
 			float: right;
-			width: calc(100% - 240px);
+			width: calc(100% - 233px);
 		}
 		&.right-aligned {
 			.img-box {
 				float: right;
+				margin: 0;
 			}
 			.text {
 				float: left;
@@ -773,7 +786,7 @@
 			.img-box {
 				float: none !important;
 				width: 150px;
-				margin: 0 auto 50px auto;
+				margin: 0 auto 50px auto !important;
 				padding: 0;
 			}
 			.text {
