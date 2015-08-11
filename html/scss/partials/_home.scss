@@ -109,10 +109,10 @@
 		margin-bottom: 20px;
 	}
 	@include breakpoint(phone) {
-		padding: 45px 30px;
+		padding: 45px 0;
 	}
 	@include breakpoint(tablet) {
-		padding: 60px 25px;
+		padding: 60px 0;
 	}
 }
 
@@ -173,6 +173,18 @@
 		font-family: $bold-font;
 		margin-bottom: 20px;
 	}	
+	h2 {
+		font-size: 30px;
+		margin-bottom: 13px;
+		display: none;
+		a {
+			color: $black;
+			@include transition(color 0.3s);
+			&:hover {
+				color: $blue-light;
+			}
+		}
+	}
 	.ico.arrow-more {
 		&:hover {
 			@include sprite(ico-arrow-more-h);
@@ -180,6 +192,7 @@
 	}
 	.wrapper {
 		overflow: visible;
+		@extend %clearfix;
 	}
 	.one-fourth {
 		width: 24.4%;
@@ -244,6 +257,93 @@
 		@include base-float;
 		padding-left: 16%;
 		text-align: center;
+	}
+	@include breakpoint(phone) {
+		h2 {
+			display: block;
+			font-size: 19px;
+			line-height: 20px;
+		}
+		h3 {
+			display: none;
+		}
+		.btn {
+			height: 40px;
+			line-height: 40px;
+			padding: 0 20px;
+		}
+		.top .box-title h4 {
+			display: none;
+		}
+		.one-fourth,
+		.one-third {
+			width: 100%;
+			&.right-aligned {
+				
+			}
+		}
+		.romb-wrap {
+			width: 200px;
+			padding: 40px;
+			margin: 20px auto;
+			float: none;
+			overflow: hidden;
+		}
+		.text {
+			padding-left: 0;
+		}
+	}
+	@include breakpoint(tablet) {
+		h2 {
+			display: block;
+		}
+		.one-fourth,
+		.one-third {
+			width: 100%;
+			&.right-aligned {
+				.romb-wrap {
+					float: right;
+					margin: 40px 25px 40px 0;
+				}
+				.text {
+					float: left;
+				}
+			}
+		}
+		.one-third {
+			.romb-wrap {
+				width: 160px;
+				margin: 40px 0 40px 5px;
+			}
+			.text {
+				width: calc(100% - 200px);
+			}
+			&.right-aligned {
+				.romb-wrap {
+					margin: 40px 5px 40px 0;
+				}
+			}
+		}
+		.romb-wrap {
+			width: 230px;
+			margin: 40px 0 40px 25px;
+			padding: 20px;
+		}
+		.text {
+			width: calc(100% - 310px);
+			padding: 0;
+			float: right;
+			text-align: left;
+			margin-top: 30px;
+		}
+		.top .box-title h4 {
+			display: none;
+		}
+	}
+	@include breakpoint(desktop) {
+		.top .box-title h4 {
+			font-size: 14px;
+		}
 	}
 	@include breakpoint(desktop-large){
 		.one-fourth {

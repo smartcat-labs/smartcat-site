@@ -153,6 +153,25 @@ blockquote {
 		font-size: 18px;
 		line-height: 18px;
 	}
+	@include breakpoint(tablet) {
+		h2 {
+			font-size: 40px;
+			line-height: 44px;
+		}
+		.go-back {
+			top: 45px;
+		}
+	}
+	@include breakpoint(phone) {
+		.shape {
+			display: block;
+			margin: 0 auto 20px auto;
+		}
+		h2 {
+			font-size: 19px;
+			line-height: 20px;
+		}
+	}
 }
 
 .read-more-link {
