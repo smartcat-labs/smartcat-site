@@ -65,65 +65,122 @@
 		width: 35.15625%;
 		margin: 58px 5.078125% 0;
 		float: left;
-		h2 {
-			font-size: 50px;
-			line-height: 50px;
-			margin-bottom: 5px;
-		}
-		.position {
-			color: $blue-light;
-			font-size: 24px;
+	}	
+	h2 {
+		font-size: 50px;
+		line-height: 50px;
+		margin-bottom: 5px;
+	}
+	.position {
+		color: $blue-light;
+		font-size: 24px;
+		display: block;
+		margin-bottom: 20px;
+	}
+	p {
+		margin-bottom: 40px;
+	}
+	blockquote {
+		font-size: 16px;
+		line-height: 24px;
+		margin-bottom: 35px;
+	}
+	.contact-box {
+		@include base-float;
+		margin-bottom: 40px;
+		height: 50px;
+		a {
+			width: 50%;
+			float: left;
+			line-height: 48px;
 			display: block;
-			margin-bottom: 20px;
-		}
-		p {
-			margin-bottom: 40px;
-		}
-		.contact-box {
-			@include base-float;
-			margin-bottom: 40px;
+			text-align: center;
+			text-transform: uppercase;
 			border: 1px solid #141b23;
-			height: 50px;
-			a {
-				width: 50%;
+			.ico {
+				margin: 0 10px -3px 0;
+			}
+			&.mail {
+				background: #141b23;
+				color: $white;
 				float: left;
-				line-height: 48px;
-				display: block;
-				text-align: center;
-				text-transform: uppercase;
 				.ico {
-					margin: 0 10px -3px 0;
+					@include sprite(ico-mail-white);
 				}
-				&.mail {
-					background: #141b23;
-					color: $white;
-					.ico {
-						@include sprite(ico-mail-white);
-					}
-				}
-				&.phone {
-					background: $white;
-					color: #141b23;
-					.ico {
-						@include sprite(ico-phone-black);
-					}
+			}
+			&.phone {
+				background: $white;
+				color: #141b23;
+				float: right;
+				.ico {
+					@include sprite(ico-phone-black);
 				}
 			}
 		}
-		blockquote {
-			font-size: 16px;
-			line-height: 24px;
-			margin-bottom: 35px;
-		}
 	}
 	&:first-of-type {
-		margin-top: 20px;
+		margin-top: 20px;	
 	}
 	&:last-of-type {
 		margin-bottom: 25px;
 	}
+	&.right-aligned {
+		.img-wrap {
+			float: right;
+		}
+		.info {
+			float: left;
+		}
+	}
+	@include breakpoint(phone) {
+		border-bottom: 1px solid $grey-bg;
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		&:last-of-type {
+			padding-bottom: 0;
+			margin-bottom: 0;
+			border: none;
+		}
+		.img-wrap,
+		.info {
+			float: left !important;
+		}
+		.img-wrap {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		.info {
+			width: 100%;
+			margin: 0;
+		}
+		h2 {
+			font-size: 25px;
+			line-height: 25px;
+		}
+		p {
+			margin-bottom: 25px;
+		}
+		.position {
+			font-size: 12px;
+			margin-bottom: 10px;
+		}
+		.contact-box { 
+			height: auto;
+			text-align: center;
+			a {
+				border: none;
+				&.mail {
+					@include horizontal-align;
+					padding: 0 20px;
+					width: auto;
+				}
+				&.phone {
+					width: 100%;
+				}
+			}
+		}
+	}
 }
-
 
 /*----------Sidebar
 ------------------------------------------------------------------------------*/
@@ -684,18 +741,44 @@
 		margin-bottom: 52px;
 		.img-box {
 			float: left;
-			width: 25.34611288604899%;
-			padding: 25px 38px 0 59px;
+			width: 195px;
+			padding: 30px 20px 0 30px;
 			position: relative;
 		}
 		.text {
-			float: left;
-			width: 74.65388711395101%;
-			h2 {
-
+			float: right;
+			width: calc(100% - 240px);
+		}
+		&.right-aligned {
+			.img-box {
+				float: right;
 			}
-			p {
-
+			.text {
+				float: left;
+			}
+		}
+	}
+	@include breakpoint(phone) {
+		margin-top: 50px;
+		h2 {
+			font-size: 19px;
+			line-height: 22px;
+			margin-bottom: 15px;
+		}
+		p {
+			font-size: 15px;
+		}
+		li {
+			margin-bottom: 70px;
+			.img-box {
+				float: none !important;
+				width: 150px;
+				margin: 0 auto 50px auto;
+				padding: 0;
+			}
+			.text {
+				float: left !important;
+				width: 100%;
 			}
 		}
 	}

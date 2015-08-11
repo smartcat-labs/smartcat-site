@@ -8,11 +8,15 @@
 	}
 
 	@else if $value == 'tablet' {
-		@media only screen and (min-width: 768px) and (max-width: 1023px) { @content; }
+		@media only screen and (min-width: 768px) and (max-width: 1024px) { @content; }
 	}
 
 	@else if $value == 'desktop' {
-		@media only screen and (min-width: 1024px) { @content }
+		@media only screen and (min-width: 1025px) and (max-width: 1280px) { @content }
+	}
+
+	@else if $value == 'desktop-large' {
+		@media only screen and (min-width: 1281px) { @content }
 	}
 
 	@else {

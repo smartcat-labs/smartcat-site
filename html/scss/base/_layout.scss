@@ -17,6 +17,11 @@ body {
 	&.o-visible {
 		overflow: visible;
 	}
+	@include breakpoint(phone) {
+		&.centered {
+			text-align: center;
+		}
+	}
 }
 .container {
 	overflow-x: hidden;
@@ -45,50 +50,19 @@ body {
 			margin-bottom: 65px;
 		}
 	}
-}
-
-.page-title {
-	@include base-float;
-	border-bottom: 1px solid #c9cacc;
-	h1 {
-		font-size: 48px;
-		line-height: 48px;
-		padding: 46px 0;
-		font-family: $din-font-light;
-		margin-bottom: 0;
-	}
-}
-
-.title {
-	@include base-float;
-	position: relative;
-	padding-right: 40px;
-	h2 {
-		font-size: 50px;
-		line-height: 54px;
-		margin-bottom: 20px;
-	}
-	.go-back {
-		position: absolute;
-		display: inline-block;
-		right: 0;
-		top: 25px;
-		text-transform: uppercase;
-		font-size: 12px;
-		line-height: 12px;
-		color: $blue-dark;
-		padding-left: 17px;
-		background: transparent url(../img/icons/ico-back-btn.png) no-repeat left 1px;
-		&:hover {
-			text-decoration: underline;
+	@include breakpoint(phone) {
+		padding: 35px 30px;
+		.main {
+			width: 100%;
+			&.centered {
+				text-align: center;
+			}
+		}
+		.sidebar {
+			display: none;
 		}
 	}
-	.date {
-		display: block;
-		text-transform: uppercase;
-		color: #7d7d7d;
-		margin-bottom: 12px;
-		font-size: 18px;
-		line-height: 18px;
+	@include breakpoint(tablet) {
+		padding: 75px 25px 35px;
 	}
 }
