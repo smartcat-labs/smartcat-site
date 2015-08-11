@@ -36,6 +36,12 @@ body {
 		font-size: 48px;
 		line-height: 50px;
 	}
+	@include breakpoint(phone) {
+		h2 {
+			font-size: 19px;
+			line-height: 22px;
+		}
+	}
 }
 
 .content {

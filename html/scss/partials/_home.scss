@@ -48,8 +48,24 @@
 		}
 	}
 	@include breakpoint(phone) {
+		padding: 45px 0;
+		h2 {
+			margin-bottom: 30px;
+		}
 		ul {
 			width: 2000em;
+			li {
+				h3 {
+					font-size: 18px;
+					line-height: 20px;
+					margin-bottom: 12px;
+				}
+				p {
+					font-size: 15px;
+					line-height: 20px;
+					padding: 0;
+				}
+			}
 		}
 	}
 	@media only screen and (min-width: 769px) {
@@ -70,7 +86,7 @@
 	}
 	blockquote {
 		color: #ababab;
-		margin:0 auto 28px;
+		margin: 0 auto 28px;
 		position: relative;
 		width: 77%;
 		display: inline-block;
@@ -98,6 +114,16 @@
 		font-size: 18px;
 		font-family: $din-font-bold;
 	}
+	@include breakpoint(phone) {
+		padding: 30px 0;
+		blockquote {
+			width: 100%;
+			font-size: 15px;
+		}
+		.author {
+			font-size: 12px;
+		}
+	}
 }
 
 /*----------  about Us block
@@ -106,6 +132,13 @@
 	padding-bottom: 72px;
 	h2 {
 		margin-bottom: 58px;
+	}
+	@include breakpoint(phone) {
+		border-top: 1px solid $grey-bg;
+		padding: 30px 0;
+		h2 {
+			margin-bottom: 15px;
+		}
 	}
 }
 
@@ -121,6 +154,9 @@
 	}
 	@include breakpoint(phone) {
 		padding: 45px 0;
+		h4 {
+			text-align: center;
+		}
 	}
 	@include breakpoint(tablet) {
 		padding: 60px 0;
@@ -170,6 +206,27 @@
 		.slides > li,
 		.slides > li > a {
 			height: 100%;
+		}
+	}
+	@include breakpoint(phone) {
+		padding: 28px 0 0 0;
+		h2 {
+			margin-bottom: 0;
+		}
+		.flexslider {
+			padding: 0 30px;
+			height: 113px;
+			.slides li {
+				max-width: 100% !important;
+			}
+			.flex-direction-nav a {
+				&.flex-next {
+					right: 0;
+				}
+				&.flex-prev {
+					left: 0;
+				}
+			}
 		}
 	}
 }
@@ -279,6 +336,7 @@
 		}
 	}
 	@include breakpoint(phone) {
+		padding: 50px 0;
 		.swiper-wrapper {
 			width: 2000em;
 		}
@@ -286,6 +344,7 @@
 			display: block;
 			font-size: 19px;
 			line-height: 20px;
+			margin-bottom: 0;
 		}
 		h3 {
 			display: none;
@@ -305,12 +364,15 @@
 		.romb-wrap {
 			width: 200px;
 			padding: 40px;
-			margin: 20px auto;
+			margin: 15px auto 20px auto;
 			float: none;
 			overflow: hidden;
 		}
 		.text {
 			padding-left: 0;
+			h2 {
+				margin-bottom: 13px;
+			}
 		}
 	}
 	@include breakpoint(touch) {

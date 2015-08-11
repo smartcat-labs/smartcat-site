@@ -45,8 +45,6 @@
 
 /*----------  Generic elements
 ------------------------------------------------------------------------------*/
-
-
 .people-block {
 	background: #efefef;
 }
@@ -56,7 +54,7 @@
 .employee-block {
 	@include base-float;
 	&:first-of-type {
-		margin-top: 50px;	
+		margin-top: 50px;
 	}
 	&:last-of-type {
 		margin-bottom: 25px;
@@ -193,6 +191,25 @@
 				}
 			}
 		}
+	}
+	@include breakpoint(tablet) {
+		margin-bottom: 30px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		.img-wrap {
+			width: 510px !important;
+			float: left;
+			img {
+				width: 100%;
+			}
+		}
+		.info {
+			width: calc(100% - 540px) !important;
+			margin-top: 55px;
+			float: right;
+			padding: 0 !important;
+		}	
 	}
 }
 
@@ -812,105 +829,137 @@
 
 /*----------  contact page
 ------------------------------------------------------------------------------*/
-
-.contact-questions {
-	li {
-		overflow: visible;
-		margin-left: 4px;
-	}
-	margin-top: -5px;
-	input {
-		width: 100%;
-		height: 56px;
-		margin-top: 11px;
-	}
-	span {
-		font-size: 16px;
-		font-family: $din-font-bold;
-		color: $blue-dark;
-	}
-	.main-questions {
-		overflow: auto;
+.contact-us {
+	padding-bottom: 80px;
+	.contact-questions {
 		li {
-			width: 32.1%;
-			float: left; 
-			margin-right: 17px;
-			padding-bottom: 0 !important;
-			margin-left: 0 !important;
-			&:last-of-type {
-				margin-right: 0;
-			}
+			overflow: visible;
+			margin-left: 4px;
 		}
-
-	}
-}
-.contact-who-block {
-	overflow: visible;
-	padding: 35px 5px;
-	p {
-		font-family: $din-font-bold;
-		color: $blue-dark;
-	}
-	.one-contact {
-		width: 24%;
-		float: left;
-		.contact-romb-wrap {
+		margin-top: -5px;
+		input {
 			width: 100%;
-		    float: left;
-		    margin: 30px 58px 36px;
-		    .contact-who {
-		    	width: auto;
-			    float: left;
-			    z-index: 5;
-			    position: relative;
-			    margin: 25px 25px 50px 3px;
-			    border: 1px solid $gray-lighter;
-			    .img-wrap {
-					@include base-float;
-					width: 155px;
-					height: 155px;
-					position: relative;
-					z-index: 5;
-					background: #1595bf url(../img/contact-blue-bg.png) no-repeat center center;
-					background-size: cover;
-					text-align: center;
-					margin: 13px;
-					img {
-						width: 137px;
-					    height: 146px;
-					    position: relative;
-					    top: 11px;
-					    right: 11px;
-					}
-				}
-		    }
-		    .contact-who-name {
-		    	    width: 100%;
-					float: left;
-					margin-left: -17%;
-					text-align: center;
-		    }
-		    &.contact-office-img {
-		    	.img-wrap {
-		    		background: $gray-bg-darker;
-					img {
-						width: 106px;
-					    height: 106px;
-					    top: 21px;
-					    right: 0px;
-					}
-		    	}
-				
-			}
-		}
-		&:first-of-type {
-			.contact-romb-wrap {
-				margin-left: 68px;
-			}
-		}
-		&.selected-contact {
-			.contact-who {
+			height: 56px;
+			margin-top: 11px;
+			font-size: 16px;
+			@include input-placeholder($blue-light);
+			color: $blue-light;
+			border: 1px solid $gray-lighter;
+			&:focus {
 				border: 1px solid $blue-light;
+			}
+		}
+		span {
+			font-size: 16px;
+			font-family: $din-font-bold;
+			color: $blue-dark;
+		}
+		.main-questions {
+			overflow: auto;
+			li {
+				width: 32.1%;
+				float: left; 
+				margin-right: 17px;
+				padding-bottom: 0 !important;
+				margin-left: 0 !important;
+				&:last-of-type {
+					margin-right: 0;
+				}
+			}
+
+		}
+		.contact-message {
+			padding-top: 28px;
+			textarea {
+				width: 100%;
+				height: 283px;
+				margin: 11px 0 50px;
+				padding-top: 10px;
+    			font-size: 16px;
+    			border: 1px solid $gray-lighter;
+    			@include input-placeholder($blue-light);
+				color: $blue-light;
+				&:focus {
+					border: 1px solid $blue-light;
+				}
+			}
+		}
+		.btn.btn-arrow {
+		 	margin-left: 4px;
+		}
+	}
+	.contact-who-block {
+		overflow: visible;
+		padding: 35px 5px;
+		p {
+			font-family: $din-font-bold;
+			color: $blue-dark;
+		}
+		.one-contact {
+			width: 24%;
+			float: left;
+			.contact-romb-wrap {
+				width: 100%;
+			    float: left;
+			    margin: 30px 58px 36px;
+			    .contact-who {
+			    	width: auto;
+				    float: left;
+				    z-index: 5;
+				    position: relative;
+				    margin: 25px 25px 50px 3px;
+				    border: 1px solid $gray-lighter;
+				    .img-wrap {
+						@include base-float;
+						width: 155px;
+						height: 155px;
+						position: relative;
+						z-index: 5;
+						background: #1595bf url(../img/contact-blue-bg.png) no-repeat center center;
+						background-size: cover;
+						text-align: center;
+						margin: 13px;
+						cursor: pointer;
+						img {
+							width: 137px;
+						    height: 146px;
+						    position: relative;
+						    top: 11px;
+						    right: 11px;
+						}
+					}
+			    }
+			    .contact-who-name {
+			    	    width: 100%;
+						float: left;
+						margin-left: -17%;
+						text-align: center;
+						p {
+							font-family: $din-font;
+						}
+			    }
+			    &.contact-office-img {
+			    	.img-wrap {
+			    		background: $gray-bg-darker;
+						img {
+							width: 106px;
+						    height: 106px;
+						    top: 21px;
+						    right: 0px;
+						}
+			    	}
+					
+				}
+			}
+			&:first-of-type {
+				.contact-romb-wrap {
+					margin-left: 50px;
+				}
+			}
+			&.selected-contact {
+				.contact-who {
+					border: 1px solid $blue-light;
+				}
 			}
 		}
 	}

@@ -30,7 +30,7 @@
 		}
 		h2 {
 			margin-bottom: 35px;
-			
+			font-size: 38px;
 		}
 		p {
 			font-size: 18px;
@@ -87,7 +87,7 @@
 		li {
 			float: left;
 			margin-left: 35px;
-			a {
+			a, span {
 				color: $grey;
 				display: inline-block;
 				font-size: 14px;
@@ -102,6 +102,68 @@
 					text-decoration: underline;
 				}
 
+			}
+		}
+	}
+	@include breakpoint(phone) {
+		.contact-block {
+			position: relative;
+		}
+		.scroll-top {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			margin-left: -18px;
+			@include sprite(ico-scroll-top);
+			display: inline-block;
+		}
+		.top {
+			padding: 30px 0;
+			height: auto;
+		    min-height: 220px;
+			h2 {
+				font-size: 19px;
+				line-height: 22px;
+				margin-bottom: 20px;
+			}
+			p {
+				font-size: 15px;
+				line-height: 20px;
+				width: 100%;
+			}
+		}	
+		.bottom {
+			text-align: center;
+			.left {
+				width: 100%;
+				margin-bottom: 15px;
+				p {
+					display: none;
+				}
+				.logo {
+					float: none;
+					margin: 0 auto;
+				}
+			}
+		}
+		.social {
+			margin: 40px 0 20px 0;
+			@include base-float;
+			li {
+				width: 25%;
+				text-align: center;
+			}
+		}
+		.info-list {
+			float: left;
+			width: 100%;
+			li {
+				margin: 0 0 5px 0;
+				width: 100%;
+				a .ico,
+				span .ico {
+					display: none;
+				}
 			}
 		}
 	}

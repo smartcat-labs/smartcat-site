@@ -154,21 +154,21 @@
   height: 8px;
   display: inline-block;
   border-radius: 100%;
-  background: #fff;
+  background: $blue-light;
   opacity: 0.2;
 }
 .swiper-pagination-clickable .swiper-pagination-bullet {
   cursor: pointer;
 }
 .swiper-pagination-white .swiper-pagination-bullet {
-  background: #fff;
+  background: $blue-light;
 }
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #fff;
+  background: $blue-light;
 }
 .swiper-pagination-white .swiper-pagination-bullet-active {
-  background: #fff;
+  background: $blue-dark;
 }
 .swiper-pagination-black .swiper-pagination-bullet-active {
   background: #000;
