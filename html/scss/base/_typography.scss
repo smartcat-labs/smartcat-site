@@ -88,6 +88,10 @@ p {
 	line-height: 24px;
 	color: $grey-light;
 	margin-bottom: 20px;
+	@include breakpoint(phone) {
+		font-size: 15px;
+		line-height: 20px;
+	}
 }
 
 blockquote {
@@ -109,7 +113,7 @@ blockquote {
 		h1 {
 			font-size: 24px;
 			line-height: 24px;
-			padding: 23px 0;
+			padding: 27px 0 23px 0;
 		}
 	}
 }
@@ -117,7 +121,10 @@ blockquote {
 .title {
 	@include base-float;
 	position: relative;
-	padding-right: 40px;
+	.shape {
+		display: inline-block;
+		margin-right: 40px;
+	}
 	h2 {
 		font-size: 50px;
 		line-height: 54px;
@@ -145,6 +152,15 @@ blockquote {
 		margin-bottom: 12px;
 		font-size: 18px;
 		line-height: 18px;
+	}
+	@include breakpoint(tablet) {
+		h2 {
+			font-size: 40px;
+			line-height: 44px;
+		}
+		.go-back {
+			top: 45px;
+		}
 	}
 }
 

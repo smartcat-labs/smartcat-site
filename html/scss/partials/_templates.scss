@@ -1,2 +1,17 @@
 /*----------  templates
 ------------------------------------------------------------------------------*/
+
+.services-detail-page {
+	padding-top: 40px;
+	.title {
+		margin-bottom: 17px;
+	}
+	.what-we-do-block {
+		padding: 50px 0;
+	}
+	@include breakpoint(phone) {
+		.what-we-do-block {
+			padding: 0;
+		}
+	}
+}

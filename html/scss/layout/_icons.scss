@@ -3,9 +3,6 @@
 
 .ico {
 	display: inline-block;
-	&.star {
-		@include sprite(star);
-	}
 	&.phone {
 		@include sprite(ico-phone);
 	}
@@ -37,17 +34,15 @@
 	&.arrow-acc-down {
 		@include sprite(arrow-acc-down);
 	}
-}
-
-
-/*
-.ico {
-	display: inline-block;
-	position: absolute;
-	top: 50%;
-	&.star {
-		@include sprite('star');
-		margin-top: -((image-height("icons/star.png"))/2);
+	&.arrow-more {
+		@include sprite(ico-arrow-more);		
+	}
+	&.cat {
+		@include sprite(ico-cat);
+	}
+	@include breakpoint(phone){
+		&.cat {
+			@include sprite(ico-cat-mobile);
+		}
 	}
 }
-*/

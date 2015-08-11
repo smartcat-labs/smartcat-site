@@ -40,6 +40,9 @@
 				p {
 					color: #2f2f2f;
 				}
+				.ico {
+					@include sprite(ico-arrow-more-h);
+				}
 			}
 		}
 	}
@@ -106,10 +109,10 @@
 		margin-bottom: 20px;
 	}
 	@include breakpoint(phone) {
-		padding: 45px 30px;
+		padding: 45px 0;
 	}
 	@include breakpoint(tablet) {
-		padding: 60px 25px;
+		padding: 60px 0;
 	}
 }
 
@@ -164,8 +167,31 @@
 ------------------------------------------------------------------------------*/
 .what-we-do-block {
 	padding: 100px 0;
+	h3 {
+		font-size: 20px;
+		line-height: 22px;
+		font-family: $bold-font;
+		margin-bottom: 20px;
+	}	
+	h2 {
+		font-size: 30px;
+		margin-bottom: 13px;
+		display: none;
+		a {
+			color: $black;
+			&:hover {
+				color: $blue-light;
+			}
+		}
+	}
+	.ico.arrow-more {
+		&:hover {
+			@include sprite(ico-arrow-more-h);
+		}
+	}
 	.wrapper {
 		overflow: visible;
+		@extend %clearfix;
 	}
 	.one-fourth {
 		width: 24.4%;
@@ -173,7 +199,7 @@
 	}
 	.one-third {
 		width: 32.3%;
-		float: left;	
+		float: left;
 	}
 	.romb-wrap {
 		@include base-float;
@@ -231,11 +257,84 @@
 		padding-left: 16%;
 		text-align: center;
 	}
-	@include breakpoint(desktop-large){
+	@include breakpoint(phone) {
+		h2 {
+			display: block;
+			font-size: 19px;
+			line-height: 20px;
+		}
+		.btn {
+			height: 40px;
+			line-height: 40px;
+			padding: 0 20px;
+		}
+		.top .box-title h4 {
+			display: none;
+		}
 		.one-fourth,
 		.one-third {
+			width: 100%;
+			&.right-aligned {
+				
+			}
+		}
+		.romb-wrap {
+			width: 200px;
+			padding: 40px;
+			margin: 20px auto;
+			float: none;
+			overflow: hidden;
+		}
+		.text {
+			padding-left: 0;
+		}
+	}
+	@include breakpoint(tablet) {
+		h2 {
+			display: block;
+		}
+		.one-fourth,
+		.one-third {
+			width: 100%;
+			&.right-aligned {
+				.romb-wrap {
+					float: right;
+					margin: 40px 25px 40px 0;
+				}
+				.text {
+					float: left;
+				}
+			}
+		}
+		.romb-wrap {
+			width: 230px;
+			margin: 40px 0 40px 25px;
+			padding: 20px;
+		}
+		.text {
+			width: calc(100% - 310px);
+			padding: 0;
+			float: right;
+			text-align: left;
+			margin-top: 30px;
+		}
+		.top .box-title h4 {
+			display: none;
+		}
+	}
+	@include breakpoint(desktop) {
+		.top .box-title h4 {
+			font-size: 14px;
+		}
+	}
+	@include breakpoint(desktop-large){
+		.one-fourth {
 			position: relative;
 			height: 520px;
+		}
+		.one-third {
+			position: relative;
+			height: 470px;
 		}
 		.text {
 			position: absolute;
