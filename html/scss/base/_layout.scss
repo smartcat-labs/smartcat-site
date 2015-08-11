@@ -67,5 +67,22 @@ body {
 	}
 	@include breakpoint(tablet) {
 		padding: 75px 0 35px;
+		.main {
+			width: calc(100% - 300px);
+		}
+	}
+}
+
+.show-on-mobile {
+	display: none !important;
+	@include breakpoint(phone) {
+		display: inline-block !important;
+	}
+}
+
+.hidden-on-mobile {
+	display: inline-block !important;
+	@include breakpoint(phone) {
+		display: none !important;
 	}
 }

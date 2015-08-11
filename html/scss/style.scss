@@ -140,8 +140,11 @@
 	}
 	@include breakpoint(phone) {
 		border-bottom: 1px solid $grey-bg;
-		padding-bottom: 20px;
-		margin-bottom: 20px;
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+		&:first-of-type {
+			margin-top: 30px;
+		}
 		&:last-of-type {
 			padding-bottom: 0;
 			margin-bottom: 0;
@@ -152,27 +155,30 @@
 			float: left !important;
 		}
 		.img-wrap {
-			width: 100%;
-			margin-bottom: 20px;
+			width: 100% !important;
+			margin-bottom: 30px;
 		}
 		.info {
-			width: 100%;
-			margin: 0;
+			width: 100% !important;
+			padding: 0 !important;
+			margin: 0 !important;
 		}
 		h2 {
 			font-size: 25px;
 			line-height: 25px;
+			margin-bottom: 10px;
 		}
 		p {
-			margin-bottom: 25px;
+			margin-bottom: 5px;
 		}
 		.position {
 			font-size: 12px;
-			margin-bottom: 10px;
+			margin-bottom: 5px;
 		}
 		.contact-box { 
 			height: auto;
 			text-align: center;
+			margin-bottom: 20px;
 			a {
 				border: none;
 				&.mail {
@@ -182,6 +188,7 @@
 				}
 				&.phone {
 					width: 100%;
+					margin-bottom: 10px;
 				}
 			}
 		}

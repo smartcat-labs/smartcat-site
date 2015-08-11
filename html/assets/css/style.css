@@ -267,6 +267,14 @@ td {
 ------------------------------------------------------------------------------*/
 /*----------  helpers
 ------------------------------------------------------------------------------*/
+.what-we-do-block .wrapper {
+  *zoom: 1; }
+  .what-we-do-block .wrapper:before, .what-we-do-block .wrapper:after {
+    content: "";
+    display: table; }
+  .what-we-do-block .wrapper:after {
+    clear: both; }
+
 .hide {
   display: none; }
 
@@ -428,6 +436,12 @@ blockquote {
     margin-bottom: 12px;
     font-size: 18px;
     line-height: 18px; }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .title h2 {
+      font-size: 40px;
+      line-height: 44px; }
+    .title .go-back {
+      top: 45px; } }
 
 .read-more-link {
   font-size: 14px;
@@ -551,7 +565,21 @@ body {
         display: none; } }
   @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .content {
-      padding: 75px 0 35px; } }
+      padding: 75px 0 35px; }
+      .content .main {
+        width: calc(100% - 300px); } }
+
+.show-on-mobile {
+  display: none !important; }
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .show-on-mobile {
+      display: inline-block !important; } }
+
+.hidden-on-mobile {
+  display: inline-block !important; }
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .hidden-on-mobile {
+      display: none !important; } }
 
 /*----------  layout
 ------------------------------------------------------------------------------*/
@@ -1016,6 +1044,16 @@ textarea {
 
 /*----------  templates
 ------------------------------------------------------------------------------*/
+.services-detail-page {
+  padding-top: 40px; }
+  .services-detail-page .title {
+    margin-bottom: 17px; }
+  .services-detail-page .what-we-do-block {
+    padding: 50px 0; }
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .services-detail-page .what-we-do-block {
+      padding: 0; } }
+
 /*----------  components
 ------------------------------------------------------------------------------*/
 .romb {
@@ -1267,10 +1305,10 @@ textarea {
     margin-bottom: 20px; }
   @media only screen and (min-width: 320px) and (max-width: 767px) {
     .contact-block {
-      padding: 45px 30px; } }
+      padding: 45px 0; } }
   @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .contact-block {
-      padding: 60px 25px; } }
+      padding: 60px 0; } }
 
 /*---------- carousel section
 ------------------------------------------------------------------------------*/
@@ -1325,6 +1363,14 @@ textarea {
     line-height: 22px;
     font-family: "NeutraText-Bold";
     margin-bottom: 20px; }
+  .what-we-do-block h2 {
+    font-size: 30px;
+    margin-bottom: 13px;
+    display: none; }
+    .what-we-do-block h2 a {
+      color: #000; }
+      .what-we-do-block h2 a:hover {
+        color: #00a1e4; }
   .what-we-do-block .ico.arrow-more:hover {
     background: url('../img/icons-s8495516883.png') no-repeat 0 -378px;
     height: 9px;
@@ -1398,6 +1444,56 @@ textarea {
     float: left;
     padding-left: 16%;
     text-align: center; }
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .what-we-do-block h2 {
+      display: block;
+      font-size: 19px;
+      line-height: 20px; }
+    .what-we-do-block .btn {
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px; }
+    .what-we-do-block .top .box-title h4 {
+      display: none; }
+    .what-we-do-block .one-fourth,
+    .what-we-do-block .one-third {
+      width: 100%; }
+    .what-we-do-block .romb-wrap {
+      width: 200px;
+      padding: 40px;
+      margin: 20px auto;
+      float: none;
+      overflow: hidden; }
+    .what-we-do-block .text {
+      padding-left: 0; } }
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .what-we-do-block h2 {
+      display: block; }
+    .what-we-do-block .one-fourth,
+    .what-we-do-block .one-third {
+      width: 100%; }
+      .what-we-do-block .one-fourth.right-aligned .romb-wrap,
+      .what-we-do-block .one-third.right-aligned .romb-wrap {
+        float: right;
+        margin: 40px 25px 40px 0; }
+      .what-we-do-block .one-fourth.right-aligned .text,
+      .what-we-do-block .one-third.right-aligned .text {
+        float: left; }
+    .what-we-do-block .romb-wrap {
+      width: 230px;
+      margin: 40px 0 40px 25px;
+      padding: 20px; }
+    .what-we-do-block .text {
+      width: calc(100% - 310px);
+      padding: 0;
+      float: right;
+      text-align: left;
+      margin-top: 30px; }
+    .what-we-do-block .top .box-title h4 {
+      display: none; } }
+  @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+    .what-we-do-block .top .box-title h4 {
+      font-size: 14px; } }
   @media only screen and (min-width: 1281px) {
     .what-we-do-block .one-fourth {
       position: relative;
@@ -2009,8 +2105,10 @@ html[xmlns] .slides {
   @media only screen and (min-width: 320px) and (max-width: 767px) {
     .employee-block {
       border-bottom: 1px solid #efefef;
-      padding-bottom: 20px;
-      margin-bottom: 20px; }
+      padding-bottom: 30px;
+      margin-bottom: 30px; }
+      .employee-block:first-of-type {
+        margin-top: 30px; }
       .employee-block:last-of-type {
         padding-bottom: 0;
         margin-bottom: 0;
@@ -2019,22 +2117,25 @@ html[xmlns] .slides {
       .employee-block .info {
         float: left !important; }
       .employee-block .img-wrap {
-        width: 100%;
-        margin-bottom: 20px; }
+        width: 100% !important;
+        margin-bottom: 30px; }
       .employee-block .info {
-        width: 100%;
-        margin: 0; }
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important; }
       .employee-block h2 {
         font-size: 25px;
-        line-height: 25px; }
+        line-height: 25px;
+        margin-bottom: 10px; }
       .employee-block p {
-        margin-bottom: 25px; }
+        margin-bottom: 5px; }
       .employee-block .position {
         font-size: 12px;
-        margin-bottom: 10px; }
+        margin-bottom: 5px; }
       .employee-block .contact-box {
         height: auto;
-        text-align: center; }
+        text-align: center;
+        margin-bottom: 20px; }
         .employee-block .contact-box a {
           border: none; }
           .employee-block .contact-box a.mail {
@@ -2047,7 +2148,8 @@ html[xmlns] .slides {
             padding: 0 20px;
             width: auto; }
           .employee-block .contact-box a.phone {
-            width: 100%; } }
+            width: 100%;
+            margin-bottom: 10px; } }
 
 /*----------Sidebar
 ------------------------------------------------------------------------------*/
