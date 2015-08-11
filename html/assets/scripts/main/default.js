@@ -36,6 +36,11 @@ $(document).ready(function () {
 		$("body").addClass("fixed");
 	});
 
+	$(".open-search").click(function () {
+		$(".search-desktop").toggleClass('active');
+		$(".btn-search").fadeToggle();
+	});
+
 });
 
 

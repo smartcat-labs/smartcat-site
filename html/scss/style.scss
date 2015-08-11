@@ -55,7 +55,7 @@
 .employee-block {
 	@include base-float;
 	&:first-of-type {
-		margin-top: 50px;	
+		margin-top: 50px;
 	}
 	&:last-of-type {
 		margin-bottom: 25px;

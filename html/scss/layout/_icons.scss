@@ -40,7 +40,7 @@
 	&.cat {
 		@include sprite(ico-cat);
 	}
-	@include breakpoint(phone){
+	@include breakpoint(touch){
 		&.cat {
 			@include sprite(ico-cat-mobile);
 		}
