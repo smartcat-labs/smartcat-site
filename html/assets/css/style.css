@@ -851,18 +851,6 @@ body {
       height: 21px;
       width: 27px; } }
 
-  @media only screen and (min-width: 320px) and (max-width: 1024px) {
-    .ico.cat {
-      background: url('../img/icons-s273527b6ed.png') no-repeat 0 -464px;
-      height: 21px;
-      width: 27px; } }
-  @media only screen and (min-width: 320px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 320px) and (max-width: 1024px) and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min-width: 320px) and (max-width: 1024px) and (min-device-pixel-ratio: 2) {
-    .ico.cat {
-      background: url('../img/icons2x-s128483c078.png') no-repeat 0 -334px;
-      background-size: 71px 1095.5px;
-      height: 21px;
-      width: 27px; } }
-
 /*----------  forms
 ------------------------------------------------------------------------------*/
 input,
@@ -1137,43 +1125,6 @@ textarea {
       display: none; }
     .header .t-desktop-small {
       display: block; } }
-  @media only screen and (min-width: 320px) and (max-width: 1024px) {
-    .header .search-desktop {
-      display: none; }
-    .header .phone,
-    .header .menu-wrapper,
-    .header .social {
-      display: none; }
-    .header .wrapper {
-      padding: 0 30px; }
-    .header .menu-wrapper {
-      margin: 0;
-      background: #141b23;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 30; }
-      .header .menu-wrapper .main-nav {
-        width: 100%;
-        float: left; }
-      .header .menu-wrapper ul {
-        padding-top: 100px;
-        width: 100%;
-        margin-bottom: 38px; }
-        .header .menu-wrapper ul li {
-          width: 100%;
-          text-align: center;
-          margin-bottom: 18px; }
-          .header .menu-wrapper ul li a {
-            font-size: 20px; }
-            .header .menu-wrapper ul li a .ico {
-              float: none;
-              margin-top: 0;
-              margin-bottom: -3px; }
-            .header .menu-wrapper ul li a.active {
-              color: #00a1e4; }
-              .header .menu-wrapper ul li a.active:after {
-                display: none; } }
   @media only screen and (min-width: 320px) and (max-width: 1024px) {
     .header .search-desktop {
       display: none; }
@@ -1590,12 +1541,6 @@ textarea {
     width: 100%; }
   .blue-romb:hover {
     background: #141b23; }
-  @media only screen and (min-width: 320px) and (max-width: 1024px) {
-    .blue-romb {
-      -moz-transition: none;
-      -o-transition: none;
-      -webkit-transition: none;
-      transition: none; } }
   @media only screen and (min-width: 320px) and (max-width: 1024px) {
     .blue-romb {
       -moz-transition: none;
@@ -2146,14 +2091,6 @@ textarea {
         padding-left: 0; }
         .what-we-do-block .text h2 {
           margin-bottom: 13px; } }
-  @media only screen and (min-width: 320px) and (max-width: 1024px) {
-    .what-we-do-block .top:hover .img-wrap {
-      width: 100%;
-      height: 100%;
-      -moz-transition: none;
-      -o-transition: none;
-      -webkit-transition: none;
-      transition: none; } }
   @media only screen and (min-width: 320px) and (max-width: 1024px) {
     .what-we-do-block .top:hover .img-wrap {
       width: 100%;
@@ -3822,6 +3759,46 @@ html[xmlns] .slides {
     @media only screen and (min-width: 1025px) and (max-width: 1280px) {
       .one-half-list li .text .contact-box {
         display: none; } }
+  @media only screen and (min-width: 769px) {
+    .one-half-list li {
+      width: 50% !important;
+      margin-right: 0 !important; } }
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .one-half-list {
+      width: 2000em; }
+      .one-half-list li * {
+        transition: none !important; }
+      .one-half-list li .text {
+        width: 100%;
+        float: left;
+        display: block;
+        text-align: center; }
+      .one-half-list li .box {
+        border: none;
+        height: 120px;
+        width: 100%;
+        margin-right: 0; }
+        .one-half-list li .box .img-wrap {
+          height: 100%;
+          transform: none !important; } }
+  @media only screen and (max-width: phone) {
+    .one-half-list {
+      width: 2000em; }
+      .one-half-list li * {
+        transition: none !important; }
+      .one-half-list li .text {
+        width: 100%;
+        float: left;
+        display: block;
+        text-align: center; }
+      .one-half-list li .box {
+        border: none;
+        height: 120px;
+        width: 100%;
+        margin-right: 0; }
+        .one-half-list li .box .img-wrap {
+          height: 100%;
+          transform: none !important; } }
 
 .certificate-block {
   width: 100%;
