@@ -721,6 +721,34 @@
 			}
 		}
 	}
+	@media only screen and (min-width: 769px) {
+		li {
+			width: 50% !important;
+		}
+	}
+	@include breakpoint(phone) {
+		width: 2000em;
+		li {
+			* {
+				transition: none !important;
+			}
+			.text {
+				@include base-float;
+				display: block;
+				text-align: center;
+			}
+			.box {
+				border: none;
+				height: 120px;
+				width: 100%;
+				margin-right: 0;
+				.img-wrap {
+					height: 100%;
+					transform: none !important;
+				}
+			}
+		}
+	}
 }
 
 .certificate-block {
