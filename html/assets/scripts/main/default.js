@@ -41,13 +41,15 @@ $(document).ready(function () {
 		$(".btn-search").fadeToggle();
 	});
 
+	$('.scroll-top').click(function(){
+		$('html, body').animate({scrollTop : 0},800);
+		return false;
+	});
+
 });
 
 
-
-
 var theForm = document.getElementById( 'theForm' );
-
 new stepsForm( theForm, {
 	onSubmit : function( form ) {
 		// hide form

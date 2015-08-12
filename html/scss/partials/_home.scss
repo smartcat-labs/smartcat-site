@@ -29,6 +29,7 @@
 				color: #7d7d7d;
 				padding-right: 25px;
 				margin-bottom: 0;
+				@include transition(color 0.3s);
 			}
 			&:last-child {
 				margin-right: 0;
@@ -46,6 +47,32 @@
 			}
 		}
 	}
+	@include breakpoint(phone) {
+		padding: 45px 0;
+		h2 {
+			margin-bottom: 30px;
+		}
+		ul {
+			width: 2000em;
+			li {
+				h3 {
+					font-size: 18px;
+					line-height: 20px;
+					margin-bottom: 12px;
+				}
+				p {
+					font-size: 15px;
+					line-height: 20px;
+					padding: 0;
+				}
+			}
+		}
+	}
+	@media only screen and (min-width: 769px) {
+		ul li {
+			width: 17.915% !important;
+		}
+	}
 }
 
 /*----------  testimonials block
@@ -59,7 +86,7 @@
 	}
 	blockquote {
 		color: #ababab;
-		margin:0 auto 28px;
+		margin: 0 auto 28px;
 		position: relative;
 		width: 77%;
 		display: inline-block;
@@ -87,6 +114,16 @@
 		font-size: 18px;
 		font-family: $din-font-bold;
 	}
+	@include breakpoint(phone) {
+		padding: 30px 0;
+		blockquote {
+			width: 100%;
+			font-size: 15px;
+		}
+		.author {
+			font-size: 12px;
+		}
+	}
 }
 
 /*----------  about Us block
@@ -95,6 +132,13 @@
 	padding-bottom: 72px;
 	h2 {
 		margin-bottom: 58px;
+	}
+	@include breakpoint(phone) {
+		border-top: 1px solid $grey-bg;
+		padding: 30px 0;
+		h2 {
+			margin-bottom: 15px;
+		}
 	}
 }
 
@@ -110,6 +154,9 @@
 	}
 	@include breakpoint(phone) {
 		padding: 45px 0;
+		h4 {
+			text-align: center;
+		}
 	}
 	@include breakpoint(tablet) {
 		padding: 60px 0;
@@ -140,12 +187,12 @@
 					max-width: 80%;
 					margin: 0 auto;
 					@include vertical-align;
-					@include opacity(1);
+					@include opacity(0.5);
 					@include transition(opacity, 0.5s ease-out);
 				}
 				&:hover {
 					img {
-						@include opacity(0.5);
+						@include opacity(1);
 					}
 				}
 			}
@@ -159,6 +206,27 @@
 		.slides > li,
 		.slides > li > a {
 			height: 100%;
+		}
+	}
+	@include breakpoint(phone) {
+		padding: 28px 0 0 0;
+		h2 {
+			margin-bottom: 0;
+		}
+		.flexslider {
+			padding: 0 30px;
+			height: 113px;
+			.slides li {
+				max-width: 100% !important;
+			}
+			.flex-direction-nav a {
+				&.flex-next {
+					right: 0;
+				}
+				&.flex-prev {
+					left: 0;
+				}
+			}
 		}
 	}
 }
@@ -194,12 +262,8 @@
 		overflow: visible;
 		@extend %clearfix;
 	}
-	.one-fourth {
-		width: 24.4%;
-		float: left;	
-	}
+	.one-fourth, 
 	.one-third {
-		width: 32.3%;
 		float: left;
 	}
 	.romb-wrap {
@@ -258,11 +322,29 @@
 		padding-left: 16%;
 		text-align: center;
 	}
+
+	@media only screen and (min-width: 769px) {
+		.one-fourth, 
+		.one-third {
+			margin-right: 0 !important;
+		}
+		.one-fourth {
+			width: 24.4% !important;
+		}
+		.one-third {
+			width: 32.3% !important;
+		}
+	}
 	@include breakpoint(phone) {
+		padding: 50px 0;
+		.swiper-wrapper {
+			width: 2000em;
+		}
 		h2 {
 			display: block;
 			font-size: 19px;
 			line-height: 20px;
+			margin-bottom: 0;
 		}
 		h3 {
 			display: none;
@@ -277,21 +359,30 @@
 		}
 		.one-fourth,
 		.one-third {
-			width: 100%;
-			&.right-aligned {
-				
-			}
+
 		}
 		.romb-wrap {
 			width: 200px;
 			padding: 40px;
-			margin: 20px auto;
+			margin: 15px auto 20px auto;
 			float: none;
 			overflow: hidden;
 		}
 		.text {
 			padding-left: 0;
+			h2 {
+				margin-bottom: 13px;
+			}
 		}
+	}
+	@include breakpoint(touch) {
+		.top:hover {
+			.img-wrap {
+				width: 100%;
+				height: 100%;
+				@include transition(none);
+			}
+		}		
 	}
 	@include breakpoint(tablet) {
 		h2 {
@@ -299,7 +390,7 @@
 		}
 		.one-fourth,
 		.one-third {
-			width: 100%;
+			width: 100% !important;
 			&.right-aligned {
 				.romb-wrap {
 					float: right;

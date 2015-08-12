@@ -41,11 +41,10 @@
 
 @import "lib/flexslider";
 @import "lib/contact-form";
+@import "lib/swiper";
 
 /*----------  Generic elements
 ------------------------------------------------------------------------------*/
-
-
 .people-block {
 	background: #efefef;
 }
@@ -192,6 +191,25 @@
 				}
 			}
 		}
+	}
+	@include breakpoint(tablet) {
+		margin-bottom: 30px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		.img-wrap {
+			width: 510px !important;
+			float: left;
+			img {
+				width: 100%;
+			}
+		}
+		.info {
+			width: calc(100% - 540px) !important;
+			margin-top: 55px;
+			float: right;
+			padding: 0 !important;
+		}	
 	}
 }
 
@@ -737,7 +755,7 @@
 
 /*----------  services page
 ------------------------------------------------------------------------------*/
-.service-list {
+.items-list {
 	@include base-float;
 	margin-top: 40px;
 	h2 {
@@ -778,7 +796,7 @@
 			}
 		}
 	}
-	&.project-list {
+	&.full {
 		.text {
 			width: 100%;
 		}

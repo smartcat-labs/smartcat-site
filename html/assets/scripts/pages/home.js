@@ -1,17 +1,17 @@
 $(document).ready(function () {
-	 $('.flexslider').flexslider({
-	    animation: "slide",
-        animationLoop: true,
-        controlNav: false,
-        itemMargin: 20,
-        slideshow: false,
-        move: 1,                   
+	$('.flexslider').flexslider({
+		animation: "slide",
+		animationLoop: true,
+		controlNav: false,
+		itemMargin: 20,
+		slideshow: false,
+		move: 1,                   
 		itemWidth : 260,
-            minItems : 2,
-            maxItems : 4
-	  });
+		minItems : 2,
+		maxItems : 4
+	});
 
-	jQuery('.tp-banner').revolution({
+	$('.tp-banner').revolution({
 		delay:9000,
 		startwidth:1170,
 		startheight:1090,
@@ -29,11 +29,24 @@ $(document).ready(function () {
 		navigationHAlign: 'right',
 	});
 
-	// jQuery('.people-slider').revolution({
-	// 	delay:9000,
-	// 	startwidth:1170,
-	// 	startheight:500,
-	// 	hideThumbs:10
-	// });
+	initSwiper();
 
 });
+
+$(window).load(function(){
+	initSwiper();
+});
+
+$(window).resize(function(){
+	initSwiper();
+});
+
+function initSwiper() {
+	if ($(window).width() <= 768 ) {
+		var swiper = new Swiper('.swiper-container', {
+			spaceBetween: 20,
+			pagination: '.swiper-pagination',
+			paginationClickable: true
+	 	});
+	}
+}

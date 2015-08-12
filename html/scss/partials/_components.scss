@@ -18,6 +18,9 @@
 		background: #141b23;
 		// @include box-shadow(-5px 5px 12px rgba(0,0,0,.45));
 	}
+	@include breakpoint(touch) {
+		@include transition(none);
+	}
 }
 
 .reset-inner {
