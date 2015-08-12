@@ -215,6 +215,31 @@ blockquote {
 			color: $blue-light;
 		}
 	}
+	h3 {
+		font-size: 20px;
+		font-family: $bold-font;
+		margin-bottom: 20px;
+	}
+	ol li {list-style: decimal;}
+	ul li {list-style: disc;}
+	ol, ul {
+		@include base-float;
+		margin-left: 20px;
+		li {
+			font-size: 16px;
+			line-height: 24px;
+			color: $grey-light;
+			@include base-float;
+			margin-bottom: 10px;
+			strong {
+				font-weight: normal;
+				font-family: $din-font-bold;
+			}
+			a {
+				color: $blue-light;
+			}
+		}
+	}
 	blockquote {
 		@include base-float;
 		padding: 40px;
