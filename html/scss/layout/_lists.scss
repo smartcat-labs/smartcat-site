@@ -1,2 +1,252 @@
 /*----------  lists
 ------------------------------------------------------------------------------*/
+
+.one-half-list {
+	@include breakpoint(tablet) {
+		li {
+			width: 100%;
+			margin-right: 0;
+			.text .contact-box {
+				display: none !important;
+			}
+		}
+	}
+	@include breakpoint(phone) {
+		width: 2000em;
+		margin-bottom: 15px;
+		li {
+			* {
+				transition: none !important;
+			}
+			.text {
+				@include base-float;
+				display: block;
+				text-align: center;
+			}
+			.box {
+				border: none;
+				height: 120px;
+				width: 100%;
+				margin-right: 0;
+				.img-wrap {
+					height: 100%;
+					transform: none !important;
+					img {
+						@include vertical-align;
+					}
+				}
+			}
+		}
+	}
+}
+
+/*---------- What we do page
+------------------------------------------------------------------------------*/
+.employee-block {
+	@include base-float;
+	border-bottom: 1px solid #d0d1d3;
+	margin-bottom: 50px;
+	&:first-of-type {
+		margin-top: 50px;
+	}
+	&:last-of-type {
+		margin-bottom: 25px;
+	}
+	.img-wrap {
+		width: 42.2824302134647%;
+		float: left;
+		img {
+			max-width: 100%;
+			display: block;
+		}
+	}
+	.info {
+		//width: calc(100% - 775px);
+		width: 54.16%;
+		margin-top: 14%;
+		float: right;
+	}
+	.col {
+		width: 48.48484848484848%;
+		float: left;
+		&:last-child {
+			width: 43.18181818181818%;
+			float: right;
+		}
+	}
+	h2 {
+		font-size: 50px;
+		line-height: 50px;
+		margin-bottom: 2px;
+	}
+	.position {
+		color: $blue-light;
+		font-size: 24px;
+		display: block;
+		margin-bottom: 16px;
+	}
+	p {
+		margin-bottom: 27px;
+	}
+	blockquote {
+		font-size: 16px;
+		line-height: 24px;
+		margin-bottom: 35px;
+		@include base-float;
+		color: $grey-light;
+	}
+	.contact-box {
+		@include base-float;
+		.mail {
+			float: left;
+			clear: both;
+			height: 51px;
+			line-height: 48px;
+			display: block;
+			text-align: center;
+			text-transform: uppercase;
+			border: 1px solid #141b23;
+			padding: 0 40px 0 25px;
+			background: #141b23;
+			color: $white;
+			font-size: 14px;
+			margin-bottom: 16px;
+			.ico {
+				margin: 0 10px -2px 0;
+				@include sprite(ico-mail-white);
+			}
+			&:hover {
+				background: $blue-light;
+				border-color: $blue-light;
+			}
+		}
+		.phone {
+			float: left;
+			clear: both;
+			color: #141b23;
+			font-size: 14px;
+			line-height: 19px;
+			font-family: $din-font-bold;
+			.ico {
+				@include sprite(ico-mobile-black);
+				margin: 0 10px -4px 0;
+			}
+		}
+	}
+	&.right-aligned {
+		.img-wrap {
+			float: right;
+		}
+		.info {
+			float: left;
+		    //width: calc(100% - 706px);
+		    width: 57.7175697865353%;
+			//padding-left: 60px;
+			margin-top: 105px;
+		}
+		.col {
+			width: 54.056%;
+			&:last-child {
+				width: 38.8%;
+			}
+		}
+	}
+	@include breakpoint(phone) {
+		border-bottom: 1px solid $grey-bg;
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+		&:first-of-type {
+			margin-top: 30px;
+		}
+		&:last-of-type {
+			padding-bottom: 0;
+			margin-bottom: 0;
+			border: none;
+		}
+		.img-wrap,
+		.info {
+			float: left !important;
+		}
+		.img-wrap {
+			width: 100% !important;
+			margin-bottom: 30px;
+		}
+		.info {
+			width: 100% !important;
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+		.col {
+			width: 100% !important;
+		}
+		h2 {
+			font-size: 25px;
+			line-height: 25px;
+			margin-bottom: 10px;
+		}
+		p {
+			margin-bottom: 10px;
+		}
+		.position {
+			font-size: 12px;
+			margin-bottom: 5px;
+		}
+		.contact-box { 
+			height: auto;
+			text-align: center;
+			margin-bottom: 10px;
+			a {
+				border: none;
+				&.mail {
+					@include horizontal-align;
+					padding: 0 20px;
+					width: auto;
+				}
+				&.phone {
+					width: 100%;
+					margin-bottom: 10px;
+				}
+			}
+		}
+		blockquote {
+			margin-bottom: 15px;
+		}
+	}
+	@include breakpoint(tablet) {
+		margin-bottom: 30px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		.img-wrap {
+			width: 50% !important;
+			float: left;
+			img {
+				width: 100%;
+			}
+		}
+		.info {
+			width: 48% !important;
+			margin-top: 0 !important;
+			float: right;
+			padding: 0 !important;
+		}
+		.col {
+			width: 100% !important;
+		}
+		.position {
+			margin-bottom: 15px;
+		}
+		p {
+			margin-bottom: 15px;
+		}
+		.contact-box {
+			margin-bottom: 15px;
+			.mail {
+				margin-bottom: 15px;
+			}
+		}
+		blockquote {
+			margin-bottom: 15px;
+		}
+	}
+}
