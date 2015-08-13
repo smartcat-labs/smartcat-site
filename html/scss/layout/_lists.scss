@@ -315,7 +315,8 @@
 				position: relative !important;
 				top: auto !important;
 				left: auto !important;
-				width: 243px !important;
+				width: 100% !important;
+				height: auto;
 				.img-wrap {
 					width: 100% !important;
 					.arrow {
@@ -335,13 +336,14 @@
 				}
 				.text {
 					width: 100% !important;
-					padding: 35px 10px 10px 10px !important;
+					padding: 15px 0 !important;
+					height: auto;
 					h3 {
 						font-family: $bold-font;
 						text-transform: none;
 						font-size: 27px;
 						line-height: 30px;
-						margin-bottom: 25px;
+						margin-bottom: 10px;
 						&:after {
 							content: "";
 							display: inline-block;
@@ -355,6 +357,7 @@
 						color: $grey-light;
 						font-size: 12px;
 						line-height: 15px;
+						margin-bottom: 5px;
 					}
 					.author {
 						font-size: 12px;
@@ -376,6 +379,7 @@
 					}
 				}
 				&.stamp {
+					height: auto;
 					.img-wrap {
 						height: 242px;
 					}
@@ -383,18 +387,20 @@
 						position: relative;
 						top: auto;
 						left: auto;
-						height: 242px;
+						height: auto;
+						padding: 15px 0 !important;
 						h3 {
 							color: $blue-dark;
 							font-size: 27px;
 							line-height: 30px;
+							margin-bottom: 10px;
 							a {
 								color: $blue-dark;
 							}
 						}
 						.date {
 							color: $grey-light;
-							margin-bottom: 26px;
+							margin-bottom: 10px;
 						}
 					}
 				}

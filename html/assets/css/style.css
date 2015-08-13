@@ -469,14 +469,26 @@ blockquote {
       margin: 0 auto 20px auto; }
     .title h2 {
       font-size: 19px;
-      line-height: 20px; } }
+      line-height: 20px; }
+    .title .go-back {
+      top: auto;
+      -moz-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0); } }
   @media only screen and (max-width: phone) {
     .title .shape {
       display: block;
       margin: 0 auto 20px auto; }
     .title h2 {
       font-size: 19px;
-      line-height: 20px; } }
+      line-height: 20px; }
+    .title .go-back {
+      top: auto;
+      -moz-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0); } }
 
 .read-more-link {
   font-size: 14px;
@@ -1193,7 +1205,8 @@ textarea {
         position: relative !important;
         top: auto !important;
         left: auto !important;
-        width: 243px !important; }
+        width: 100% !important;
+        height: auto; }
         .blog-landing .blog-inner-wrap .item .img-wrap {
           width: 100% !important; }
           .blog-landing .blog-inner-wrap .item .img-wrap .arrow {
@@ -1210,13 +1223,14 @@ textarea {
             display: none; }
         .blog-landing .blog-inner-wrap .item .text {
           width: 100% !important;
-          padding: 35px 10px 10px 10px !important; }
+          padding: 15px 0 !important;
+          height: auto; }
           .blog-landing .blog-inner-wrap .item .text h3 {
             font-family: "NeutraText-Bold";
             text-transform: none;
             font-size: 27px;
             line-height: 30px;
-            margin-bottom: 25px; }
+            margin-bottom: 10px; }
             .blog-landing .blog-inner-wrap .item .text h3:after {
               content: "";
               display: inline-block;
@@ -1235,7 +1249,8 @@ textarea {
           .blog-landing .blog-inner-wrap .item .text .date {
             color: #7d7d7d;
             font-size: 12px;
-            line-height: 15px; }
+            line-height: 15px;
+            margin-bottom: 5px; }
           .blog-landing .blog-inner-wrap .item .text .author {
             font-size: 12px;
             line-height: 15px; }
@@ -1247,22 +1262,26 @@ textarea {
             color: #141b23; }
             .blog-landing .blog-inner-wrap .item:hover .text h3 a {
               color: #141b23; }
-        .blog-landing .blog-inner-wrap .item.stamp .img-wrap {
-          height: 242px; }
-        .blog-landing .blog-inner-wrap .item.stamp .text {
-          position: relative;
-          top: auto;
-          left: auto;
-          height: 242px; }
-          .blog-landing .blog-inner-wrap .item.stamp .text h3 {
-            color: #141b23;
-            font-size: 27px;
-            line-height: 30px; }
-            .blog-landing .blog-inner-wrap .item.stamp .text h3 a {
-              color: #141b23; }
-          .blog-landing .blog-inner-wrap .item.stamp .text .date {
-            color: #7d7d7d;
-            margin-bottom: 26px; } }
+        .blog-landing .blog-inner-wrap .item.stamp {
+          height: auto; }
+          .blog-landing .blog-inner-wrap .item.stamp .img-wrap {
+            height: 242px; }
+          .blog-landing .blog-inner-wrap .item.stamp .text {
+            position: relative;
+            top: auto;
+            left: auto;
+            height: auto;
+            padding: 15px 0 !important; }
+            .blog-landing .blog-inner-wrap .item.stamp .text h3 {
+              color: #141b23;
+              font-size: 27px;
+              line-height: 30px;
+              margin-bottom: 10px; }
+              .blog-landing .blog-inner-wrap .item.stamp .text h3 a {
+                color: #141b23; }
+            .blog-landing .blog-inner-wrap .item.stamp .text .date {
+              color: #7d7d7d;
+              margin-bottom: 10px; } }
 
 /*----------  custom select
 ------------------------------------------------------------------------------*/
@@ -5033,6 +5052,16 @@ html[xmlns] .slides {
             background-size: 71px 1349.5px;
             height: 17.5px;
             width: 70px; } }
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .article-nav {
+      padding: 20px 0; }
+      .article-nav a i {
+        display: none; } }
+  @media only screen and (max-width: phone) {
+    .article-nav {
+      padding: 20px 0; }
+      .article-nav a i {
+        display: none; } }
 
 .article-footer {
   width: 100%;
@@ -5090,9 +5119,7 @@ html[xmlns] .slides {
       margin-bottom: 25px; }
     .author-box .info .bottom {
       width: 100%;
-      float: left;
-      height: 50px;
-      line-height: 50px; }
+      float: left; }
       .author-box .info .bottom .contact-link {
         float: left;
         background: #141b23;
@@ -5100,6 +5127,8 @@ html[xmlns] .slides {
         padding: 0 24px;
         text-transform: uppercase;
         font-size: 14px;
+        height: 50px;
+        line-height: 50px;
         -moz-transition: all 0.3s;
         -o-transition: all 0.3s;
         -webkit-transition: all 0.3s;
@@ -5123,6 +5152,38 @@ html[xmlns] .slides {
         height: 30px;
         line-height: 30px;
         margin-top: 14px; }
+  @media only screen and (min-width: 320px) and (max-width: 767px) {
+    .author-box {
+      padding: 15px 10px 10px 10px; }
+      .author-box .info {
+        width: 100%;
+        margin: 0; }
+        .author-box .info .bottom .contact-link {
+          height: 40px;
+          line-height: 40px;
+          width: 100%;
+          text-align: center; }
+          .author-box .info .bottom .contact-link i {
+            display: none; }
+        .author-box .info .bottom .social-links {
+          float: left;
+          width: 100%; } }
+  @media only screen and (max-width: phone) {
+    .author-box {
+      padding: 15px 10px 10px 10px; }
+      .author-box .info {
+        width: 100%;
+        margin: 0; }
+        .author-box .info .bottom .contact-link {
+          height: 40px;
+          line-height: 40px;
+          width: 100%;
+          text-align: center; }
+          .author-box .info .bottom .contact-link i {
+            display: none; }
+        .author-box .info .bottom .social-links {
+          float: left;
+          width: 100%; } }
 
 .related-posts h3 {
   text-transform: uppercase;
@@ -5553,7 +5614,7 @@ html[xmlns] .slides {
           color: #00a1e4; }
         .contact-us .contact-questions .contact-message textarea:focus {
           border: 1px solid #00a1e4; }
-    .contact-us .contact-questions .btn.btn-arrow {
+    .contact-us .contact-questions .btn {
       margin-left: 4px; }
   .contact-us .contact-who-block {
     overflow: hidden;
@@ -5589,7 +5650,7 @@ html[xmlns] .slides {
             font-family: "DINPro-Regular"; }
         .contact-us .contact-who-block .one-contact .contact-romb-wrap.contact-office-img .contact-who .img-wrap {
           background: #e5e5e5; }
-      .contact-us .contact-who-block .one-contact.selected-contact .contact-who {
+      .contact-us .contact-who-block .one-contact.active .contact-who, .contact-us .contact-who-block .one-contact:hover .contact-who {
         border: 1px solid #00a1e4; }
     .contact-us .contact-who-block .select-contact-form {
       width: 102%;
@@ -5625,36 +5686,52 @@ html[xmlns] .slides {
       margin-top: 50px; }
       .contact-us .contact-questions span {
         font-size: 15px; }
-      .contact-us .contact-questions select {
-        font-size: 13px !important; }
       .contact-us .contact-questions li {
         text-align: left;
         overflow: visible; }
       .contact-us .contact-questions .main-questions li {
         width: 100%;
         margin-bottom: 25px; }
+      .contact-us .contact-questions .contact-message textarea {
+        height: 120px; }
       .contact-us .contact-questions .contact-who-block .contacts-wrapper {
         margin-right: 0; }
         .contact-us .contact-questions .contact-who-block .contacts-wrapper .one-contact {
           width: 100%; }
           .contact-us .contact-questions .contact-who-block .contacts-wrapper .one-contact .contact-romb-wrap {
-            margin-left: 20%; } }
+            margin: 0; }
+            .contact-us .contact-questions .contact-who-block .contacts-wrapper .one-contact .contact-romb-wrap .contact-who {
+              width: 160px;
+              margin: 50px auto;
+              float: none; }
+      .contact-us .contact-questions .contact-who-block .select-contact-form select {
+        width: 100%;
+        margin-bottom: 11px;
+        font-family: "DINPro-Regular"; } }
   @media only screen and (max-width: phone) {
     .contact-us .contact-questions {
       margin-top: 50px; }
       .contact-us .contact-questions span {
         font-size: 15px; }
-      .contact-us .contact-questions select {
-        font-size: 13px !important; }
       .contact-us .contact-questions li {
         text-align: left;
         overflow: visible; }
       .contact-us .contact-questions .main-questions li {
         width: 100%;
         margin-bottom: 25px; }
+      .contact-us .contact-questions .contact-message textarea {
+        height: 120px; }
       .contact-us .contact-questions .contact-who-block .contacts-wrapper {
         margin-right: 0; }
         .contact-us .contact-questions .contact-who-block .contacts-wrapper .one-contact {
           width: 100%; }
           .contact-us .contact-questions .contact-who-block .contacts-wrapper .one-contact .contact-romb-wrap {
-            margin-left: 20%; } }
+            margin: 0; }
+            .contact-us .contact-questions .contact-who-block .contacts-wrapper .one-contact .contact-romb-wrap .contact-who {
+              width: 160px;
+              margin: 50px auto;
+              float: none; }
+      .contact-us .contact-questions .contact-who-block .select-contact-form select {
+        width: 100%;
+        margin-bottom: 11px;
+        font-family: "DINPro-Regular"; } }
