@@ -1,2 +1,108 @@
 /*----------  lists
 ------------------------------------------------------------------------------*/
+/*----------  blog landing page
+------------------------------------------------------------------------------*/
+.blog-landing {
+	@include base-float;
+	.filter-wrapper {
+		@include base-float;
+		.item {
+			float: left;
+			width: 50%;
+			margin-right: -1px;
+		}
+		.search-filter {
+			@include base-float;
+			border: 1px solid #c7c7c7;
+			position: relative;
+			padding-right: 45px;
+			input {
+				@include base-float;
+				height: 65px;
+				color: $blue-dark;
+				@include input-placeholder($blue-dark);
+				font-size: 21px;
+				line-height: 65px;
+				border: 0;
+				@include border-radius(0);
+				background: $white;
+				font-family: $bold-font;
+				padding: 0 10px 0 33px;
+			}
+			a {
+				position: absolute;
+				top: 25px;
+				right: 22px;
+				text-indent: -9999px;
+				@include sprite(ico-search);
+			}
+		}
+	}
+}
+
+/*----------  custom select
+------------------------------------------------------------------------------*/
+.newListSelected {
+	@include base-float;
+	height: 67px;
+	cursor: pointer;
+	position: relative;
+	.selectedTxt {
+		@include base-float;
+		height: 67px;
+		line-height: 65px;
+		background: $white;
+		padding: 0 60px 0 26px;
+		color: $blue-dark;
+		font-size: 21px;
+		font-family: $bold-font;
+		@include text-truncate;
+		position: relative;
+		border: 1px solid #c7c7c7;
+		&:before {
+			content: "";
+			position: absolute;
+			top: 29px;
+			right: 34px;
+			@include sprite(arrow-acc-down);
+		}
+		&.active {
+			&:before {
+				@include sprite(arrow-acc-up);
+			}
+		}
+	}
+	
+	.newList {
+		width: 100%;
+		position: absolute;
+		overflow: auto;
+		z-index: 9999;
+		background: #d6d6d6;
+		float: none;
+		li {
+			width: 100%;
+			border-bottom: 1px solid #C7C7C7;
+			display: block;
+			float: left;
+			margin-bottom: 0;
+			a {
+				width: 100%;
+				float: left;
+				color: #6D6D6D;
+				padding: 6px 10px;
+				font-weight: normal;
+				display: block;
+				line-height: 16px;
+				text-align: left;
+				height: auto;
+				&.newListHover  {
+					background: #C7C7C7;
+				}
+			}
+		}
+	}
+	&.newListSelFocus {
+		outline: none !important;
+	}
+}
