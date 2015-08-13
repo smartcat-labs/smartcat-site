@@ -53,6 +53,8 @@
 ------------------------------------------------------------------------------*/
 .employee-block {
 	@include base-float;
+	border-bottom: 1px solid #d0d1d3;
+	margin-bottom: 50px;
 	&:first-of-type {
 		margin-top: 50px;
 	}
@@ -60,29 +62,40 @@
 		margin-bottom: 25px;
 	}
 	.img-wrap {
-		width: 700px;
+		width: 42.2824302134647%;
 		float: left;
 		img {
-			width: 100%;
+			max-width: 100%;
+			display: block;
 		}
 	}
 	.info {
-		width: calc(100% - 775px);
-		margin-top: 55px;
+		//width: calc(100% - 775px);
+		width: 54.16%;
+		margin-top: 14%;
 		float: right;
-	}	
+	}
+	.col {
+		width: 48.48484848484848%;
+		float: left;
+		&:last-child {
+			width: 43.18181818181818%;
+			float: right;
+		}
+	}
 	h2 {
 		font-size: 50px;
 		line-height: 50px;
+		margin-bottom: 2px;
 	}
 	.position {
 		color: $blue-light;
 		font-size: 24px;
 		display: block;
-		margin-bottom: 18px;
+		margin-bottom: 16px;
 	}
 	p {
-		margin-bottom: 40px;
+		margin-bottom: 27px;
 	}
 	blockquote {
 		font-size: 16px;
@@ -93,36 +106,39 @@
 	}
 	.contact-box {
 		@include base-float;
-		margin-bottom: 40px;
-		height: 50px;
-		a {
-			width: 50%;
+		.mail {
 			float: left;
+			clear: both;
+			height: 51px;
 			line-height: 48px;
 			display: block;
 			text-align: center;
 			text-transform: uppercase;
 			border: 1px solid #141b23;
-			&.mail {
-				background: #141b23;
-				color: $white;
-				float: left;
-				font-size: 14px;
-				.ico {
-					margin: 0 10px -3px 0;
-					@include sprite(ico-mail-white);
-				}
+			padding: 0 40px 0 25px;
+			background: #141b23;
+			color: $white;
+			font-size: 14px;
+			margin-bottom: 16px;
+			.ico {
+				margin: 0 10px -2px 0;
+				@include sprite(ico-mail-white);
 			}
-			&.phone {
-				background: $white;
-				color: #141b23;
-				float: right;
-				font-size: 17px;
-				font-family: $din-font-bold;
-				.ico {
-					@include sprite(ico-phone-black);
-					margin-right: 10px;
-				}
+			&:hover {
+				background: $blue-light;
+				border-color: $blue-light;
+			}
+		}
+		.phone {
+			float: left;
+			clear: both;
+			color: #141b23;
+			font-size: 14px;
+			line-height: 19px;
+			font-family: $din-font-bold;
+			.ico {
+				@include sprite(ico-mobile-black);
+				margin: 0 10px -4px 0;
 			}
 		}
 	}
@@ -132,9 +148,16 @@
 		}
 		.info {
 			float: left;
-		    width: calc(100% - 706px);
-			padding-left: 60px;
+		    //width: calc(100% - 706px);
+		    width: 57.7175697865353%;
+			//padding-left: 60px;
 			margin-top: 105px;
+		}
+		.col {
+			width: 54.056%;
+			&:last-child {
+				width: 38.8%;
+			}
 		}
 	}
 	@include breakpoint(phone) {
@@ -162,13 +185,16 @@
 			padding: 0 !important;
 			margin: 0 !important;
 		}
+		.col {
+			width: 100% !important;
+		}
 		h2 {
 			font-size: 25px;
 			line-height: 25px;
 			margin-bottom: 10px;
 		}
 		p {
-			margin-bottom: 5px;
+			margin-bottom: 10px;
 		}
 		.position {
 			font-size: 12px;
@@ -177,7 +203,7 @@
 		.contact-box { 
 			height: auto;
 			text-align: center;
-			margin-bottom: 20px;
+			margin-bottom: 10px;
 			a {
 				border: none;
 				&.mail {
@@ -191,6 +217,9 @@
 				}
 			}
 		}
+		blockquote {
+			margin-bottom: 15px;
+		}
 	}
 	@include breakpoint(tablet) {
 		margin-bottom: 30px;
@@ -198,18 +227,36 @@
 			margin-bottom: 0;
 		}
 		.img-wrap {
-			width: 510px !important;
+			width: 50% !important;
 			float: left;
 			img {
 				width: 100%;
 			}
 		}
 		.info {
-			width: calc(100% - 540px) !important;
-			margin-top: 55px;
+			width: 48% !important;
+			margin-top: 0 !important;
 			float: right;
 			padding: 0 !important;
-		}	
+		}
+		.col {
+			width: 100% !important;
+		}
+		.position {
+			margin-bottom: 15px;
+		}
+		p {
+			margin-bottom: 15px;
+		}
+		.contact-box {
+			margin-bottom: 15px;
+			.mail {
+				margin-bottom: 15px;
+			}
+		}
+		blockquote {
+			margin-bottom: 15px;
+		}
 	}
 }
 
@@ -721,7 +768,7 @@
 			}
 		}
 	}
-	@media only screen and (min-width: 769px) {
+	@media only screen and (min-width: 1025px) {
 		li {
 			width: 50% !important;
 			margin-right: 0 !important;
@@ -729,6 +776,7 @@
 	}
 	@include breakpoint(phone) {
 		width: 2000em;
+		margin-bottom: 15px;
 		li {
 			* {
 				transition: none !important;
@@ -746,7 +794,19 @@
 				.img-wrap {
 					height: 100%;
 					transform: none !important;
+					img {
+						@include vertical-align;
+					}
 				}
+			}
+		}
+	}
+	@include breakpoint(tablet) {
+		li {
+			width: 100%;
+			margin-right: 0;
+			.text .contact-box {
+				display: none !important;
 			}
 		}
 	}
