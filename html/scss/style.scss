@@ -681,7 +681,7 @@
 
 		}
 		.box {
-			width: 238px;
+			width: 180px;
 			height: 200px;
 			float: left;
 			border: 1px solid #c7c7c7;
@@ -707,7 +707,7 @@
 				min-height: 75px;
 				padding: 0 10px 0 11px;
 				position: absolute;
-				bottom: 0;
+				bottom: 5px;
 				left: 0;
 				@include transition(all 0.7s ease-in-out);
 				img {
@@ -753,18 +753,15 @@
 			}
 		}
 		.text {
-			
-			display: inline;
+			float: right;
+			width: calc(100% - 203px);
+			padding: 15px 15px 0 0;
 			p {
-				padding-top: 17px;
-				max-width: 95%;
+				font-size: 15px;
+				line-height: 22px;
 			}
-		}
-		@include breakpoint(desktop){
-			.text {
-				.contact-box {
-					display: none;
-				}
+			.contact-box {
+				display: none;
 			}
 		}
 	}
@@ -803,13 +800,37 @@
 	}
 	@include breakpoint(tablet) {
 		li {
+			* {
+				transition: none !important;
+			}
 			width: 100%;
 			margin-right: 0;
-			.text .contact-box {
+			.box .contact-box {
 				display: none !important;
+			}
+			.text {
+				float: right;
+				width: calc(100% - 210px);
 			}
 		}
 	}
+	@media only screen and (min-width: 1025px) and (max-width: 1300px) {
+		li {
+			width: 100% !important;
+			margin-right: 0;
+			.box {
+				margin-right: 0;
+			}
+			.text {
+				float: right;
+				width: calc(100% - 210px);
+				.contact-box {
+					display: none !important;
+				}
+			}
+		}
+	}
+	
 }
 
 .certificate-block {
@@ -852,14 +873,13 @@
 		margin-bottom: 13px;
 		a {
 			color: $black;
-			&:hover {
-				color: $blue-light;
-				@include transition(color 0.3s);
-			}
 		}
 	}
 	p {
 		margin-bottom: 26px;
+		a {
+			color: $grey-light;
+		}
 	}
 	li {
 		@include base-float;
@@ -882,6 +902,26 @@
 			}
 			.text {
 				float: left;
+			}
+		}
+	}
+	&.has-hover {
+		li {
+			&:hover {
+				h2 a {
+					color: $blue-light;
+					@include transition(color 0.3s);					
+				}
+				.read-more-link {
+					color: $blue-light;
+					@include transition(color 0.3s);
+					i {
+						@include sprite (ico-arrow-link-blue);
+					}
+				}
+				.blue-romb {
+					background: #141b23;
+				}
 			}
 		}
 	}
@@ -919,7 +959,6 @@
 		padding-bottom: 30px;
 	}
 }
-
 
 /*----------  search-results page
 ------------------------------------------------------------------------------*/
