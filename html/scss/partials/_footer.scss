@@ -104,6 +104,24 @@
 			}
 		}
 	}
+	@include breakpoint(tablet){
+		.top img {
+			top: -9999px;
+		    left: -9999px;
+		    right: -9999px;
+		    bottom: -9999px;
+		    margin: auto;
+		}
+	}
+	@include breakpoint(tablet){
+		.top img {
+			top: -9999px;
+		    left: -9999px;
+		    right: -9999px;
+		    bottom: -9999px;
+		    margin: auto;
+		}
+	}
 	@include breakpoint(phone) {
 		.contact-block {
 			position: relative;
@@ -129,6 +147,13 @@
 				font-size: 15px;
 				line-height: 20px;
 				width: 100%;
+			}
+			img {
+				top: -9999px;
+			    left: -9999px;
+			    right: -9999px;
+			    bottom: -9999px;
+			    margin: auto;
 			}
 		}	
 		.bottom {
