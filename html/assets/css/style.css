@@ -3776,90 +3776,89 @@ textarea {
       .people-slider .flexslider .flex-direction-nav li {
         float: left;
         margin: 0 1px; } }
-
-.info h2 {
-  font-size: 50px;
-  line-height: 50px; }
-.info .position {
-  color: #00a1e4;
-  font-size: 24px;
-  display: block;
-  margin-bottom: 18px; }
-.info p {
-  margin-bottom: 40px; }
-.info blockquote {
-  font-size: 16px;
-  line-height: 24px;
-  margin-bottom: 35px;
-  width: 100%;
-  float: left;
-  color: #7d7d7d; }
-.info .contact-box {
-  width: 100%;
-  float: left;
-  margin-bottom: 40px;
-  height: 50px; }
-  .info .contact-box a {
-    width: 50%;
-    float: left;
-    line-height: 48px;
+  .people-slider .info h2 {
+    font-size: 50px;
+    line-height: 50px; }
+  .people-slider .info .position {
+    color: #00a1e4;
+    font-size: 24px;
     display: block;
     margin-bottom: 18px; }
-  .info .contact-box p {
+  .people-slider .info p {
     margin-bottom: 40px; }
-  .info .contact-box blockquote {
+  .people-slider .info blockquote {
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 35px;
     width: 100%;
     float: left;
     color: #7d7d7d; }
-  .info .contact-box .contact-box {
+  .people-slider .info .contact-box {
     width: 100%;
     float: left;
     margin-bottom: 40px;
     height: 50px; }
-    .info .contact-box .contact-box a {
+    .people-slider .info .contact-box a {
       width: 50%;
       float: left;
       line-height: 48px;
       display: block;
-      text-align: center;
-      text-transform: uppercase;
-      border: 1px solid #141b23; }
-      .info .contact-box .contact-box a.mail {
-        background: #141b23;
-        color: white;
+      margin-bottom: 18px; }
+    .people-slider .info .contact-box p {
+      margin-bottom: 40px; }
+    .people-slider .info .contact-box blockquote {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 35px;
+      width: 100%;
+      float: left;
+      color: #7d7d7d; }
+    .people-slider .info .contact-box .contact-box {
+      width: 100%;
+      float: left;
+      margin-bottom: 40px;
+      height: 50px; }
+      .people-slider .info .contact-box .contact-box a {
+        width: 50%;
         float: left;
-        font-size: 14px; }
-        .info .contact-box .contact-box a.mail .ico {
-          margin: 0 10px -3px 0;
-          background: url('../img/icons-s735b1acc2f.png') no-repeat 0 -791px;
-          height: 15px;
-          width: 20px; }
-          @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
-            .info .contact-box .contact-box a.mail .ico {
-              background: url('../img/icons2x-s360746759e.png') no-repeat 0 -165px;
-              background-size: 71px 1349.5px;
-              height: 15px;
-              width: 20px; } }
-      .info .contact-box .contact-box a.phone {
-        background: white;
-        color: #141b23;
-        float: right;
-        font-size: 17px;
-        font-family: "DINPro-Bold"; }
-        .info .contact-box .contact-box a.phone .ico {
-          background: url('../img/icons-s735b1acc2f.png') no-repeat 0 -1190px;
-          height: 14px;
-          width: 13px;
-          margin-right: 10px; }
-          @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
-            .info .contact-box .contact-box a.phone .ico {
-              background: url('../img/icons2x-s360746759e.png') no-repeat 0 -856px;
-              background-size: 71px 1349.5px;
-              height: 14px;
-              width: 13px; } }
+        line-height: 48px;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        border: 1px solid #141b23; }
+        .people-slider .info .contact-box .contact-box a.mail {
+          background: #141b23;
+          color: white;
+          float: left;
+          font-size: 14px; }
+          .people-slider .info .contact-box .contact-box a.mail .ico {
+            margin: 0 10px -3px 0;
+            background: url('../img/icons-s735b1acc2f.png') no-repeat 0 -791px;
+            height: 15px;
+            width: 20px; }
+            @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
+              .people-slider .info .contact-box .contact-box a.mail .ico {
+                background: url('../img/icons2x-s360746759e.png') no-repeat 0 -165px;
+                background-size: 71px 1349.5px;
+                height: 15px;
+                width: 20px; } }
+        .people-slider .info .contact-box .contact-box a.phone {
+          background: white;
+          color: #141b23;
+          float: right;
+          font-size: 17px;
+          font-family: "DINPro-Bold"; }
+          .people-slider .info .contact-box .contact-box a.phone .ico {
+            background: url('../img/icons-s735b1acc2f.png') no-repeat 0 -1190px;
+            height: 14px;
+            width: 13px;
+            margin-right: 10px; }
+            @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
+              .people-slider .info .contact-box .contact-box a.phone .ico {
+                background: url('../img/icons2x-s360746759e.png') no-repeat 0 -856px;
+                background-size: 71px 1349.5px;
+                height: 14px;
+                width: 13px; } }
 
 /*----------  libs
 ------------------------------------------------------------------------------*/
