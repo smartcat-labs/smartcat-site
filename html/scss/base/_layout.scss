@@ -28,7 +28,7 @@ body {
 	}
 }
 .container {
-	overflow-x: hidden;
+	overflow: hidden;
 }
 .full-width {
 	@include base-float;

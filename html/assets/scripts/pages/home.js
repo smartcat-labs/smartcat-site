@@ -3,17 +3,17 @@ $(document).ready(function () {
 		animation: "slide",
 		animationLoop: true,
 		controlNav: false,
-		itemMargin: 20,
+		itemMargin: 0,
 		slideshow: false,
 		move: 1,                   
 		itemWidth : 260,
-		minItems : 2,
+		minItems : 4,
 		maxItems : 4
 	});
 
 
 	$('.people-slider .flexslider').flexslider({
-		animation: "slide",
+		animation: "fade",
 		animationLoop: true,
 		controlNav: true
 	});
@@ -68,9 +68,6 @@ $(document).ready(function () {
 	    });
 	};
 	triangleRezise();
-
-
-
 	
 	setImgHeight();
 
@@ -81,26 +78,8 @@ $(document).ready(function () {
 
 });
 
-	function setImgHeight(){
-		var divWidth = $('.one-three .img-container').width();
-		$('.one-three .img-container').outerHeight(divWidth);
-		$('.one-three .text').outerHeight(divWidth);
-	};
-
-// $(window).load(function(){
-// 	initSwiper();
-// });
-
-// $(window).resize(function(){
-// 	initSwiper();
-// });
-
-// function initSwiper() {
-// 	if ($(window).width() <= 768 ) {
-// 		var swiper = new Swiper('.swiper-container', {
-// 			spaceBetween: 20,
-// 			pagination: '.swiper-pagination',
-// 			paginationClickable: true
-// 	 	});
-// 	}
-// }
+function setImgHeight(){
+	var divWidth = $('.one-three .img-container').width();
+	$('.one-three .img-container').outerHeight(divWidth);
+	$('.one-three .text').outerHeight(divWidth);
+};
