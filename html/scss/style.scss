@@ -981,7 +981,7 @@
 /*----------  contact page
 ------------------------------------------------------------------------------*/
 .contact-us {
-	padding-bottom: 80px;
+	padding: 9px 0 80px;
 	.contact-questions {
 		margin-top: -5px;
 		li {
@@ -1055,7 +1055,7 @@
 	}
 	.contact-who-block {
 		overflow: hidden;
-		padding: 35px 5px;
+		padding: 35px 5px 1px;
 		.contacts-wrapper {
 			margin-right: 45px;
 		}
@@ -1074,29 +1074,17 @@
 				    float: left;
 				    margin: 25px 25px 50px 3px;
 				    border: 1px solid $gray-lighter;
-				    padding-right: 18px;
 				    .img-wrap {
-						float: left;
-						width: 95%;
-						height: auto;
-						background: #1595bf url(../img/contact-blue-bg.png) no-repeat center center;
-						background-size: cover;
-						text-align: center;
 						margin: 13px;
 						cursor: pointer;
-						padding-bottom: 8px;
 						img {
-							width: 90%;
-						    height: auto;
-						    position: relative;
-						    top: 8px;
-						    right: 8px;
+							width: 100%;
 						}
 					}
 			    }
 			    .contact-who-name {
 			    	    @include base-float;
-						margin-left: -17%;
+						margin-left: -18%;
 						text-align: center;
 						p {
 							font-family: $din-font;
@@ -1106,10 +1094,6 @@
 			    	.contact-who {
 			    		.img-wrap {
 				    		background: $gray-bg-darker;
-							img {
-							    top: 7px;
-    							right: 0px;
-							}
 				    	}
 			    	}
 				}
@@ -1139,6 +1123,9 @@
 				.contact-romb-wrap  {
 					width: 80%;
 				}
+				.contact-who-name {
+					margin-left: -5% !important;
+				}
 			}
 		}
 	}
@@ -1154,13 +1141,6 @@
 				.one-contact {
 					.contact-romb-wrap {
 						width: 80%;
-						.img-wrap {
-							width: 92%;
-							img {
-								top: 8px;
-   								right: 5px;
-							}
-						}
 					}
 					.contact-who-name {
 						margin-left: -5%;
