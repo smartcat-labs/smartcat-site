@@ -210,6 +210,9 @@
 		.menu-wrapper {
 			display: inline-block !important;
 		}
+		.t-desktop-small {
+			display: none;
+		}
 	}
 	@include breakpoint(desktop){
 		.menu-btn,
@@ -305,6 +308,12 @@
 				@include sprite(ico-menu-tablet);
 			}
 		}
+		.t-desktop-small {
+			display: block;
+		}
+		.t-desktop {
+			display: none;
+		}
 	}
 	@include breakpoint(phone){
 		height: 63px;
@@ -331,6 +340,9 @@
 			}
 		}
 		&.home:after {
+			display: none;
+		}
+		.t-desktop-small {
 			display: none;
 		}
 	}

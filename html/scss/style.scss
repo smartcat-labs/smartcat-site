@@ -53,6 +53,8 @@
 ------------------------------------------------------------------------------*/
 .employee-block {
 	@include base-float;
+	border-bottom: 1px solid #d0d1d3;
+	margin-bottom: 50px;
 	&:first-of-type {
 		margin-top: 50px;
 	}
@@ -60,29 +62,40 @@
 		margin-bottom: 25px;
 	}
 	.img-wrap {
-		width: 700px;
+		width: 42.2824302134647%;
 		float: left;
 		img {
-			width: 100%;
+			max-width: 100%;
+			display: block;
 		}
 	}
 	.info {
-		width: calc(100% - 775px);
-		margin-top: 55px;
+		//width: calc(100% - 775px);
+		width: 54.16%;
+		margin-top: 14%;
 		float: right;
-	}	
+	}
+	.col {
+		width: 48.48484848484848%;
+		float: left;
+		&:last-child {
+			width: 43.18181818181818%;
+			float: right;
+		}
+	}
 	h2 {
 		font-size: 50px;
 		line-height: 50px;
+		margin-bottom: 2px;
 	}
 	.position {
 		color: $blue-light;
 		font-size: 24px;
 		display: block;
-		margin-bottom: 18px;
+		margin-bottom: 16px;
 	}
 	p {
-		margin-bottom: 40px;
+		margin-bottom: 27px;
 	}
 	blockquote {
 		font-size: 16px;
@@ -93,36 +106,39 @@
 	}
 	.contact-box {
 		@include base-float;
-		margin-bottom: 40px;
-		height: 50px;
-		a {
-			width: 50%;
+		.mail {
 			float: left;
+			clear: both;
+			height: 51px;
 			line-height: 48px;
 			display: block;
 			text-align: center;
 			text-transform: uppercase;
 			border: 1px solid #141b23;
-			&.mail {
-				background: #141b23;
-				color: $white;
-				float: left;
-				font-size: 14px;
-				.ico {
-					margin: 0 10px -3px 0;
-					@include sprite(ico-mail-white);
-				}
+			padding: 0 40px 0 25px;
+			background: #141b23;
+			color: $white;
+			font-size: 14px;
+			margin-bottom: 16px;
+			.ico {
+				margin: 0 10px -2px 0;
+				@include sprite(ico-mail-white);
 			}
-			&.phone {
-				background: $white;
-				color: #141b23;
-				float: right;
-				font-size: 17px;
-				font-family: $din-font-bold;
-				.ico {
-					@include sprite(ico-phone-black);
-					margin-right: 10px;
-				}
+			&:hover {
+				background: $blue-light;
+				border-color: $blue-light;
+			}
+		}
+		.phone {
+			float: left;
+			clear: both;
+			color: #141b23;
+			font-size: 14px;
+			line-height: 19px;
+			font-family: $din-font-bold;
+			.ico {
+				@include sprite(ico-mobile-black);
+				margin: 0 10px -4px 0;
 			}
 		}
 	}
@@ -132,9 +148,16 @@
 		}
 		.info {
 			float: left;
-		    width: calc(100% - 706px);
-			padding-left: 60px;
+		    //width: calc(100% - 706px);
+		    width: 57.7175697865353%;
+			//padding-left: 60px;
 			margin-top: 105px;
+		}
+		.col {
+			width: 54.056%;
+			&:last-child {
+				width: 38.8%;
+			}
 		}
 	}
 	@include breakpoint(phone) {
@@ -162,13 +185,16 @@
 			padding: 0 !important;
 			margin: 0 !important;
 		}
+		.col {
+			width: 100% !important;
+		}
 		h2 {
 			font-size: 25px;
 			line-height: 25px;
 			margin-bottom: 10px;
 		}
 		p {
-			margin-bottom: 5px;
+			margin-bottom: 10px;
 		}
 		.position {
 			font-size: 12px;
@@ -177,7 +203,7 @@
 		.contact-box { 
 			height: auto;
 			text-align: center;
-			margin-bottom: 20px;
+			margin-bottom: 10px;
 			a {
 				border: none;
 				&.mail {
@@ -191,6 +217,9 @@
 				}
 			}
 		}
+		blockquote {
+			margin-bottom: 15px;
+		}
 	}
 	@include breakpoint(tablet) {
 		margin-bottom: 30px;
@@ -198,18 +227,36 @@
 			margin-bottom: 0;
 		}
 		.img-wrap {
-			width: 510px !important;
+			width: 50% !important;
 			float: left;
 			img {
 				width: 100%;
 			}
 		}
 		.info {
-			width: calc(100% - 540px) !important;
-			margin-top: 55px;
+			width: 48% !important;
+			margin-top: 0 !important;
 			float: right;
 			padding: 0 !important;
-		}	
+		}
+		.col {
+			width: 100% !important;
+		}
+		.position {
+			margin-bottom: 15px;
+		}
+		p {
+			margin-bottom: 15px;
+		}
+		.contact-box {
+			margin-bottom: 15px;
+			.mail {
+				margin-bottom: 15px;
+			}
+		}
+		blockquote {
+			margin-bottom: 15px;
+		}
 	}
 }
 
@@ -721,7 +768,7 @@
 			}
 		}
 	}
-	@media only screen and (min-width: 769px) {
+	@media only screen and (min-width: 1025px) {
 		li {
 			width: 50% !important;
 			margin-right: 0 !important;
@@ -729,6 +776,7 @@
 	}
 	@include breakpoint(phone) {
 		width: 2000em;
+		margin-bottom: 15px;
 		li {
 			* {
 				transition: none !important;
@@ -746,7 +794,19 @@
 				.img-wrap {
 					height: 100%;
 					transform: none !important;
+					img {
+						@include vertical-align;
+					}
 				}
+			}
+		}
+	}
+	@include breakpoint(tablet) {
+		li {
+			width: 100%;
+			margin-right: 0;
+			.text .contact-box {
+				display: none !important;
 			}
 		}
 	}
@@ -854,6 +914,29 @@
 			}
 		}
 	}
+	&.search-list {
+		border-bottom: 1px solid $grey-bg;
+		padding-bottom: 30px;
+	}
+}
+
+
+/*----------  search-results page
+------------------------------------------------------------------------------*/
+.search-pagination {
+	@include base-float;
+	li {
+		display: inline-block;
+		padding: 20px 30px 20px 0;
+		a {
+			color: $black;
+			font-size: 14px;
+		}
+		.pagination-active {
+			font-family: $din-font-bold;
+			border-bottom: 1px solid $black;
+		}
+	}
 }
 
 /*----------  contact page
@@ -866,23 +949,35 @@
 			margin-left: 4px;
 		}
 		margin-top: -5px;
-		input {
-			width: 100%;
-			height: 56px;
-			margin-top: 11px;
-			font-size: 16px;
-			@include input-placeholder($blue-light);
-			color: $blue-light;
-			border: 1px solid $gray-lighter;
-			&:focus {
-				border: 1px solid $blue-light;
-			}
-		}
 		span {
 			font-size: 16px;
 			font-family: $din-font-bold;
 			color: $blue-dark;
 		}
+		.contact-info {
+			position: relative;
+			input {
+				width: 100%;
+				height: 56px;
+				margin-top: 11px;
+				font-size: 16px;
+				@include input-placeholder($blue-light);
+				color: $blue-light;
+				border: 1px solid $gray-lighter;
+				&:focus {
+					border: 1px solid $blue-light;
+				}
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				width: 90px;
+				height: 3px;
+				background: $blue-light;
+				bottom: 0px;
+			}
+		}
+		
 		.main-questions {
 			overflow: auto;
 			li {
@@ -891,6 +986,7 @@
 				margin-right: 17px;
 				padding-bottom: 0 !important;
 				margin-left: 0 !important;
+				position: relative;
 				&:last-of-type {
 					margin-right: 0;
 				}
@@ -898,14 +994,15 @@
 
 		}
 		.contact-message {
-			padding-top: 28px;
+			padding: 28px 0 50px;
 			textarea {
 				width: 100%;
 				height: 283px;
-				margin: 11px 0 50px;
+				margin-top: 11px;
 				padding-top: 10px;
     			font-size: 16px;
     			border: 1px solid $gray-lighter;
+    			resize: none;
     			@include input-placeholder($blue-light);
 				color: $blue-light;
 				&:focus {
@@ -918,14 +1015,17 @@
 		}
 	}
 	.contact-who-block {
-		overflow: visible;
+		overflow: hidden;
 		padding: 35px 5px;
+		.contacts-wrapper {
+			margin-right: 45px;
+		}
 		p {
 			font-family: $din-font-bold;
 			color: $blue-dark;
 		}
 		.one-contact {
-			width: 24%;
+			width: 25%;
 			float: left;
 			.contact-romb-wrap {
 				width: 100%;
@@ -938,10 +1038,11 @@
 				    position: relative;
 				    margin: 25px 25px 50px 3px;
 				    border: 1px solid $gray-lighter;
+				    padding-right: 18px;
 				    .img-wrap {
-						@include base-float;
-						width: 155px;
-						height: 155px;
+						float: left;
+						width: 95%;
+						height: auto;
 						position: relative;
 						z-index: 5;
 						background: #1595bf url(../img/contact-blue-bg.png) no-repeat center center;
@@ -949,12 +1050,13 @@
 						text-align: center;
 						margin: 13px;
 						cursor: pointer;
+						padding-bottom: 8px;
 						img {
-							width: 137px;
-						    height: 146px;
+							width: 90%;
+						    height: auto;
 						    position: relative;
-						    top: 11px;
-						    right: 11px;
+						    top: 8px;
+						    right: 8px;
 						}
 					}
 			    }
@@ -968,26 +1070,99 @@
 						}
 			    }
 			    &.contact-office-img {
-			    	.img-wrap {
-			    		background: $gray-bg-darker;
-						img {
-							width: 106px;
-						    height: 106px;
-						    top: 21px;
-						    right: 0px;
-						}
+			    	.contact-who {
+			    		.img-wrap {
+				    		background: $gray-bg-darker;
+							img {
+							    top: 7px;
+    							right: 0px;
+							}
+				    	}
 			    	}
-					
-				}
-			}
-			&:first-of-type {
-				.contact-romb-wrap {
-					margin-left: 50px;
 				}
 			}
 			&.selected-contact {
 				.contact-who {
 					border: 1px solid $blue-light;
+				}
+			}
+		}
+		.select-contact-form {
+			    width: 102%;
+   				margin-left: -5px;
+			select {
+				width: 100%;
+			    height: 56px;
+			    border: 1px solid $gray-lighter;
+			    color: $blue-dark;
+			    font-size: 14px;
+    			padding-left: 20px;
+			}
+		}
+	}
+	@include breakpoint(desktop) {
+		.contact-who-block {
+			.one-contact {
+				.contact-romb-wrap  {
+					width: 80%;
+				}
+			}
+		}
+	}
+	
+	@include breakpoint(tablet) {
+		.contact-questions {
+			.main-questions {
+				li {
+					width: 31.1%;
+				}
+			}
+			.contact-who-block {
+				.one-contact {
+					.contact-romb-wrap {
+						width: 80%;
+						.img-wrap {
+							width: 92%;
+							img {
+								top: 9px;
+   								right: 6px;
+							}
+						}
+					}
+					.contact-office-img {
+						.contact-who {
+							.img-wrap {
+							}
+						}						
+					}
+					.contact-who-name {
+						margin-left: -5%;
+					}
+				}				
+			}
+		}
+	}
+	@include breakpoint(phone) {
+		.contact-questions {
+			li {
+				text-align: left;
+			}
+			.main-questions {
+				li {
+					width: 100%;
+					margin-bottom: 25px;
+				}
+			}
+			.contact-who-block {
+				.contacts-wrapper {
+					margin-right: 0;
+					.one-contact {
+						width: 100%;
+						.contact-romb-wrap {
+							width: 100%;
+							margin-left: 25%;
+						}
+					}
 				}
 			}
 		}
