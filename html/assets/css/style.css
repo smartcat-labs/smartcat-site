@@ -4390,7 +4390,6 @@ html[xmlns] .slides {
   .contact-us .contact-questions {
     margin-top: -5px; }
     .contact-us .contact-questions li {
-      overflow: visible;
       margin-left: 4px; }
     .contact-us .contact-questions span {
       font-size: 16px;
@@ -4419,9 +4418,10 @@ html[xmlns] .slides {
         width: 90px;
         height: 3px;
         background: #00a1e4;
-        bottom: 0px; }
+        bottom: 0px;
+        left: 0; }
     .contact-us .contact-questions .main-questions {
-      overflow: auto; }
+      overflow: hidden; }
       .contact-us .contact-questions .main-questions li {
         width: 32.1%;
         float: left;
@@ -4470,8 +4470,6 @@ html[xmlns] .slides {
         .contact-us .contact-who-block .one-contact .contact-romb-wrap .contact-who {
           width: auto;
           float: left;
-          z-index: 5;
-          position: relative;
           margin: 25px 25px 50px 3px;
           border: 1px solid #dedede;
           padding-right: 18px; }
@@ -4479,8 +4477,6 @@ html[xmlns] .slides {
             float: left;
             width: 95%;
             height: auto;
-            position: relative;
-            z-index: 5;
             background: #1595bf url(../img/contact-blue-bg.png) no-repeat center center;
             background-size: cover;
             text-align: center;
@@ -4511,7 +4507,7 @@ html[xmlns] .slides {
       width: 102%;
       margin-left: -5px; }
       .contact-us .contact-who-block .select-contact-form select {
-        width: 100%;
+        width: 98.9%;
         height: 56px;
         border: 1px solid #dedede;
         color: #141b23;
@@ -4528,8 +4524,8 @@ html[xmlns] .slides {
       .contact-us .contact-questions .contact-who-block .one-contact .contact-romb-wrap .img-wrap {
         width: 92%; }
         .contact-us .contact-questions .contact-who-block .one-contact .contact-romb-wrap .img-wrap img {
-          top: 9px;
-          right: 6px; }
+          top: 8px;
+          right: 5px; }
     .contact-us .contact-questions .contact-who-block .one-contact .contact-who-name {
       margin-left: -5%; } }
   @media only screen and (max-width: tablet) {
@@ -4540,33 +4536,45 @@ html[xmlns] .slides {
       .contact-us .contact-questions .contact-who-block .one-contact .contact-romb-wrap .img-wrap {
         width: 92%; }
         .contact-us .contact-questions .contact-who-block .one-contact .contact-romb-wrap .img-wrap img {
-          top: 9px;
-          right: 6px; }
+          top: 8px;
+          right: 5px; }
     .contact-us .contact-questions .contact-who-block .one-contact .contact-who-name {
       margin-left: -5%; } }
   @media only screen and (min-width: 320px) and (max-width: 767px) {
-    .contact-us .contact-questions li {
-      text-align: left; }
-    .contact-us .contact-questions .main-questions li {
-      width: 100%;
-      margin-bottom: 25px; }
-    .contact-us .contact-questions .contact-who-block .contacts-wrapper {
-      margin-right: 0; }
-      .contact-us .contact-questions .contact-who-block .contacts-wrapper .one-contact {
-        width: 100%; }
-        .contact-us .contact-questions .contact-who-block .contacts-wrapper .one-contact .contact-romb-wrap {
-          width: 100%;
-          margin-left: 25%; } }
+    .contact-us .contact-questions {
+      margin-top: 50px; }
+      .contact-us .contact-questions span {
+        font-size: 15px; }
+      .contact-us .contact-questions select {
+        font-size: 13px !important; }
+      .contact-us .contact-questions li {
+        text-align: left;
+        overflow: visible; }
+      .contact-us .contact-questions .main-questions li {
+        width: 100%;
+        margin-bottom: 25px; }
+      .contact-us .contact-questions .contact-who-block .contacts-wrapper {
+        margin-right: 0; }
+        .contact-us .contact-questions .contact-who-block .contacts-wrapper .one-contact {
+          width: 100%; }
+          .contact-us .contact-questions .contact-who-block .contacts-wrapper .one-contact .contact-romb-wrap {
+            margin-left: 20%; } }
   @media only screen and (max-width: phone) {
-    .contact-us .contact-questions li {
-      text-align: left; }
-    .contact-us .contact-questions .main-questions li {
-      width: 100%;
-      margin-bottom: 25px; }
-    .contact-us .contact-questions .contact-who-block .contacts-wrapper {
-      margin-right: 0; }
-      .contact-us .contact-questions .contact-who-block .contacts-wrapper .one-contact {
-        width: 100%; }
-        .contact-us .contact-questions .contact-who-block .contacts-wrapper .one-contact .contact-romb-wrap {
-          width: 100%;
-          margin-left: 25%; } }
+    .contact-us .contact-questions {
+      margin-top: 50px; }
+      .contact-us .contact-questions span {
+        font-size: 15px; }
+      .contact-us .contact-questions select {
+        font-size: 13px !important; }
+      .contact-us .contact-questions li {
+        text-align: left;
+        overflow: visible; }
+      .contact-us .contact-questions .main-questions li {
+        width: 100%;
+        margin-bottom: 25px; }
+      .contact-us .contact-questions .contact-who-block .contacts-wrapper {
+        margin-right: 0; }
+        .contact-us .contact-questions .contact-who-block .contacts-wrapper .one-contact {
+          width: 100%; }
+          .contact-us .contact-questions .contact-who-block .contacts-wrapper .one-contact .contact-romb-wrap {
+            margin-left: 20%; } }
