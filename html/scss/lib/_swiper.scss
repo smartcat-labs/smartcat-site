@@ -153,22 +153,23 @@
   width: 8px;
   height: 8px;
   display: inline-block;
-  border-radius: 100%;
-  background: $blue-light;
-  opacity: 0.2;
+  background: #a5a5a5;
 }
 .swiper-pagination-clickable .swiper-pagination-bullet {
   cursor: pointer;
 }
 .swiper-pagination-white .swiper-pagination-bullet {
-  background: $blue-light;
+  background: #a5a5a5;
 }
 .swiper-pagination-bullet-active {
-  opacity: 1;
-  background: $blue-light;
+  background: #2f2f2f;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 .swiper-pagination-white .swiper-pagination-bullet-active {
-  background: $blue-dark;
+  background: #2f2f2f;
 }
 .swiper-pagination-black .swiper-pagination-bullet-active {
   background: #000;
