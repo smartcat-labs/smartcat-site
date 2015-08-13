@@ -30,11 +30,15 @@
 		li {
 			margin-left: 12px;
 			a .ico {
+				@include transition(all 0.3s);
 				&.twitter {
-					  margin-bottom: -5px;
+				  	margin-bottom: -5px;
 				}
 				&.stackoverflow {
 					margin-top: -3px;
+				}
+				&:hover {
+					@include opacity(0.8);
 				}
 			}
 			&:first-child {
