@@ -75,6 +75,9 @@
 				@include sprite(twitter-black);
 				margin-top: 2px;
 			}
+			&.git .ico {
+				@include sprite(ico-github-black);
+			}
 			&:hover {
 				&.facebook .ico {
 					@include sprite(facebook-black-hover);
@@ -87,6 +90,9 @@
 				}
 				&.twitter .ico {
 					@include sprite(twitter-black-hover);
+				}
+				&.git .ico {
+					@include sprite(ico-github-black-hover);
 				}
 			}
 		}
@@ -107,5 +113,230 @@
 	@include base-float;
 	height: 2px;
 	@include opacity(0.08);
+}
+
+/*----------Sidebar
+------------------------------------------------------------------------------*/
+.widget {
+	&.accordion {
+		border: 1px solid #c7c7c7;
+		border-bottom: none;
+		.item {
+			@include base-float;
+			border-bottom: 1px solid #c7c7c7;
+			.accordion-head {
+				@include base-float;
+				a {
+					font-size: 20px;
+					line-height: 22px;
+					color: $blue-dark;
+					display: block;
+					padding: 22px 24px;
+					position: relative;
+					font-family: $bold-font;
+					i {
+						float: right;
+						margin-top: 6px;
+					}
+				}
+				&.open {
+					a {
+						.ico.arrow-acc-down {
+							@include sprite(arrow-acc-up);
+						}
+					}
+				}
+			}
+			.accordion-content {
+				display: none;
+				@include base-float;
+				padding: 5px 25px;
+			}
+		}
+		.search {
+			@include base-float;
+			position: relative;
+			padding: 12px 25px;
+			border-bottom: 1px solid #c7c7c7;
+			input {
+				width: 100%;
+				float: left;
+				border: none;
+				outline: none;
+				height: 40px;
+				line-height: 40px;
+				font-size: 20px;
+				font-family: $bold-font;
+				padding: 0;
+				padding-right: 25px;
+			}
+			.submit {
+				position: absolute;
+				top: 24px;
+				right: 25px;
+				.ico {
+					@include sprite(ico-search);
+				}
+			}
+		}
+	}
+	&.slider {
+		h3 {
+			text-align: center;			
+			text-transform: uppercase;
+			font-size: 18px;
+			height: 52px;
+			line-height: 52px;
+			a {
+				color: #141b23;
+				background: #d4d4d4;
+				display: block;		
+				@include transition(all 0.3s);	
+				&:hover {
+					background: #CAC6C6;
+					color: $blue-light;
+				}
+			}
+		}
+		.flexslider {
+			height: 310px;
+			background: #efefef;
+			margin: 0;
+			h4 {
+				font-size: 18px;
+				line-height: 22px;
+				font-family: $bold-font;
+				padding: 0 5px;
+				margin-bottom: 8px;
+				a {
+					color: $blue-dark;
+					@include transition(color 0.3s);
+					&:hover {
+						color: $blue-light;
+					}
+				}
+			}
+			.center {
+				text-align: center;
+				img {
+					display: inline-block;
+					max-width: 72%;
+					margin: 35px auto 30px;
+				}
+			}
+			.text-item {
+				text-align: center;
+				padding: 18px 20px;
+				.romb {
+					width: 55px;
+					height: 55px;
+					background: $blue-light;
+					margin: 12px auto 22px;
+				}
+				p {
+					line-height: 16px;
+					font-size: 14px;
+					color: $grey-light;
+					margin-bottom: 20px;
+				}
+				.reset-inner {
+					color: $white;
+				}
+			}
+			.flex-control-nav {
+				bottom: 0;
+				background: $white;
+				text-align: left;
+				height: 30px;
+				padding-top: 15px;
+				li {
+					margin: 0 4px;
+					padding: 3px;
+					a {
+						@include border-radius(0);
+						width: 7px;
+						height: 7px;
+						background: #a5a5a5;
+						@include box-shadow(none);
+						&.flex-active {
+							@include rotate(-45);
+							background: #2f2f2f;
+						}
+					}
+					&:first-child {
+						margin-left: 0;
+					}
+				}
+			}
+			.date, .author {
+				font-family: Verdana, Geneva, sans-serif;
+			}
+			.date {
+				float: right;
+			}
+			.author {
+				float: left;
+			}
+			.flex-direction-nav {
+				display: none;
+			}
+			&.challengers {
+				height: 335px;
+				.slides li {
+					.inner {
+						@include base-float;
+						padding: 20px 12px 0 12px;
+					}
+					img {
+						@include base-float;
+						display: inline-block;
+					}
+					.author-info {
+						text-align: right;
+						@include base-float;
+						h4 {
+							font-family: $bold-font;
+							margin-bottom: 6px;
+							color: #2f2f2f;
+							font-size: 18px;
+						}
+						span {
+							font-family: $neutra;
+							font-size: 14px;
+							color: $grey-light;
+						}
+					}
+				}
+			}
+			&.small {
+				height: 270px;
+			}
+		}
+	}
+	&.text-box {
+		text-align: center;
+		background: #efefef;
+		h3 {
+			background: $blue-light;
+			text-transform: uppercase;
+			color: $white;
+			padding: 16px;
+			font-size: 18px;
+			line-height: 20px;
+		}
+		.inner {
+			@include base-float;
+			padding: 10% 11% 35px 11%;
+			h4 {
+				font-size: 18px;
+				font-family: $bold-font;
+				color: $blue-dark;
+			}
+			p {
+				font-size: 14px;
+				margin-bottom: 0;
+			}
+		}
+	}
 }
 

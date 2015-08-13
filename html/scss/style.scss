@@ -53,6 +53,8 @@
 ------------------------------------------------------------------------------*/
 .employee-block {
 	@include base-float;
+	border-bottom: 1px solid #d0d1d3;
+	margin-bottom: 50px;
 	&:first-of-type {
 		margin-top: 50px;
 	}
@@ -60,29 +62,40 @@
 		margin-bottom: 25px;
 	}
 	.img-wrap {
-		width: 700px;
+		width: 42.2824302134647%;
 		float: left;
 		img {
-			width: 100%;
+			max-width: 100%;
+			display: block;
 		}
 	}
 	.info {
-		width: calc(100% - 775px);
-		margin-top: 55px;
+		//width: calc(100% - 775px);
+		width: 54.16%;
+		margin-top: 14%;
 		float: right;
-	}	
+	}
+	.col {
+		width: 48.48484848484848%;
+		float: left;
+		&:last-child {
+			width: 43.18181818181818%;
+			float: right;
+		}
+	}
 	h2 {
 		font-size: 50px;
 		line-height: 50px;
+		margin-bottom: 2px;
 	}
 	.position {
 		color: $blue-light;
 		font-size: 24px;
 		display: block;
-		margin-bottom: 18px;
+		margin-bottom: 16px;
 	}
 	p {
-		margin-bottom: 40px;
+		margin-bottom: 27px;
 	}
 	blockquote {
 		font-size: 16px;
@@ -93,36 +106,39 @@
 	}
 	.contact-box {
 		@include base-float;
-		margin-bottom: 40px;
-		height: 50px;
-		a {
-			width: 50%;
+		.mail {
 			float: left;
+			clear: both;
+			height: 51px;
 			line-height: 48px;
 			display: block;
 			text-align: center;
 			text-transform: uppercase;
 			border: 1px solid #141b23;
-			&.mail {
-				background: #141b23;
-				color: $white;
-				float: left;
-				font-size: 14px;
-				.ico {
-					margin: 0 10px -3px 0;
-					@include sprite(ico-mail-white);
-				}
+			padding: 0 40px 0 25px;
+			background: #141b23;
+			color: $white;
+			font-size: 14px;
+			margin-bottom: 16px;
+			.ico {
+				margin: 0 10px -2px 0;
+				@include sprite(ico-mail-white);
 			}
-			&.phone {
-				background: $white;
-				color: #141b23;
-				float: right;
-				font-size: 17px;
-				font-family: $din-font-bold;
-				.ico {
-					@include sprite(ico-phone-black);
-					margin-right: 10px;
-				}
+			&:hover {
+				background: $blue-light;
+				border-color: $blue-light;
+			}
+		}
+		.phone {
+			float: left;
+			clear: both;
+			color: #141b23;
+			font-size: 14px;
+			line-height: 19px;
+			font-family: $din-font-bold;
+			.ico {
+				@include sprite(ico-mobile-black);
+				margin: 0 10px -4px 0;
 			}
 		}
 	}
@@ -132,9 +148,16 @@
 		}
 		.info {
 			float: left;
-		    width: calc(100% - 706px);
-			padding-left: 60px;
+		    //width: calc(100% - 706px);
+		    width: 57.7175697865353%;
+			//padding-left: 60px;
 			margin-top: 105px;
+		}
+		.col {
+			width: 54.056%;
+			&:last-child {
+				width: 38.8%;
+			}
 		}
 	}
 	@include breakpoint(phone) {
@@ -162,13 +185,16 @@
 			padding: 0 !important;
 			margin: 0 !important;
 		}
+		.col {
+			width: 100% !important;
+		}
 		h2 {
 			font-size: 25px;
 			line-height: 25px;
 			margin-bottom: 10px;
 		}
 		p {
-			margin-bottom: 5px;
+			margin-bottom: 10px;
 		}
 		.position {
 			font-size: 12px;
@@ -177,7 +203,7 @@
 		.contact-box { 
 			height: auto;
 			text-align: center;
-			margin-bottom: 20px;
+			margin-bottom: 10px;
 			a {
 				border: none;
 				&.mail {
@@ -191,6 +217,9 @@
 				}
 			}
 		}
+		blockquote {
+			margin-bottom: 15px;
+		}
 	}
 	@include breakpoint(tablet) {
 		margin-bottom: 30px;
@@ -198,230 +227,35 @@
 			margin-bottom: 0;
 		}
 		.img-wrap {
-			width: 510px !important;
+			width: 50% !important;
 			float: left;
 			img {
 				width: 100%;
 			}
 		}
 		.info {
-			width: calc(100% - 540px) !important;
-			margin-top: 55px;
+			width: 48% !important;
+			margin-top: 0 !important;
 			float: right;
 			padding: 0 !important;
-		}	
-	}
-}
-
-/*----------Sidebar
-------------------------------------------------------------------------------*/
-.widget {
-	&.accordion {
-		border: 1px solid #c7c7c7;
-		border-bottom: none;
-		.item {
-			@include base-float;
-			border-bottom: 1px solid #c7c7c7;
-			.accordion-head {
-				@include base-float;
-				a {
-					font-size: 20px;
-					line-height: 22px;
-					color: $blue-dark;
-					display: block;
-					padding: 22px 24px;
-					position: relative;
-					font-family: $bold-font;
-					i {
-						float: right;
-						margin-top: 6px;
-					}
-				}
-				&.open {
-					a {
-						.ico.arrow-acc-down {
-							@include sprite(arrow-acc-up);
-						}
-					}
-				}
-			}
-			.accordion-content {
-				display: none;
-				@include base-float;
-				padding: 5px 25px;
+		}
+		.col {
+			width: 100% !important;
+		}
+		.position {
+			margin-bottom: 15px;
+		}
+		p {
+			margin-bottom: 15px;
+		}
+		.contact-box {
+			margin-bottom: 15px;
+			.mail {
+				margin-bottom: 15px;
 			}
 		}
-		.search {
-			@include base-float;
-			position: relative;
-			padding: 12px 25px;
-			border-bottom: 1px solid #c7c7c7;
-			input {
-				width: 100%;
-				float: left;
-				border: none;
-				outline: none;
-				height: 40px;
-				line-height: 40px;
-				font-size: 20px;
-				font-family: $bold-font;
-				padding: 0;
-				padding-right: 25px;
-			}
-			.submit {
-				position: absolute;
-				top: 24px;
-				right: 25px;
-				.ico {
-					@include sprite(ico-search);
-				}
-			}
-		}
-	}
-	&.slider {
-		h3 {
-			text-align: center;
-			background: #d4d4d4;
-			color: #141b23;
-			text-transform: uppercase;
-			font-size: 18px;
-			height: 52px;
-			line-height: 52px;
-		}
-		.flexslider {
-			height: 310px;
-			background: #efefef;
-			margin: 0;
-			h4 {
-				font-size: 18px;
-				line-height: 22px;
-				font-family: $bold-font;
-				padding: 0 5px;
-				margin-bottom: 8px;
-				a {
-					color: $blue-dark;
-				}
-			}
-			.center {
-				text-align: center;
-				img {
-					display: inline-block;
-					max-width: 72%;
-					margin: 35px auto 30px;
-				}
-			}
-			.text-item {
-				text-align: center;
-				padding: 18px 20px;
-				.romb {
-					width: 55px;
-					height: 55px;
-					background: $blue-light;
-					margin: 12px auto 22px;
-				}
-				p {
-					line-height: 16px;
-					font-size: 14px;
-					color: $grey-light;
-					margin-bottom: 20px;
-				}
-				.reset-inner {
-					color: $white;
-				}
-			}
-			.flex-control-nav {
-				bottom: 0;
-				background: $white;
-				text-align: left;
-				height: 30px;
-				padding-top: 15px;
-				li {
-					margin: 0 4px;
-					padding: 3px;
-					a {
-						@include border-radius(0);
-						width: 7px;
-						height: 7px;
-						background: #a5a5a5;
-						@include box-shadow(none);
-						&.flex-active {
-							@include rotate(-45);
-							background: #2f2f2f;
-						}
-					}
-					&:first-child {
-						margin-left: 0;
-					}
-				}
-			}
-			.date, .author {
-				font-family: Verdana, Geneva, sans-serif;
-			}
-			.date {
-				float: right;
-			}
-			.author {
-				float: left;
-			}
-			.flex-direction-nav {
-				display: none;
-			}
-			&.challengers {
-				.slides li {
-					.inner {
-						@include base-float;
-						padding: 25px 25px 0 12px;
-					}
-					img {
-						width: 87%;
-						display: inline-block;
-						margin-left: 4px;
-					}
-					.author-info {
-						text-align: right;
-						@include base-float;
-						h4 {
-							font-family: $bold-font;
-							margin-bottom: 6px;
-							color: #2f2f2f;
-							font-size: 18px;
-						}
-						span {
-							font-family: $neutra;
-							font-size: 14px;
-							color: $grey-light;
-						}
-					}
-				}
-			}
-			&.small {
-				height: 270px;
-			}
-		}
-	}
-	&.text-box {
-		text-align: center;
-		background: #efefef;
-		h3 {
-			background: $blue-light;
-			text-transform: uppercase;
-			color: $white;
-			padding: 16px;
-			font-size: 18px;
-			line-height: 20px;
-		}
-		.inner {
-			@include base-float;
-			padding: 10% 11% 35px 11%;
-			h4 {
-				font-size: 18px;
-				font-family: $bold-font;
-				color: $blue-dark;
-			}
-			p {
-				font-size: 14px;
-				margin-bottom: 0;
-			}
+		blockquote {
+			margin-bottom: 15px;
 		}
 	}
 }
@@ -454,23 +288,40 @@
 	padding: 34px 16px;
 	border-top: 2px solid #efefef;
 	border-bottom: 2px solid #efefef;
-	.prev-post,
-	.next-post {
+	a {
 		text-transform: uppercase;
 		color: $grey-light;
-		&:hover {
-			text-decoration: underline;
+		i {
+			display: inline-block;
+			position: relative;
+			top: 4px;
 		}
 	}
 	.prev-post {
 		float: left;
-		padding-left: 78px;
-		background: transparent url(../img/link-arrow-left-grey.png) no-repeat left center;
+		i {
+			@include sprite(ico-arrow-link-grey-back);
+			margin-right: 10px;
+		}
+		&:hover {
+			color: $blue-light;
+			i {
+				@include sprite(ico-arrow-link-grey-back-hover);
+			}
+		}
 	}
 	.next-post {
 		float: right;
-		padding-right: 78px;
-		background: transparent url(../img/link-arrow-right-grey.png) no-repeat right center;
+		i {
+			@include sprite(ico-arrow-link-grey);
+			margin-left: 10px;
+		}
+		&:hover {
+			color: $blue-light;
+			i {
+				@include sprite(ico-arrow-link-grey-hover);
+			}
+		}
 	}
 }
 
@@ -554,9 +405,13 @@
 				padding: 0 24px;
 				text-transform: uppercase;
 				font-size: 14px;
+				@include transition(all 0.3s);
 				.ico {
 					@include sprite(ico-mail-white);
 					margin: 0 18px -3px 0;
+				}
+				&:hover {
+					background: $blue-light;
 				}
 			}
 			.social-links {
@@ -627,14 +482,13 @@
 	margin-bottom: 110px;
 	li {
 		float: left;
-		width: 50%;
+		width: 100%;
 		margin-bottom: 28px;
 		* {
 			@include transition(all 0.4s ease-in-out);
-
 		}
 		.box {
-			width: 238px;
+			width: 230px;
 			height: 200px;
 			float: left;
 			border: 1px solid #c7c7c7;
@@ -660,7 +514,7 @@
 				min-height: 75px;
 				padding: 0 10px 0 11px;
 				position: absolute;
-				bottom: 0;
+				bottom: -5px;
 				left: 0;
 				@include transition(all 0.7s ease-in-out);
 				img {
@@ -706,29 +560,23 @@
 			}
 		}
 		.text {
-			
-			display: inline;
-			p {
-				padding-top: 17px;
-				max-width: 95%;
-			}
-		}
-		@include breakpoint(desktop){
-			.text {
-				.contact-box {
-					display: none;
-				}
+			float: right;
+			width: calc(100% - 260px);
+			padding-top: 7%;
+			.contact-box {
+				display: none;
 			}
 		}
 	}
-	@media only screen and (min-width: 769px) {
+	@media only screen and (min-width: 1025px) {
 		li {
-			width: 50% !important;
-			margin-right: 0 !important;
+			//width: 50% !important;
+			//margin-right: 0 !important;
 		}
 	}
 	@include breakpoint(phone) {
 		width: 2000em;
+		margin-bottom: 15px;
 		li {
 			* {
 				transition: none !important;
@@ -737,6 +585,7 @@
 				@include base-float;
 				display: block;
 				text-align: center;
+				padding-top: 0;
 			}
 			.box {
 				border: none;
@@ -746,10 +595,40 @@
 				.img-wrap {
 					height: 100%;
 					transform: none !important;
+					img {
+						@include vertical-align;
+					}
 				}
 			}
 		}
 	}
+	@include breakpoint(tablet) {
+		li {
+			* {
+				transition: none !important;
+			}
+			width: 100%;
+			margin-right: 0;
+			.box  {
+				width: 180px;
+				&:hover .img-wrap {
+					transform: translate3d(0,50%,0);
+					-webkit-transform: translate3d(0,50%,0);
+				}
+				.contact-box {
+					display: none !important;
+				}
+			}
+			.text {
+				float: right;
+				width: calc(100% - 210px);
+				padding-top: 15px;
+				.contact-box {
+					display: block !important;
+				}
+			}
+		}
+	}	
 }
 
 .certificate-block {
@@ -792,14 +671,13 @@
 		margin-bottom: 13px;
 		a {
 			color: $black;
-			&:hover {
-				color: $blue-light;
-				@include transition(color 0.3s);
-			}
 		}
 	}
 	p {
 		margin-bottom: 26px;
+		a {
+			color: $grey-light;
+		}
 	}
 	li {
 		@include base-float;
@@ -822,6 +700,26 @@
 			}
 			.text {
 				float: left;
+			}
+		}
+	}
+	&.has-hover {
+		li {
+			&:hover {
+				h2 a {
+					color: $blue-light;
+					@include transition(color 0.3s);					
+				}
+				.read-more-link {
+					color: $blue-light;
+					@include transition(color 0.3s);
+					i {
+						@include sprite (ico-arrow-link-blue);
+					}
+				}
+				.blue-romb {
+					background: #141b23;
+				}
 			}
 		}
 	}
@@ -860,7 +758,6 @@
 	}
 }
 
-
 /*----------  search-results page
 ------------------------------------------------------------------------------*/
 .search-pagination {
@@ -882,13 +779,12 @@
 /*----------  contact page
 ------------------------------------------------------------------------------*/
 .contact-us {
-	padding-bottom: 80px;
+	padding: 9px 0 80px;
 	.contact-questions {
+		margin-top: -5px;
 		li {
-			overflow: visible;
 			margin-left: 4px;
 		}
-		margin-top: -5px;
 		span {
 			font-size: 16px;
 			font-family: $din-font-bold;
@@ -915,11 +811,12 @@
 				height: 3px;
 				background: $blue-light;
 				bottom: 0px;
+				left: 0;
 			}
 		}
 		
 		.main-questions {
-			overflow: auto;
+			overflow: hidden;
 			li {
 				width: 32.1%;
 				float: left; 
@@ -956,7 +853,7 @@
 	}
 	.contact-who-block {
 		overflow: hidden;
-		padding: 35px 5px;
+		padding: 35px 5px 1px;
 		.contacts-wrapper {
 			margin-right: 45px;
 		}
@@ -968,42 +865,24 @@
 			width: 25%;
 			float: left;
 			.contact-romb-wrap {
-				width: 100%;
-			    float: left;
+				@include base-float;
 			    margin: 30px 58px 36px;
 			    .contact-who {
 			    	width: auto;
 				    float: left;
-				    z-index: 5;
-				    position: relative;
 				    margin: 25px 25px 50px 3px;
 				    border: 1px solid $gray-lighter;
-				    padding-right: 18px;
 				    .img-wrap {
-						float: left;
-						width: 95%;
-						height: auto;
-						position: relative;
-						z-index: 5;
-						background: #1595bf url(../img/contact-blue-bg.png) no-repeat center center;
-						background-size: cover;
-						text-align: center;
 						margin: 13px;
 						cursor: pointer;
-						padding-bottom: 8px;
 						img {
-							width: 90%;
-						    height: auto;
-						    position: relative;
-						    top: 10px;
-						    right: 10px;
+							width: 100%;
 						}
 					}
 			    }
 			    .contact-who-name {
-			    	    width: 100%;
-						float: left;
-						margin-left: -17%;
+			    	    @include base-float;
+						margin-left: -18%;
 						text-align: center;
 						p {
 							font-family: $din-font;
@@ -1013,10 +892,6 @@
 			    	.contact-who {
 			    		.img-wrap {
 				    		background: $gray-bg-darker;
-							img {
-							    top: 7px;
-    							right: 0px;
-							}
 				    	}
 			    	}
 				}
@@ -1031,7 +906,7 @@
 			    width: 102%;
    				margin-left: -5px;
 			select {
-				width: 100%;
+				width: 98.9%;
 			    height: 56px;
 			    border: 1px solid $gray-lighter;
 			    color: $blue-dark;
@@ -1045,6 +920,9 @@
 			.one-contact {
 				.contact-romb-wrap  {
 					width: 80%;
+				}
+				.contact-who-name {
+					margin-left: -5% !important;
 				}
 			}
 		}
@@ -1061,19 +939,6 @@
 				.one-contact {
 					.contact-romb-wrap {
 						width: 80%;
-						.img-wrap {
-							width: 92%;
-							img {
-								top: 9px;
-   								right: 6px;
-							}
-						}
-					}
-					.contact-office-img {
-						.contact-who {
-							.img-wrap {
-							}
-						}						
 					}
 					.contact-who-name {
 						margin-left: -5%;
@@ -1084,8 +949,17 @@
 	}
 	@include breakpoint(phone) {
 		.contact-questions {
+			margin-top: 50px;
+
+			span {
+				font-size: 15px;
+			}
+			select {
+				font-size: 13px !important;
+			}
 			li {
 				text-align: left;
+				overflow: visible;
 			}
 			.main-questions {
 				li {
@@ -1099,8 +973,7 @@
 					.one-contact {
 						width: 100%;
 						.contact-romb-wrap {
-							width: 100%;
-							margin-left: 25%;
+							margin-left: 20%;
 						}
 					}
 				}
