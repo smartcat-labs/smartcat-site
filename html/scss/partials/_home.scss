@@ -133,11 +133,17 @@
 	h2 {
 		margin-bottom: 58px;
 	}
+	.rte-content {
+		margin-bottom: 50px;
+	}
 	@include breakpoint(phone) {
 		border-top: 1px solid $grey-bg;
 		padding: 30px 0;
 		h2 {
 			margin-bottom: 15px;
+		}
+		.rte-content {
+			margin-bottom: 20px;
 		}
 	}
 }
@@ -365,6 +371,7 @@
 		.romb-wrap {
 			width: 200px;
 			padding: 40px;
+			height: auto;
 			margin: 15px auto 20px auto;
 			float: none;
 			overflow: hidden;
@@ -405,7 +412,7 @@
 		.one-third {
 			.romb-wrap {
 				width: 160px;
-				margin: 40px 0 40px 5px;
+				margin: 40px 0 0 5px;
 			}
 			.text {
 				width: calc(100% - 200px);
@@ -418,8 +425,8 @@
 		}
 		.romb-wrap {
 			width: 230px;
-			margin: 40px 0 40px 25px;
-			padding: 20px;
+			margin: 40px 0 0 25px;
+			padding: 20px 20px 28% 20px;
 		}
 		.text {
 			width: calc(100% - 310px);
