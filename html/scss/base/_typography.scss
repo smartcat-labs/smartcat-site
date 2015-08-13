@@ -134,7 +134,8 @@ blockquote {
 		position: absolute;
 		display: inline-block;
 		right: 0;
-		top: 25px;
+		top: 50%;
+		@include translate(0, -50%);
 		text-transform: uppercase;
 		font-size: 12px;
 		line-height: 12px;
