@@ -623,7 +623,9 @@
 					height: 100%;
 					transform: none !important;
 					img {
-						@include vertical-align;
+						position: relative;
+						top: 50%;
+						margin-top: -38px;
 					}
 				}
 			}

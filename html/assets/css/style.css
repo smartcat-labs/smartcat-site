@@ -5415,10 +5415,7 @@ html[xmlns] .slides {
           .one-half-list li .box .img-wrap img {
             position: relative;
             top: 50%;
-            -moz-transform: translate(0, -50%);
-            -ms-transform: translate(0, -50%);
-            -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%); } }
+            margin-top: -38px; } }
   @media only screen and (max-width: phone) {
     .one-half-list {
       width: 2000em;
@@ -5442,10 +5439,7 @@ html[xmlns] .slides {
           .one-half-list li .box .img-wrap img {
             position: relative;
             top: 50%;
-            -moz-transform: translate(0, -50%);
-            -ms-transform: translate(0, -50%);
-            -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%); } }
+            margin-top: -38px; } }
   @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .one-half-list li {
       width: 100%;
