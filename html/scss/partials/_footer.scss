@@ -4,6 +4,7 @@
 .footer {
 	background: $blue-dark;
 	@include base-float;
+	overflow: hidden;
 	.top,
 	.contact-block,
 	.bottom {
