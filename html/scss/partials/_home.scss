@@ -614,8 +614,6 @@
 		}
 	}
 }
-
-
 /*----------  Home banner
 ------------------------------------------------------------------------------*/
 .home-banner {
@@ -1113,6 +1111,85 @@
 			padding: 20% 0 0 60px;
 		}
 	}
+	.info {
+		h2 {
+			font-size: 50px;
+			line-height: 50px;
+		}
+		.position {
+			color: $blue-light;
+			font-size: 24px;
+			display: block;
+			margin-bottom: 18px;
+		}
+		p {
+			margin-bottom: 40px;
+		}
+		blockquote {
+			font-size: 16px;
+			line-height: 24px;
+			margin-bottom: 35px;
+			@include base-float;
+			color: $grey-light;
+		}
+		.contact-box {
+			@include base-float;
+			margin-bottom: 40px;
+			height: 50px;
+			a {
+				width: 50%;
+				float: left;
+				line-height: 48px;
+				display: block;
+				margin-bottom: 18px;
+			}
+			p {
+				margin-bottom: 40px;
+			}
+			blockquote {
+				font-size: 16px;
+				line-height: 24px;
+				margin-bottom: 35px;
+				@include base-float;
+				color: $grey-light;
+			}
+		}
+	}	
+	.contact-box {
+		@include base-float;
+		margin-bottom: 40px;
+		height: 50px;
+		a {
+			width: 50%;
+			float: left;
+			line-height: 48px;
+			display: block;
+			text-align: center;
+			text-transform: uppercase;
+			border: 1px solid #141b23;
+			&.mail {
+				background: #141b23;
+				color: $white;
+				float: left;
+				font-size: 14px;
+				.ico {
+					margin: 0 10px -3px 0;
+					@include sprite(ico-mail-white);
+				}
+			}
+			&.phone {
+				background: $white;
+				color: #141b23;
+				float: right;
+				font-size: 17px;
+				font-family: $din-font-bold;
+				.ico {
+					@include sprite(ico-phone-black);
+					margin-right: 10px;
+				}
+			}
+		}
+	}
 	.flex-control-nav {
 		display: none;
 	}
@@ -1246,80 +1323,6 @@
 				li {
 					float: left;
 					margin: 0 1px;
-				}
-			}
-		}
-	}
-	.info {
-		h2 {
-			font-size: 50px;
-			line-height: 50px;
-		}
-		.position {
-			color: $blue-light;
-			font-size: 24px;
-			display: block;
-			margin-bottom: 18px;
-		}
-		p {
-			margin-bottom: 40px;
-		}
-		blockquote {
-			font-size: 16px;
-			line-height: 24px;
-			margin-bottom: 35px;
-			@include base-float;
-			color: $grey-light;
-		}
-		.contact-box {
-			@include base-float;
-			margin-bottom: 40px;
-			height: 50px;
-			a {
-				width: 50%;
-				float: left;
-				line-height: 48px;
-				display: block;
-				margin-bottom: 18px;
-			}
-			p {
-				margin-bottom: 40px;
-			}
-			blockquote {
-				font-size: 16px;
-				line-height: 24px;
-				margin-bottom: 35px;
-				@include base-float;
-				color: $grey-light;
-			}
-			a {
-				width: 50%;
-				float: left;
-				line-height: 48px;
-				display: block;
-				text-align: center;
-				text-transform: uppercase;
-				border: 1px solid #141b23;
-				&.mail {
-					background: #141b23;
-					color: $white;
-					float: left;
-					font-size: 14px;
-					.ico {
-						margin: 0 10px -3px 0;
-						@include sprite(ico-mail-white);
-					}
-				}
-				&.phone {
-					background: $white;
-					color: #141b23;
-					float: right;
-					font-size: 17px;
-					font-family: $din-font-bold;
-					.ico {
-						@include sprite(ico-phone-black);
-						margin-right: 10px;
-					}
 				}
 			}
 		}

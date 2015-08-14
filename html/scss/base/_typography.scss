@@ -172,6 +172,10 @@ blockquote {
 			font-size: 19px;
 			line-height: 20px;
 		}
+		.go-back {
+			top: auto;
+			@include translate(0, 0);
+		}
 	}
 }
 
