@@ -1809,7 +1809,8 @@ textarea {
 .footer {
   background: #141b23;
   width: 100%;
-  float: left; }
+  float: left;
+  overflow: hidden; }
   .footer .top,
   .footer .contact-block,
   .footer .bottom {
@@ -3813,52 +3814,47 @@ textarea {
       width: 100%;
       float: left;
       color: #7d7d7d; }
-    .people-slider .info .contact-box .contact-box {
-      width: 100%;
+    .people-slider .info .contact-box a {
+      width: 50%;
       float: left;
-      margin-bottom: 40px;
-      height: 50px; }
-      .people-slider .info .contact-box .contact-box a {
-        width: 50%;
+      line-height: 48px;
+      display: block;
+      text-align: center;
+      text-transform: uppercase;
+      border: 1px solid #141b23; }
+      .people-slider .info .contact-box a.mail {
+        background: #141b23;
+        color: white;
         float: left;
-        line-height: 48px;
-        display: block;
-        text-align: center;
-        text-transform: uppercase;
-        border: 1px solid #141b23; }
-        .people-slider .info .contact-box .contact-box a.mail {
-          background: #141b23;
-          color: white;
-          float: left;
-          font-size: 14px; }
-          .people-slider .info .contact-box .contact-box a.mail .ico {
-            margin: 0 10px -3px 0;
-            background: url('../img/icons-s735b1acc2f.png') no-repeat 0 -791px;
-            height: 15px;
-            width: 20px; }
-            @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
-              .people-slider .info .contact-box .contact-box a.mail .ico {
-                background: url('../img/icons2x-s360746759e.png') no-repeat 0 -165px;
-                background-size: 71px 1349.5px;
-                height: 15px;
-                width: 20px; } }
-        .people-slider .info .contact-box .contact-box a.phone {
-          background: white;
-          color: #141b23;
-          float: right;
-          font-size: 17px;
-          font-family: "DINPro-Bold"; }
-          .people-slider .info .contact-box .contact-box a.phone .ico {
-            background: url('../img/icons-s735b1acc2f.png') no-repeat 0 -1190px;
-            height: 14px;
-            width: 13px;
-            margin-right: 10px; }
-            @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
-              .people-slider .info .contact-box .contact-box a.phone .ico {
-                background: url('../img/icons2x-s360746759e.png') no-repeat 0 -856px;
-                background-size: 71px 1349.5px;
-                height: 14px;
-                width: 13px; } }
+        font-size: 14px; }
+        .people-slider .info .contact-box a.mail .ico {
+          margin: 0 10px -3px 0;
+          background: url('../img/icons-s735b1acc2f.png') no-repeat 0 -791px;
+          height: 15px;
+          width: 20px; }
+          @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
+            .people-slider .info .contact-box a.mail .ico {
+              background: url('../img/icons2x-s360746759e.png') no-repeat 0 -165px;
+              background-size: 71px 1349.5px;
+              height: 15px;
+              width: 20px; } }
+      .people-slider .info .contact-box a.phone {
+        background: white;
+        color: #141b23;
+        float: right;
+        font-size: 17px;
+        font-family: "DINPro-Bold"; }
+        .people-slider .info .contact-box a.phone .ico {
+          background: url('../img/icons-s735b1acc2f.png') no-repeat 0 -1190px;
+          height: 14px;
+          width: 13px;
+          margin-right: 10px; }
+          @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
+            .people-slider .info .contact-box a.phone .ico {
+              background: url('../img/icons2x-s360746759e.png') no-repeat 0 -856px;
+              background-size: 71px 1349.5px;
+              height: 14px;
+              width: 13px; } }
 
 /*----------  libs
 ------------------------------------------------------------------------------*/
