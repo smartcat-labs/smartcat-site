@@ -7,7 +7,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 		<link href="favicon.ico" rel="icon" />
-		<title>SmartCat | Cassandra Summit</title>
+		<title>SmartCat | Blackbox testing microservices</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -75,13 +75,13 @@
 								<a href="team.html">Team</a>
 							</li>
 							<li>
-								<a href="blog.html">
+								<a href="blog.html" class="active">
 									<i class="ico cat"></i>
 									<strong>Blog</strong>
 								</a>
 							</li>
 							<li>
-								<a href="news.html" class="active">News</a>
+								<a href="news.html">News</a>
 							</li>
 							<li>
 								<a href="contact.html">Contact</a>
@@ -101,7 +101,7 @@
 		
 		<div class="page-title">
 			<div class="wrapper">
-				<h1>News</h1>
+				<h1>Blog</h1>
 			</div>
 		</div>
 		
@@ -109,31 +109,58 @@
 			<div class="wrapper o-visible">
 				<div class="main article">
 					<div class="title">
-						<h2>Cassandra summit 2015</h2>
-						<a href="news.html" class="go-back">Back</a>
-						<span class="date">30/07/15</span>
+						<h2>Blackbox testing microservices</h2>
+						<a href="blog.html" class="go-back">Back</a>
+						<span class="date">08/07/15</span>
 					</div>
 					<div class="img-wrap">
-						<img src="assets/img/content/cassandra_summit_detailed.jpg" alt="" />
-						<div class="badge romb"><span class="reset-inner">N.</span></div>
+						<img src="assets/img/content/black-box-testing_detailed.jpg" alt="" />
+						<div class="badge romb"><span class="reset-inner">B.</span></div>
 					</div>
 					<div class="rte-content">
 						<p>
-							We are excited for the upcoming Cassandra Summit in San Francisco, the biggest NoSQL conference in the world and epicenter of Cassandra community. There are a couple of great reasons to be in San Francisco in September, Datastax and Oracle have decided to provide a unique opportunity to get certified on Cassandra, 2 full days of technical conference talks, a lot of interesting people to meet and share experience with, and keynote talk by Jonathan Ellis himself.
+							Microservice architecture is the new normal these days, especially with the growth of distributed systems and need for scalability and fault tolerance. You partition your application in small “two pizza team” services, and they collaborate together to achieve the application goal. This is really nice from an architectural point of view, since development and maintenance are much easier, there is flexibility to change and adopt, domain knowledge is easier to be grasped by new people in teams and many more. But these perks come with a price.
 						</p>
 						<p>
-							Apache Cassandra is still young (released by Facebook in 2008 as open source) but far from being a premature product, and places like this are a great chance to talk about experiences, get new ideas and be better at implementing those ideas on top of this great product. SmartCat has 2 years of experience with Cassandra on products which are in production, so we have decided it is time to step up the game, get certified and use that experience to give back to the community. We  are already up and running and you can check our baby steps on github, which is a small migration tool used for schema and data version migrations.
+							The bad part of microservice architecture according to our experience is deployment, monitoring and testing. There are many pieces which are harder to monitor and deploy, since applications consist of many small services, which have integration points, so conventional testing is not enough.
 						</p>
 						<p>
-							If you are attending Cassandra Summit this year, look for guys in SmartCat T-Shirts because we are sending two of our core team members, Nenad and Matija, as our representatives this year. See you there!
+							In this blog post, we will try to concentrate on testing and monitoring aspect, especially blackbox testing as health check whether the system is doing fine. We will explain why convenient unit and integration testing alone won’t be enough, explain blackbox testing as a concept and give all prerequisites which should be done in order to achieve successful blackbox testing and monitoring. 
+						</p>
+						<h3>Types of tests</h3>
+						<p>
+							In general, when it comes to testing levels, we have unit testing, integration testing, component interface testing and system testing. Unit testing is simply a must, it is the verification that even a smallest piece of code works, and developers gain comfort that the code they produce works as designed alone in isolation. Integration test, on the other hand, should verify that class or piece of code works well with other pieces in the application. Those two levels are widespread and every developer should be familiar with them.  
+						</p>
+						<p>
+							As the system grows in complexity, other two levels start to become more and more important. Component interface testing verifies that data being passed among components in the system is done right and it verifies application flow, apart from simple integration between components. Usually, here the business flow is tested across different components in the system. <strong>Blackbox testing</strong> is a type of component interface testing.
+						</p>
+						<p>
+							At the highest level, we have system testing, which usually verifies non-functional requirements of a system. Each system has them, and we must be sure that the system can support that many users, fail of certain amount of nodes, certain latency etc. For these types of tests, the companies usually build software which deliberately simulate this type of environment and monitor how the system reacts. A good example is netflix Simian Army which is a group of system tests whose goal is to destroy nodes, data centers, regions, add artificial latency and test system performance.
+						</p>
+						<h3>Blackbox testing for microservices</h3>
+						<p>
+							Blackbox testing is a perfect fit for microservices. We try to divide the application into many single purpose modules, and usual business flow needs to touch at least a couple of them to finish the task. We need to be sure that those business flows work as expected. In our application we used spring boot for microservice configuration and spring retry mechanism to orchestrate test execution. There is a problem with latency and async execution of certain parts of the system and retry mechanism with pause in between is a great way to be sure that you have provided enough time for your test to be completed successfully. 
+						</p>
+						<p>
+							We had a couple of prerequisites in order to perform blackbox tests successfully. The first thing that needed to be done was creating a http client, since we needed to trigger our flow and communicate with our tests programmatically. We used jersey http client for that. Then we needed a way to generate data for our tests, so we created microservice whose sole purpose was to generate near production data using a http client. We needed to setup the monitoring and scheduling of those tests, so we configured the main test scheduler to run all tests for 10 minutes each. We saved only the results of the latest run (for now, later we might save all runs so we can audit) and showed results over http in form of json report. This way we can later integrate GUI for monitoring and we can query results with http request.
+						</p>
+						<p>
+							After all this setup, we isolated business flow in our application which was critical to customers and for which we had to be sure that it worked properly. Basically, we have a batch job which is used for import, it starts with ftp file upload, parses that file, generates request to other microservice, and that microservice stores data to DB.  So, here we are testing ftp server microservice, batch microservice, oauth server, gateway server and application which store data. Cleanup is done on the end. What is most important, and where retry mechanism comes as helpful, is the part when you are waiting for the result to be stored. We started with ftp upload and since it can take some time to store data, we needed a mechanism to wait (we did not want to use Thread.sleep) so we created retry with a 30 second pause and maximum 5 attempts to read data, which gave us a lot of window to verify and make sure this flow works. 
+						</p>
+						<p>
+							As for monitoring, if the test fails we place a notification in message queue which can be consumed with anything (currently there is a small service which sends SMS after X failures) and we have integration with rollbar which provides a nice overview of all failures.
+						</p>
+						<h3>Conclusion</h3>
+						<p>
+							Microservice architecture is great for flexibility, it enables you to change small parts of a system without too much risk. Also, it is great for maintenance since parts of a system can be maintained by small teams, which are familiar with all internals of that part down to the smallest details. It is also great for scaling, if there is a bottleneck in some part you can multiply servers. But the problem arises from testing, monitoring and debugging since there are many more components which can produce errors. With that big systems, you must remain in control and the only way to achieve that is through constant tests and good monitoring tools. Blackbox testing with notifications on failure provides that possibility for important business flows.
 						</p>
 					</div>
 					<div class="article-nav">
-						<a href="coding-serbia.html" class="prev-post">
+						<a href="why-go-distributed.html" class="prev-post">
 							<i></i>
 							Previus post
 						</a>
-						<a href="why-smartcat.html" class="next-post">
+						<a href="migrating-time.html" class="next-post">
 							Next post
 							<i></i>
 						</a>
@@ -156,9 +183,6 @@
 						  		</li>
 							</ul>
 						</div>
-						<!-- <span class="current-coments">
-							<a href="javascript:;">35</a>comments
-						</span> -->
 					</div>
 					
 					<div class="author-box">

@@ -7,7 +7,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 		<link href="favicon.ico" rel="icon" />
-		<title>SmartCat | Cassandra Summit</title>
+		<title>SmartCat | Setting up embedded cassandra on spring project</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -75,13 +75,13 @@
 								<a href="team.html">Team</a>
 							</li>
 							<li>
-								<a href="blog.html">
+								<a href="blog.html" class="active">
 									<i class="ico cat"></i>
 									<strong>Blog</strong>
 								</a>
 							</li>
 							<li>
-								<a href="news.html" class="active">News</a>
+								<a href="news.html">News</a>
 							</li>
 							<li>
 								<a href="contact.html">Contact</a>
@@ -101,7 +101,7 @@
 		
 		<div class="page-title">
 			<div class="wrapper">
-				<h1>News</h1>
+				<h1>Blog</h1>
 			</div>
 		</div>
 		
@@ -109,31 +109,99 @@
 			<div class="wrapper o-visible">
 				<div class="main article">
 					<div class="title">
-						<h2>Cassandra summit 2015</h2>
-						<a href="news.html" class="go-back">Back</a>
-						<span class="date">30/07/15</span>
+						<h2>Setting up embedded cassandra on spring project</h2>
+						<a href="blog.html" class="go-back">Back</a>
+						<span class="date">23/07/15</span>
 					</div>
 					<div class="img-wrap">
-						<img src="assets/img/content/cassandra_summit_detailed.jpg" alt="" />
-						<div class="badge romb"><span class="reset-inner">N.</span></div>
+						<img src="assets/img/content/setting-up-embedded-cassandra-with-spring.jpg" alt="" />
+						<div class="badge romb"><span class="reset-inner">B.</span></div>
 					</div>
 					<div class="rte-content">
 						<p>
-							We are excited for the upcoming Cassandra Summit in San Francisco, the biggest NoSQL conference in the world and epicenter of Cassandra community. There are a couple of great reasons to be in San Francisco in September, Datastax and Oracle have decided to provide a unique opportunity to get certified on Cassandra, 2 full days of technical conference talks, a lot of interesting people to meet and share experience with, and keynote talk by Jonathan Ellis himself.
+							When we first started using cassandra, we immediately realized there would be a long period of development and prototyping until we reach the stable repository classes we would use. It was a new technology, client demands were changing constantly (in cassandra you do query based modeling which means our repository classes changed as well) and we needed to build up confidence that we are doing right thing. We needed a tool which will give us fast feedback using production-like database setup without starting server, doing API triggers and checking what had landed in our database.  
 						</p>
 						<p>
-							Apache Cassandra is still young (released by Facebook in 2008 as open source) but far from being a premature product, and places like this are a great chance to talk about experiences, get new ideas and be better at implementing those ideas on top of this great product. SmartCat has 2 years of experience with Cassandra on products which are in production, so we have decided it is time to step up the game, get certified and use that experience to give back to the community. We  are already up and running and you can check our baby steps on github, which is a small migration tool used for schema and data version migrations.
+							<a href="https://github.com/jsevellec/cassandra-unit" target="_blank">Cassandra unit</a>  gave us exactly what we needed, which was a java utility test tool providing us with an ability to test drive our repository and schema models according to the requirements. Basically, it starts embedded cassandra before test methods, has the ability to create structure and allows the developer to run cql queries against production-like database without constantly starting the application, and without the need to have full API designed. We have decided to go with Datastax driver, so Cassandra Unit enabled us to explore driver API in TDD manner. We receive the requirement, write the integration test using connected Session to Embedded Cassandra and start implementing until we see it turn green. 
 						</p>
 						<p>
-							If you are attending Cassandra Summit this year, look for guys in SmartCat T-Shirts because we are sending two of our core team members, Nenad and Matija, as our representatives this year. See you there!
+							Setup in spring project and cleaning up the database between tests took quite an effort. We did this in a couple of steps. First, we created <em>TestCassandraConfiguration</em> which is plain Spring configuration class for active profile tests, and it creates the necessary beans and initializes Embedded Cassandra. The main thing here is to create a Session bean which we can use in other test methods to connect to our database.
 						</p>
+<pre class="csharpcode">
+ @Bean
+    <span class="kwrd">public</span> Session session() throws Exception {
+        <span class="kwrd">if</span> (session == <span class="kwrd">null</span>) {
+            initialize();
+        }
+
+        <span class="kwrd">if</span> (sessionProxy == <span class="kwrd">null</span>) {
+            sessionProxy = <span class="kwrd">new</span> SessionProxy(session);
+        }
+
+        <span class="kwrd">return</span> sessionProxy;
+    }
+</pre>
+					    <p>
+					    	For now, we will ignore the <em>SessionProxy</em> thing, which will be explained later. If we do not have Session defined, initialize() method will start Embedded Cassandra, create a cluster and initialize table structure and connect to it. Here is the initialize method as well:
+					    </p>
+<pre class="csharpcode">
+	<span class="kwrd">private</span> <span class="kwrd">void</span> initialize() throws Exception {
+        LOGGER.info(<span class="str">"Starting embedded cassandra server"</span>);
+        EmbeddedCassandraServerHelper.startEmbeddedCassandra(<span class="str">"another-cassandra.yaml"</span>);
+
+        LOGGER.info(<span class="str">"Connect to embedded db"</span>);
+        cluster = Cluster.builder().addContactPoints(contact_points).withPort(port).build();
+        session = cluster.connect();
+
+        LOGGER.info(<span class="str">"Initialize keyspace"</span>);
+        final CQLDataLoader cqlDataLoader = <span class="kwrd">new</span> CQLDataLoader(session);
+        cqlDataLoader.load(<span class="kwrd">new</span> ClassPathCQLDataSet(CQL, <span class="kwrd">false</span>, <span class="kwrd">true</span>, keyspace));
+    }
+</pre>
+					    <p>
+					    	We created this configuration as DisposableBean implementation which enabled us to use the destroy() method for total cleanup. The complete example with all details of the configuration file [link to file] can be found on our github account, showing how to wire everything up. It is a part of our Spring showcase for <a href="https://github.com/smartcat-labs/cassandra-migration-tool-java" target="_blank">cassanadra schema migration</a> tool we had created. 
+					    </p>
+					    <p>
+					    	The second step is creating a listener which can be used on classes which need embedded cassandra. This listener is implementing <em>AbstractTestExecutionListener</em> and is responsible for cleanup between tests. It has <em>afterTestMethod()</em> which is doing cleanup.
+					    </p>
+<pre class="csharpcode">
+@Override
+<span class="kwrd">public</span> <span class="kwrd">void</span> afterTestMethod(final TestContext testContext) throws Exception {
+    LOGGER.debug(<span class="str">"AfterTest: clean embedded cassandra"</span>);
+    final Session session = (Session) TestApplicationContext.getBean(<span class="str">"session"</span>);
+    <span class="kwrd">for</span> (final String table : tables(session)) {
+        session.execute(String.format(<span class="str">"TRUNCATE %s.%s;"</span>, KEYSPACE, table));
+    }
+    super.afterTestMethod(testContext);
+}
+</pre>
+					    <p>
+					    	Nothing special here, for all tables we have in cluster metadata which we are fetching from session we perform truncate, so we can have a clean state before the next test. The complete details of this listener can be seen at [link here]. An important middle step in the communication between listener and configuration class is to create <em>TestApplicationContext</em> which will hold the beans defined in configuration and which can be used to access the Session bean.
+					    </p>
+					    <p>
+					    	The last step was loading this listener on each test method, and that was it, we had embedded cassandra working and our Session connected to it injected in all repository classes instead of the production Session which would be created from production code and would be connected to production cassandra cluster.
+
+					    </p>
+<pre class="csharpcode">
+ @TestExecutionListeners({CassandraTestExecutionListener.<span class="kwrd">class</span>,
+     DependencyInjectionTestExecutionListener.<span class="kwrd">class</span>})
+  <span class="kwrd">public</span> <span class="kwrd">class</span> SomeRepositoryTest {
+      …..
+  }</pre>
+					  	<p>
+					  		Back to the <em>SessionProxy</em> thing. This was an another tweak we did. With cassandra we used executeAsync() as much as we could; whenever we didn’t need response immediately, we used it. The problem was to test this. First, we took the Thread.sleep() road and added pauses all over our tests to be sure something would be written in order to read and verify it. That slowed our test suite a lot and was not a particular solution since there were no guarantees write will finish in sleep amount of seconds. We stubbed ResultSetFuture which was a result of executeAsync() method on Session and created a proxy on top of Session which would override executeAsync() to work as regular execute. As a result, we got synchronous executions even when our repository method used executeAsync (only in tests of course) which made our life easier while testing. We did not have to worry anymore if the results are written and how long should we pause the execution. Details can also be seen here [link here].
+					  	</p>
+					  	<p>
+					  		To sum it all up. Cassandra is not new to us anymore, but we still like to have repository classes integration tested against production cassandra like environment. Cassandra is known for its schema which evolves, modeling decisions must be revisited occasionally, so this gives us confidence that we can refactor and change. Also, performing tests this way has provided us a lot of insights into driver API much faster because we can now play with API and see the results right away. Last, but not the least, we are starting our backend applications much less often when we are developing database models, which significantly speeds up the development.
+
+					  	</p>
 					</div>
 					<div class="article-nav">
-						<a href="coding-serbia.html" class="prev-post">
+						<a href="migrating-time.html" class="prev-post">
 							<i></i>
 							Previus post
 						</a>
-						<a href="why-smartcat.html" class="next-post">
+						<a href="leveraging-parallel-execution.html" class="next-post">
 							Next post
 							<i></i>
 						</a>
@@ -156,32 +224,23 @@
 						  		</li>
 							</ul>
 						</div>
-						<!-- <span class="current-coments">
-							<a href="javascript:;">35</a>comments
-						</span> -->
 					</div>
 					
 					<div class="author-box">
-						<img src="assets/img/content/home-matija.png"  alt="" class="hidden-on-mobile" />
+						<img src="assets/img/content/home-bojan.png"  alt="" class="hidden-on-mobile" />
 						<div class="info">
-							<h4><span>Matija Gobec</span></h4>
+							<h4><span>Bojan Kovac</span></h4>
 							<h5>Co-Founder</h5>
 							<p>
-								Polyglot engineer with open minded approach to technologies. Always looking for new challenges and seeking for knowledge.
+								A computer science graduate with over 10 years of experience managing software projects and product development while leading organizational changes towards operational maturity and efficiency.
 							</p>
 							<div class="bottom">
-								<a href="mailto:matija.gobec@smartcat.io" class="contact-link">
-									<i class="ico ico-mail"></i> Contact Matija
+								<a href="mailto:bojan.kovac@smartcat.io" class="contact-link">
+									<i class="ico ico-mail"></i> Contact Bojan
 								</a>
 								<ul class="social-links">
 									<li>
-										<a href="https://twitter.com/mad_max0204" target="_blank" class="twitter"><i class="ico"></i></a>
-									</li>
-									<li>
-										<a href="https://github.com/mgobec" target="_blank" class="git"><i class="ico"></i></a>
-									</li>
-									<li>
-										<a href="https://www.linkedin.com/in/matijagobec" target="_blank" class="linked"><i class="ico"></i></a>
+										<a href="https://rs.linkedin.com/in/bojankovac" target="_blank" class="linked"><i class="ico"></i></a>
 									</li>
 								</ul>
 							</div>
