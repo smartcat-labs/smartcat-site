@@ -106,16 +106,18 @@
 		&:before {
 			position: absolute;
 			top: 0;
-			font-size: 60px;
-			line-height: 36px;
+			width: 20px;
+			height: 20px;
 		}
 		&:after {
 			right: 0;
-			content: close-quote;
+			background: transparent url(../img/icons/ico-close-quote.png) no-repeat left top;
+			content: '';
 		}
 		&:before {
 			left: 0;
-			content: open-quote;
+			background: transparent url(../img/icons/ico-open-quote.png) no-repeat left top;
+			content: '';
 		}
 	}
 	.author {
@@ -129,6 +131,17 @@
 		blockquote {
 			width: 100%;
 			font-size: 15px;
+			padding: 0 18px;
+			&:after,
+			&:before {
+				background: none;
+			}
+			&:after {
+				content: close-quote;
+			}
+			&:before {
+				content: open-quote;
+			}
 		}
 		.author {
 			font-size: 12px;
@@ -1197,6 +1210,7 @@
 		position: absolute;
 		top: 40%;
 		right: 0;
+		z-index: 10;
 		li {
 			width: 88px;
 			height: 88px;
