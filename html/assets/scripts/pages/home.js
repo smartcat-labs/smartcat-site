@@ -17,6 +17,15 @@ $(document).ready(function () {
 		animationLoop: true,
 		controlNav: true
 	});
+
+	$('.testimonials-block .flexslider').flexslider({
+		animation: "fade",
+		animationLoop: true,
+		controlNav: false,
+		directionNav: false,
+		slideshowSpeed: 6000,
+		animationSpeed: 600,   
+	});
 	
 
 	// $('.tp-banner').revolution({

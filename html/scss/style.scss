@@ -730,6 +730,13 @@
 			}
 		}
 	}
+	&.no-hover {
+		li .blue-romb {
+			@include transition(none);
+			background: #1595bf url('../img/blue-bg.png') no-repeat center center;
+    		background-size: cover;
+		}
+	}
 	&.has-hover {
 		li {
 			&:hover {
