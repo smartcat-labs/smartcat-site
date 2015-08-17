@@ -86,9 +86,6 @@ Now it’s our time to show the world what we can do. So, let’s start with a s
                                 </a>
                                 <ul class="social-links">
                                     <li>
-                                        <a href="https://en-gb.facebook.com/nbozicns" target="_blank" class="facebook"><i class="ico"></i></a>
-                                    </li>
-                                    <li>
                                         <a href="https://twitter.com/nenadbozicns" target="_blank" class="twitter"><i class="ico"></i></a>
                                     </li>
                                     <li>
@@ -96,6 +93,9 @@ Now it’s our time to show the world what we can do. So, let’s start with a s
                                     </li>
                                     <li>
                                         <a href="https://rs.linkedin.com/pub/nenad-bozic/32/1b6/b30" target="_blank" class="linked"><i class="ico"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="http://stackoverflow.com/users/4617377/nenad-bozic" target="_blank" class="stack"><i class="ico"></i></a>
                                     </li>
                                 </ul>
                             </div>
