@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4CAB1D96-8710-4B61-91BA-40801C8B5B6B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartCat.Web</RootNamespace>
+    <AssemblyName>SmartCat.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\fonts\DINPro-Bold_gdi.eot" />
+    <Content Include="assets\fonts\DINPro-Bold_gdi.ttf" />
+    <Content Include="assets\fonts\DINPro-Bold_gdi.woff" />
+    <Content Include="assets\fonts\DINPro-Light_gdi.eot" />
+    <Content Include="assets\fonts\DINPro-Light_gdi.ttf" />
+    <Content Include="assets\fonts\DINPro-Light_gdi.woff" />
+    <Content Include="assets\fonts\DINPro-Regular_gdi.eot" />
+    <Content Include="assets\fonts\DINPro-Regular_gdi.ttf" />
+    <Content Include="assets\fonts\DINPro-Regular_gdi.woff" />
+    <Content Include="assets\fonts\NeutraText-Bold_gdi.eot" />
+    <Content Include="assets\fonts\NeutraText-Bold_gdi.ttf" />
+    <Content Include="assets\fonts\NeutraText-Bold_gdi.woff" />
+    <Content Include="assets\fonts\NeutraText-Light_gdi.eot" />
+    <Content Include="assets\fonts\NeutraText-Light_gdi.ttf" />
+    <Content Include="assets\fonts\NeutraText-Light_gdi.woff" />
+    <Content Include="assets\fonts\NeutraTextTF-Book_gdi.eot" />
+    <Content Include="assets\fonts\NeutraTextTF-Book_gdi.ttf" />
+    <Content Include="assets\fonts\NeutraTextTF-Book_gdi.woff" />
+    <Content Include="assets\fonts\Times-Italic_gdi.eot" />
+    <Content Include="assets\fonts\Times-Italic_gdi.ttf" />
+    <Content Include="assets\fonts\Times-Italic_gdi.woff" />
+    <Content Include="Site.master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Architecture.aspx" />
+    <Content Include="assets\css\read-me.txt" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\favicon.ico" />
+    <Content Include="assets\fonts\DINPro-Bold_gdi.svg" />
+    <Content Include="assets\fonts\DINPro-Light_gdi.svg" />
+    <Content Include="assets\fonts\DINPro-Regular_gdi.svg" />
+    <Content Include="assets\fonts\NeutraText-Bold_gdi.svg" />
+    <Content Include="assets\fonts\NeutraText-Light_gdi.svg" />
+    <Content Include="assets\fonts\NeutraTextTF-Book_gdi.svg" />
+    <Content Include="assets\fonts\Times-Italic_gdi.svg" />
+    <Content Include="assets\img\abstract-lines-1.png" />
+    <Content Include="assets\img\Background.jpg" />
+    <Content Include="assets\img\bg_direction_nav.png" />
+    <Content Include="assets\img\blog-hover-bg.jpg" />
+    <Content Include="assets\img\blog-hover-big-bg.jpg" />
+    <Content Include="assets\img\blog-read-more-bg.png" />
+    <Content Include="assets\img\blue-bg.png" />
+    <Content Include="assets\img\contact-blue-bg.png" />
+    <Content Include="assets\img\content\black-box-testing_detailed.jpg" />
+    <Content Include="assets\img\content\black-box-testing_teaser.jpg" />
+    <Content Include="assets\img\content\blog-1.jpg" />
+    <Content Include="assets\img\content\blog-2.jpg" />
+    <Content Include="assets\img\content\blog-3.jpg" />
+    <Content Include="assets\img\content\cassadra-summit-teaser.jpg" />
+    <Content Include="assets\img\content\cassandra-migration-tool_detailed.jpg" />
+    <Content Include="assets\img\content\cassandra-migration-tool_teaser.jpg" />
+    <Content Include="assets\img\content\cassandra-use-casses_detailed.jpg" />
+    <Content Include="assets\img\content\cassandra-use-casses_teaser.jpg" />
+    <Content Include="assets\img\content\cassandra_summit_detailed.jpg" />
+    <Content Include="assets\img\content\certificate-1.png" />
+    <Content Include="assets\img\content\certificate-2.png" />
+    <Content Include="assets\img\content\certificate-3.png" />
+    <Content Include="assets\img\content\coding_serbia_detailed.jpg" />
+    <Content Include="assets\img\content\coding_serbia_teaser.jpg" />
+    <Content Include="assets\img\content\contact-bojan.png" />
+    <Content Include="assets\img\content\contact-matija.png" />
+    <Content Include="assets\img\content\contact-nenad.png" />
+    <Content Include="assets\img\content\contact-office.png" />
+    <Content Include="assets\img\content\Craft-conference_detailed.jpg" />
+    <Content Include="assets\img\content\Craft-conference_teaser.jpg" />
+    <Content Include="assets\img\content\data-analytics-slider.png" />
+    <Content Include="assets\img\content\data-analytics-white.png" />
+    <Content Include="assets\img\content\data-analytics.png" />
+    <Content Include="assets\img\content\data-architecture-slider.png" />
+    <Content Include="assets\img\content\data-architecture-white.png" />
+    <Content Include="assets\img\content\data-architecture.png" />
+    <Content Include="assets\img\content\data-processing-slider.png" />
+    <Content Include="assets\img\content\data-processing-white.png" />
+    <Content Include="assets\img\content\data-processing.png" />
+    <Content Include="assets\img\content\data-storage-slider.png" />
+    <Content Include="assets\img\content\data-storage-white.png" />
+    <Content Include="assets\img\content\data-storage.png" />
+    <Content Include="assets\img\content\home-boban.png" />
+    <Content Include="assets\img\content\home-bojan.png" />
+    <Content Include="assets\img\content\home-matija.png" />
+    <Content Include="assets\img\content\home-nenad.png" />
+    <Content Include="assets\img\content\home-sasa.png" />
+    <Content Include="assets\img\content\home-slider-1.jpg" />
+    <Content Include="assets\img\content\home-slider-1.png" />
+    <Content Include="assets\img\content\home-vladan.png" />
+    <Content Include="assets\img\content\leveraging_parallel_execution_detailed.jpg" />
+    <Content Include="assets\img\content\leveraging_parallel_execution_teaser.jpg" />
+    <Content Include="assets\img\content\logo-item-1.png" />
+    <Content Include="assets\img\content\logo-item-10.png" />
+    <Content Include="assets\img\content\logo-item-11.png" />
+    <Content Include="assets\img\content\logo-item-12.png" />
+    <Content Include="assets\img\content\logo-item-13.png" />
+    <Content Include="assets\img\content\logo-item-14.png" />
+    <Content Include="assets\img\content\logo-item-15.png" />
+    <Content Include="assets\img\content\logo-item-16.png" />
+    <Content Include="assets\img\content\logo-item-17.png" />
+    <Content Include="assets\img\content\logo-item-18.png" />
+    <Content Include="assets\img\content\logo-item-19.png" />
+    <Content Include="assets\img\content\logo-item-2.png" />
+    <Content Include="assets\img\content\logo-item-20.png" />
+    <Content Include="assets\img\content\logo-item-21.png" />
+    <Content Include="assets\img\content\logo-item-3.png" />
+    <Content Include="assets\img\content\logo-item-4.png" />
+    <Content Include="assets\img\content\logo-item-5.png" />
+    <Content Include="assets\img\content\logo-item-6.png" />
+    <Content Include="assets\img\content\logo-item-7.png" />
+    <Content Include="assets\img\content\logo-item-8.png" />
+    <Content Include="assets\img\content\logo-item-9.png" />
+    <Content Include="assets\img\content\migration-time-series_detailed.jpg" />
+    <Content Include="assets\img\content\migration-time-series_teaser.jpg" />
+    <Content Include="assets\img\content\news-1.jpg" />
+    <Content Include="assets\img\content\news-2.jpg" />
+    <Content Include="assets\img\content\news-3.jpg" />
+    <Content Include="assets\img\content\news-details-1.jpg" />
+    <Content Include="assets\img\content\news-details-2.jpg" />
+    <Content Include="assets\img\content\news-details-3.jpg" />
+    <Content Include="assets\img\content\news-romb-2.jpg" />
+    <Content Include="assets\img\content\news-romb-3.jpg" />
+    <Content Include="assets\img\content\partner-1.png" />
+    <Content Include="assets\img\content\partner-2.png" />
+    <Content Include="assets\img\content\partner-3.png" />
+    <Content Include="assets\img\content\partner-4.png" />
+    <Content Include="assets\img\content\people-1.png" />
+    <Content Include="assets\img\content\people-slider-1.jpg" />
+    <Content Include="assets\img\content\setting-up-embedded-cassandra-with-spring.jpg" />
+    <Content Include="assets\img\content\setting-up-embedded-cassandra-with-spring_teaser.jpg" />
+    <Content Include="assets\img\content\shape-1.png" />
+    <Content Include="assets\img\content\shape-2.png" />
+    <Content Include="assets\img\content\shape-3.png" />
+    <Content Include="assets\img\content\shape-4.png" />
+    <Content Include="assets\img\content\shape-process-1.png" />
+    <Content Include="assets\img\content\shape-process-2.png" />
+    <Content Include="assets\img\content\shape-process-3.png" />
+    <Content Include="assets\img\content\shape-process-4.png" />
+    <Content Include="assets\img\content\shape-process-5.png" />
+    <Content Include="assets\img\content\sidebar-boban.png" />
+    <Content Include="assets\img\content\sidebar-bojan.png" />
+    <Content Include="assets\img\content\sidebar-matija.png" />
+    <Content Include="assets\img\content\sidebar-nenad.png" />
+    <Content Include="assets\img\content\sidebar-sasa.png" />
+    <Content Include="assets\img\content\sidebar-vladan.png" />
+    <Content Include="assets\img\content\spring-batch_detailed.jpg" />
+    <Content Include="assets\img\content\spring-batch_teaser.jpg" />
+    <Content Include="assets\img\content\team-boban.png" />
+    <Content Include="assets\img\content\team-bojan.png" />
+    <Content Include="assets\img\content\team-matija.png" />
+    <Content Include="assets\img\content\team-nenad.png" />
+    <Content Include="assets\img\content\team-sasa.png" />
+    <Content Include="assets\img\content\team-vladan.png" />
+    <Content Include="assets\img\content\techn-boban.png" />
+    <Content Include="assets\img\content\techn-bojan.png" />
+    <Content Include="assets\img\content\techn-matija.png" />
+    <Content Include="assets\img\content\techn-nenad.png" />
+    <Content Include="assets\img\content\techn-sasa.png" />
+    <Content Include="assets\img\content\techn-vladan.png" />
+    <Content Include="assets\img\content\the-perfect-match_details.jpg" />
+    <Content Include="assets\img\content\the-perfect-match__teaser.jpg" />
+    <Content Include="assets\img\content\why-big-data.png" />
+    <Content Include="assets\img\content\why-big-data_detailed.jpg" />
+    <Content Include="assets\img\content\why-big-data_teaser.jpg" />
+    <Content Include="assets\img\content\why-go-distributed_detailed.jpg" />
+    <Content Include="assets\img\content\why-go-distributed_teaser.jpg" />
+    <Content Include="assets\img\content\why-smartcat-teaser.jpg" />
+    <Content Include="assets\img\content\why_smartcat_detailed.jpg" />
+    <Content Include="assets\img\cube.png" />
+    <Content Include="assets\img\direction_people.png" />
+    <Content Include="assets\img\direction_people_hover.png" />
+    <Content Include="assets\img\footer-logo.png" />
+    <Content Include="assets\img\icons-s6877a1ff79.png" />
+    <Content Include="assets\img\icons2x-s37068fa475.png" />
+    <Content Include="assets\img\icons2x\arrow-acc-down.png" />
+    <Content Include="assets\img\icons2x\arrow-acc-up.png" />
+    <Content Include="assets\img\icons2x\facebook-black-hover.png" />
+    <Content Include="assets\img\icons2x\facebook-black.png" />
+    <Content Include="assets\img\icons2x\form-next-btn.png" />
+    <Content Include="assets\img\icons2x\gplus-black-hover.png" />
+    <Content Include="assets\img\icons2x\gplus-black.png" />
+    <Content Include="assets\img\icons2x\ico-arrow-link-black.png" />
+    <Content Include="assets\img\icons2x\ico-arrow-link-blue-back.png" />
+    <Content Include="assets\img\icons2x\ico-arrow-link-blue.png" />
+    <Content Include="assets\img\icons2x\ico-arrow-link-grey-back-hover.png" />
+    <Content Include="assets\img\icons2x\ico-arrow-link-grey-back.png" />
+    <Content Include="assets\img\icons2x\ico-arrow-link-grey-hover.png" />
+    <Content Include="assets\img\icons2x\ico-arrow-link-grey.png" />
+    <Content Include="assets\img\icons2x\ico-arrow-link.png" />
+    <Content Include="assets\img\icons2x\ico-arrow-more-h.png" />
+    <Content Include="assets\img\icons2x\ico-arrow-more.png" />
+    <Content Include="assets\img\icons2x\ico-back-btn.png" />
+    <Content Include="assets\img\icons2x\ico-cat-mobile.png" />
+    <Content Include="assets\img\icons2x\ico-cat.png" />
+    <Content Include="assets\img\icons2x\ico-close-nav-tablet.png" />
+    <Content Include="assets\img\icons2x\ico-close-nav.png" />
+    <Content Include="assets\img\icons2x\ico-close-quote.png" />
+    <Content Include="assets\img\icons2x\ico-close-search.png" />
+    <Content Include="assets\img\icons2x\ico-github-black-hover.png" />
+    <Content Include="assets\img\icons2x\ico-github-black.png" />
+    <Content Include="assets\img\icons2x\ico-github.png" />
+    <Content Include="assets\img\icons2x\ico-linked.png" />
+    <Content Include="assets\img\icons2x\ico-logo.png" />
+    <Content Include="assets\img\icons2x\ico-mail-white.png" />
+    <Content Include="assets\img\icons2x\ico-mail.png" />
+    <Content Include="assets\img\icons2x\ico-menu-tablet.png" />
+    <Content Include="assets\img\icons2x\ico-menu.png" />
+    <Content Include="assets\img\icons2x\ico-mobile-black.png" />
+    <Content Include="assets\img\icons2x\ico-open-quote.png" />
+    <Content Include="assets\img\icons2x\ico-phone-black.png" />
+    <Content Include="assets\img\icons2x\ico-phone.png" />
+    <Content Include="assets\img\icons2x\ico-pin.png" />
+    <Content Include="assets\img\icons2x\ico-plus.png" />
+    <Content Include="assets\img\icons2x\ico-scroll-top.png" />
+    <Content Include="assets\img\icons2x\ico-search-mobile.png" />
+    <Content Include="assets\img\icons2x\ico-search-white.png" />
+    <Content Include="assets\img\icons2x\ico-search.png" />
+    <Content Include="assets\img\icons2x\ico-stackoverflow.png" />
+    <Content Include="assets\img\icons2x\ico-telephone.png" />
+    <Content Include="assets\img\icons2x\ico-twitter.png" />
+    <Content Include="assets\img\icons2x\linked-black-hover.png" />
+    <Content Include="assets\img\icons2x\linked-black.png" />
+    <Content Include="assets\img\icons2x\star.png" />
+    <Content Include="assets\img\icons2x\twitter-black-hover.png" />
+    <Content Include="assets\img\icons2x\twitter-black.png" />
+    <Content Include="assets\img\icons\arrow-acc-down.png" />
+    <Content Include="assets\img\icons\arrow-acc-up.png" />
+    <Content Include="assets\img\icons\facebook-black-hover.png" />
+    <Content Include="assets\img\icons\facebook-black.png" />
+    <Content Include="assets\img\icons\form-next-btn.png" />
+    <Content Include="assets\img\icons\gplus-black-hover.png" />
+    <Content Include="assets\img\icons\gplus-black.png" />
+    <Content Include="assets\img\icons\ico-arrow-link-black.png" />
+    <Content Include="assets\img\icons\ico-arrow-link-blue-back.png" />
+    <Content Include="assets\img\icons\ico-arrow-link-blue.png" />
+    <Content Include="assets\img\icons\ico-arrow-link-grey-back-hover.png" />
+    <Content Include="assets\img\icons\ico-arrow-link-grey-back.png" />
+    <Content Include="assets\img\icons\ico-arrow-link-grey-hover.png" />
+    <Content Include="assets\img\icons\ico-arrow-link-grey.png" />
+    <Content Include="assets\img\icons\ico-arrow-link.png" />
+    <Content Include="assets\img\icons\ico-arrow-more-h.png" />
+    <Content Include="assets\img\icons\ico-arrow-more.png" />
+    <Content Include="assets\img\icons\ico-back-btn.png" />
+    <Content Include="assets\img\icons\ico-cat-mobile.png" />
+    <Content Include="assets\img\icons\ico-cat.png" />
+    <Content Include="assets\img\icons\ico-close-nav-tablet.png" />
+    <Content Include="assets\img\icons\ico-close-nav.png" />
+    <Content Include="assets\img\icons\ico-close-quote.png" />
+    <Content Include="assets\img\icons\ico-close-search.png" />
+    <Content Include="assets\img\icons\ico-github-black-hover.png" />
+    <Content Include="assets\img\icons\ico-github-black.png" />
+    <Content Include="assets\img\icons\ico-github.png" />
+    <Content Include="assets\img\icons\ico-linked.png" />
+    <Content Include="assets\img\icons\ico-logo.png" />
+    <Content Include="assets\img\icons\ico-mail-white.png" />
+    <Content Include="assets\img\icons\ico-mail.png" />
+    <Content Include="assets\img\icons\ico-menu-tablet.png" />
+    <Content Include="assets\img\icons\ico-menu.png" />
+    <Content Include="assets\img\icons\ico-mobile-black.png" />
+    <Content Include="assets\img\icons\ico-open-quote.png" />
+    <Content Include="assets\img\icons\ico-phone-black.png" />
+    <Content Include="assets\img\icons\ico-phone.png" />
+    <Content Include="assets\img\icons\ico-pin.png" />
+    <Content Include="assets\img\icons\ico-plus.png" />
+    <Content Include="assets\img\icons\ico-scroll-top.png" />
+    <Content Include="assets\img\icons\ico-search-mobile.png" />
+    <Content Include="assets\img\icons\ico-search-white.png" />
+    <Content Include="assets\img\icons\ico-search.png" />
+    <Content Include="assets\img\icons\ico-stackoverflow.png" />
+    <Content Include="assets\img\icons\ico-telephone.png" />
+    <Content Include="assets\img\icons\ico-twitter.png" />
+    <Content Include="assets\img\icons\linked-black-hover.png" />
+    <Content Include="assets\img\icons\linked-black.png" />
+    <Content Include="assets\img\icons\star.png" />
+    <Content Include="assets\img\icons\twitter-black-hover.png" />
+    <Content Include="assets\img\icons\twitter-black.png" />
+    <Content Include="assets\img\link-arrow-left-grey.png" />
+    <Content Include="assets\img\link-arrow-right-grey.png" />
+    <Content Include="assets\img\link-arrow.png" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\new-ribbon.png" />
+    <Content Include="assets\img\news-hover-bg.jpg" />
+    <Content Include="assets\img\quote-img.png" />
+    <Content Include="assets\img\rgbapng\00000033-5.png" />
+    <Content Include="assets\img\rgbapng\00000040-5.png" />
+    <Content Include="assets\img\rgbapng\00000066-5.png" />
+    <Content Include="assets\img\rgbapng\0000007f-5.png" />
+    <Content Include="assets\img\rgbapng\000000b3-5.png" />
+    <Content Include="assets\img\rgbapng\000000e5-5.png" />
+    <Content Include="assets\img\rgbapng\141b2347-5.png" />
+    <Content Include="assets\img\star-texture.png" />
+    <Content Include="assets\scripts\libs\classie.js" />
+    <Content Include="assets\scripts\libs\functions.js" />
+    <Content Include="assets\scripts\libs\grayscale.js" />
+    <Content Include="assets\scripts\libs\jquery.flexslider-min.js" />
+    <Content Include="assets\scripts\libs\jquery.stylish-select.min.js" />
+    <Content Include="assets\scripts\libs\masonry.pkgd.min.js" />
+    <Content Include="assets\scripts\libs\modernizr-2.6.2.min.js" />
+    <Content Include="assets\scripts\libs\stepsForm.js" />
+    <Content Include="assets\scripts\libs\swiper.jquery.min.js" />
+    <Content Include="assets\scripts\main\default.js" />
+    <Content Include="assets\scripts\main\initSwiper.js" />
+    <Content Include="assets\scripts\main\jquery-1.8.3.min.js" />
+    <Content Include="assets\scripts\pages\blog.js" />
+    <Content Include="assets\scripts\pages\home.js" />
+    <Content Include="BlackboxTesting.aspx" />
+    <Content Include="Blog.aspx" />
+    <Content Include="CassandraSummit.aspx" />
+    <Content Include="CassandraUsecases.aspx" />
+    <Content Include="CodingSerbia.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="CraftConference.aspx" />
+    <Content Include="DataAnalytics.aspx" />
+    <Content Include="DataProcessing.aspx" />
+    <Content Include="DataStorage.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="LeveragingParallelExecution.aspx" />
+    <Content Include="MigratingTime.aspx" />
+    <Content Include="News.aspx" />
+    <Content Include="Process.aspx" />
+    <Content Include="Projects.aspx" />
+    <Content Include="Search.aspx" />
+    <Content Include="Services.aspx" />
+    <Content Include="ServicesDetail.aspx" />
+    <Content Include="SettingUpEmbedded.aspx" />
+    <Content Include="Team.aspx" />
+    <Content Include="Technologies.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="WhyBigData.aspx" />
+    <Content Include="WhyGoDistributed.aspx" />
+    <Content Include="WhySmartCat.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.master.cs">
+      <DependentUpon>Site.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54755</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54265/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

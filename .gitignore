@@ -1,1 +1,15 @@
 html/.sass-cache/
+
+#nuget packages
+packages*/
+
+#folders
+[Bb]in
+[Dd]ebug*/
+obj/
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+
+#files
+*.suo
