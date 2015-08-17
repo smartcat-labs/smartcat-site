@@ -100,12 +100,12 @@
                                         <div class="romb badge">
                                             <span class="reset-inner">N.</span>
                                         </div>
-                                        <h4><a href="WhySmartCat.aspx">Why SmartCat?</a></h4>
+                                        <h4><a href="OnThisDay.aspx">On this day</a></h4>
                                         <p>
-                                            The concept of Big Data has intrigued us from the very first online articles describing this new frontier of technology, back in 2007. Imagine if we could know...
+                                            On this day the news that we've decided to open our own company may not be interesting or relevant to many of you reading this, however I assure you that this...
                                         </p>
-                                        <span class="author">Nenad Bozic</span>
-                                        <span class="date">24/07/15</span>
+                                        <span class="author">Bojan Kovac</span>
+                                        <span class="date">09/03/15</span>
                                     </div>
                                 </li>
                                 <li>

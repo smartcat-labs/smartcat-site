@@ -1,4 +1,4 @@
-﻿<%@ Page Title="SmartCat | Why SmartCat" Language="C#" MasterPageFile="Site.master" %>
+﻿<%@ Page Title="SmartCat | OnThisDay" Language="C#" MasterPageFile="Site.master" %>
 
 <asp:Content runat="server" ID="unknown" ContentPlaceHolderID="ContentPlaceHolder">
     
@@ -12,9 +12,9 @@
             <div class="wrapper o-visible">
                 <div class="main article">
                     <div class="title">
-                        <h2>Why SmartCat?</h2>
+                        <h2>On This Day</h2>
                         <a href="News.aspx" class="go-back">Back</a>
-                        <span class="date">24/07/15</span>
+                        <span class="date">09/03/15</span>
                     </div>
                     <div class="img-wrap">
                         <img src="assets/img/content/why_smartcat_detailed.jpg" alt="" />
@@ -22,10 +22,21 @@
                     </div>
                     <div class="rte-content">
                         <p>
-                            The concept of Big Data has intrigued us from the very first online articles describing this new frontier of technology, back in 2007. 
+                            On this day the news that we've decided to open our own company may not be interesting or relevant to many of you reading this, however I assure you that this day will be remembered as a start of something great, something inspiring and remarkable. 
                         </p>
                         <p>
                             Imagine if we could know all there is to know about a particular problem or a situation at the time when we need to make a decision, imagine a world with no assumptions, just facts. Imagine the efficiency we could achieve, imagine the comfort of predictability. Imagine the responsiveness that is always real-time...
+
+                        </p>
+                        <p>
+                            The concept of Big Data has intrigued us from the very first online articles describing this new frontier of technology, back in 2007. Imagine if we could know all there is to know about a particular problem or a situation at the time when we need to make a decision, imagine a world with no assumptions, just facts. Imagine the efficiency we could achieve, imagine the comfort of predictability. Imagine the responsiveness that is always real-time… Some may say it’s scary, but a fear of the unknown is an elemental part of progress. 
+                        </p>
+                        <p>
+                            This is why we, all three of us founders, have spent considerable portion of our career studying this new frontier of computer science. From trying out different technologies to studying various use cases and implementing production-ready systems, each one of us has focused on this emerging field independently. We’ve now come together bound by the same ideals, a shared childhood bond, and same dedication to be the best at what we do and do it in an innovative way.
+Now it’s our time to show the world what we can do. So, let’s start with a simple message…
+                        </p>
+                        <p>
+                            "Hello, world!" :)
                         </p>
                     </div>
                     <div class="article-nav">
@@ -101,12 +112,12 @@
                                         <div class="romb badge">
                                             <span class="reset-inner">N.</span>
                                         </div>
-                                        <h4><a href="WhySmartCat.aspx">Why SmartCat?</a></h4>
+                                        <h4><a href="OnThisDay.aspx">On this day</a></h4>
                                         <p>
-                                            The concept of Big Data has intrigued us from the very first online articles describing this new frontier of technology, back in 2007. Imagine if we could know...
+                                            On this day the news that we've decided to open our own company may not be interesting or relevant to many of you reading this, however I assure you that this...
                                         </p>
-                                        <span class="author">Nenad Bozic</span>
-                                        <span class="date">24/07/15</span>
+                                        <span class="author">Bojan Kovac</span>
+                                        <span class="date">09/03/15</span>
                                     </div>
                                 </li>
                                 <li>

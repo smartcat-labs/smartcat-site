@@ -390,7 +390,7 @@
     <Content Include="Web.config" />
     <Content Include="WhyBigData.aspx" />
     <Content Include="WhyGoDistributed.aspx" />
-    <Content Include="WhySmartCat.aspx" />
+    <Content Include="OnThisDay.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

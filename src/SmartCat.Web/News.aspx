@@ -60,19 +60,20 @@
                                 <img src="assets/img/content/why-smartcat-teaser.jpg" alt="" />
                                 <span class="color-overlay"></span>
                                 <span class="blue-overlay"></span>
-                                <a href="WhySmartCat.aspx" class="read-more"><i></i></a>
+                                <a href="OnThisDay.aspx" class="read-more"><i></i></a>
                                 <span class="arrow"></span>
                             </div>
                             <div class="text">
-                                <span class="date">24/07/15</span>
+                                <span class="date">09/03/15</span>
                                 <h3>
-                                    <a href="WhySmartCat.aspx">Why SmartCat?</a>
+                                    <a href="OnThisDay.aspx">On this day</a>
                                 </h3>
                                 <p>
-                                    The concept of Big Data has intrigued us from the very first online articles describing this new frontier of...
+                                    On this day the news that we’ve decided to open our own company may not be interesting or relevant to many of...
+
                                 </p>
                                 <span class="author">
-                                    By Nenad Bozic
+                                    By Bojan Kovac
                                 </span>
                             </div>
                         </div>
