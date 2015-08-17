@@ -19,16 +19,16 @@
                             Time. Time changes the world around us, constantly. Irreversibly. With each change, we have two options: adapt or live in the past. Embracing the change is what evolution is all about. It is a necessary survival skill. The faster you adapt, the greater is your advantage against competition.
                         </p>
                         <p>
-                            In the past, businesses were run based on what you know and who you know. That is still true today, however the ways we gain our knowledge and create our contacts have become lightning fast thanks to advances in technology.
+                           In the past, businesses were run based on what you know and who you know. That is still true today, however the ways we gain our knowledge and create our contacts have become lightning fast thanks to advances in technology.
                         </p>
                         <p>
-                            In this brave new world, the difference between professionals and amateurs boils down to the decision making process - experienced decision makers rely on their previous experiences and their "gut feeling", while today's professionals rely on facts. Real-time facts. In ever-faster changing world, our perspectives need to change with it in order to reach smarter insights that lead to smarter decisions. Careful and planned analysis of available data provides these insights and empowers the decision makers with agility necessary for the survival in the markets of tomorrow.
+                            In this brave new world, the difference between professionals and amateurs boils down to the decision making process - experienced decision makers rely on their previous experiences and their “gut feeling”, while today’s professionals rely on facts. Real-time facts. In ever-faster changing world, our perspectives need to change with it in order to reach smarter insights that lead to smarter decisions. Careful and planned analysis of available data provides these insights and empowers the decision makers with agility necessary for the survival in the markets of tomorrow.
                         </p>
                         <p>
-                            But we can even take you a step beyond… Outsmart the time. Take control. Bring on the changes and shape the future in your favor.
+                            But we can even take you a step beyond... Outsmart the time. Take control. Bring on the changes and shape the future in your favor.
                         </p>
                         <p>
-                            Connect the dots. Get the big picture. <br> Don't be in the dark. Be in the know. Take control. The smart way.
+                            Connect the dots. Get the big picture. <br> Don’t be in the dark. Be in the know. Take control. The smart way.
                         </p>
                     </div>
                     <ul class="items-list has-hover">

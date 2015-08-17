@@ -23,7 +23,7 @@
                             First, we need to fully understand the business. In a perfect scenario, this understanding would come through architecture service and building of the system. If we do not participate in that phase we will have to go through workshops and documentation to create business requirements for this phase.  This is where our data science team comes to play. They analyze the business and the data and come up with algorithms that can produce meaningful results business wise. In the last step, data science and engineering teams team up to implement those new algorithms in the application, resulting in a better and smarter application. Our business experts are there to facilitate the process, help with implementation and verify if goals are met at the end.
                         </p>
                         <p>
-                            A couple of things can be achieved in this service, data will be closer to business decision makers in a form that has a meaning, application will be closer to customers and their needs, time for reaction will be lower because everything will be well displayed and transparent, new business ideas can arise from analytics and trending.
+                           A couple of things can be achieved in this service, data will be closer to business decision makers in a form that has a meaning, application will be closer to customers and their needs, time for reaction will be lower because everything will be well displayed and transparent, new business ideas can arise from analytics and trending.
                         </p>
                         <h3>Big Data Use cases</h3>
                         <ol>
