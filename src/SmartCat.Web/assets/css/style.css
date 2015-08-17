@@ -2464,6 +2464,8 @@ textarea {
       font-size: 14px;
       color: #7d7d7d;
       margin-bottom: 20px; }
+      .widget.slider .flexslider .text-item p a {
+        color: #7d7d7d; }
     .widget.slider .flexslider .text-item .reset-inner {
       color: #fff; }
   .widget.slider .flexslider .flex-control-nav {
