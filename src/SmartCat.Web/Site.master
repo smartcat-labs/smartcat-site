@@ -154,10 +154,6 @@
                                         <input id="SenderEmail" name="SenderEmail" type="text"/>
                                     </li>
                                     <li>
-                                        <span><label for="SenderContact">Contact number?</label></span>
-                                        <input id="SenderContact" name="SenderContact" type="text"/>
-                                    </li>
-                                    <li>
                                         <span><label for="Subject">What would you like to contact us about?</label></span>
                                         <input id="Subject" name="Subject" type="text"/>
                                     </li>
@@ -166,6 +162,10 @@
                                         <input id="Message" name="Message" type="text"/>
                                     </li>
                                     <%--<li>
+                                        <span><label for="q5">What book inspires you?</label></span>
+                                        <input id="q5" name="q5" type="text"/>
+                                    </li>
+                                    <li>
                                         <span><label for="q6">What's your profession?</label></span>
                                         <input id="q6" name="q6" type="text"/>
                                     </li>--%>

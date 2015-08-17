@@ -83,7 +83,7 @@
                         </div>
                         <div class="item right">
                             <div class="img-wrap">
-                                <img src="assets/img/content/blog-2.jpg" alt="" />
+                                <img src="assets/img/content/cassandra-certified-teaser.png" alt="" />
                                 <span class="color-overlay"></span>
                                 <a href="WeAreGettingCertified.aspx"><span class="blue-overlay"></span></a>
                                 <a href="WeAreGettingCertified.aspx" class="read-more"><i></i></a>

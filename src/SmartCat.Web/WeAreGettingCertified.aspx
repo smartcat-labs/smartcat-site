@@ -17,7 +17,7 @@
                         <span class="date">26/07/15</span>
                     </div>
                     <div class="img-wrap">
-                        <img src="assets/img/content/why_smartcat_detailed.jpg" alt="" />
+                        <img src="assets/img/content/cassandra-certified-detailed.png" alt="" />
                         <div class="badge romb"><span class="reset-inner">N.</span></div>
                     </div>
                     <div class="rte-content">

@@ -6,6 +6,7 @@
     private void OnContactClick(object sender, EventArgs e)
     {
         Master.OnContactUsClick(sender, e);
+        
     }
 
 </script>
@@ -111,21 +112,26 @@
                     </li>
                     <li>
                         <span>
-                            <label for="Subject">*Subject</label></span>
+                            <label for="Subject">*Subject</label>
+                        </span>
                         <div class="contact-info">
                             <input id="Subject" name="Subject" type="text" />
                         </div>
                     </li>
                     <li class="contact-message">
                         <span>
-                            <label for="Message">*Message?</label></span>
+                            <label for="Message">*Message?</label>
+                        </span>
                         <div class="contact-info">
                             <textarea id="Message" name="Message"></textarea>
                         </div>
                     </li>
                 </ol>
                 <%--<a href="javascript:;" class="btn arrow"><span>Send</span> <i class="ico"></i></a>--%>
-                <asp:ImageButton runat="server" CssClass="btn arrow" Text="Send" OnClick="OnContactClick" />
+                <asp:LinkButton runat="server" ID="SubmitButton" CssClass="btn arrow" OnClick="OnContactClick">
+                    <span>Send</span>
+                    <i class="ico"></i>
+                </asp:LinkButton>
             </div>
         </div>
     </div>
