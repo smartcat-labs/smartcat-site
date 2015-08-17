@@ -129,6 +129,9 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
 
             <footer class="footer">
+                
+                <% if (!Page.Title.Contains("Contact"))
+                   { %>
                 <section class="top">
                     <img src="assets/img/star-texture.png" alt=""/>
                     <div class="wrapper">
@@ -138,7 +141,7 @@
                         </p>
                     </div>
                 </section>
-
+                
                 <div class="contact-block">
                     <div class="wrapper">
                         <h4>Contact us</h4>
@@ -201,6 +204,7 @@
                         <a href="javascript:;" class="scroll-top show-on-mobile"></a>
                     </div>
                 </div>
+                <% } %>
 
                 <div class="bottom">
                     <div class="wrapper">
@@ -250,7 +254,7 @@
         <script type="text/javascript" src="assets/scripts/libs/stepsForm.js"></script>
         <script type="text/javascript" src="assets/scripts/libs/jquery.flexslider-min.js"></script>  
         <script type="text/javascript" src="assets/scripts/libs/grayscale.js"></script>
-        <asp:ContentPlaceHolder ID="cphAdditionalFooter" runat="server" />      
+        <asp:ContentPlaceHolder ID="cphAdditionalFooter" runat="server" />
         <script type="text/javascript" src="assets/scripts/main/default.js"></script>
         <script type="text/javascript" src="assets/scripts/libs/functions.js"></script>
         <!--[if lt IE 7]>
