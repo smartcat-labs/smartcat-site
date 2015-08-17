@@ -2,20 +2,6 @@
 
 <asp:Content runat="server" ID="unknown" ContentPlaceHolderID="ContentPlaceHolder">
     
-    <!-- javascript -->
-
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript">window.jQuery || document.write("<script src='assets/scripts/main/jquery-1.8.3.min.js'>\x3C/script>")</script>
-    <script type="text/javascript" src="assets/scripts/libs/classie.js"></script>
-    <script type="text/javascript" src="assets/scripts/libs/stepsForm.js"></script>
-    <script type="text/javascript" src="assets/scripts/libs/jquery.flexslider-min.js"></script>
-
-    <script type="text/javascript" src="assets/scripts/main/default.js"></script>
-
-     <!--[if lt IE 7]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    
     <div class="page-title">
             <div class="wrapper">
                 <h1>Blog</h1>
@@ -245,4 +231,8 @@
             </div>
         </div>
 
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="cphAdditionalFooter" runat="server">
+	
 </asp:Content>
