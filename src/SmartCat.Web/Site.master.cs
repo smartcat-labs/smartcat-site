@@ -13,6 +13,9 @@
 
         protected void OnContactUsClick(object sender, EventArgs e)
         {
+            // Send email to info using gmails anonymous email sending server
+            // This should be updated to IP based smtp relay service https://support.google.com/a/answer/176600?hl=en
+
             using (var client = new SmtpClient(GmailServer, Port))
             {
                 var senderName = Request.Form["SenderName"];
@@ -21,11 +24,12 @@
                 var message = Request.Form["Message"];
 
                 var mail = new MailMessage();
-                mail.From = new MailAddress("matija0204@gmail.com");
+                mail.From = new MailAddress(senderEmail);
                 mail.To.Add("info@smartcat.io");
-                mail.Subject = "Contact us";
-                mail.Body = "I'm contacting you from your smartcat.io web application";
+                mail.Subject = senderName + " | " + subject;
+                mail.Body = message;
 
+                // TODO: Uncomment when implemented
                 //client.Send(mail);
             }
         }
