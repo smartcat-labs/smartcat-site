@@ -442,19 +442,13 @@
                         <span>Associations / Certificates</span>
                         <ul>
                             <li>
-                                <a href="javascript:;">
-                                    <img src="assets/img/content/certificate-1.png" alt="" />
-                                </a>
+                                <img src="assets/img/content/certificate-1.png" alt="" />
                             </li>
                             <li>
-                                <a href="javascript:;">
-                                    <img src="assets/img/content/certificate-2.png" alt="" />
-                                </a>
+                                <img src="assets/img/content/certificate-2.png" alt="" />
                             </li>
                             <li>
-                                <a href="javascript:;">
-                                    <img src="assets/img/content/certificate-3.png" alt="" />
-                                </a>
+                                <img src="assets/img/content/certificate-3.png" alt="" />
                             </li>
                         </ul>
                     </div>
