@@ -264,8 +264,6 @@
     <Content Include="assets\img\direction_people.png" />
     <Content Include="assets\img\direction_people_hover.png" />
     <Content Include="assets\img\footer-logo.png" />
-    <Content Include="assets\img\icons-s6877a1ff79.png" />
-    <Content Include="assets\img\icons2x-s37068fa475.png" />
     <Content Include="assets\img\icons2x\arrow-acc-down.png" />
     <Content Include="assets\img\icons2x\arrow-acc-up.png" />
     <Content Include="assets\img\icons2x\facebook-black-hover.png" />
