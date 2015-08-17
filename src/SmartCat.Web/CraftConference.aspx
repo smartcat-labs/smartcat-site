@@ -60,7 +60,7 @@
                             <i></i>
                             Previus post
                         </a>
-                        <a href="WhyBigData.aspx" class="next-post">
+                        <a href="CassandraMigrationTool.aspx" class="next-post">
                             Next post
                             <i></i>
                         </a>
@@ -89,26 +89,29 @@
                     </div>
                     
                     <div class="author-box">
-                        <img src="assets/img/content/home-matija.png"  alt="" class="hidden-on-mobile" />
+                        <img src="assets/img/content/home-nenad.png"  alt="" class="hidden-on-mobile" />
                         <div class="info">
-                            <h4><span>Matija Gobec</span></h4>
+                            <h4><span>Nenad Bozic</span></h4>
                             <h5>Co-Founder</h5>
                             <p>
-                                Polyglot engineer with open minded approach to technologies. Always looking for new challenges and seeking for knowledge.
+                                Craftsman with more than 10 years of experience, when he does backend coding in Java he feels right at home but likes to do short excursions in other technologies like ruby on rails, angularJS, PHP…
                             </p>
                             <div class="bottom">
-                                <a href="mailto:matija.gobec@smartcat.io" class="contact-link">
-                                    <i class="ico ico-mail"></i> Contact Matija
+                                <a href="mailto:nenad.bozic@smartcat.io" class="contact-link">
+                                    <i class="ico ico-mail"></i> Contact Nenad
                                 </a>
                                 <ul class="social-links">
                                     <li>
-                                        <a href="https://twitter.com/mad_max0204" target="_blank" class="twitter"><i class="ico"></i></a>
+                                        <a href="https://twitter.com/nenadbozicns" target="_blank" class="twitter"><i class="ico"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://github.com/mgobec" target="_blank" class="git"><i class="ico"></i></a>
+                                        <a href="https://github.com/nbozic" target="_blank" class="git"><i class="ico"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://www.linkedin.com/in/matijagobec" target="_blank" class="linked"><i class="ico"></i></a>
+                                        <a href="https://rs.linkedin.com/pub/nenad-bozic/32/1b6/b30" target="_blank" class="linked"><i class="ico"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="http://stackoverflow.com/users/4617377/nenad-bozic" target="_blank" class="stack"><i class="ico"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -127,7 +130,7 @@
                                         </div>
                                         <h4><a href="OnThisDay.aspx">On this day</a></h4>
                                         <p>
-                                            On this day the news that we've decided to open our own company may not be interesting or relevant to many of you reading this, however I assure you that this...
+                                            <a href="OnThisDay.aspx">On this day the news that we've decided to open our own company may not be interesting or relevant to many of you reading this, however I assure you that this...</a>
                                         </p>
                                         <span class="author">Bojan Kovac</span>
                                         <span class="date">09/03/15</span>
@@ -140,7 +143,7 @@
                                         </div>
                                         <h4><a href="CassandraSummit.aspx">Cassandra summit 2015</a></h4>
                                         <p>
-                                            We are excited for the upcoming Cassandra Summit in San Francisco, the biggest NoSQL conference in the world and epicenter of Cassandra...
+                                            <a href="CassandraSummit.aspx">We are excited for the upcoming Cassandra Summit in San Francisco, the biggest NoSQL conference in the world and epicenter of Cassandra...</a>
                                         </p>
                                         <span class="author">Matija Gobec</span>
                                         <span class="date">30/07/15</span>
@@ -153,7 +156,7 @@
                                         </div>
                                         <h4><a href="CodingSerbia.aspx">Coding Serbia</a></h4>
                                         <p>
-                                            We would like to share our excitement with you. This October we will be a part of the 3rd international Coding Serbia conference in Novi Sad as silver...
+                                            <a href="CodingSerbia.aspx">We would like to share our excitement with you. This October we will be a part of the 3rd international Coding Serbia conference in Novi Sad as silver...</a>
                                         </p>
                                         <span class="author">Bojan Kovac</span>
                                         <span class="date">05/08/15</span>

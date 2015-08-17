@@ -229,7 +229,7 @@
                                 <p>
                                     With NoSql databases comes change in physical data modelling. When it comes to truly distributed databases, data model is denormalized...
                                 </p>
-                                <span>By Nenad Bozic</span>
+                                <span>By Matija Gobec</span>
                             </div>
                         </div>
                     </div>
@@ -255,7 +255,7 @@
                                 <p>
                                     We wanted to share why we want to do what we do and why we think this is the future of IT. The number of internet users is constantly growing...
                                 </p>
-                                <span>By Bojan Kovac</span>
+                                <span>By Nenad Bozic</span>
                             </div>
                         </div>
                     </div>
@@ -378,9 +378,6 @@
                                 </blockquote>
                                 <ul class="social-links">
                                     <li>
-                                        <a href="https://en-gb.facebook.com/nbozicns" target="_blank" class="facebook"><i class="ico"></i></a>
-                                    </li>
-                                    <li>
                                         <a href="https://twitter.com/nenadbozicns" target="_blank" class="twitter"><i class="ico"></i></a>
                                     </li>
                                     <li>
@@ -388,6 +385,9 @@
                                     </li>
                                     <li>
                                         <a href="https://rs.linkedin.com/pub/nenad-bozic/32/1b6/b30" target="_blank" class="linked"><i class="ico"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="http://stackoverflow.com/users/4617377/nenad-bozic" target="_blank" class="stack"><i class="ico"></i></a>
                                     </li>
                                 </ul>
                             </div>

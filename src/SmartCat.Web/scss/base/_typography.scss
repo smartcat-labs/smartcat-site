@@ -1,0 +1,305 @@
+/*----------  Typography
+------------------------------------------------------------------------------*/
+@include font-face('DINPro-Regular',
+	font-files('DINPro-Regular_gdi.ttf',
+	'DINPro-Regular_gdi.svg#DINPro-Regular',
+	'DINPro-Regular_gdi.woff',
+	'DINPro-Regular_gdi.eot?#iefix'),
+    'DINPro-Regular_gdi.eot', normal, normal
+);
+
+@include font-face('DINPro-Bold',
+	font-files('DINPro-Bold_gdi.ttf',
+	'DINPro-Bold_gdi.svg#DINPro-Bold',
+	'DINPro-Bold_gdi.woff',
+	'DINPro-Bold_gdi.eot?#iefix'),
+    'DINPro-Bold_gdi.eot', normal, normal
+);
+
+@include font-face('DINPro-Light',
+	font-files('DINPro-Light_gdi.ttf',
+	'DINPro-Light_gdi.svg#DINPro-Light',
+	'DINPro-Light_gdi.woff',
+	'DINPro-Light_gdi.eot?#iefix'),
+    'DINPro-Light_gdi.eot', normal, normal
+);
+
+@include font-face('NeutraText-Bold',
+	font-files('NeutraText-Bold_gdi.ttf',
+	'NeutraText-Bold_gdi.svg#NeutraText-Bold',
+	'NeutraText-Bold_gdi.woff',
+	'NeutraText-Bold_gdi.eot?#iefix'),
+    'NeutraText-Bold_gdi.eot', normal, normal
+);
+
+@include font-face('NeutraTextTF-Book',
+	font-files('NeutraTextTF-Book_gdi.ttf',
+	'NeutraTextTF-Book_gdi.svg#NeutraTextTF-Book',
+	'NeutraTextTF-Book_gdi.woff',
+	'NeutraTextTF-Book_gdi.eot?#iefix'),
+    'NeutraTextTF-Book_gdi.eot', normal, normal
+);
+
+@include font-face('NeutraText-Light',
+	font-files('NeutraText-Light_gdi.ttf',
+	'NeutraText-Light_gdi.svg#NeutraText-Light',
+	'NeutraText-Light_gdi.woff',
+	'NeutraText-Light_gdi.eot?#iefix'),
+    'NeutraText-Light_gdi.eot', normal, normal
+);
+
+@include font-face('Times-Italic',
+	font-files('Times-Italic_gdi.ttf',
+	'Times-Italic_gdi.svg#Times-Italic',
+	'Times-Italic_gdi.woff',
+	'Times-Italic_gdi.eot?#iefix'),
+    'Times-Italic_gdi.eot', normal, normal
+);
+
+
+h1 {
+	font-size: 48px;
+	text-transform: uppercase;
+	color: $blue-dark;
+}
+
+h2 {
+	font-family: $bold-font;
+}
+
+h3 {
+	
+}
+
+h4 {
+	
+}
+
+h5 {
+	
+}
+
+h6 {
+	
+}
+
+p {
+	font-size: 16px;
+	line-height: 24px;
+	color: $grey-light;
+	margin-bottom: 20px;
+	@include breakpoint(phone) {
+		font-size: 15px;
+		line-height: 20px;
+	}
+}
+
+blockquote {
+	font-family: $italic;
+}
+
+.page-title {
+	@include base-float;
+	border-bottom: 1px solid #c9cacc;
+	h1 {
+		font-size: 48px;
+		line-height: 48px;
+		padding: 46px 0;
+		font-family: $din-font-light;
+		margin-bottom: 0;
+	}
+	@include breakpoint(phone) {
+		text-align: center;
+		h1 {
+			font-size: 24px;
+			line-height: 24px;
+			padding: 27px 0 23px 0;
+		}
+	}
+}
+
+.title {
+	@include base-float;
+	position: relative;
+	.shape {
+		display: inline-block;
+		margin-right: 40px;
+	}
+	h2 {
+		font-size: 50px;
+		line-height: 54px;
+		margin-bottom: 20px;
+		padding-right: 60px;
+	}
+	.go-back {
+		position: absolute;
+		display: inline-block;
+		right: 0;
+		top: 35px;
+		//@include translate(0, -50%);
+		text-transform: uppercase;
+		font-size: 12px;
+		line-height: 12px;
+		color: $blue-dark;
+		padding-left: 17px;
+		background: transparent url(../img/icons/ico-back-btn.png) no-repeat left 1px;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.date {
+		display: block;
+		text-transform: uppercase;
+		color: #7d7d7d;
+		margin-bottom: 12px;
+		font-size: 18px;
+		line-height: 18px;
+	}
+	@include breakpoint(tablet) {
+		h2 {
+			font-size: 40px;
+			line-height: 44px;
+		}
+		.go-back {
+			top: 45px;
+		}
+	}
+	@include breakpoint(phone) {
+		.shape {
+			display: block;
+			margin: 0 auto 20px auto;
+		}
+		h2 {
+			font-size: 19px;
+			line-height: 20px;
+			padding-right: 0;
+		}
+		.go-back {
+			top: auto;
+			@include translate(0, 0);
+		}
+	}
+}
+
+.read-more-link {
+	font-size: 14px;
+	text-transform: uppercase;
+	color: $black;
+	i {
+		display: inline-block;
+		@include sprite (ico-arrow-link-black);
+		position: relative;
+		top: 3px;
+		margin-left: 20px;
+	}
+	&:hover {
+		color: $blue-light;
+		@include transition(color 0.3s);
+		i {
+			@include sprite (ico-arrow-link-blue);
+		}
+	}
+	@include breakpoint(phone) {
+		background: $blue-dark;
+		color: $white;
+		height: 40px;
+		line-height: 40px;
+		padding: 0 40px;
+		display: inline-block;
+		i {
+			display: none;
+		}
+	}
+}
+
+.rte-content {
+	p {
+		em {
+			font-style: italic;
+		}
+		strong {
+			font-weight: normal;
+			font-family: $din-font-bold;
+		}
+		a {
+			color: $blue-light;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	img {
+		margin: 0 auto 15px auto;
+		max-width: 100%;
+		display: block;
+	}
+	h3 {
+		font-size: 20px;
+		font-family: $bold-font;
+		margin-bottom: 20px;
+	}
+	ol li {list-style: decimal;}
+	ul li {list-style: disc;}
+	ol, ul {
+		@include base-float;
+		margin-left: 20px;
+		li {
+			font-size: 16px;
+			line-height: 24px;
+			color: $grey-light;
+			@include base-float;
+			margin-bottom: 10px;
+			strong {
+				font-weight: normal;
+				font-family: $din-font-bold;
+			}
+			a {
+				color: $blue-light;
+			}
+		}
+	}
+	blockquote {
+		@include base-float;
+		padding: 40px;
+		margin: 10px 0;
+		background: transparent url(../img/quote-img.png) no-repeat left top;
+		font-size: 15px;
+		line-height: 24px;
+		color: #7d7d7d;
+	}
+	.csharpcode {
+		font-size: small;
+		color: black;
+		font-family: Consolas, "Courier New", Courier, Monospace;
+		float: left;
+		background: $grey-bg;
+		padding: 20px 25px;
+		margin: 0 27px 15px 0;
+		width: 100%;
+		@include box-sizing(border-box);
+		&.narrow {
+			width: 48.75%;
+			margin: 0 0 15px 0;
+		}
+		pre { 
+			margin: 0; 
+		}
+		.rem { color: #008000; }
+		.kwrd { color: #0000ff; }
+		.str { color: #a31515; }
+		.op { color: #0000c0; }
+		.preproc { color: #cc6633; }
+		.asp { background-color: #ffff00; }
+		.html { color: #800000; }
+		.attr { color: #ff0000; }
+		.lnum { color: #606060; }
+		.alt {
+			background-color: #f4f4f4;
+			width: 100%;
+			margin: 0em;
+		}	
+		.marked {
+			background-color: #ffff00;
+		}		
+	}
+}
