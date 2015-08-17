@@ -55,8 +55,7 @@
                     <div class="twitter-box">
                         <h3>Latest tweet</h3>
                         <p>
-                            Lorem ipsum dolor sit amet,
-                            consectetuer adipiscing elit, sed diam nonummy nibh eusmod tincidunt.
+                            SmartCat is going to be at Cassandra Summit 2015, in September, San Francisco, California. Let's meet-up!
                         </p>
                         <span class="author">@John Due</span>
                         <span class="date">29/05/2015</span>
