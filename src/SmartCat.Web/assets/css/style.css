@@ -3490,6 +3490,8 @@ textarea {
         .one-three .column .text .inner p {
           font-size: 14px;
           line-height: 16px; }
+          .one-three .column .text .inner p a {
+            color: #7d7d7d; }
         .one-three .column .text .inner span {
           font-size: 10px; }
     .one-three .column .overlay {

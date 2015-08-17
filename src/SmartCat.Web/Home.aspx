@@ -227,7 +227,7 @@
                                 <span class="date">08/08/15</span>
                                 <h4><a href="LeveragingParallelExecution.aspx">Leveraging parallel execution</a></h4>
                                 <p>
-                                    With NoSql databases comes change in physical data modelling. When it comes to truly distributed databases, data model is denormalized...
+                                    <a href="LeveragingParallelExecution.aspx">With NoSql databases comes change in physical data modelling. When it comes to truly distributed databases, data model is denormalized...</a>
                                 </p>
                                 <span>By Matija Gobec</span>
                             </div>
@@ -253,7 +253,7 @@
                                 <span class="date">18/05/15</span>
                                 <h4><a href="WhyBigData.aspx">Why Big Data</a></h4>
                                 <p>
-                                    We wanted to share why we want to do what we do and why we think this is the future of IT. The number of internet users is constantly growing...
+                                    <a href="WhyBigData.aspx">We wanted to share why we want to do what we do and why we think this is the future of IT. The number of internet users is constantly growing...</a>
                                 </p>
                                 <span>By Nenad Bozic</span>
                             </div>
@@ -279,7 +279,7 @@
                                 <span class="date">30/07/15</span>
                                 <h4><a href="CassandraSummit.aspx">Cassandra summit 2015</a></h4>
                                 <p>
-                                    We are excited for the upcoming Cassandra Summit in San Francisco, the biggest NoSQL conference in the world and epicenter of...
+                                    <a href="CassandraSummit.aspx">We are excited for the upcoming Cassandra Summit in San Francisco, the biggest NoSQL conference in the world and epicenter of...</a>
                                 </p>
                                 <span>By Matija Gobec</span>
                             </div>
