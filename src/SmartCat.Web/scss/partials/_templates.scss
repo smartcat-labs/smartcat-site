@@ -1,0 +1,27 @@
+/*----------  templates
+------------------------------------------------------------------------------*/
+
+.services-detail-page {
+	padding-top: 40px;
+	.title {
+		margin-bottom: 17px;
+	}
+	.what-we-do-block {
+		padding: 50px 0;
+	}
+	@include breakpoint(phone) {
+		.what-we-do-block {
+			padding: 0;
+		}
+	}
+}
+.technologies-page {
+	.swiper-container {
+		margin-left: -30px;
+		margin-right: -30px;
+		padding: 0;
+	}
+	.swiper-slide {
+		padding: 0 40px;
+	}
+}

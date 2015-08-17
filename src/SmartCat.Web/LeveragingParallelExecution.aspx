@@ -78,29 +78,26 @@
                     </div>
                     
                     <div class="author-box">
-                        <img src="assets/img/content/home-nenad.png"  alt="" class="hidden-on-mobile" />
+                        <img src="assets/img/content/home-matija.png"  alt="" class="hidden-on-mobile" />
                         <div class="info">
-                            <h4><span>Nenad Bozic</span></h4>
+                            <h4><span>Matija Gobec</span></h4>
                             <h5>Co-Founder</h5>
                             <p>
-                                Craftsman with more than 10 years of experience, when he does backend coding in Java he feels right at home but likes to do short excursions in other technologies like ruby on rails, angularJS, PHP…
+                                Polyglot engineer with open minded approach to technologies. Always looking for new challenges and seeking for knowledge.
                             </p>
                             <div class="bottom">
-                                <a href="mailto:nenad.bozic@smartcat.io" class="contact-link">
-                                    <i class="ico ico-mail"></i> Contact Nenad
+                                <a href="mailto:matija.gobec@smartcat.io" class="contact-link">
+                                    <i class="ico ico-mail"></i> Contact Matija
                                 </a>
                                 <ul class="social-links">
                                     <li>
-                                        <a href="https://en-gb.facebook.com/nbozicns" target="_blank" class="facebook"><i class="ico"></i></a>
+                                        <a href="https://twitter.com/mad_max0204" target="_blank" class="twitter"><i class="ico"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://twitter.com/nenadbozicns" target="_blank" class="twitter"><i class="ico"></i></a>
+                                        <a href="https://github.com/mgobec" target="_blank" class="git"><i class="ico"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://github.com/nbozic" target="_blank" class="git"><i class="ico"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://rs.linkedin.com/pub/nenad-bozic/32/1b6/b30" target="_blank" class="linked"><i class="ico"></i></a>
+                                        <a href="https://www.linkedin.com/in/matijagobec" target="_blank" class="linked"><i class="ico"></i></a>
                                     </li>
                                 </ul>
                             </div>

@@ -79,20 +79,26 @@
                     </div>
                     
                     <div class="author-box">
-                        <img src="assets/img/content/home-bojan.png"  alt="" class="hidden-on-mobile" />
+                        <img src="assets/img/content/home-matija.png"  alt="" class="hidden-on-mobile" />
                         <div class="info">
-                            <h4><span>Bojan Kovac</span></h4>
+                            <h4><span>Matija Gobec</span></h4>
                             <h5>Co-Founder</h5>
                             <p>
-                                A computer science graduate with over 10 years of experience managing software projects and product development while leading organizational changes towards operational maturity and efficiency.
+                                Polyglot engineer with open minded approach to technologies. Always looking for new challenges and seeking for knowledge.
                             </p>
                             <div class="bottom">
-                                <a href="mailto:bojan.kovac@smartcat.io" class="contact-link">
-                                    <i class="ico ico-mail"></i> Contact Bojan
+                                <a href="mailto:matija.gobec@smartcat.io" class="contact-link">
+                                    <i class="ico ico-mail"></i> Contact Matija
                                 </a>
                                 <ul class="social-links">
                                     <li>
-                                        <a href="https://rs.linkedin.com/in/bojankovac" target="_blank" class="linked"><i class="ico"></i></a>
+                                        <a href="https://twitter.com/mad_max0204" target="_blank" class="twitter"><i class="ico"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/mgobec" target="_blank" class="git"><i class="ico"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/in/matijagobec" target="_blank" class="linked"><i class="ico"></i></a>
                                     </li>
                                 </ul>
                             </div>

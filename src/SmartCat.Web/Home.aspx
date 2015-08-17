@@ -229,7 +229,7 @@
                                 <p>
                                     With NoSql databases comes change in physical data modelling. When it comes to truly distributed databases, data model is denormalized...
                                 </p>
-                                <span>By Nenad Bozic</span>
+                                <span>By Matija Gobec</span>
                             </div>
                         </div>
                     </div>
@@ -255,7 +255,7 @@
                                 <p>
                                     We wanted to share why we want to do what we do and why we think this is the future of IT. The number of internet users is constantly growing...
                                 </p>
-                                <span>By Bojan Kovac</span>
+                                <span>By Nenad Bozic</span>
                             </div>
                         </div>
                     </div>

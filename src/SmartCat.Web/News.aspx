@@ -16,7 +16,7 @@
                             <div class="img-wrap">
                                 <img src="assets/img/content/coding_serbia_teaser.jpg" alt="" />
                                 <span class="color-overlay"></span>
-                                <span class="blue-overlay"></span>
+                                <a href="CodingSerbia.aspx"><span class="blue-overlay"></span></a>
                                 <a href="CodingSerbia.aspx" class="read-more"><i></i></a>
                                 <span class="ribbon"></span>
                             </div>
@@ -38,7 +38,7 @@
                             <div class="img-wrap">
                                 <img src="assets/img/content/cassadra-summit-teaser.jpg" alt="" />
                                 <span class="color-overlay"></span>
-                                <span class="blue-overlay"></span>
+                                <a href="CassandraSummit.aspx"><span class="blue-overlay"></span></a>
                                 <a href="CassandraSummit.aspx" class="read-more"><i></i></a>
                                 <span class="arrow"></span>
                             </div>
@@ -48,7 +48,9 @@
                                     <a href="CassandraSummit.aspx">Cassandra summit 2015</a>
                                 </h3>
                                 <p>
-                                    We are excited for the upcoming Cassandra Summit in San Francisco, the biggest NoSQL conference in the world...
+                                	<a href="CassandraSummit.aspx">
+                                    	We are excited for the upcoming Cassandra Summit in San Francisco, the biggest NoSQL conference in the world...
+                                	</a>
                                 </p>
                                 <span class="author">
                                     By Matija Gobec
@@ -59,7 +61,7 @@
                             <div class="img-wrap">
                                 <img src="assets/img/content/why-smartcat-teaser.jpg" alt="" />
                                 <span class="color-overlay"></span>
-                                <span class="blue-overlay"></span>
+                                <a href="OnThisDay.aspx"><span class="blue-overlay"></span></a>
                                 <a href="OnThisDay.aspx" class="read-more"><i></i></a>
                                 <span class="arrow"></span>
                             </div>
@@ -69,8 +71,9 @@
                                     <a href="OnThisDay.aspx">On this day</a>
                                 </h3>
                                 <p>
-                                    On this day the news that we’ve decided to open our own company may not be interesting or relevant to many of...
-
+                                	<a href="OnThisDay.aspx">
+                                    	On this day the news that we’ve decided to open our own company may not be interesting or relevant to many of...
+                                	</a>
                                 </p>
                                 <span class="author">
                                     By Bojan Kovac
@@ -81,20 +84,22 @@
                             <div class="img-wrap">
                                 <img src="assets/img/content/blog-2.jpg" alt="" />
                                 <span class="color-overlay"></span>
-                                <span class="blue-overlay"></span>
-                                <a href="javascritp:;" class="read-more"><i></i></a>
+                                <a href="WeAreGettingCertified.aspx"><span class="blue-overlay"></span></a>
+                                <a href="WeAreGettingCertified.aspx" class="read-more"><i></i></a>
                                 <span class="arrow"></span>
                             </div>
                             <div class="text">
-                                <span class="date">24/05/15</span>
+                                <span class="date">26/07/15</span>
                                 <h3>
-                                    <a href="javascript:;">Lorem ipsum dolor sit amet</a>
+                                    <a href="WeAreGettingCertified.aspx">We're Getting Certified!</a>
                                 </h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet, expetenda euripidis cum ad, ex autem epicurei maiestatis mel. In suavitate complectitur sed.
+                                	<a href="WeAreGettingCertified.aspx">
+                               			We are pleased to announce that SmartCat will be one of the first companies in the world to become officially Cassandra...
+                               	 	</a>
                                 </p>
                                 <span class="author">
-                                    By John Doe
+                                    By Bojan Kovac
                                 </span>
                             </div>
                         </div>

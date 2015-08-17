@@ -69,7 +69,7 @@
                             <div class="text">
                                 <h2><a href="DataProcessing.aspx">Data processing</a></h2>
                                 <p>
-                                    <a href="DataProcessing.aspx">It is hard to think of an enterprise application these days without the need for integration, both internally among many small services and externally with public APIs or 3rd party services. With the emergence of IoT and public APIs this has become a common requirement. For successful integration, data needs to be processed and this needs to be done fast, fault tolerant, usually in async and non blocking mater (?). We have experience with a huge variety of public APIs, protocols and tools for data processing (messaging systems, stream computing systems, batch processing tools and reactive technologies).</a>
+                                    <a href="DataProcessing.aspx">It is hard to think of an enterprise application these days without the need for integration, both internally among many small services and externally with public APIs or 3rd party services. With the emerging of IoT and public APIs this has become a common requirement. For successful integration, data needs to be processed and this needs to be done fast, fault tolerant, usually in async and non blocking manner. We have experience with a huge variety of public APIs, protocols and tools for data processing (messaging systems, stream computing systems, batch processing tools and reactive technologies).</a>
                                 </p>
                                 <a href="DataProcessing.aspx" class="read-more-link">Read more <i></i></a>
                             </div>

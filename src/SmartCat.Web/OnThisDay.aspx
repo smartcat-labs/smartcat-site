@@ -12,7 +12,7 @@
             <div class="wrapper o-visible">
                 <div class="main article">
                     <div class="title">
-                        <h2>On This Day</h2>
+                        <h2>On this day</h2>
                         <a href="News.aspx" class="go-back">Back</a>
                         <span class="date">09/03/15</span>
                     </div>
@@ -44,7 +44,7 @@ Now it’s our time to show the world what we can do. So, let’s start with a s
                             <i></i>
                             Previus post
                         </a>
-                        <a href="CodingSerbia.aspx" class="next-post">
+                        <a href="WeAreGettingCertified.aspx" class="next-post">
                             Next post
                             <i></i>
                         </a>

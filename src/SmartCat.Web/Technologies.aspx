@@ -8,7 +8,7 @@
             </div>
         </div>
         
-        <div class="content">
+        <div class="content technologies-page">
             <div class="wrapper">
                 <div class="main">
                     <div class="swiper-container">
@@ -435,7 +435,8 @@
                                 </div>	
                             </li>
                         </ul>
-                        <div class="swiper-pagination show-on-mobile"></div>
+                        <div class="swiper-button-prev show-on-mobile"></div>
+                        <div class="swiper-button-next show-on-mobile"></div>
                     </div>					
                     <div class="certificate-block hidden-on-mobile">
                         <span>Associations / Certificates</span>

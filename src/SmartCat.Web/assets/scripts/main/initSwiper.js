@@ -16,7 +16,9 @@ function initSwiper() {
 		var swiper = new Swiper('.swiper-container', {
 			spaceBetween: 20,
 			pagination: '.swiper-pagination',
-			paginationClickable: true
+			paginationClickable: true,
+			nextButton: '.swiper-button-next',
+			prevButton: '.swiper-button-prev'
 	 	});
 	}
 }
