@@ -18,19 +18,25 @@
 
             using (var client = new SmtpClient(GmailServer, Port))
             {
-                var senderName = Request.Form["SenderName"];
-                var senderEmail = Request.Form["SenderEmail"];
-                var subject = Request.Form["Subject"];
-                var message = Request.Form["Message"];
+                try
+                {
+                    var senderName = Request.Form["SenderName"];
+                    var senderEmail = Request.Form["SenderEmail"];
+                    var subject = Request.Form["Subject"];
+                    var message = Request.Form["Message"];
 
-                var mail = new MailMessage();
-                mail.From = new MailAddress(senderEmail);
-                mail.To.Add("info@smartcat.io");
-                mail.Subject = senderName + " | " + subject;
-                mail.Body = message;
+                    var mail = new MailMessage();
+                    mail.From = new MailAddress(senderEmail);
+                    mail.To.Add("info@smartcat.io");
+                    mail.Subject = senderName + " | " + subject;
+                    mail.Body = message;
 
-                // TODO: Uncomment when implemented
-                //client.Send(mail);
+                    client.Send(mail);
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
         }
     }

@@ -24,7 +24,7 @@
 
 </head>
 <body runat="server">
-    <form runat="server" autocomplete="off">
+    <form id="theForm" runat="server" autocomplete="off">
         <div class="container">
             <header class="header <%= Page.Title == "SmartCat" ? "home" : "" %>">
                 <div class="wrapper">
@@ -132,7 +132,7 @@
                 <div class="contact-block">
                     <div class="wrapper">
                         <h4>Contact us</h4>
-                        <div id="theForm" class="simform">
+                        <div class="simform">
                             <div class="simform-inner">
                                 <ol class="questions">
                                     <li>
@@ -161,7 +161,7 @@
                                     </li>--%>
                                 </ol><!-- /questions -->
                                 <%--<button class="submit" type="submit">Send answers</button>--%>
-                                <asp:Button runat="server" CssClass="submit" OnClick="OnContactUsClick" Text="Send answers" />
+                                <asp:Button runat="server" ID="SubmitButton" CssClass="submit" OnClick="OnContactUsClick" Text="Send answers" />
                                 <div class="controls">
                                     <button class="next"></button>
                                     <div class="progress"></div>
@@ -226,6 +226,13 @@
                 </div>
             </footer>
         </div>
+        
+        <script type="text/javascript">
+            function contactUs() {
+                $('#<%=SubmitButton.ClientID%>').click();
+            }
+        </script>
+        
         <!-- javascript -->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script type="text/javascript">window.jQuery || document.write("<script src='assets/scripts/main/jquery-1.8.3.min.js'>\x3C/script>")</script>
