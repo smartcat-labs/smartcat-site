@@ -40,7 +40,7 @@
                 }
                 catch (Exception ex)
                 {
-
+                    System.Diagnostics.Trace.TraceError("Something brokeded", ex);
                 }
             }
         }
