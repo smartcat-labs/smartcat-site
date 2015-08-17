@@ -40,7 +40,7 @@
                             </li>
                             <li>
                                 <span>
-                                    <label for="SenderContact">*Contact number?</label></span>
+                                    <label for="SenderContact">Contact number?</label></span>
                                 <div class="contact-info">
                                     <input id="SenderContact" name="SenderContact" type="text" />
                                 </div>
