@@ -13,6 +13,7 @@
                 <div class="blog-landing">
                     <div class="blog-inner-wrap">
                         <div class="item stamp">
+                            <a href="CodingSerbia.aspx" class="link-overlay"></a> 
                             <div class="img-wrap">
                                 <img src="assets/img/content/coding_serbia_teaser.jpg" alt="" />
                                 <span class="color-overlay"></span>

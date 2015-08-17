@@ -29,6 +29,7 @@
                     </div> -->
                     <div class="blog-inner-wrap">
                         <div class="item stamp">
+                            <a href="LeveragingParallelExecution.aspx" class="link-overlay"></a> 
                             <div class="img-wrap">
                                 <img src="assets/img/content/leveraging_parallel_execution_teaser.jpg" alt="" />
                                 <span class="color-overlay"></span>
