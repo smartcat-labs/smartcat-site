@@ -8,225 +8,225 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js">
 <!--<![endif]-->
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<html xmlns="http://www.w3.org/1999/xhtml" runat="server">
+<head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <link href="assets/favicon.ico" rel="icon"/>
+    <link href="assets/favicon.ico" rel="icon" />
     <title><%= Page.Title %></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css"/>
+    <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" />
 
     <script type="text/javascript" src="assets/scripts/libs/modernizr-2.6.2.min.js"></script>
 
 </head>
 <body>
-<form runat="server">
-<div class="container">
-    <header class="header <%= Page.Title == "SmartCat" ? "home" : "" %>">
-        <div class="wrapper">
-            <a href="Home.aspx" class="logo">
-                <img src="assets/img/logo.png" alt=""/>
-            </a>
+    <form>
+        <div class="container">
+            <header class="header <%= Page.Title == "SmartCat" ? "home" : "" %>">
+                <div class="wrapper">
+                    <a href="Home.aspx" class="logo">
+                        <img src="assets/img/logo.png" alt=""/>
+                    </a>
 
-            <div class="search-desktop">
-                <div class="search-wrapper">
-                    <a href="javascript:;" class="btn-search">
-                        <i class="ico"></i>
-                    </a>
-                    <input type="search" placeholder="Search">
-                </div>
-
-                <a href="javascript:;" class="open-search">
-                    <i class="ico"></i>
-                </a>
-            </div>
-
-            <ul class="social">
-                <li>
-                    <a href="http://www.github.com" target="_blank">
-                        <i class="ico github"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.twitter.com" target="_blank">
-                        <i class="ico twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.stackoverflow.com" target="_blank">
-                        <i class="ico stackoverflow"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.linkedin.com" target="_blank">
-                        <i class="ico linked"></i>
-                    </a>
-                </li>
-            </ul>
-            <a href="tel:+381216616557" class="phone">+381 (0)21 661 65 57</a>
-            <div class="menu-wrapper">
-                <nav class="main-nav">
-                    <a href="javascript:;" class="close-menu">
-                        <i class="ico"></i>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="Services.aspx">Services</a>
-                        </li>
-                        <li>
-                            <a href="Technologies.aspx">
-                                <span class="t-desktop">Technologies</span>
-                                <span class="t-desktop-small">Techs</span>
+                    <div class="search-desktop">
+                        <div class="search-wrapper">
+                            <a href="javascript:;" class="btn-search">
+                                <i class="ico"></i>
                             </a>
-                        </li>
-                        <li>
-                            <a href="Process.aspx">Process</a>
-                        </li>
-                        <li>
-                            <a href="Team.aspx">Team</a>
-                        </li>
-                        <li>
-                            <a href="Blog.aspx">
-                                <i class="ico cat"></i>
-                                <strong>Blog</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="News.aspx">News</a>
-                        </li>
-                        <li>
-                            <a href="Contact.aspx">Contact</a>
-                        </li>
-                    </ul>
-                    <div class="search-box">
-                        <input type="text">
-                        <a href="javascript:;" class="search-btn">
+                            <input type="search" placeholder="Search">
+                        </div>
+
+                        <a href="javascript:;" class="open-search">
                             <i class="ico"></i>
                         </a>
                     </div>
-                </nav>
-            </div>
-            <a href="javascript:;" class="menu-btn">
-                <i class="ico"></i>
-            </a>
-        </div>
-    </header>
 
-    <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
-
-    <footer class="footer">
-        <section class="top">
-            <img src="assets/img/star-texture.png" alt=""/>
-            <div class="wrapper">
-                <h2>Want to work with us?</h2>
-                <p>
-                    Want to see what SmartCat can do for your business? <br> We can't wait to show you! Provide us your info in the field below.
-                </p>
-            </div>
-        </section>
-
-        <div class="contact-block">
-            <div class="wrapper">
-                <h4>Contact us</h4>
-                <form id="theForm" class="simform" autocomplete="off">
-                    <div class="simform-inner">
-                        <ol class="questions">
-                            <li>
-                                <span><label for="q1">What's your name? <span>(Please fill the field before continuing)</span></label></span>
-                                <input id="q1" name="q1" type="text"/>
-                            </li>
-                            <li>
-                                <span><label for="q2">Where do you live?</label></span>
-                                <input id="q2" name="q2" type="text"/>
-                            </li>
-                            <li>
-                                <span><label for="q3">What time do you got to work?</label></span>
-                                <input id="q3" name="q3" type="text"/>
-                            </li>
-                            <li>
-                                <span><label for="q4">How do you like your veggies?</label></span>
-                                <input id="q4" name="q4" type="text"/>
-                            </li>
-                            <li>
-                                <span><label for="q5">What book inspires you?</label></span>
-                                <input id="q5" name="q5" type="text"/>
-                            </li>
-                            <li>
-                                <span><label for="q6">What's your profession?</label></span>
-                                <input id="q6" name="q6" type="text"/>
-                            </li>
-                        </ol><!-- /questions -->
-                        <%--<button class="submit" type="submit">Send answers</button>--%>
-                        <asp:Button runat="server" CssClass="submit" OnClick="OnContactUsClick"/>
-                        <div class="controls">
-                            <button class="next"></button>
-                            <div class="progress"></div>
-                            <span class="number">
-                                    <span class="number-current"></span>
-                                    <span class="number-total"></span>
-                                </span>
-                            <span class="error-message"></span>
-                        </div><!-- / controls -->
-                    </div><!-- /simform-inner -->
-                    <span class="final-message"></span>
-                </form>
-                <ul class="social show-on-mobile">
-                    <li>
-                        <a href="https://github.com/smartcat-labs" class="ico github" target="_blank"></a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" class="ico twitter"></a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" class="ico stackoverflow"></a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" class="ico linked"></a>
-                    </li>
-                </ul>
-                <a href="javascript:;" class="scroll-top show-on-mobile"></a>
-            </div>
-        </div>
-
-        <div class="bottom">
-            <div class="wrapper">
-                <div class="left">
-                    <a href="Home.aspx" class="logo">
-                        <img src="assets/img/footer-logo.png" alt=""/>
+                    <ul class="social">
+                        <li>
+                            <a href="http://www.github.com" target="_blank">
+                                <i class="ico github"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.twitter.com" target="_blank">
+                                <i class="ico twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.stackoverflow.com" target="_blank">
+                                <i class="ico stackoverflow"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.linkedin.com" target="_blank">
+                                <i class="ico linked"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="tel:+381216616557" class="phone">+381 (0)21 661 65 57</a>
+                    <div class="menu-wrapper">
+                        <nav class="main-nav">
+                            <a href="javascript:;" class="close-menu">
+                                <i class="ico"></i>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="Services.aspx">Services</a>
+                                </li>
+                                <li>
+                                    <a href="Technologies.aspx">
+                                        <span class="t-desktop">Technologies</span>
+                                        <span class="t-desktop-small">Techs</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="Process.aspx">Process</a>
+                                </li>
+                                <li>
+                                    <a href="Team.aspx">Team</a>
+                                </li>
+                                <li>
+                                    <a href="Blog.aspx">
+                                        <i class="ico cat"></i>
+                                        <strong>Blog</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="News.aspx">News</a>
+                                </li>
+                                <li>
+                                    <a href="Contact.aspx">Contact</a>
+                                </li>
+                            </ul>
+                            <div class="search-box">
+                                <input type="text">
+                                <a href="javascript:;" class="search-btn">
+                                    <i class="ico"></i>
+                                </a>
+                            </div>
+                        </nav>
+                    </div>
+                    <a href="javascript:;" class="menu-btn">
+                        <i class="ico"></i>
                     </a>
-                    <p>
-                        &copy;SmartCat 2015.All rights reserved. Design by <a href="http://www.weareelder.com" target="_blank">Elder</a>.
-                    </p>
                 </div>
-                <ul class="info-list">
-                    <li>
-                        <span>
-                                <i class="ico pin"></i>
-                                Danila Kiša 3V/14, Novi Sad, 21000, Serbia
-                            </span>
-                    </li>
-                    <li>
-                        <a href="tel:+381216616557">
-                            <i class="ico telephone"></i>
-                            +381 (0)21 661 65 57
-                        </a>
-                    </li>
-                    <li>
-                        <a href="mailto:info@smartcat.io">
-                            <i class="ico mail"></i>
-                            info@smartcat.io
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            </header>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+
+            <footer class="footer">
+                <section class="top">
+                    <img src="assets/img/star-texture.png" alt=""/>
+                    <div class="wrapper">
+                        <h2>Want to work with us?</h2>
+                        <p>
+                            Want to see what SmartCat can do for your business? <br> We can't wait to show you! Provide us your info in the field below.
+                        </p>
+                    </div>
+                </section>
+
+                <div class="contact-block">
+                    <div class="wrapper">
+                        <h4>Contact us</h4>
+                        <div id="theForm" class="simform" autocomplete="off">
+                            <div class="simform-inner">
+                                <ol class="questions">
+                                    <li>
+                                        <span><label for="q1">What's your name? <span>(Please fill the field before continuing)</span></label></span>
+                                        <input id="q1" name="q1" type="text"/>
+                                    </li>
+                                    <li>
+                                        <span><label for="q2">Where do you live?</label></span>
+                                        <input id="q2" name="q2" type="text"/>
+                                    </li>
+                                    <li>
+                                        <span><label for="q3">What time do you got to work?</label></span>
+                                        <input id="q3" name="q3" type="text"/>
+                                    </li>
+                                    <li>
+                                        <span><label for="q4">How do you like your veggies?</label></span>
+                                        <input id="q4" name="q4" type="text"/>
+                                    </li>
+                                    <li>
+                                        <span><label for="q5">What book inspires you?</label></span>
+                                        <input id="q5" name="q5" type="text"/>
+                                    </li>
+                                    <li>
+                                        <span><label for="q6">What's your profession?</label></span>
+                                        <input id="q6" name="q6" type="text"/>
+                                    </li>
+                                </ol><!-- /questions -->
+                                <%--<button class="submit" type="submit">Send answers</button>--%>
+                                <asp:Button runat="server" CssClass="submit" OnClick="OnContactUsClick" Text="Send answers" />
+                                <div class="controls">
+                                    <button class="next"></button>
+                                    <div class="progress"></div>
+                                    <span class="number">
+                                            <span class="number-current"></span>
+                                            <span class="number-total"></span>
+                                        </span>
+                                    <span class="error-message"></span>
+                                </div><!-- / controls -->
+                            </div><!-- /simform-inner -->
+                            <span class="final-message"></span>
+                        </div>
+                        <ul class="social show-on-mobile">
+                            <li>
+                                <a href="https://github.com/smartcat-labs" class="ico github" target="_blank"></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="ico twitter"></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="ico stackoverflow"></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="ico linked"></a>
+                            </li>
+                        </ul>
+                        <a href="javascript:;" class="scroll-top show-on-mobile"></a>
+                    </div>
+                </div>
+
+                <div class="bottom">
+                    <div class="wrapper">
+                        <div class="left">
+                            <a href="Home.aspx" class="logo">
+                                <img src="assets/img/footer-logo.png" alt=""/>
+                            </a>
+                            <p>
+                                &copy;SmartCat 2015.All rights reserved. Design by <a href="http://www.weareelder.com" target="_blank">Elder</a>.
+                            </p>
+                        </div>
+                        <ul class="info-list">
+                            <li>
+                                <span>
+                                        <i class="ico pin"></i>
+                                        Danila Kiša 3V/14, Novi Sad, 21000, Serbia
+                                    </span>
+                            </li>
+                            <li>
+                                <a href="tel:+381216616557">
+                                    <i class="ico telephone"></i>
+                                    +381 (0)21 661 65 57
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@smartcat.io">
+                                    <i class="ico mail"></i>
+                                    info@smartcat.io
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
         </div>
-    </footer>
-</div>
-</form>
+    </form>
 </body>
 </html>
