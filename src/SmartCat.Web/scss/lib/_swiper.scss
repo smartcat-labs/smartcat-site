@@ -189,7 +189,7 @@
   display: block;
 }
 .swiper-container-horizontal > .swiper-pagination {
-  bottom: -3px;
+  bottom: 2px;
   left: 0;
   width: 100%;
 }
@@ -353,7 +353,7 @@
 .swiper-container-horizontal > .swiper-scrollbar {
   position: absolute;
   left: 1%;
-  bottom: 3px;
+  bottom: 2px;
   z-index: 50;
   height: 5px;
   width: 98%;
