@@ -71,9 +71,8 @@ val usersTable = sc.cassandraTable(<span class="str">"testsparkcassandra"</span>
                             In a typical query scenario we couldn’t query by age because it’s not a part of a partition or clustering key. We could query and explicitly allow filtering but this is a huge performance impact and it is not recommended. On the other hand, we could use secondary indexing but this is also at the cost of performance since cardinality is high. We can solve this problem using spark. As an example, we could execute transformation and get count
                         </p>
 <pre class="csharpcode">
-<span class="kwrd">case</span> <span class="kwrd">class</span> User(username: String, name: String, email: String, age: Int)
-sc.cassandraTable[User](<span class="str">"testsparkcassandra"</span>, <span class="str">"users"</span>).registerAsTable(<span class="str">"users"</span>)
-<span class="kwrd">var</span> adults = sql(<span class="str">"SELECT * FROM users WHERE age &gt; 21"</span>)
+val adults = usersTable.filter(_.age &gt; 21)
+val total = adults.count
 </pre>
                         <p>
                             This is great but since we are talking about SparkSQL we can also query using SQL statements against the cassandra table like this
