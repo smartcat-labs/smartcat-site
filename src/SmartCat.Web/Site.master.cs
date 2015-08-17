@@ -15,9 +15,12 @@
         {
             using (var client = new SmtpClient(GmailServer, Port))
             {
-                //Request.Form[""]
+                var senderName = Request.Form["SenderName"];
+                var senderEmail = Request.Form["SenderEmail"];
+                var subject = Request.Form["Subject"];
+                var message = Request.Form["Message"];
 
-                MailMessage mail = new MailMessage();
+                var mail = new MailMessage();
                 mail.From = new MailAddress("matija0204@gmail.com");
                 mail.To.Add("info@smartcat.io");
                 mail.Subject = "Contact us";
