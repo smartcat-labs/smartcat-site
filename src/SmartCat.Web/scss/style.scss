@@ -732,6 +732,10 @@
 		margin-bottom: 26px;
 		a {
 			color: $grey-light;
+			&:visited,
+			&:active {
+				color: $grey-light;
+			}
 		}
 	}
 	li {

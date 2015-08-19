@@ -246,6 +246,10 @@
 					margin-bottom: 20px;
 					a {
 						color: $grey-light;
+						&:visited,
+						&:active {
+							color: $grey-light;
+						}
 					}
 				}
 				.reset-inner {

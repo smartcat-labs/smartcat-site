@@ -1223,6 +1223,8 @@ textarea {
         margin-bottom: 30px; }
         .blog-landing .blog-inner-wrap .text p a {
           color: #7d7d7d; }
+          .blog-landing .blog-inner-wrap .text p a:visited, .blog-landing .blog-inner-wrap .text p a:active {
+            color: #7d7d7d; }
       .blog-landing .blog-inner-wrap .text .author {
         font-size: 9px;
         line-height: 11px;
@@ -2473,6 +2475,8 @@ textarea {
       margin-bottom: 20px; }
       .widget.slider .flexslider .text-item p a {
         color: #7d7d7d; }
+        .widget.slider .flexslider .text-item p a:visited, .widget.slider .flexslider .text-item p a:active {
+          color: #7d7d7d; }
     .widget.slider .flexslider .text-item .reset-inner {
       color: #fff; }
   .widget.slider .flexslider .flex-control-nav {
@@ -2590,6 +2594,8 @@ textarea {
         transition: color 0.3s; }
         .process-block ul li p a {
           color: #7d7d7d; }
+          .process-block ul li p a:visited, .process-block ul li p a:active {
+            color: #7d7d7d; }
       .process-block ul li:last-child {
         margin-right: 0; }
       .process-block ul li:hover h3 a {
@@ -3492,6 +3498,8 @@ textarea {
           line-height: 16px; }
           .one-three .column .text .inner p a {
             color: #7d7d7d; }
+            .one-three .column .text .inner p a:visited, .one-three .column .text .inner p a:active {
+              color: #7d7d7d; }
         .one-three .column .text .inner span {
           font-size: 10px; }
     .one-three .column .overlay {
@@ -5631,6 +5639,8 @@ html[xmlns] .slides {
     margin-bottom: 26px; }
     .items-list p a {
       color: #7d7d7d; }
+      .items-list p a:visited, .items-list p a:active {
+        color: #7d7d7d; }
   .items-list li {
     width: 100%;
     float: left;

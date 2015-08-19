@@ -192,13 +192,13 @@
                                 <a href="https://github.com/smartcat-labs" class="ico github" target="_blank"></a>
                             </li>
                             <li>
-                                <a href="javascript:;" class="ico twitter"></a>
+                                <a href="http://www.twitter.com/smartcat_io" class="ico twitter" target="_blank"></a>
                             </li>
                             <li>
-                                <a href="javascript:;" class="ico stackoverflow"></a>
+                                <a href="http://www.stackoverflow.com" class="ico stackoverflow" target="_blank"></a>
                             </li>
                             <li>
-                                <a href="javascript:;" class="ico linked"></a>
+                                <a href="http://www.linkedin.com/company/smartcat-io" class="ico linked" target="_blank"></a>
                             </li>
                         </ul>
                         <a href="javascript:;" class="scroll-top show-on-mobile"></a>

@@ -33,7 +33,11 @@
 				margin-bottom: 0;
 				@include transition(color 0.3s);
 				a {
-					color: #7d7d7d;
+					color: $grey-light;
+					&:visited,
+					&:active {
+						color: $grey-light;
+					}
 				}
 			}
 			&:last-child {
@@ -940,6 +944,10 @@
 					line-height: 16px;
 					a {
 						color: $grey-light;
+						&:visited,
+						&:active {
+							color: $grey-light;
+						}
 					}
 				}
 				span {

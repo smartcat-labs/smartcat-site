@@ -267,6 +267,10 @@
 				margin-bottom: 30px;
 				a {
 					color: $grey-light;
+					&:visited,
+					&:active {
+						color: $grey-light;
+					}
 				}
 			}
 			.author {
