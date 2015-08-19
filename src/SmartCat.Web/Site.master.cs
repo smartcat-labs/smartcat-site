@@ -6,17 +6,9 @@
 
     public class Site : MasterPage
     {
-        //Smpt server  
-        public const string GmailServer = "aspmx.l.google.com";
-        //Connecting port  
-        public const int Port = 25;
-
         public void OnContactUsClick(object sender, EventArgs e)
         {
-            // Send email to info using gmails anonymous email sending server
-            // This should be updated to IP based smtp relay service https://support.google.com/a/answer/176600?hl=en
-
-            using (var client = new SmtpClient(GmailServer, Port))
+            using (var client = new SmtpClient())
             {
                 try
                 {
@@ -41,6 +33,7 @@
                 catch (Exception ex)
                 {
                     System.Diagnostics.Trace.TraceError("Something brokeded", ex);
+                    throw ex;
                 }
             }
         }
