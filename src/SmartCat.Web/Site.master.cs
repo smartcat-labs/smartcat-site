@@ -22,11 +22,10 @@
                     mail.From = new MailAddress(senderEmail);
                     mail.To.Add("info@smartcat.io");
                     mail.Subject = subject;
-                    mail.Body = senderName;
-                    mail.Body += Environment.NewLine;
-                    mail.Body += senderContact;
-                    mail.Body += Environment.NewLine;
-                    mail.Body += message;
+                    mail.Body = "Sender: " + senderName + Environment.NewLine;
+                    mail.Body += "Sender email: " + senderEmail + Environment.NewLine;
+                    mail.Body += "Sender contact: " + senderContact + Environment.NewLine;
+                    mail.Body += "Message" + Environment.NewLine + message;
 
                     client.Send(mail);
                 }
