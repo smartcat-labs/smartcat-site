@@ -22,18 +22,18 @@
                     </div>
                     <div class="rte-content">
                         <p>
-                            On this day the news that we've decided to open our own company may not be interesting or relevant to many of you reading this, however I assure you that this day will be remembered as a start of something great, something inspiring and remarkable. 
+                            On this day the news that we’ve decided to open our own company may not be interesting or relevant to many of you reading this, however I assure you that this day will be remembered as a start of something great, something inspiring and remarkable. 
                         </p>
                         <p>
-                            Imagine if we could know all there is to know about a particular problem or a situation at the time when we need to make a decision, imagine a world with no assumptions, just facts. Imagine the efficiency we could achieve, imagine the comfort of predictability. Imagine the responsiveness that is always real-time...
+                            When you have a group of highly-motivated and determined seniors, with same core values that promote synergy, progress, open-mindedness, positive attitude and passion for learning, when you find the right partners and all the experiences behind you start connecting, like dots in a graph, same way stars connect to form constellations, the excitement is undeniable. You are certain this is your calling, this is your destiny, and great things are in front of us.
 
                         </p>
                         <p>
-                            The concept of Big Data has intrigued us from the very first online articles describing this new frontier of technology, back in 2007. Imagine if we could know all there is to know about a particular problem or a situation at the time when we need to make a decision, imagine a world with no assumptions, just facts. Imagine the efficiency we could achieve, imagine the comfort of predictability. Imagine the responsiveness that is always real-time… Some may say it’s scary, but a fear of the unknown is an elemental part of progress. 
+                            The concept of Big Data has intrigued us from the very first online articles describing this new frontier of technology, back in 2007. Imagine if we could know all there is to know about a particular problem or a situation at the time when we need to make a decision, imagine a world with no assumptions, just facts. Imagine the efficiency we could achieve, imagine the comfort of predictability. Imagine the responsiveness that is always real-time... Some may say it’s scary, but a fear of the unknown is an elemental part of progress. 
                         </p>
                         <p>
-                            This is why we, all three of us founders, have spent considerable portion of our career studying this new frontier of computer science. From trying out different technologies to studying various use cases and implementing production-ready systems, each one of us has focused on this emerging field independently. We’ve now come together bound by the same ideals, a shared childhood bond, and same dedication to be the best at what we do and do it in an innovative way.
-Now it’s our time to show the world what we can do. So, let’s start with a simple message…
+                            This is why we, all three of us founders, have spent considerable portion of our career studying this new frontier of computer science. From trying out different technologies to studying various use cases and implementing production-ready systems, each one of us has focused on this emerging field independently. We’ve now come together bound by the same ideals, a shared childhood bond, and same dedication to be the best at what we do and do it in an innovative way. Now it’s our time to show the world what we can do. So, let’s start with a simple message...
+
                         </p>
                         <p>
                             "Hello, world!" :)
