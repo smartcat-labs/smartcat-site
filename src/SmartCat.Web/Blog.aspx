@@ -29,23 +29,44 @@
                     </div> -->
                     <div class="blog-inner-wrap">
                         <div class="item stamp">
-                            <a href="LeveragingParallelExecution.aspx" class="link-overlay"></a> 
+                            <a href="SparkPlusCassandra.aspx" class="link-overlay"></a> 
+                            <div class="img-wrap">
+                                <img src="assets/img/content/the-perfect-match__teaser.jpg" alt="" />
+                                <span class="color-overlay"></span>
+                                <a href="SparkPlusCassandra.aspx"><span class="blue-overlay"></span></a>
+                                <a href="SparkPlusCassandra.aspx" class="read-more"><i></i></a>
+                                <span class="ribbon"></span>
+                            </div>
+                            <div class="text hidden-on-mobile">
+                                <h3>Spark + Cassandra: The perfect match</h3>
+                                <span class="date">17/08/15</span>
+                            </div>
+                            <div class="text show-on-mobile">
+                                <span class="date">17/08/15</span>
+                                <h3>
+                                    <a href="LeveragingParallelExecution.aspx">Spark + Cassandra: The perfect match</a>
+                                </h3>
+                                <span class="author">
+                                    By Matija Gobec
+                                </span>
+                            </div>
+                        </div>
+                        <div class="item">
                             <div class="img-wrap">
                                 <img src="assets/img/content/leveraging_parallel_execution_teaser.jpg" alt="" />
                                 <span class="color-overlay"></span>
                                 <a href="LeveragingParallelExecution.aspx"><span class="blue-overlay"></span></a>
                                 <a href="LeveragingParallelExecution.aspx" class="read-more"><i></i></a>
-                                <span class="ribbon"></span>
+                                <span class="arrow"></span>
                             </div>
-                            <div class="text hidden-on-mobile">
-                                <h3>Leveraging parallel execution</h3>
-                                <span class="date">08/08/15</span>
-                            </div>
-                            <div class="text show-on-mobile">
-                                <span class="date">08/08/15</span>
+                            <div class="text">
+                                <span class="date">03/08/15</span>
                                 <h3>
-                                    <a href="LeveragingParallelExecution.aspx">Leveraging parallel execution</a>
+                                    <a href="SparkPlusCassandra.aspx">Leveraging parallel execution</a>
                                 </h3>
+                                <p>
+                                    <a href="SparkPlusCassandra.aspx">With NoSql databases comes change in physical data modelling. When it comes to truly distributed databases...</a>
+                                </p>
                                 <span class="author">
                                     By Matija Gobec
                                 </span>
@@ -60,7 +81,7 @@
                                 <span class="arrow"></span>
                             </div>
                             <div class="text">
-                                <span class="date">23/07/15</span>
+                                <span class="date">27/07/15</span>
                                 <h3>
                                     <a href="SettingUpEmbedded.aspx">Setting up embedded cassandra on spring project</a>
                                 </h3>
@@ -72,21 +93,21 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="item vertical">
+                        <div class="item right">
                             <div class="img-wrap">
-                                <img src="assets/img/content/migration-time-series_teaser.jpg" alt="" />
+                                <img src="assets/img/content/cassandra-migration-tool_teaser.jpg" alt="" />
                                 <span class="color-overlay"></span>
-                                <a href="MigratingTime.aspx"><span class="blue-overlay"></span></a>
-                                <a href="MigratingTime.aspx" class="read-more"><i></i></a>
+                                <a href="CassandraMigrationTool.aspx"><span class="blue-overlay"></span></a>
+                                <a href="CassandraMigrationTool.aspx" class="read-more"><i></i></a>
                                 <span class="arrow"></span>
                             </div>
                             <div class="text">
-                                <span class="date">17/07/15</span>
+                                <span class="date">20/07/15</span>
                                 <h3>
-                                    <a href="MigratingTime.aspx">Migrating time series data from MySql to Cassandra</a>
+                                    <a href="CassandraMigrationTool.aspx">Cassandra migration tool</a>
                                 </h3>
                                 <p>
-                                    <a href="MigratingTime.aspx">MySql is still widely used in application development as a stable, fairly performant...</a>
+                                    <a href="CassandraMigrationTool.aspx">Developing a product usually means that during the period of development you are going to change requirements and...</a>
                                 </p>
                                 <span class="author">
                                     By Matija Gobec
@@ -102,7 +123,7 @@
                                 <span class="arrow"></span>
                             </div>
                             <div class="text">
-                                <span class="date">08/07/15</span>
+                                <span class="date">06/07/15</span>
                                 <h3>
                                     <a href="BlackboxTesting.aspx">Blackbox testing microservices</a>
                                 </h3>
@@ -111,6 +132,27 @@
                                 </p>
                                 <span class="author">
                                     By Nenad Bozic
+                                </span>
+                            </div>
+                        </div>
+                        <div class="item vertical">
+                            <div class="img-wrap">
+                                <img src="assets/img/content/migration-time-series_teaser.jpg" alt="" />
+                                <span class="color-overlay"></span>
+                                <a href="MigratingTime.aspx"><span class="blue-overlay"></span></a>
+                                <a href="MigratingTime.aspx" class="read-more"><i></i></a>
+                                <span class="arrow"></span>
+                            </div>
+                            <div class="text">
+                                <span class="date">22/06/15</span>
+                                <h3>
+                                    <a href="MigratingTime.aspx">Migrating time series data from MySql to Cassandra</a>
+                                </h3>
+                                <p>
+                                    <a href="MigratingTime.aspx">MySql is still widely used in application development as a stable, fairly performant...</a>
+                                </p>
+                                <span class="author">
+                                    By Matija Gobec
                                 </span>
                             </div>
                         </div>
@@ -123,7 +165,7 @@
                                 <span class="arrow"></span>
                             </div>
                             <div class="text">
-                                <span class="date">28/06/15</span>
+                                <span class="date">08/06/15</span>
                                 <h3>
                                     <a href="WhyGoDistributed.aspx">Why go distributed</a>
                                 </h3>
@@ -144,7 +186,7 @@
                                 <span class="arrow"></span>
                             </div>
                             <div class="text">
-                                <span class="date">15/06/15</span>
+                                <span class="date">25/05/15</span>
                                 <h3>
                                     <a href="CassandraUsecases.aspx">Cassandra use cases</a>
                                 </h3>
@@ -165,7 +207,7 @@
                                 <span class="arrow"></span>
                             </div>
                             <div class="text">
-                                <span class="date">18/05/15</span>
+                                <span class="date">11/05/15</span>
                                 <h3>
                                     <a href="WhyBigData.aspx">Why Big Data</a>
                                 </h3>
@@ -177,7 +219,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="item right">
+                        <div class="item left">
                             <div class="img-wrap">
                                 <img src="assets/img/content/Craft-conference_teaser.jpg" alt="" />
                                 <span class="color-overlay"></span>
@@ -186,7 +228,7 @@
                                 <span class="arrow"></span>
                             </div>
                             <div class="text">
-                                <span class="date">05/05/15</span>
+                                <span class="date">27/04/15</span>
                                 <h3>
                                     <a href="CraftConference.aspx">Craft conference 2015</a>
                                 </h3>
@@ -198,48 +240,6 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="item right">
-							<div class="img-wrap">
-								<img src="assets/img/content/cassandra-migration-tool_teaser.jpg" alt="" />
-								<span class="color-overlay"></span>
-								<a href="CassandraMigrationTool.aspx"><span class="blue-overlay"></span></a>
-								<a href="CassandraMigrationTool.aspx" class="read-more"><i></i></a>
-								<span class="arrow"></span>
-							</div>
-							<div class="text">
-								<span class="date">29/04/15</span>
-								<h3>
-									<a href="CassandraMigrationTool.aspx">Cassandra migration tool</a>
-								</h3>
-								<p>
-									<a href="CassandraMigrationTool.aspx">Developing a product usually means that during the period of development you are going to change requirements and...</a>
-								</p>
-								<span class="author">
-									By Matija Gobec
-								</span>
-							</div>
-						</div>
-						<div class="item">
-							<div class="img-wrap">
-								<img src="assets/img/content/the-perfect-match__teaser.jpg" alt="" />
-								<span class="color-overlay"></span>
-								<a href="sparkPlusCassandra.aspx"><span class="blue-overlay"></span></a>
-								<a href="sparkPlusCassandra.aspx" class="read-more"><i></i></a>
-								<span class="arrow"></span>
-							</div>
-							<div class="text">
-								<span class="date">10/04/15</span>
-								<h3>
-									<a href="sparkPlusCassandra.aspx">Spark + Cassandra: The perfect match</a>
-								</h3>
-								<p>
-									<a href="sparkPlusCassandra.aspx">Hadoop has been the leading platform for distributed data storage and analytics for some time now. It is a solid...</a>
-								</p>
-								<span class="author">
-									By Matija Gobec
-								</span>
-							</div>
-						</div>
                     </div>
                 </div>
             </div>

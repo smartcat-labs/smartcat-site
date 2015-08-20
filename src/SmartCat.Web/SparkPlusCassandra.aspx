@@ -14,7 +14,7 @@
                     <div class="title">
                         <h2>Spark + Cassandra: The perfect match</h2>
                         <a href="Blog.aspx" class="go-back">Back</a>
-                        <span class="date">25/04/15</span>
+                        <span class="date">17/08/15</span>
                     </div>
                     <div class="img-wrap">
                         <img src="assets/img/content/the-perfect-match_details.jpg" alt="" />
@@ -268,5 +268,5 @@ sc.cassandraTable[User](<span class="str">"testsparkcassandra"</span>, <span cla
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="cphAdditionalFooter" runat="server">
-	
+    
 </asp:Content>

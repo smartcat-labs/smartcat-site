@@ -14,7 +14,7 @@
                     <div class="title">
                         <h2>Migrating time series data from MySql to Cassandra</h2>
                         <a href="Blog.aspx" class="go-back">Back</a>
-                        <span class="date">17/07/15</span>
+                        <span class="date">22/06/15</span>
                     </div>
                     <div class="img-wrap">
                         <img src="assets/img/content/migration-time-series_detailed.jpg" alt="" />
@@ -219,5 +219,5 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="cphAdditionalFooter" runat="server">
-	
+    
 </asp:Content>

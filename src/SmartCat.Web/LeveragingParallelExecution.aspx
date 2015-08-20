@@ -14,7 +14,7 @@
                     <div class="title">
                         <h2>Leveraging parallel execution</h2>
                         <a href="Blog.aspx" class="go-back">Back</a>
-                        <span class="date">08/08/15</span>
+                        <span class="date">03/08/15</span>
                     </div>
                     <div class="img-wrap">
                         <img src="assets/img/content/leveraging_parallel_execution_detailed.jpg" alt="" />
@@ -223,5 +223,5 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="cphAdditionalFooter" runat="server">
-	
+    
 </asp:Content>

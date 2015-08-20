@@ -14,7 +14,7 @@
                     <div class="title">
                         <h2>Blackbox testing microservices</h2>
                         <a href="Blog.aspx" class="go-back">Back</a>
-                        <span class="date">08/07/15</span>
+                        <span class="date">06/07/15</span>
                     </div>
                     <div class="img-wrap">
                         <img src="assets/img/content/black-box-testing_detailed.jpg" alt="" />
@@ -237,5 +237,5 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="cphAdditionalFooter" runat="server">
-	
+    
 </asp:Content>

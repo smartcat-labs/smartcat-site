@@ -14,7 +14,7 @@
                     <div class="title">
                         <h2>Cassandra use cases (what cassandra should not be used for)</h2>
                         <a href="Blog.aspx" class="go-back">Back</a>
-                        <span class="date">15/06/15</span>
+                        <span class="date">25/05/15</span>
                     </div>
                     <div class="img-wrap">
                         <img src="assets/img/content/cassandra-use-casses_detailed.jpg" alt="" />
@@ -242,5 +242,5 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="cphAdditionalFooter" runat="server">
-	
+    
 </asp:Content>

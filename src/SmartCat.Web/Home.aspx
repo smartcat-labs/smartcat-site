@@ -212,7 +212,7 @@
                     <div class="item romb">
                         <div class="top ">
                             <div class="box-title">
-                                <h4>08/08/15</h4>
+                                <h4>03/08/15</h4>
                             </div>
                             <a href="LeveragingParallelExecution.aspx" class="img-container">
                                 <img src="assets/img/content/leveraging_parallel_execution_teaser.jpg" alt="" class="reset-inner"/>
@@ -224,7 +224,7 @@
                         </div>
                         <div class="text">
                             <div class="inner reset-inner">
-                                <span class="date">08/08/15</span>
+                                <span class="date">03/08/15</span>
                                 <h4><a href="LeveragingParallelExecution.aspx">Leveraging parallel execution</a></h4>
                                 <p>
                                     <a href="LeveragingParallelExecution.aspx">With NoSql databases comes change in physical data modelling. When it comes to truly distributed databases, data model is denormalized...</a>
@@ -238,7 +238,7 @@
                     <div class="item romb">
                         <div class="top">
                             <div class="box-title">
-                                <h4>18/05/15</h4>
+                                <h4>11/05/15</h4>
                             </div>
                             <a href="WhyBigData.aspx" class="img-container">
                                 <img src="assets/img/content/why-big-data_teaser.jpg" alt="" />
@@ -250,7 +250,7 @@
                         </div>
                         <div class="text">
                             <div class="inner reset-inner">
-                                <span class="date">18/05/15</span>
+                                <span class="date">11/05/15</span>
                                 <h4><a href="WhyBigData.aspx">Why Big Data</a></h4>
                                 <p>
                                     <a href="WhyBigData.aspx">We wanted to share why we want to do what we do and why we think this is the future of IT. The number of internet users is constantly growing...</a>

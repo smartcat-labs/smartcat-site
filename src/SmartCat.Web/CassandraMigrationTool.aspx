@@ -14,7 +14,7 @@
                     <div class="title">
                         <h2>Cassandra migration tool</h2>
                         <a href="Blog.aspx" class="go-back">Back</a>
-                        <span class="date">29/04/15</span>
+                        <span class="date">20/07/15</span>
                     </div>
                     <div class="img-wrap">
                         <img src="assets/img/content/cassandra-migration-tool_detailed.jpg" alt="" />
@@ -222,5 +222,5 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="cphAdditionalFooter" runat="server">
-	
+    
 </asp:Content>
