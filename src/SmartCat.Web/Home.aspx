@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="SmartCat" Language="C#" MasterPageFile="Site.master" EnableEventValidation="false" %>
 
-<asp:Content runat="server" ID="unknown" ContentPlaceHolderID="ContentPlaceHolder">  
+<asp:Content runat="server" ID="unknown" ContentPlaceHolderID="ContentPlaceHolder">
 
     <section class="full-width home-banner">
         <div class="wrapper" >
@@ -134,7 +134,7 @@
             </div>
         </div>	
     </section>
-        
+
     <section class="full-width about-us-block">
         <div class="wrapper centered">
             <h2><i class="ico title-ico hidden-on-mobile"></i>About us</h2>
@@ -156,7 +156,7 @@
             </a>
         </div>
     </section>
-        
+
     <section class="full-width process-block">
         <div class="wrapper centered">
             <h2><i class="ico title-ico hidden-on-mobile"></i>Our process</h2>
@@ -200,7 +200,7 @@
             </div>
         </div>
     </section>
-        
+
     <section class="full-width news-block">
         <div class="wrapper">
             <h2>What's new?</h2>
@@ -233,32 +233,6 @@
                             </div>
                         </div>
                     </div>
-                </div>					
-                <div class="column">
-                    <div class="item romb">
-                        <div class="top">
-                            <div class="box-title">
-                                <h4>11/05/15</h4>
-                            </div>
-                            <a href="WhyBigData.aspx" class="img-container">
-                                <img src="assets/img/content/why-big-data_teaser.jpg" alt="" />
-                                <span class="overlay"></span>
-                                <div class="badge-holder">
-                                    <span class="reset-inner">B.</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="text">
-                            <div class="inner reset-inner">
-                                <span class="date">11/05/15</span>
-                                <h4><a href="WhyBigData.aspx">Why Big Data</a></h4>
-                                <p>
-                                    <a href="WhyBigData.aspx">We wanted to share why we want to do what we do and why we think this is the future of IT. The number of internet users is constantly growing...</a>
-                                </p>
-                                <span>By Nenad Bozic</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="column">
                     <div class="item romb">
@@ -282,6 +256,32 @@
                                     <a href="CassandraSummit.aspx">We are excited for the upcoming Cassandra Summit in San Francisco, the biggest NoSQL conference in the world and epicenter of...</a>
                                 </p>
                                 <span>By Matija Gobec</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="item romb">
+                        <div class="top">
+                            <div class="box-title">
+                                <h4>11/05/15</h4>
+                            </div>
+                            <a href="WhyBigData.aspx" class="img-container">
+                                <img src="assets/img/content/why-big-data_teaser.jpg" alt="" />
+                                <span class="overlay"></span>
+                                <div class="badge-holder">
+                                    <span class="reset-inner">B.</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="text">
+                            <div class="inner reset-inner">
+                                <span class="date">11/05/15</span>
+                                <h4><a href="WhyBigData.aspx">Why Big Data</a></h4>
+                                <p>
+                                    <a href="WhyBigData.aspx">We wanted to share why we want to do what we do and why we think this is the future of IT. The number of internet users is constantly growing...</a>
+                                </p>
+                                <span>By Nenad Bozic</span>
                             </div>
                         </div>
                     </div>
@@ -481,7 +481,7 @@
             </div>
         </div>
     </section>
-        
+
     <section class="full-width testimonials-block">
         <div class="wrapper">
             <h2>Behold the power of Big Data</h2>
@@ -533,7 +533,7 @@
             </div>
         </div>
     </section>
-        
+
     <section class="full-width carousel-block">
         <div class="wrapper">
             <h2>Partner network</h2>
