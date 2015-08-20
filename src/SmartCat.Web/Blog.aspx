@@ -72,7 +72,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="item">
+                        <div class="item right">
                             <div class="img-wrap">
                                 <img src="assets/img/content/setting-up-embedded-cassandra-with-spring_teaser.jpg" alt="" />
                                 <span class="color-overlay"></span>
@@ -93,7 +93,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="item right">
+                        <div class="item left">
                             <div class="img-wrap">
                                 <img src="assets/img/content/cassandra-migration-tool_teaser.jpg" alt="" />
                                 <span class="color-overlay"></span>
@@ -114,7 +114,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="item right">
+                        <div class="item left">
                             <div class="img-wrap">
                                 <img src="assets/img/content/black-box-testing_teaser.jpg" alt="" />
                                 <span class="color-overlay"></span>
@@ -156,7 +156,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="item">
+                        <div class="item right">
                             <div class="img-wrap">
                                 <img src="assets/img/content/why-go-distributed_teaser.jpg" alt="" />
                                 <span class="color-overlay"></span>
