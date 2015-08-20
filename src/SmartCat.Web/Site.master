@@ -113,7 +113,7 @@
                                 </li>
                             </ul>
                             <div class="search-box">
-                                <input type="text">
+                                <input type="text" />
                                 <a href="javascript:;" class="search-btn">
                                     <i class="ico"></i>
                                 </a>
@@ -130,14 +130,14 @@
 
             <footer class="footer">
                 
-                <% if (!Page.Title.Contains("Contact"))
+                <% if (!(Page.Title.Contains("Contact") || Page.Title.Contains("Error")))
                    { %>
                 <section class="top">
                     <img src="assets/img/star-texture.png" alt=""/>
                     <div class="wrapper">
                         <h2>Want to work with us?</h2>
                         <p>
-                            Want to see what SmartCat can do for your business? <br> We can't wait to show you! Provide us your info in the field below.
+                            Want to see what SmartCat can do for your business? <br /> We can't wait to show you! Provide us your info in the field below.
                         </p>
                     </div>
                 </section>

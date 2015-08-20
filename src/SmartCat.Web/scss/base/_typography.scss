@@ -255,6 +255,9 @@ blockquote {
 			}
 			a {
 				color: $blue-light;
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 		}
 	}

@@ -581,6 +581,8 @@ blockquote {
       font-family: "DINPro-Bold"; }
     .rte-content ol li a, .rte-content ul li a {
       color: #00a1e4; }
+      .rte-content ol li a:hover, .rte-content ul li a:hover {
+        text-decoration: underline; }
 .rte-content blockquote {
   width: 100%;
   float: left;
@@ -2143,6 +2145,9 @@ textarea {
   padding: 0; }
 .technologies-page .swiper-slide {
   padding: 0 40px; }
+
+.error-page .rte-content ul {
+  margin-bottom: 20px; }
 
 /*----------  components
 ------------------------------------------------------------------------------*/
