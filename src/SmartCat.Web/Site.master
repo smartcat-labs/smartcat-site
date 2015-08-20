@@ -66,11 +66,11 @@
                                 <i class="ico twitter"></i>
                             </a>
                         </li>
-                        <li>
+                        <%--<li>
                             <a href="http://www.stackoverflow.com" target="_blank">
                                 <i class="ico stackoverflow"></i>
                             </a>
-                        </li>
+                        </li>--%>
                         <li>
                             <a href="http://www.linkedin.com/company/smartcat-io" target="_blank">
                                 <i class="ico linked"></i>
