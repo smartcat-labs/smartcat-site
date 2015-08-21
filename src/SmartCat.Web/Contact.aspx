@@ -12,6 +12,22 @@
 </script>
 
 <asp:Content runat="server" ID="unknown" ContentPlaceHolderID="ContentPlaceHolder">
+    
+    <script type="text/javascript">
+        function whoSelected(ctrl) {
+            var info = document.getElementById('info');
+            var bk = document.getElementById('bk');
+            var mg = document.getElementById('mg');
+            var nb = document.getElementById('nb');
+
+            info.classList.remove('active');
+            bk.classList.remove('active');
+            mg.classList.remove('active');
+            nb.classList.remove('active');
+
+            ctrl.classList.add('active');
+        }
+    </script>
 
     <div class="page-title">
         <div class="wrapper">
@@ -52,7 +68,7 @@
                     <li class="contact-who-block">
                         <p>*Who do you want to contact?</p>
                         <div class="contacts-wrapper">
-                            <div class="one-contact active">
+                            <div class="one-contact active" id="info" onclick="whoSelected(this)">
                                 <div class="contact-romb-wrap contact-office-img">
                                     <div class="contact-who romb">
                                         <div class="img-wrap">
@@ -64,7 +80,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="one-contact hidden-on-mobile">
+                            <div class="one-contact hidden-on-mobile" id="bk" onclick="whoSelected(this)">
                                 <div class="contact-romb-wrap">
                                     <div class="contact-who romb">
                                         <div class="img-wrap">
@@ -76,7 +92,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="one-contact hidden-on-mobile">
+                            <div class="one-contact hidden-on-mobile" id="mg" onclick="whoSelected(this)">
                                 <div class="contact-romb-wrap">
                                     <div class="contact-who romb">
                                         <div class="img-wrap">
@@ -88,7 +104,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="one-contact hidden-on-mobile">
+                            <div class="one-contact hidden-on-mobile" id="nb" onclick="whoSelected(this)">
                                 <div class="contact-romb-wrap">
                                     <div class="contact-who romb">
                                         <div class="img-wrap">
