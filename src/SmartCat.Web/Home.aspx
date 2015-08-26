@@ -38,10 +38,10 @@
                     <div class="twitter-box">
                         <h3>Latest tweet</h3>
                         <p>
-                            SmartCat is going to be at Cassandra Summit 2015, in September, San Francisco, California. Let's meet-up!
+                            SmartCat is going to be at Cassandra Summit 2015, in September, San Francisco, California. Let's meet-up! #CassandraSummit
                         </p>
                         <span class="author">@SmartCat_io</span>
-                        <span class="date">29/05/2015</span>
+                        <span class="date">26/08/2015</span>
                     </div>
                 </div>
             </div>
