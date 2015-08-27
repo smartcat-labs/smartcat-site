@@ -90,11 +90,11 @@ sc.cassandraTable[User](<span class="str">"testsparkcassandra"</span>, <span cla
                         </p>
                     </div>
                     <div class="article-nav">
-                        <a href="CassandraMigrationTool.aspx" class="prev-post">
+                        <a href="LeveragingParallelExecution.aspx" class="prev-post">
                             <i></i>
                             Previus post
                         </a>
-                        <a href="WhyBigData.aspx" class="next-post">
+                        <a href="SpringBatchAsFramework.aspx" class="next-post">
                             Next post
                             <i></i>
                         </a>

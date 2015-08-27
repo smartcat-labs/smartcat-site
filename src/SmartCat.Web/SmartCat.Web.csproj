@@ -421,6 +421,7 @@
     <Content Include="ServicesDetail.aspx" />
     <Content Include="SettingUpEmbedded.aspx" />
     <Content Include="SparkPlusCassandra.aspx" />
+    <Content Include="SpringBatchAsFramework.aspx" />
     <Content Include="Team.aspx" />
     <Content Include="Technologies.aspx" />
     <Content Include="WeAreGettingCertified.aspx" />
