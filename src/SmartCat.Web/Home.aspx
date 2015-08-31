@@ -8,9 +8,9 @@
             <img src="assets/img/abstract-lines-1.png" alt="" class="lines" />
             <div class="caption">
                 <div class="inner">
-                    <h2>We are your trusted <br />
+                    <h1>We are your trusted <br />
                         <span class="white">Analytics</span> <span class="black">Partner</span>
-                    </h2>
+                    </h1>
                     <p>
                         We believe in striving for perfection and making the world a better place. <br> We believe in evolution. <br><br>
                         This is not our job. These are our lives. <br>Knowledge is our thirst and dedication our lifestyle.

@@ -3235,15 +3235,15 @@ textarea {
     .home-banner .caption .inner {
       width: 100%;
       float: left; }
-      .home-banner .caption .inner h2 {
+      .home-banner .caption .inner h1 {
         color: #fff;
         font-size: 62px;
         line-height: 72px;
         font-family: "NeutraText-Light"; }
-        .home-banner .caption .inner h2 span {
+        .home-banner .caption .inner h1 span {
           font-family: "NeutraText-Bold";
           text-transform: uppercase; }
-          .home-banner .caption .inner h2 span.black {
+          .home-banner .caption .inner h1 span.black {
             color: #141b23; }
       .home-banner .caption .inner p {
         color: #fff;
@@ -3345,13 +3345,13 @@ textarea {
       .home-banner .caption {
         max-width: 85%;
         padding-top: 15px; }
-        .home-banner .caption .inner h2 {
+        .home-banner .caption .inner h1 {
           font-size: 28px;
           line-height: 36px;
           margin-bottom: 25px; }
-          .home-banner .caption .inner h2 span {
+          .home-banner .caption .inner h1 span {
             display: block; }
-            .home-banner .caption .inner h2 span.black {
+            .home-banner .caption .inner h1 span.black {
               color: #fff; }
         .home-banner .caption .inner p {
           display: none; } }
@@ -3368,13 +3368,13 @@ textarea {
       .home-banner .caption {
         max-width: 85%;
         padding-top: 15px; }
-        .home-banner .caption .inner h2 {
+        .home-banner .caption .inner h1 {
           font-size: 28px;
           line-height: 36px;
           margin-bottom: 25px; }
-          .home-banner .caption .inner h2 span {
+          .home-banner .caption .inner h1 span {
             display: block; }
-            .home-banner .caption .inner h2 span.black {
+            .home-banner .caption .inner h1 span.black {
               color: #fff; }
         .home-banner .caption .inner p {
           display: none; } }
