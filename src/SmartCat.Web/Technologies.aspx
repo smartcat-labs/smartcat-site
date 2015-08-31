@@ -314,9 +314,9 @@
                                         <img src="assets/img/content/logo-item-17.png" alt="" class="greyscale"/>
                                     </div>
                                     <div class="contact-box hidden-on-mobile">
-                                        <img src="assets/img/content/techn-nenad.png" alt=""/>
+                                        <img src="assets/img/content/techn-bojan.png" alt=""/>
                                         <span>Have questions?</span>
-                                        <a href="javascript:;">Contact Nenad</a>
+                                        <a href="javascript:;">Contact Bojan</a>
                                     </div>
                                 </div>
                                 <div class="text">
@@ -325,14 +325,56 @@
                                     </p>
                                     <div class="contact-box">
                                         <span>Have questions?</span>
+                                        <a href="javascript:;">Contact Bojan</a>
+                                    </div>
+                                </div>	
+                            </li>
+                             <li class="swiper-slide">
+                                <div class="box">
+                                    <div class="img-wrap">
+                                        <img src="assets/img/content/logo-item-22.png" alt="" class="greyscale"/>
+                                    </div>
+                                    <div class="contact-box hidden-on-mobile">
+                                        <img src="assets/img/content/techn-nenad.png" alt=""/>
+                                        <span>Have questions?</span>
                                         <a href="javascript:;">Contact Nenad</a>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        Ruby is our language of choice for scripting: when you program in ruby it feels like playing a game. A lot of DevOps tools are written in Ruby which is a huge plus. It is much better to write scripts in some kind of scripting language then in bash scripts because code is testable and much closer to programmers.
+                                    </p>
+                                    <div class="contact-box">
+                                        <span>Have questions?</span>
+                                        <a href="javascript:;">Contact Nenad</a>
+                                    </div>
+                                </div>	
+                            </li>
+                             <li class="swiper-slide">
+                                <div class="box">
+                                    <div class="img-wrap">
+                                        <img src="assets/img/content/logo-item-23.png" alt="" class="greyscale"/>
+                                    </div>
+                                    <div class="contact-box hidden-on-mobile">
+                                        <img src="assets/img/content/techn-matija.png" alt=""/>
+                                        <span>Have questions?</span>
+                                        <a href="javascript:;">Contact Matija</a>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        Ruby on Rails is a powerful web framework which can solve most of our problems with little or no JavaScript! It has a nice scaffolding feature for fast prototyping which makes it the perfect choice for back-office CRUD-like administration panels.
+                                    </p>
+                                    <div class="contact-box">
+                                        <span>Have questions?</span>
+                                        <a href="javascript:;">Contact Matija</a>
                                     </div>
                                 </div>	
                             </li>
                             <li class="swiper-slide">
                                 <div class="box">
                                     <div class="img-wrap">
-                                        <img src="assets/img/content/logo-item-2.png" alt="" class="greyscale"/>
+                                        <img src="assets/img/content/logo-item-24.png" alt="" class="greyscale"/>
                                     </div>
                                     <div class="contact-box hidden-on-mobile">
                                         <img src="assets/img/content/techn-bojan.png" alt=""/>
@@ -342,7 +384,7 @@
                                 </div>
                                 <div class="text">
                                     <p>
-                                        Ruby is our language of choice for scripting: when you program with ruby it feels like playing a game. Rails is a powerful web framework which can solve most our problems, and with little or no JavaScript!
+                                        Our primary choice front-end framework when we need to present analytic results to business people. It has an easy integration with REST APIs, vibrant community and a nice selection of graph and pie chart plugins.
                                     </p>
                                     <div class="contact-box">
                                         <span>Have questions?</span>

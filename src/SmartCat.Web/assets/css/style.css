@@ -5439,9 +5439,9 @@ html[xmlns] .slides {
         -webkit-transform: translate3d(0, 50%, 0); }
         .one-half-list li .box .img-wrap > img {
           max-width: 75%;
-          filter: url(assets/img/filters.svg#grayscale);
-          filter: gray;
-          -webkit-filter: grayscale(1); }
+          filter: grayscale(100%);
+          -webkit-filter: grayscale(100%);
+          filter: gray; }
       .one-half-list li .box .contact-box {
         filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
         opacity: 0;
