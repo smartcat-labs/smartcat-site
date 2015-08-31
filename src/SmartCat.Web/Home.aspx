@@ -540,47 +540,12 @@
             <div class="flexslider">
                 <ul class="slides">
                     <li>
-                        <a href="http://www.datastax.com" target="_blank">
-                            <img src="assets/img/content/partner-1.png" />
-                        </a>
-                    </li>
-                    <li>
                         <a href="http://vegait.rs" target="_blank">
                             <img src="assets/img/content/partner-2.png" />
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.typesafe.com" target="_blank">
-                            <img src="assets/img/content/partner-3.png" />
-                        </a>
-                    </li>
-                    <li>
                         <a href="http://weareelder.com" target="_blank">
-                            <img src="assets/img/content/partner-4.png" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" target="_blank">
-                            <img src="assets/img/content/partner-1.png" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" target="_blank">
-                            <img src="assets/img/content/partner-2.png" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <img src="assets/img/content/partner-3.png" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <img src="assets/img/content/partner-1.png" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
                             <img src="assets/img/content/partner-4.png" />
                         </a>
                     </li>
