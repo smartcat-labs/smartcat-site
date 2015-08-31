@@ -1432,7 +1432,8 @@ textarea {
   background-color: #141b23;
   width: 100%;
   height: 110px;
-  top: 0; }
+  top: 0;
+  z-index: 100; }
   .header .logo {
     float: left;
     margin-top: 25px; }
@@ -1635,7 +1636,7 @@ textarea {
           height: 13px;
           width: 13px; } }
   .header.home {
-    background: none;
+    background: transparent;
     position: absolute;
     top: 0;
     left: 0;
@@ -1876,6 +1877,14 @@ textarea {
         margin-right: 0; }
       .main-nav ul li strong {
         font-family: "DINPro-Bold"; }
+
+.sticky-wrapper .header.home {
+  -moz-transition: background 500ms ease;
+  -o-transition: background 500ms ease;
+  -webkit-transition: background 500ms ease;
+  transition: background 500ms ease; }
+.sticky-wrapper.is-sticky .header {
+  background: #141b23; }
 
 /*----------  footer
 ------------------------------------------------------------------------------*/
@@ -3226,7 +3235,8 @@ textarea {
   width: 100%;
   float: left;
   height: 1080px;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-top: -110px; }
   .home-banner .caption {
     max-width: 58%;
     position: relative;
@@ -3239,7 +3249,8 @@ textarea {
         color: #fff;
         font-size: 62px;
         line-height: 72px;
-        font-family: "NeutraText-Light"; }
+        font-family: "NeutraText-Light";
+        text-transform: none; }
         .home-banner .caption .inner h1 span {
           font-family: "NeutraText-Bold";
           text-transform: uppercase; }
@@ -3334,7 +3345,8 @@ textarea {
       padding-bottom: 2%; } }
   @media only screen and (min-width: 120px) and (max-width: 767px) {
     .home-banner {
-      height: 310px; }
+      height: 310px;
+      margin-top: -63px; }
       .home-banner .bottom,
       .home-banner .lines {
         display: none; }
@@ -3357,7 +3369,8 @@ textarea {
           display: none; } }
   @media only screen and (max-width: phone) {
     .home-banner {
-      height: 310px; }
+      height: 310px;
+      margin-top: -63px; }
       .home-banner .bottom,
       .home-banner .lines {
         display: none; }

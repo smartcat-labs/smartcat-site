@@ -25,7 +25,7 @@
         <div class="bottom">
             <div class="left-box">
                 <div class="triangle-box">
-                    <div class="triangle bottomleft" w="100" h="65"></div>
+                    <div class="triangle bottomleft" w="110" h="65"></div>
                 </div>
             </div>
             <div class="right-box">

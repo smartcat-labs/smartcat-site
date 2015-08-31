@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+	//sticky header
+	$(".header").sticky({
+		topSpacing: 0
+	});
+
 	//accordion
 	if ($('.accordion').length > 0) {
 		var heading = '.accordion .item .accordion-head a';

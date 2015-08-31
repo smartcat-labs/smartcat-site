@@ -663,6 +663,7 @@
 	@include base-float;
 	height: 1080px;
 	overflow: hidden;
+	margin-top: -110px;
 	.caption {
 		max-width: 58%;
 		position: relative;
@@ -675,6 +676,7 @@
 				font-size: 62px;
 				line-height: 72px;
 				font-family: $neutra-light;
+				text-transform: none;
 				span {
 					font-family: $bold-font;
 					text-transform: uppercase;
@@ -784,6 +786,7 @@
 	}
 	@include breakpoint(phone){
 		height: 310px;
+		margin-top: -63px;
 		.bottom,
 		.lines {
 			display: none;
