@@ -6,9 +6,7 @@ $(document).ready(function () {
 		itemMargin: 0,
 		slideshow: false,
 		move: 1,                   
-		itemWidth : 260,
-		minItems : 4,
-		maxItems : 4
+		itemWidth : 260
 	});
 
 
