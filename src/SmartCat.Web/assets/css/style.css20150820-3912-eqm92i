@@ -5396,22 +5396,22 @@ html[xmlns] .slides {
         margin-top: 14px; }
   @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .author-box > img {
-      width: 44%; }
+      width: 45%; }
     .author-box .info {
-      width: 51%;
+      width: 50%;
       margin-left: 5%;
-      padding-right: 25px; }
-      .author-box .info .bottom .social-links {
+      padding-right: 20px; }
+      .author-box .info .bottom .social {
         width: 100%;
         float: left; } }
   @media only screen and (max-width: tablet) {
     .author-box > img {
-      width: 44%; }
+      width: 45%; }
     .author-box .info {
-      width: 51%;
+      width: 50%;
       margin-left: 5%;
-      padding-right: 25px; }
-      .author-box .info .bottom .social-links {
+      padding-right: 20px; }
+      .author-box .info .bottom .social {
         width: 100%;
         float: left; } }
   @media only screen and (min-width: 120px) and (max-width: 767px) {
@@ -5500,28 +5500,6 @@ html[xmlns] .slides {
     color: #141b23; }
   .related-posts .one-fourth:hover .date {
     color: #00a1e4; }
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .related-posts .one-fourth {
-    width: 29.74137931034483%;
-    margin-left: 5.38793103448276%;
-    margin-right: 0; }
-    .related-posts .one-fourth h4 {
-      font-family: "NeutraText-Bold"; }
-    .related-posts .one-fourth:last-of-type {
-      display: none; }
-    .related-posts .one-fourth:first-of-type {
-      margin-left: 0; } }
-@media only screen and (max-width: tablet) {
-  .related-posts .one-fourth {
-    width: 29.74137931034483%;
-    margin-left: 5.38793103448276%;
-    margin-right: 0; }
-    .related-posts .one-fourth h4 {
-      font-family: "NeutraText-Bold"; }
-    .related-posts .one-fourth:last-of-type {
-      display: none; }
-    .related-posts .one-fourth:first-of-type {
-      margin-left: 0; } }
 @media only screen and (min-width: 120px) and (max-width: 767px) {
   .related-posts {
     text-align: center; }

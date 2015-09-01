@@ -94,6 +94,7 @@
     <Content Include="CassandraMigrationTool.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="robots.txt" />
+    <Content Include="SinglePost.aspx" />
     <Content Include="Site.master" />
     <Content Include="scss\base\_layout.scss" />
     <Content Include="scss\base\_typography.scss" />

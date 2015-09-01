@@ -305,4 +305,10 @@ blockquote {
 			background-color: #ffff00;
 		}		
 	}
+	@include breakpoint(phone){
+		blockquote {
+			background-size: 27px;
+			padding: 20px 0 30px 30px;
+		}
+	}
 }
