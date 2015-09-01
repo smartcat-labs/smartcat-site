@@ -12,8 +12,10 @@
                         <span class="white">Analytics</span> <span class="black">Partner</span>
                     </h1>
                     <p>
-                        We believe in striving for perfection and making the world a better place. <br> We believe in evolution. <br><br>
-                        This is not our job. These are our lives. <br>Knowledge is our thirst and dedication our lifestyle.
+                        We are here to empower you with new insights derived from Big Data.<br />
+                        We believe in striving for perfection. We believe in evolution. <br /><br />
+                        This is not our job. These are our lives. <br />
+                        Knowledge is our thirst and dedication our lifestyle.
                     </p>
                     <a href="Services.aspx" class="btn arrow">
                         <span>Learn more</span>
@@ -67,7 +69,7 @@
                         <div class="text">
                             <h2><a href="Architecture.aspx">Architecture</a></h2>
                             <p>
-                                This is the most comprehensive service of all. We must truly understand your business before we make any decisions. It all starts with an intake phase, where a workshop is held... <a href="Architecture.aspx" class="ico arrow-more hidden-on-mobile"></a>
+                                Have a cool new mobile app or web-based product idea? Thinking of a new IoT solution? If you’re planning to have a scalable and fail-safe platform we can help you design and implement it.<a href="Architecture.aspx" class="ico arrow-more hidden-on-mobile"></a>
                             </p>
                             <a href="Architecture.aspx" class="btn show-on-mobile">read more</a>
                         </div>
@@ -86,7 +88,7 @@
                         <div class="text">
                             <h2><a href="DataStorage.aspx">Data storage</a></h2>
                             <p>
-                                We are way past the time when you had to choose a data storage provider and put all data in it without worrying about use cases of specific data models. We are strong believers... <a href="DataStorage.aspx" class="ico arrow-more hidden-on-mobile"></a>
+                                Is your legacy system running slower? Having data service availability issues? Maybe it’s time to look in the direction of NoSQL technologies. We can show you how...<a href="DataStorage.aspx" class="ico arrow-more hidden-on-mobile"></a>
                             </p>
                             <a href="DataStorage.aspx" class="btn show-on-mobile">read more</a>
                         </div>
