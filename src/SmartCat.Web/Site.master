@@ -17,7 +17,7 @@
     <title><%= Page.Title %></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0" />
-
+    <asp:ContentPlaceHolder ID="cphMetaTags" runat="server" />
     <link rel="stylesheet" href="assets/css/style.css">
 
     <script type="text/javascript" src="assets/scripts/libs/modernizr-2.6.2.min.js"></script>
@@ -74,6 +74,11 @@
                         <li>
                             <a href="http://www.linkedin.com/company/smartcat-io" target="_blank">
                                 <i class="ico linked"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/SmartCat.io" target="_blank">
+                                <i class="ico facebook"></i>
                             </a>
                         </li>
                     </ul>
@@ -194,8 +199,13 @@
                             <li>
                                 <a href="http://www.twitter.com/smartcat_io" class="ico twitter" target="_blank"></a>
                             </li>
-                            <li>
+                            <%--<li>
                                 <a href="http://www.stackoverflow.com" class="ico stackoverflow" target="_blank"></a>
+                            </li>--%>
+                            <li>
+                                <a href="https://www.facebook.com/SmartCat.io" target="_blank">
+                                    <i class="ico facebook"></i>
+                                </a>
                             </li>
                             <li>
                                 <a href="http://www.linkedin.com/company/smartcat-io" class="ico linked" target="_blank"></a>

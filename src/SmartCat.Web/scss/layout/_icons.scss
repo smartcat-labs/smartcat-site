@@ -12,6 +12,9 @@
 	&.linked {
 		@include sprite(ico-linked);
 	}
+	&.facebook {
+		@include sprite(ico-facebook);
+	}
 	&.stackoverflow {
 		@include sprite(ico-stackoverflow);
 	}
