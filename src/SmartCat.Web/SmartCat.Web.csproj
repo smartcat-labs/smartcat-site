@@ -90,6 +90,7 @@
     <Content Include="assets\img\icons\ico-prev-swiper.png" />
     <Content Include="assets\img\icons\ico-stack-black-hover.png" />
     <Content Include="assets\img\icons\ico-stack-black.png" />
+    <Content Include="assets\scripts\libs\jquery.sticky.js" />
     <Content Include="assets\scripts\pages\error.js" />
     <Content Include="CassandraMigrationTool.aspx" />
     <Content Include="Error.aspx" />
@@ -422,6 +423,7 @@
     <Content Include="ServicesDetail.aspx" />
     <Content Include="SettingUpEmbedded.aspx" />
     <Content Include="SparkPlusCassandra.aspx" />
+    <Content Include="SpringBatchAsFramework.aspx" />
     <Content Include="Team.aspx" />
     <Content Include="Technologies.aspx" />
     <Content Include="WeAreGettingCertified.aspx" />

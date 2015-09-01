@@ -663,6 +663,7 @@
 	@include base-float;
 	height: 1080px;
 	overflow: hidden;
+	margin-top: -110px;
 	.caption {
 		max-width: 58%;
 		position: relative;
@@ -670,11 +671,12 @@
 		margin-top: 16%;
 		.inner {
 			@include base-float;
-			h2 {
+			h1 {
 				color: $white;
 				font-size: 62px;
 				line-height: 72px;
 				font-family: $neutra-light;
+				text-transform: none;
 				span {
 					font-family: $bold-font;
 					text-transform: uppercase;
@@ -784,6 +786,7 @@
 	}
 	@include breakpoint(phone){
 		height: 310px;
+		margin-top: -63px;
 		.bottom,
 		.lines {
 			display: none;
@@ -797,7 +800,7 @@
 			max-width: 85%;
 			padding-top: 15px;
 			.inner {
-				h2 {
+				h1 {
 					font-size: 28px;
 					line-height: 36px;
 					margin-bottom: 25px;
@@ -808,9 +811,9 @@
 						}
 					}
 				}
-				 p{
+				p {
 				 	display: none;
-				 }
+				}
 			}
 			
 		}

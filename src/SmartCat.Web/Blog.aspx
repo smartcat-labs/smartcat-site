@@ -29,29 +29,50 @@
                     </div> -->
                     <div class="blog-inner-wrap">
                         <div class="item stamp">
-                            <a href="SparkPlusCassandra.aspx" class="link-overlay"></a> 
+                            <a href="SpringBatchAsFramework.aspx" class="link-overlay"></a> 
+                            <div class="img-wrap">
+                                <img src="assets/img/content/spring-batch_teaser.jpg" alt="" />
+                                <span class="color-overlay"></span>
+                                <a href="SpringBatchAsFramework.aspx"><span class="blue-overlay"></span></a>
+                                <a href="SpringBatchAsFramework.aspx" class="read-more"><i></i></a>
+                                <span class="ribbon"></span>
+                            </div>
+                            <div class="text hidden-on-mobile">
+                                <h3>Spring batch as framework for system integration</h3>
+                                <span class="date">25/08/15</span>
+                            </div>
+                            <div class="text show-on-mobile">
+                                <span class="date">25/08/15</span>
+                                <h3>
+                                    <a href="SpringBatchAsFramework.aspx">Spring batch as framework for system integration</a>
+                                </h3>
+                                <span class="author">
+                                    By Nenad Bozic
+                                </span>
+                            </div>
+                        </div>
+                        <div class="item">
                             <div class="img-wrap">
                                 <img src="assets/img/content/the-perfect-match__teaser.jpg" alt="" />
                                 <span class="color-overlay"></span>
                                 <a href="SparkPlusCassandra.aspx"><span class="blue-overlay"></span></a>
                                 <a href="SparkPlusCassandra.aspx" class="read-more"><i></i></a>
-                                <span class="ribbon"></span>
+                                <span class="arrow"></span>
                             </div>
-                            <div class="text hidden-on-mobile">
-                                <h3>Spark + Cassandra: The perfect match</h3>
-                                <span class="date">17/08/15</span>
-                            </div>
-                            <div class="text show-on-mobile">
+                            <div class="text">
                                 <span class="date">17/08/15</span>
                                 <h3>
-                                    <a href="LeveragingParallelExecution.aspx">Spark + Cassandra: The perfect match</a>
+                                    <a href="SparkPlusCassandra.aspx">Spark + Cassandra: The perfect match</a>
                                 </h3>
+                                <p>
+                                    <a href="SparkPlusCassandra.aspx">Hadoop has been the leading platform for distributed data storage and analytics for some time now...</a>
+                                </p>
                                 <span class="author">
                                     By Matija Gobec
                                 </span>
                             </div>
                         </div>
-                        <div class="item">
+                        <div class="item right">
                             <div class="img-wrap">
                                 <img src="assets/img/content/leveraging_parallel_execution_teaser.jpg" alt="" />
                                 <span class="color-overlay"></span>
@@ -62,17 +83,17 @@
                             <div class="text">
                                 <span class="date">03/08/15</span>
                                 <h3>
-                                    <a href="SparkPlusCassandra.aspx">Leveraging parallel execution</a>
+                                    <a href="LeveragingParallelExecution.aspx">Leveraging parallel execution</a>
                                 </h3>
                                 <p>
-                                    <a href="SparkPlusCassandra.aspx">With NoSql databases comes change in physical data modelling. When it comes to truly distributed databases...</a>
+                                    <a href="LeveragingParallelExecution.aspx">With NoSql databases comes change in physical data modelling. When it comes to truly distributed databases...</a>
                                 </p>
                                 <span class="author">
                                     By Matija Gobec
                                 </span>
                             </div>
                         </div>
-                        <div class="item right">
+                        <div class="item">
                             <div class="img-wrap">
                                 <img src="assets/img/content/setting-up-embedded-cassandra-with-spring_teaser.jpg" alt="" />
                                 <span class="color-overlay"></span>
@@ -114,7 +135,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="item left">
+                        <div class="item right">
                             <div class="img-wrap">
                                 <img src="assets/img/content/black-box-testing_teaser.jpg" alt="" />
                                 <span class="color-overlay"></span>
@@ -198,7 +219,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="item right">
+                        <div class="item left">
                             <div class="img-wrap">
                                 <img src="assets/img/content/why-big-data_teaser.jpg" alt="" />
                                 <span class="color-overlay"></span>

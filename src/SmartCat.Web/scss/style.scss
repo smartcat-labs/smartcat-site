@@ -639,9 +639,9 @@
 				-webkit-transform: translate3d(0,50%,0);
 				> img {
 					max-width: 75%;
-					filter: url(assets/img/filters.svg#grayscale); 
-				    filter: gray;
-				    -webkit-filter: grayscale(1); 
+					filter: grayscale(100%);
+					-webkit-filter: grayscale(100%); 
+					filter: gray; 
 				}
 			}
 			.contact-box {

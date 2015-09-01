@@ -8,9 +8,9 @@
             <img src="assets/img/abstract-lines-1.png" alt="" class="lines" />
             <div class="caption">
                 <div class="inner">
-                    <h2>We are your trusted <br />
+                    <h1>We are your trusted <br />
                         <span class="white">Analytics</span> <span class="black">Partner</span>
-                    </h2>
+                    </h1>
                     <p>
                         We believe in striving for perfection and making the world a better place. <br> We believe in evolution. <br><br>
                         This is not our job. These are our lives. <br>Knowledge is our thirst and dedication our lifestyle.
@@ -25,7 +25,7 @@
         <div class="bottom">
             <div class="left-box">
                 <div class="triangle-box">
-                    <div class="triangle bottomleft" w="100" h="65"></div>
+                    <div class="triangle bottomleft" w="110" h="65"></div>
                 </div>
             </div>
             <div class="right-box">
@@ -38,10 +38,10 @@
                     <div class="twitter-box">
                         <h3>Latest tweet</h3>
                         <p>
-                            SmartCat is going to be at Cassandra Summit 2015, in September, San Francisco, California. Let's meet-up!
+                            SmartCat is going to be at Cassandra Summit 2015, in September, San Francisco, California. Let's meet-up! #CassandraSummit
                         </p>
                         <span class="author">@SmartCat_io</span>
-                        <span class="date">29/05/2015</span>
+                        <span class="date">26/08/2015</span>
                     </div>
                 </div>
             </div>
@@ -540,47 +540,12 @@
             <div class="flexslider">
                 <ul class="slides">
                     <li>
-                        <a href="http://www.datastax.com" target="_blank">
-                            <img src="assets/img/content/partner-1.png" />
-                        </a>
-                    </li>
-                    <li>
                         <a href="http://vegait.rs" target="_blank">
                             <img src="assets/img/content/partner-2.png" />
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.typesafe.com" target="_blank">
-                            <img src="assets/img/content/partner-3.png" />
-                        </a>
-                    </li>
-                    <li>
                         <a href="http://weareelder.com" target="_blank">
-                            <img src="assets/img/content/partner-4.png" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" target="_blank">
-                            <img src="assets/img/content/partner-1.png" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" target="_blank">
-                            <img src="assets/img/content/partner-2.png" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <img src="assets/img/content/partner-3.png" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <img src="assets/img/content/partner-1.png" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
                             <img src="assets/img/content/partner-4.png" />
                         </a>
                     </li>
