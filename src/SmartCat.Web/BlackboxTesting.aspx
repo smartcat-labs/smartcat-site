@@ -1,5 +1,11 @@
 ﻿<%@ Page Title="SmartCat | Blackbox testing microservices" Language="C#" MasterPageFile="Site.master" %>
-
+<asp:Content ID="Content1" ContentPlaceHolderID="cphMetaTags" runat="server" >
+    <meta property="og:title" content="Blackbox testing microservices" />
+    <meta property="og:type" content="blog" />
+    <meta property="og:image" content="http://www.smartcat.io/assets/img/content/black-box-testing_detailed.jpg" />
+    <meta property="og:url" content="http://www.smartcat.io/BlackboxTesting.aspx" />
+    <meta property="og:site_name" content="SmartCat" />
+</asp:Content>
 <asp:Content runat="server" ID="unknown" ContentPlaceHolderID="ContentPlaceHolder">
     
     <div class="page-title">
@@ -116,6 +122,21 @@
                                 </ul>
                             </div>
                         </div>
+                    </div>
+                    <div class="disqus-wrap">
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                            var disqus_shortname = 'smartcatio'; // required: replace example with your forum shortname
+                            
+                            /* * * DON'T EDIT BELOW THIS LINE * * */
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                     </div>
                 </div>
                 <aside class="sidebar">
