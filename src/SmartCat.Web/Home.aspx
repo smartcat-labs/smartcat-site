@@ -88,7 +88,7 @@
                         <div class="text">
                             <h2><a href="DataStorage.aspx">Data storage</a></h2>
                             <p>
-                                Is your legacy system running slower? Having data service availability issues? Maybe it’s time to look in the direction of NoSQL technologies. We can show you how...<a href="DataStorage.aspx" class="ico arrow-more hidden-on-mobile"></a>
+                                Is your legacy system running slow? Having data service availability issues? Maybe it’s time to look in the direction of NoSQL technologies. We can show you how...<a href="DataStorage.aspx" class="ico arrow-more hidden-on-mobile"></a>
                             </p>
                             <a href="DataStorage.aspx" class="btn show-on-mobile">read more</a>
                         </div>
@@ -107,7 +107,7 @@
                         <div class="text">
                             <h2><a href="DataProcessing.aspx">Data processing</a></h2>
                             <p>
-                                It is hard to think of an enterprise application these days without the need for integration, both internally among many small services and externally with public APIs or 3rd party... <a href="DataProcessing.aspx" class="ico arrow-more hidden-on-mobile"></a>
+                                Does your system work with large quantities of data from various sources such as sensors or cameras that require real-time processing? Want to leverage Big Data for cyber security?<a href="DataProcessing.aspx" class="ico arrow-more hidden-on-mobile"></a>
                             </p>
                             <a href="DataProcessing.aspx" class="btn show-on-mobile">read more</a>
                         </div>
@@ -126,7 +126,7 @@
                         <div class="text">
                             <h2><a href="DataAnalytics.aspx">Data analytics</a></h2>
                             <p>
-                                Probably the most valuable service since it can directly influence the business with new insights. This is where our team of business analysts and business intelligence...<a href="DataAnalytics.aspx" class="ico arrow-more hidden-on-mobile"></a>
+                                You’ve gathered data. Lots of it. Now what? Our team of data scientists and business analysts will help design your new BI dashboard or an insightful market analysis report...<a href="DataAnalytics.aspx" class="ico arrow-more hidden-on-mobile"></a>
                             </p>
                             <a href="DataAnalytics.aspx" class="btn show-on-mobile">read more</a>
                         </div>
