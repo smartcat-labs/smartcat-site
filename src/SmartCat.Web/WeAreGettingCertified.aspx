@@ -1,5 +1,11 @@
 ﻿<%@ Page Title="SmartCat | We're Getting Certified!" Language="C#" MasterPageFile="Site.master" %>
-
+<asp:Content ID="Content1" ContentPlaceHolderID="cphMetaTags" runat="server" >
+    <meta property="og:title" content="We're Getting Certified!" />
+    <meta property="og:type" content="news" />
+    <meta property="og:image" content="http://www.smartcat.io/assets/img/content/cassandra-certified-detailed.png" />
+    <meta property="og:url" content="http://www.smartcat.io/WeAreGettingCertified.aspx" />
+    <meta property="og:site_name" content="SmartCat" />
+</asp:Content>
 <asp:Content runat="server" ID="unknown" ContentPlaceHolderID="ContentPlaceHolder">
     
     <div class="page-title">

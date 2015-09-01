@@ -1,5 +1,11 @@
 ﻿<%@ Page Title="SmartCat | Cassandra use cases" Language="C#" MasterPageFile="Site.master" %>
-
+<asp:Content ID="Content1" ContentPlaceHolderID="cphMetaTags" runat="server" >
+    <meta property="og:title" content="Cassandra use cases (what cassandra should not be used for)" />
+    <meta property="og:type" content="blog" />
+    <meta property="og:image" content="http://www.smartcat.io/assets/img/content/cassandra-use-casses_detailed.jpg" />
+    <meta property="og:url" content="http://www.smartcat.io/CassandraUsecases.aspx" />
+    <meta property="og:site_name" content="SmartCat" />
+</asp:Content>
 <asp:Content runat="server" ID="unknown" ContentPlaceHolderID="ContentPlaceHolder">
     
     <div class="page-title">

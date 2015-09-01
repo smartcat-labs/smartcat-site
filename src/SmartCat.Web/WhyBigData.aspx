@@ -1,5 +1,11 @@
 ﻿<%@ Page Title="SmartCat | Why Big data" Language="C#" MasterPageFile="Site.master" %>
-
+<asp:Content ID="Content1" ContentPlaceHolderID="cphMetaTags" runat="server" >
+    <meta property="og:title" content="Why Big Data" />
+    <meta property="og:type" content="blog" />
+    <meta property="og:image" content="http://www.smartcat.io/assets/img/content/why-big-data_detailed.jpg" />
+    <meta property="og:url" content="http://www.smartcat.io/WhyBigData.aspx" />
+    <meta property="og:site_name" content="SmartCat" />
+</asp:Content>
 <asp:Content runat="server" ID="unknown" ContentPlaceHolderID="ContentPlaceHolder">
     
     <div class="page-title">

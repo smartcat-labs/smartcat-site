@@ -1,5 +1,11 @@
 ﻿<%@ Page Title="SmartCat | Migrating time series data from MySql to Cassandra" Language="C#" MasterPageFile="Site.master" %>
-
+<asp:Content ID="Content1" ContentPlaceHolderID="cphMetaTags" runat="server" >
+    <meta property="og:title" content="Migrating time series data from MySql to Cassandra" />
+    <meta property="og:type" content="blog" />
+    <meta property="og:image" content="http://www.smartcat.io/assets/img/content/migration-time-series_detailed.jpg" />
+    <meta property="og:url" content="http://www.smartcat.io/MigratingTime.aspx" />
+    <meta property="og:site_name" content="SmartCat" />
+</asp:Content>
 <asp:Content runat="server" ID="unknown" ContentPlaceHolderID="ContentPlaceHolder">
     
     <div class="page-title">

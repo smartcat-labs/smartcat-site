@@ -1,5 +1,11 @@
 ﻿<%@ Page Title="SmartCat | Setting up embedded cassandra on spring project" Language="C#" MasterPageFile="Site.master" %>
-
+<asp:Content ID="Content1" ContentPlaceHolderID="cphMetaTags" runat="server" >
+    <meta property="og:title" content="Setting up embedded cassandra on spring project" />
+    <meta property="og:type" content="blog" />
+    <meta property="og:image" content="http://www.smartcat.io/assets/img/content/setting-up-embedded-cassandra-with-spring.jpg" />
+    <meta property="og:url" content="http://www.smartcat.io/SettingUpEmbedded.aspx" />
+    <meta property="og:site_name" content="SmartCat" />
+</asp:Content>
 <asp:Content runat="server" ID="unknown" ContentPlaceHolderID="ContentPlaceHolder">
     
     <div class="page-title">

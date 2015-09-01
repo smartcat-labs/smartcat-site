@@ -3,7 +3,7 @@
     <meta property="og:title" content="Blackbox testing microservices" />
     <meta property="og:type" content="blog" />
     <meta property="og:image" content="http://www.smartcat.io/assets/img/content/black-box-testing_detailed.jpg" />
-    <meta property="og:url" content="http://www.smartcat.io" />
+    <meta property="og:url" content="http://www.smartcat.io/BlackboxTesting.aspx" />
     <meta property="og:site_name" content="SmartCat" />
 </asp:Content>
 <asp:Content runat="server" ID="unknown" ContentPlaceHolderID="ContentPlaceHolder">

@@ -1,5 +1,11 @@
 ﻿<%@ Page Title="SmartCat | Spark + Cassandra: The perfect match" Language="C#" MasterPageFile="Site.master" %>
-
+<asp:Content ID="Content1" ContentPlaceHolderID="cphMetaTags" runat="server" >
+    <meta property="og:title" content="Spark + Cassandra: The perfect match" />
+    <meta property="og:type" content="blog" />
+    <meta property="og:image" content="http://www.smartcat.io/assets/img/content/the-perfect-match_details.jpg" />
+    <meta property="og:url" content="http://www.smartcat.io/SparkPlusCassandra.aspx" />
+    <meta property="og:site_name" content="SmartCat" />
+</asp:Content>
 <asp:Content runat="server" ID="unknown" ContentPlaceHolderID="ContentPlaceHolder">
     
     <div class="page-title">
