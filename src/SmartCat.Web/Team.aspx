@@ -12,7 +12,7 @@
         <div class="wrapper centered">
             <p>
                 We are a carefully selected team of industry seniors with highly set goals. We are here to deliver outstanding data management, visualisation and analysis service and remarkable technical solutions that will empower decision makers around the globe.<br />
-                This is not our job. These are our lives. Knowledge is our thirst and dedication is our lifestyle.
+                This is not our job. This is our lives. Knowledge is our thirst and dedication our lifestyle.
             </p>
             <p>
                 We want to make the world a better place through technological advances. We trust in facts, and making smart decisions using the same. We are here to empower decision makers with information, with knowledge. This is the age of information and we are your agents. There’s no better way to gain a new perspective than challenging the way things are. Challenge the present and you are participating in the creation of the future.

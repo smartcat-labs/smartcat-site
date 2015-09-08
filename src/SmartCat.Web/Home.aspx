@@ -14,7 +14,7 @@
                     <p>
                         We are here to empower you with new insights derived from Big Data.<br />
                         We believe in striving for perfection. We believe in evolution. <br /><br />
-                        This is not our job. These are our lives. <br />
+                        This is not our job. This is our lives. <br />
                         Knowledge is our thirst and dedication our lifestyle.
                     </p>
                     <a href="Services.aspx" class="btn arrow">
