@@ -15,3 +15,5 @@ _ReSharper*/
 #files
 *.suo
 *.user
+project/SmartCat/App_Data/Logs/
+project/SmartCat/App_Data/TEMP/
