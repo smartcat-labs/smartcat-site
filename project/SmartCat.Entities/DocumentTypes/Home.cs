@@ -11,7 +11,7 @@ namespace SmartCat.Entities.DocumentTypes
         Name = "Home page",
         Description = "Home page document type.",
         AllowAtRoot = true,
-        AllowedChildNodeTypes = new [] {typeof(Services), typeof(Team)})]
+        AllowedChildNodeTypes = new[] { typeof(Services), typeof(Team), typeof(Technologies) })]
     public class Home : Page
     {
 

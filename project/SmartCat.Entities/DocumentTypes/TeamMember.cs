@@ -31,10 +31,16 @@ namespace SmartCat.Entities.DocumentTypes
         public virtual int? ContactImage { get; set; }
 
         [DocumentTypeProperty(UmbracoPropertyType.Textstring,
-                          Name = "Full Name.",
+                          Name = "First Name.",
                           Tab = TabNames.Content,
-                          Description = "Member's full name.")]
-        public virtual string FullName { get; set; }
+                          Description = "Member's first name.")]
+        public virtual string FirstName { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.Textstring,
+                         Name = "Last Name.",
+                         Tab = TabNames.Content,
+                         Description = "Member's last name.")]
+        public virtual string LastName { get; set; }
 
         [DocumentTypeProperty(UmbracoPropertyType.Textstring,
                           Name = "Work Position.",

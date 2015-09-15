@@ -324,6 +324,7 @@
     <Content Include="Views\Services.cshtml" />
     <Content Include="Views\Service.cshtml" />
     <Content Include="Views\Team.cshtml" />
+    <Content Include="Views\Technologies.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

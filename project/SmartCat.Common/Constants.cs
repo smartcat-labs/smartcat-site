@@ -52,6 +52,9 @@
         public static class CustomDataTypes
         {
             public const string TeamMemberImageCropper = "Team Member Image Cropper";
+            public const string TeamMemberPicker = "Team Member Picker";
+            public const string UrlPicker = "Url Picker";
+            public const string MultiUrlPicker = "Multi Url Picker";
         }
 
         #endregion
