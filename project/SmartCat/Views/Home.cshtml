@@ -1,0 +1,31 @@
+﻿@inherits Vega.USiteBuilder.UmbracoTemplatePageBase<SmartCat.Entities.DocumentTypes.Home>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = string.IsNullOrEmpty(Model.Title) ? Model.Name : Model.Title;
+
+    ViewBag.SeoDescription = Model.SeoDescription;
+    ViewBag.SeoKeywords = Model.SeoKeywords;
+    ViewBag.SeoAuthor = Model.SeoAuthor;
+}
+
+@section additionalHeaderSection
+{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@section additionalFooterSection
+{
+
+}

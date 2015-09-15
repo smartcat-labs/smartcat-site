@@ -30,6 +30,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="businesslogic">
+      <HintPath>..\packages\UmbracoCms.Core.7.2.8\lib\businesslogic.dll</HintPath>
+    </Reference>
+    <Reference Include="cms">
+      <HintPath>..\packages\UmbracoCms.Core.7.2.8\lib\cms.dll</HintPath>
+    </Reference>
+    <Reference Include="interfaces">
+      <HintPath>..\packages\UmbracoCms.Core.7.2.8\lib\interfaces.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -37,9 +46,30 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="umbraco">
+      <HintPath>..\packages\UmbracoCms.Core.7.2.8\lib\umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Core">
+      <HintPath>..\packages\UmbracoCms.Core.7.2.8\lib\Umbraco.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Vega.USiteBuilder">
+      <HintPath>..\packages\uSiteBuilder.2.0.2.0\lib\net40\Vega.USiteBuilder.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\MediaHelper.cs" />
+    <Compile Include="Helpers\NodeHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartCat.Common\SmartCat.Common.csproj">
+      <Project>{31f14dbe-cd9a-4ba1-a7ad-35e35fc8a364}</Project>
+      <Name>SmartCat.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartCat.Entities\SmartCat.Entities.csproj">
+      <Project>{86842206-0202-40d7-afb4-3209036c3b73}</Project>
+      <Name>SmartCat.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

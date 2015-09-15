@@ -37,9 +37,30 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Vega.USiteBuilder">
+      <HintPath>..\packages\uSiteBuilder.2.0.2.0\lib\net40\Vega.USiteBuilder.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DocumentTypes\Home.cs" />
+    <Compile Include="DocumentTypes\Main.cs" />
+    <Compile Include="DocumentTypes\Page.cs" />
+    <Compile Include="DocumentTypes\Repository\Footer.cs" />
+    <Compile Include="DocumentTypes\Repository\Header.cs" />
+    <Compile Include="DocumentTypes\Repository\Repository.cs" />
+    <Compile Include="DocumentTypes\Repository\Settings.cs" />
+    <Compile Include="DocumentTypes\ServiceItem.cs" />
+    <Compile Include="DocumentTypes\Services.cs" />
+    <Compile Include="DocumentTypes\Team.cs" />
+    <Compile Include="DocumentTypes\TeamMember.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TabNames.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartCat.Common\SmartCat.Common.csproj">
+      <Project>{31f14dbe-cd9a-4ba1-a7ad-35e35fc8a364}</Project>
+      <Name>SmartCat.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
