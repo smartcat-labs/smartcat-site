@@ -1,0 +1,267 @@
+﻿@using Vega.USiteBuilder;
+@using SmartCat.Entities.DocumentTypes;
+
+@inherits Vega.USiteBuilder.UmbracoTemplatePageBase<SmartCat.Entities.DocumentTypes.Blog>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = string.IsNullOrEmpty(Model.Title) ? Model.Name : Model.Title;
+    ViewBag.HeadSectionTitle = Model.Name;
+
+    ViewBag.SeoDescription = Model.SeoDescription;
+    ViewBag.SeoKeywords = Model.SeoKeywords;
+    ViewBag.SeoAuthor = Model.SeoAuthor;
+}
+
+@section additionalHeaderSection
+{
+
+}
+
+
+@{
+    var blogPosts = ContentHelper.GetChildren<BlogPost>(Model.Id).ToList();
+}
+
+@if (blogPosts != null && blogPosts.Any())
+{
+    blogPosts.OrderBy(x => x.PostDate);
+
+    <div class="wrapper centered">
+        <div class="blog-landing">
+            <div class="blog-inner-wrap">
+
+                @foreach (var post in blogPosts)
+                {
+                    var postIndex = blogPosts.IndexOf(post);
+                    var postClass = string.Empty;
+                    var spanClass = string.Empty;
+                    var postClasses = new string[3] { "vertical", "right", "" };
+
+                    switch (postIndex)
+                    {
+                        case 0:
+                            postClass = "stamp";
+                            spanClass = "ribbon";
+                            break;
+
+                        default:
+                            postClass = postClasses.RandomOrder().First();
+                            spanClass = "arrow";
+                            break;
+                    }
+
+                    <div class="item @postClass">
+                        <div class="img-wrap">
+                            <img src="@Umbraco.TypedContent(post.Id).GetCropUrl(SmartCat.Common.Constants.Media.CropNames.BlogHeaderImageAlias, SmartCat.Common.Constants.Media.CropNames.Box)" alt="" />
+                            <span class="color-overlay"></span>
+                            <span class="blue-overlay"></span>
+                            <a href="@post.NiceUrl" class="read-more"><i></i></a>
+                            <span class="@spanClass"></span>
+                        </div>
+                        <div class="text hidden-on-mobile">
+                            <h3>@post.BlogTitle</h3>
+                            <span class="date">@post.PostDate.ToShortDateString()</span>
+                        </div>
+                        <div class="text show-on-mobile">
+                            <span class="date">@post.PostDate.ToShortDateString()</span>
+                            <h3>
+                                <a href="@post.NiceUrl">@post.BlogTitle</a>
+                            </h3>
+
+                            @{
+                                var postAuthor = post.Author.HasValue ? ContentHelper.GetByNodeId<TeamMember>(post.Author.Value) : null;
+                            }
+                            @if (postAuthor != null)
+                            {
+                                <span class="author">
+                                    By @postAuthor.FirstName @postAuthor.LastName
+                                </span>
+                            }
+
+                        </div>
+                    </div>
+                }
+
+                @*<div class="item stamp">
+                        <div class="img-wrap">
+                            <img src="assets/img/content/leveraging_parallel_execution_teaser.jpg" alt="" />
+                            <span class="color-overlay"></span>
+                            <span class="blue-overlay"></span>
+                            <a href="leveraging-parallel-execution.html" class="read-more"><i></i></a>
+                            <span class="ribbon"></span>
+                        </div>
+                        <div class="text hidden-on-mobile">
+                            <h3>Leveraging parallel execution</h3>
+                            <span class="date">08/08/15</span>
+                        </div>
+                        <div class="text show-on-mobile">
+                            <span class="date">08/08/15</span>
+                            <h3>
+                                <a href="leveraging-parallel-execution.html">Leveraging parallel execution</a>
+                            </h3>
+                            <span class="author">
+                                By Nenad Bozic
+                            </span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="img-wrap">
+                            <img src="assets/img/content/setting-up-embedded-cassandra-with-spring_teaser.jpg" alt="" />
+                            <span class="color-overlay"></span>
+                            <span class="blue-overlay"></span>
+                            <a href="setting-up-embedded.html" class="read-more"><i></i></a>
+                            <span class="arrow"></span>
+                        </div>
+                        <div class="text">
+                            <span class="date">23/07/15</span>
+                            <h3>
+                                <a href="setting-up-embedded.html">Setting up embedded cassandra on spring project</a>
+                            </h3>
+                            <p>
+                                When we first started using cassandra, we immediately realized there would be a...
+                            </p>
+                            <span class="author">
+                                By Bojan Kovac
+                            </span>
+                        </div>
+                    </div>
+                    <div class="item vertical">
+                        <div class="img-wrap">
+                            <img src="assets/img/content/migration-time-series_teaser.jpg" alt="" />
+                            <span class="color-overlay"></span>
+                            <span class="blue-overlay"></span>
+                            <a href="migrating-time.html" class="read-more"><i></i></a>
+                            <span class="arrow"></span>
+                        </div>
+                        <div class="text">
+                            <span class="date">17/07/15</span>
+                            <h3>
+                                <a href="migrating-time.html">Migrating time series data from MySql to Cassandra</a>
+                            </h3>
+                            <p>
+                                MySql is still widely used in application development as a stable, fairly performant...
+                            </p>
+                            <span class="author">
+                                By Nenad Bozic
+                            </span>
+                        </div>
+                    </div>
+                    <div class="item right">
+                        <div class="img-wrap">
+                            <img src="assets/img/content/black-box-testing_teaser.jpg" alt="" />
+                            <span class="color-overlay"></span>
+                            <span class="blue-overlay"></span>
+                            <a href="blackbox-testing.html" class="read-more"><i></i></a>
+                            <span class="arrow"></span>
+                        </div>
+                        <div class="text">
+                            <span class="date">08/07/15</span>
+                            <h3>
+                                <a href="blackbox-testing.html">Blackbox testing microservices</a>
+                            </h3>
+                            <p>
+                                Microservice architecture is the new normal these days, especially with the growth of distributed systems...
+                            </p>
+                            <span class="author">
+                                By Matija Gobec
+                            </span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="img-wrap">
+                            <img src="assets/img/content/why-go-distributed_teaser.jpg" alt="" />
+                            <span class="color-overlay"></span>
+                            <span class="blue-overlay"></span>
+                            <a href="why-go-distributed.html" class="read-more"><i></i></a>
+                            <span class="arrow"></span>
+                        </div>
+                        <div class="text">
+                            <span class="date">28/06/15</span>
+                            <h3>
+                                <a href="why-go-distributed.html">Why go distributed</a>
+                            </h3>
+                            <p>
+                                Why go distributed? When talking to other fellow engineers and people in our industry this question appears inevitably. We have had a single...
+                            </p>
+                            <span class="author">
+                                By John Doe
+                            </span>
+                        </div>
+                    </div>
+                    <div class="item vertical">
+                        <div class="img-wrap">
+                            <img src="assets/img/content/cassandra-use-casses_teaser.jpg" alt="" />
+                            <span class="color-overlay"></span>
+                            <span class="blue-overlay"></span>
+                            <a href="cassandra-use-cases.html" class="read-more"><i></i></a>
+                            <span class="arrow"></span>
+                        </div>
+                        <div class="text">
+                            <span class="date">15/06/15</span>
+                            <h3>
+                                <a href="cassandra-use-cases.html">Cassandra use cases</a>
+                            </h3>
+                            <p>
+                                Just a couple of years ago, the decisions faced by software architects were quite easy, such as which language to choose...
+                            </p>
+                            <span class="author">
+                                By Nenad Bozic
+                            </span>
+                        </div>
+                    </div>
+                    <div class="item right">
+                        <div class="img-wrap">
+                            <img src="assets/img/content/why-big-data_teaser.jpg" alt="" />
+                            <span class="color-overlay"></span>
+                            <span class="blue-overlay"></span>
+                            <a href="why-big-data.html" class="read-more"><i></i></a>
+                            <span class="arrow"></span>
+                        </div>
+                        <div class="text">
+                            <span class="date">18/05/15</span>
+                            <h3>
+                                <a href="why-big-data.html">Why Big Data</a>
+                            </h3>
+                            <p>
+                                We wanted to share why we want to do what we do and why we think this is the future of IT. The number of internet ...
+                            </p>
+                            <span class="author">
+                                By Bojan Kovac
+                            </span>
+                        </div>
+                    </div>
+                    <div class="item right">
+                        <div class="img-wrap">
+                            <img src="assets/img/content/Craft-conference_teaser.jpg" alt="" />
+                            <span class="color-overlay"></span>
+                            <span class="blue-overlay"></span>
+                            <a href="craft-conference.html" class="read-more"><i></i></a>
+                            <span class="arrow"></span>
+                        </div>
+                        <div class="text">
+                            <span class="date">05/05/15</span>
+                            <h3>
+                                <a href="craft-conference.html">Craft conference 2015</a>
+                            </h3>
+                            <p>
+                                This was our second a craft conference, the place to be if you are connected to IT and want to be a better...
+                            </p>
+                            <span class="author">
+                                By Matija Gobec
+                            </span>
+                        </div>
+                    </div>*@
+            </div>
+        </div>
+    </div>
+}
+
+
+@section additionalFooterSection
+{
+    <script type="text/javascript" src="/scripts/libs/jquery.stylish-select.min.js"></script>
+    <script type="text/javascript" src="/scripts/libs/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="/scripts/pages/blog.js"></script>
+}

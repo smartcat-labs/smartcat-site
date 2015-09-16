@@ -52,11 +52,15 @@
     <Compile Include="DataTypes\MultiUrlPickerConverter.cs" />
     <Compile Include="DataTypes\UrlPicker.cs" />
     <Compile Include="DataTypes\UrlPickerConverter.cs" />
+    <Compile Include="DocumentTypes\Blog.cs" />
+    <Compile Include="DocumentTypes\BlogPost.cs" />
     <Compile Include="DocumentTypes\CertificateContainer.cs" />
     <Compile Include="DocumentTypes\CertificateItem.cs" />
     <Compile Include="DocumentTypes\Home.cs" />
     <Compile Include="DocumentTypes\Main.cs" />
     <Compile Include="DocumentTypes\Page.cs" />
+    <Compile Include="DocumentTypes\Process.cs" />
+    <Compile Include="DocumentTypes\ProcessItem.cs" />
     <Compile Include="DocumentTypes\Repository\Footer.cs" />
     <Compile Include="DocumentTypes\Repository\Header.cs" />
     <Compile Include="DocumentTypes\Repository\Repository.cs" />

@@ -55,6 +55,8 @@
             public const string TeamMemberPicker = "Team Member Picker";
             public const string UrlPicker = "Url Picker";
             public const string MultiUrlPicker = "Multi Url Picker";
+
+            public const string BlogImageCropper = "Blog Image Cropper";
         }
 
         #endregion
@@ -136,6 +138,11 @@
                 public const string Team = "team";
                 public const string Home = "home";
                 public const string Sidebar = "sidebar";
+
+                public const string BlogHeaderImageAlias = "headerImage";
+
+                public const string Header = "header";
+                public const string Box = "box";
 
             }
 
