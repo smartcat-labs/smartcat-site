@@ -1,0 +1,255 @@
+﻿@using Vega.USiteBuilder;
+@using SmartCat.Entities.DocumentTypes;
+@using SmartCat.Business.Helpers;
+@using System.Text.RegularExpressions;
+
+
+@inherits Vega.USiteBuilder.UmbracoTemplatePageBase<SmartCat.Entities.DocumentTypes.NewsPost>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = string.IsNullOrEmpty(Model.Title) ? Model.Name : Model.Title;
+    ViewBag.HeadSectionTitle = ContentHelper.GetByNodeId(Model.ParentId).Name;
+    
+    ViewBag.SeoDescription = Model.SeoDescription;
+    ViewBag.SeoKeywords = Model.SeoKeywords;
+    ViewBag.SeoAuthor = Model.SeoAuthor;
+}
+
+@section additionalHeaderSection
+{
+
+}
+
+<div class="wrapper o-visible">
+    <div class="main article">
+        <div class="title">
+            <h2>@Model.NewsTitle</h2>
+            <a href="@ContentHelper.GetByNodeId(Model.ParentId).NiceUrl" class="go-back">Back</a>
+            <span class="date">@Model.PostDate.ToString("MM/dd/yy")</span>
+        </div>
+        <div class="img-wrap">
+            @if (Model.HeaderImage.HasValue)
+            {
+                <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(Model.HeaderImage.Value))" alt="@MediaHelper.GetImageAlternateText(MediaHelper.GetMediaById(Model.HeaderImage.Value))" />
+            }
+            <div class="badge romb"><span class="reset-inner">B.</span></div>
+        </div>
+        <div class="rte-content">
+           @Html.Raw(Model.RteContent)
+        </div>
+        <div class="article-nav">
+            @{
+                var precedingsSiblings = uQuery.GetNode(Model.Id).GetPrecedingSiblingNodes().LastOrDefault();
+             }
+
+            @if(precedingsSiblings != null)
+            { 
+                <a href="@precedingsSiblings.NiceUrl" class="prev-post">
+                    <i></i>
+                    Previus post
+                </a>
+            }
+            
+            @{
+                var followingSiblings = uQuery.GetNode(Model.Id).GetFollowingSiblingNodes().FirstOrDefault();
+            }
+
+            @if(followingSiblings != null)
+            { 
+                <a href="@followingSiblings.NiceUrl" class="next-post">
+                    Next post
+                    <i></i>
+                </a>
+            }
+          </div>
+        <div class="article-footer">
+            <div class="share-box">
+                <span>Share</span>
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsmartcat.io&t=" target="_blank" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;">FB</a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fsmartcat.io&text=:%20http%3A%2F%2Fsmartcat.io" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;">TW</a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/share?url=http%3A%2F%2Fsmartcat.io" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;">G+</a>
+                    </li>
+                    <li>
+                        <a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fsmartcat.io&title=&summary=&source=http%3A%2F%2Fsmartcat.io" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;">IN</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        @if (Model.Author.HasValue)
+        {
+            
+            var typedAuthor = ContentHelper.GetByNodeId<TeamMember>(Model.Author.Value);
+            
+            <div class="author-box">
+                @if (!string.IsNullOrEmpty(typedAuthor.ProfileImage))
+                {
+                    <img src="@Umbraco.TypedContent(typedAuthor.Id).GetCropUrl(SmartCat.Common.Constants.Media.CropNames.ProfileImageAlias, SmartCat.Common.Constants.Media.CropNames.Home)" alt="" class="hidden-on-mobile" />
+                }
+                <div class="info">
+                    <h4><span>@typedAuthor.FirstName @typedAuthor.LastName</span></h4>
+                    <h5>@typedAuthor.WorkPosition</h5>
+                    <p>
+                        @typedAuthor.ShortDescription
+                    </p>
+                    <div class="bottom">
+                        <a href="mailto: @typedAuthor.EmailAddress" class="contact-link">
+                            <i class="ico ico-mail"></i> Contact @typedAuthor.FirstName
+                        </a>
+                        <ul class="social-links">
+                            @if(!string.IsNullOrEmpty(typedAuthor.Facebook))
+                            { 
+                                <li>
+                                    <a href="@typedAuthor.Facebook" target="_blank" class="facebook"><i class="ico"></i></a>
+                                </li>
+                            }
+                            @if(!string.IsNullOrEmpty(typedAuthor.Twitter))
+                            { 
+                                <li>
+                                    <a href="@typedAuthor.Twitter" target="_blank" class="twitter"><i class="ico"></i></a>
+                                </li>
+                            }
+                            @if(!string.IsNullOrEmpty(typedAuthor.GitHub))
+                            { 
+                                <li>
+                                    <a href="@typedAuthor.GitHub" target="_blank" class="git"><i class="ico"></i></a>
+                                </li>
+                            }
+                            @if(!string.IsNullOrEmpty(typedAuthor.LinkedIn))
+                            { 
+                                <li>
+                                    <a href="@typedAuthor.LinkedIn" target="_blank" class="linked"><i class="ico"></i></a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
+        
+        <div class="disqus-wrap">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'smartcatio'; // required: replace example with your forum shortname
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function () {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+
+    </div>
+    <aside class="sidebar">
+
+        @{
+            var newsContainer = ContentHelper.GetByNodeId<News>(Model.ParentId);
+        }
+
+        @if (newsContainer.NewsWidget != null && newsContainer.NewsWidget.Any())
+        {
+            <div class="widget slider">
+                <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(newsContainer.NewsWidget.First()).ParentId).NiceUrl">What's new</a></h3>
+                <div class="flexslider">
+                    <ul class="slides">
+                        @foreach (var newsId in newsContainer.NewsWidget)
+                        {
+                            var newsPost = ContentHelper.GetByNodeId<NewsPost>(newsId);
+
+                            <li>
+                                <div class="text-item">
+                                    <div class="romb badge">
+                                        <span class="reset-inner">N.</span>
+                                    </div>
+                                    <h4><a href="@newsPost.NiceUrl">@newsPost.Name</a></h4>
+                                    <p>
+                                        @Regex.Replace(newsPost.RteContent, @"<(.|\n)*?>", string.Empty).Substring(0, 160) ...
+                                    </p>
+                                    @if (newsPost.Author.HasValue)
+                                    {
+                                        var author = ContentHelper.GetByNodeId<TeamMember>(newsPost.Author.Value);
+                                        <span class="author">@author.FirstName @author.LastName</span>
+                                    }
+                                    <span class="date">@newsPost.PostDate.ToString("MM/dd/yy")</span>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+
+        @if (newsContainer.TeamWidget != null && newsContainer.TeamWidget.Any())
+        {
+            <div class="widget slider">
+                <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(newsContainer.TeamWidget.First()).ParentId).NiceUrl">Challengers</a></h3>
+                <div class="flexslider challengers">
+                    <ul class="slides">
+
+                        @foreach (var memberId in newsContainer.TeamWidget)
+                        {
+                            var teamMember = ContentHelper.GetByNodeId<TeamMember>(memberId);
+
+                            <li>
+                                <div class="inner">
+                                    <img src="@Umbraco.TypedContent(memberId).GetCropUrl(SmartCat.Common.Constants.Media.CropNames.ProfileImageAlias, SmartCat.Common.Constants.Media.CropNames.Sidebar)" alt="" />
+                                    <div class="author-info">
+                                        <h4>@teamMember.FirstName @teamMember.LastName</h4>
+                                        <span>@teamMember.WorkPosition</span>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        }
+        
+        @if (newsContainer.ServiceWidget != null && newsContainer.ServiceWidget.Any())
+        {
+            <div class="widget slider">
+                <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(newsContainer.ServiceWidget.First()).ParentId).NiceUrl">What we do</a></h3>
+                <div class="flexslider small">
+                    <ul class="slides">
+
+                        @foreach (var serviceId in newsContainer.ServiceWidget)
+                        {
+                            var service = ContentHelper.GetByNodeId<ServiceItem>(serviceId);
+
+                            <li>
+                                <div class="center">
+                                    @if(service.ServiceTitleImage.HasValue)
+                                    { 
+                                      <img src="@MediaHelper.GetMediaDownloadUrl(MediaHelper.GetMediaById(service.ServiceTitleImage.Value))">
+                                    }
+                                    <h4><a href="@service.NiceUrl">@service.Name</a></h4>
+                                </div>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        }
+        
+    </aside>
+</div>
+
+
+@section additionalFooterSection
+{
+
+}

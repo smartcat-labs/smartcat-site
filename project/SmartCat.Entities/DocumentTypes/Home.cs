@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartCat.Entities.DocumentTypes.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace SmartCat.Entities.DocumentTypes
         Name = "Home page",
         Description = "Home page document type.",
         AllowAtRoot = true,
-        AllowedChildNodeTypes = new[] { typeof(Services), typeof(Team), typeof(Technologies), typeof(Process), typeof(Blog) })]
+        AllowedChildNodeTypes = new[] { typeof(Services), typeof(Team), typeof(Technologies), typeof(Process), typeof(Blog), typeof(News), typeof(Error404) })]
     public class Home : Page
     {
 

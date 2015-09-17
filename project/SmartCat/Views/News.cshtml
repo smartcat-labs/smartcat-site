@@ -1,0 +1,102 @@
+﻿@using Vega.USiteBuilder;
+@using SmartCat.Entities.DocumentTypes;
+@using SmartCat.Business.Helpers;
+
+@inherits Vega.USiteBuilder.UmbracoTemplatePageBase<SmartCat.Entities.DocumentTypes.News>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = string.IsNullOrEmpty(Model.Title) ? Model.Name : Model.Title;
+    ViewBag.HeadSectionTitle = Model.Name;
+
+    ViewBag.SeoDescription = Model.SeoDescription;
+    ViewBag.SeoKeywords = Model.SeoKeywords;
+    ViewBag.SeoAuthor = Model.SeoAuthor;
+}
+
+@section additionalHeaderSection
+{
+
+}
+
+
+@{
+    var newsPosts = ContentHelper.GetChildren<NewsPost>(Model.Id).ToList();
+}
+
+@if (newsPosts != null && newsPosts.Any())
+{
+    newsPosts.OrderBy(x => x.PostDate);
+
+    <div class="wrapper centered">
+        <div class="blog-landing">
+            <div class="blog-inner-wrap">
+
+                @foreach (var post in newsPosts)
+                {
+                    var postIndex = newsPosts.IndexOf(post);
+                    var postClass = string.Empty;
+                    var spanClass = string.Empty;
+                    var postClasses = new string[3] { "vertical", "right", "" };
+
+                    switch (postIndex)
+                    {
+                        case 0:
+                            postClass = "stamp";
+                            spanClass = "ribbon";
+                            break;
+
+                        default:
+                            postClass = postClasses.RandomOrder().First();
+                            spanClass = "arrow";
+                            break;
+                    }
+
+                    <div class="item @postClass">
+                        <div class="img-wrap">
+                            @if (post.BoxImage.HasValue)
+                            {
+                                <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(post.BoxImage.Value))" alt="@MediaHelper.GetImageAlternateText(MediaHelper.GetMediaById(post.BoxImage.Value))" />
+                            }
+                            
+                            <span class="color-overlay"></span>
+                            <span class="blue-overlay"></span>
+                            <a href="@post.NiceUrl" class="read-more"><i></i></a>
+                            <span class="@spanClass"></span>
+                        </div>
+                        <div class="text hidden-on-mobile">
+                            <h3>@post.NewsTitle</h3>
+                            <span class="date">@post.PostDate.ToString("MM/dd/yy")</span>
+                        </div>
+                        <div class="text show-on-mobile">
+                            <span class="date">@post.PostDate.ToString("MM/dd/yy")</span>
+                            <h3>
+                                <a href="@post.NiceUrl">@post.NewsTitle</a>
+                            </h3>
+
+                            @{
+                                var postAuthor = post.Author.HasValue ? ContentHelper.GetByNodeId<TeamMember>(post.Author.Value) : null;
+                            }
+                            @if (postAuthor != null)
+                            {
+                                <span class="author">
+                                    By @postAuthor.FirstName @postAuthor.LastName
+                                </span>
+                            }
+
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+
+@section additionalFooterSection
+{
+    <script type="text/javascript" src="/scripts/libs/jquery.stylish-select.min.js"></script>
+    <script type="text/javascript" src="/scripts/libs/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="/scripts/pages/blog.js"></script>
+}

@@ -22,6 +22,8 @@ namespace SmartCat.Entities
 
         Settings,
 
+        Sidebar,
+
         [TabName("First Column")]
         FirstColumn,
 

@@ -49,6 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataTypes\CommaSeparatedValuesToListOfIntsConverter.cs" />
     <Compile Include="DataTypes\MultiUrlPickerConverter.cs" />
     <Compile Include="DataTypes\UrlPicker.cs" />
     <Compile Include="DataTypes\UrlPickerConverter.cs" />
@@ -58,9 +59,12 @@
     <Compile Include="DocumentTypes\CertificateItem.cs" />
     <Compile Include="DocumentTypes\Home.cs" />
     <Compile Include="DocumentTypes\Main.cs" />
+    <Compile Include="DocumentTypes\News.cs" />
+    <Compile Include="DocumentTypes\NewsPost.cs" />
     <Compile Include="DocumentTypes\Page.cs" />
     <Compile Include="DocumentTypes\Process.cs" />
     <Compile Include="DocumentTypes\ProcessItem.cs" />
+    <Compile Include="DocumentTypes\Repository\Error404.cs" />
     <Compile Include="DocumentTypes\Repository\Footer.cs" />
     <Compile Include="DocumentTypes\Repository\Header.cs" />
     <Compile Include="DocumentTypes\Repository\Repository.cs" />

@@ -12,7 +12,7 @@ namespace SmartCat.Entities.DocumentTypes
     public class BlogPost : Page
     {
         [DocumentTypeProperty(UmbracoPropertyType.Textstring,
-                         Name = "Title",
+                         Name = "Blog Title",
                          Tab = TabNames.Content,
                          Description = "Blog title.")]
         public virtual string BlogTitle { get; set; }

@@ -1,4 +1,6 @@
 ﻿@using SmartCat.Business.Helpers;
+@using Vega.USiteBuilder;
+
 @model SmartCat.Entities.DocumentTypes.Repository.Header
 
 <header class="header">
@@ -62,35 +64,82 @@
                 <a href="javascript:;" class="close-menu">
                     <i class="ico"></i>
                 </a>
-                <ul>
-                    <li>
-                        <a href="services.html">Services</a>
-                    </li>
-                    <li>
-                        <a href="technologies.html">
-                            <span class="t-desktop">Technologies</span>
-                            <span class="t-desktop-small">Techs</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="process.html" class="active">Process</a>
-                    </li>
-                    <li>
-                        <a href="team.html">Team</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">
-                            <i class="ico cat"></i>
-                            <strong>Blog</strong>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="news.html">News</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                </ul>
+
+                @{
+                    var menuItems = new List<umbraco.NodeFactory.Node>();
+                    
+                    var umbracoHelper = new UmbracoHelper();
+                    var homePage = NodeHelper.Settings.Home.Value;
+                    if (homePage != null)
+                    {
+                        menuItems = uQuery.GetNode(homePage).GetChildNodes().Where(x => x.GetProperty<bool>("umbracoNaviHide") != true).ToList();
+                    }
+                }
+
+                @if (menuItems != null && menuItems.Any())
+                {
+                    <ul>
+
+                        @foreach (var menuItem in menuItems)
+                        {
+                            if (menuItem.NodeTypeAlias == "Blog")
+                            {
+                                <li>
+                                    <a href="@menuItem.NiceUrl">
+                                        <i class="ico cat"></i>
+                                        <strong>@menuItem.Name</strong>
+                                    </a>
+                                </li>
+                            }
+                            else if (menuItem.NodeTypeAlias == "Technologies")
+                            {
+                                <li>
+                                    <a href="@menuItem.NiceUrl">
+                                        <span class="t-desktop">@menuItem.Name</span>
+                                        <span class="t-desktop-small">Techs</span>
+                                    </a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="@menuItem.NiceUrl">@menuItem.Name</a>
+                                </li>
+                            }
+                        }
+
+                        @*<li>
+                            <a href="services.html">Services</a>
+                        </li>
+                        <li>
+                            <a href="technologies.html">
+                                <span class="t-desktop">Technologies</span>
+                                <span class="t-desktop-small">Techs</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="process.html" class="active">Process</a>
+                        </li>
+                        <li>
+                            <a href="team.html">Team</a>
+                        </li>
+                        <li>
+                            <a href="blog.html">
+                                <i class="ico cat"></i>
+                                <strong>Blog</strong>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="news.html">News</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>*@
+
+                    </ul>
+                }
+
+               
                 <div class="search-box">
                     <input type="text">
                     <a href="javascript:;" class="search-btn">

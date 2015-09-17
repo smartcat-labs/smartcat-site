@@ -1,6 +1,8 @@
 ﻿@using Vega.USiteBuilder;
 @using SmartCat.Entities.DocumentTypes;
 @using SmartCat.Business.Helpers;
+@using System.Text.RegularExpressions;
+
 @inherits Vega.USiteBuilder.UmbracoTemplatePageBase<SmartCat.Entities.DocumentTypes.Services>
 
 @{
@@ -59,87 +61,68 @@
         }
        
     </div>
+
     <aside class="sidebar">
-        <div class="widget slider">
-            <h3><a href="news.html">What's new</a></h3>
-            <div class="flexslider">
-                <ul class="slides">
-                    <li>
-                        <div class="text-item">
-                            <div class="romb badge">
-                                <span class="reset-inner">N.</span>
-                            </div>
-                            <h4><a href="why-smartcat.html">Why SmartCat?</a></h4>
-                            <p>
-                                The concept of Big Data has intrigued us from the very first online articles describing this new frontier of technology, back in 2007. Imagine if we could know...
-                            </p>
-                            <span class="author">Nenad Bozic</span>
-                            <span class="date">24/07/15</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="text-item">
-                            <div class="romb badge">
-                                <span class="reset-inner">N.</span>
-                            </div>
-                            <h4><a href="cassandra-summit.html">Cassandra summit 2015</a></h4>
-                            <p>
-                                We are excited for the upcoming Cassandra Summit in San Francisco, the biggest NoSQL conference in the world and epicenter of Cassandra...
-                            </p>
-                            <span class="author">Matija Gobec</span>
-                            <span class="date">30/07/15</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="text-item">
-                            <div class="romb badge">
-                                <span class="reset-inner">N.</span>
-                            </div>
-                            <h4><a href="coding-serbia.html">Coding Serbia</a></h4>
-                            <p>
-                                We would like to share our excitement with you. This October we will be a part of the 3rd international Coding Serbia conference in Novi Sad as silver...
-                            </p>
-                            <span class="author">Bojan Kovac</span>
-                            <span class="date">05/08/15</span>
-                        </div>
-                    </li>
-                </ul>
+        @if (Model.NewsWidget != null && Model.NewsWidget.Any())
+        {
+            <div class="widget slider">
+                <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(Model.NewsWidget.First()).ParentId).NiceUrl">What's new</a></h3>
+                <div class="flexslider">
+                    <ul class="slides">
+                        @foreach (var newsId in Model.NewsWidget)
+                        {
+                            var newsPost = ContentHelper.GetByNodeId<NewsPost>(newsId);
+
+                            <li>
+                                <div class="text-item">
+                                    <div class="romb badge">
+                                        <span class="reset-inner">N.</span>
+                                    </div>
+                                    <h4><a href="@newsPost.NiceUrl">@newsPost.Name</a></h4>
+                                    <p>
+                                        @Regex.Replace(newsPost.RteContent, @"<(.|\n)*?>", string.Empty).Substring(0,160) ...
+                                    </p>
+                                    @if (newsPost.Author.HasValue)
+                                    {
+                                       var author = ContentHelper.GetByNodeId<TeamMember>(newsPost.Author.Value);
+                                       <span class="author">@author.FirstName @author.LastName</span>
+                                    }
+                                    <span class="date">@newsPost.PostDate.ToString("MM/dd/yy")</span>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="widget slider">
-            <h3><a href="team.html">Challengers</a></h3>
-            <div class="flexslider challengers">
-                <ul class="slides">
-                    <li>
-                        <div class="inner">
-                            <img src="assets/img/content/sidebar-bojan.png">
-                            <div class="author-info">
-                                <h4>Bojan Kovac</h4>
-                                <span>Co-Founder</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="inner">
-                            <img src="assets/img/content/sidebar-matija.png">
-                            <div class="author-info">
-                                <h4>Matija Gobec</h4>
-                                <span>Co-Founder</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="inner">
-                            <img src="assets/img/content/sidebar-nenad.png">
-                            <div class="author-info">
-                                <h4>Nenad Bozic</h4>
-                                <span>Co-Founder</span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+        }
+        
+        @if (Model.TeamWidget != null && Model.TeamWidget.Any())
+        {
+            <div class="widget slider">
+                <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(Model.TeamWidget.First()).ParentId).NiceUrl">Challengers</a></h3>
+                <div class="flexslider challengers">
+                    <ul class="slides">
+
+                        @foreach (var memberId in Model.TeamWidget)
+                        {
+                            var teamMember = ContentHelper.GetByNodeId<TeamMember>(memberId);
+
+                            <li>
+                                <div class="inner">
+                                    <img src="@Umbraco.TypedContent(memberId).GetCropUrl(SmartCat.Common.Constants.Media.CropNames.ProfileImageAlias, SmartCat.Common.Constants.Media.CropNames.Sidebar)" alt="" />
+                                    <div class="author-info">
+                                        <h4>@teamMember.FirstName @teamMember.LastName</h4>
+                                        <span>@teamMember.WorkPosition</span>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
             </div>
-        </div>
+        }
+        
     </aside>
 </div>
 

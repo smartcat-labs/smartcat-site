@@ -12,6 +12,13 @@ namespace SmartCat.Entities.DocumentTypes.Repository
     {
         #region PAGES
 
+        [DocumentTypeProperty(UmbracoPropertyType.ContentPicker,
+                              Tab = TabNames.Nodes,
+                              Name = "Home",
+                              Description = "Home.",
+                              Mandatory = true)]
+        public virtual int? Home { get; set; }
+
         #endregion
 
         #region NODES

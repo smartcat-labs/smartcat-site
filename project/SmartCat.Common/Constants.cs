@@ -2,6 +2,16 @@
 {
     public static class Constants
     {
+
+        #region WEBSITE
+
+        public static class Website
+        {
+            public const string WebsiteName = "SmartCat";
+        }
+
+        #endregion
+
         #region NODE IDs
 
         public static class NodeIDs
@@ -53,10 +63,14 @@
         {
             public const string TeamMemberImageCropper = "Team Member Image Cropper";
             public const string TeamMemberPicker = "Team Member Picker";
+            public const string MultipleTeamMemberPicker = "Multiple Team Member Picker";
             public const string UrlPicker = "Url Picker";
             public const string MultiUrlPicker = "Multi Url Picker";
 
             public const string BlogImageCropper = "Blog Image Cropper";
+
+            public const string MultipleNewsPostPicker = "Multiple News Post Picker";
+            public const string MultipleServicePicker = "Multiple Service Picker";
         }
 
         #endregion
