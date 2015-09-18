@@ -23,6 +23,7 @@ namespace SmartCat.Entities.DocumentTypes
         public virtual int? ServiceTitleImage { get; set; }
 
         [DocumentTypeProperty(UmbracoPropertyType.RichtextEditor,
+                            Alias = "rteContent",
                             Name = "Main body",
                             Description = "Define main content using RTE.",
                             Tab = TabNames.Content)]

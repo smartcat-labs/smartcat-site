@@ -51,7 +51,7 @@
                         <div class="text">
                             <h2><a href="@service.NiceUrl">@service.Name</a></h2>
                             <p>
-                                <a href="@service.NiceUrl">@Html.Raw(service.ServiceContent.Substring(0,445))</a>
+                                <a href="@service.NiceUrl">@Html.Raw(!string.IsNullOrEmpty(service.ServiceContent) ? service.ServiceContent.Substring(0,445) : string.Empty)</a>
                             </p>
                             <a href="@service.NiceUrl" class="read-more-link">Read more <i></i></a>
                         </div>

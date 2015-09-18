@@ -1,0 +1,59 @@
+﻿@model PaginationModel
+
+<ul class="search-pagination">
+
+    @foreach (var link in Model.PaginationLinks)
+    {
+        @BuildLink(link)
+    }
+
+</ul>
+
+@helper BuildLink(PaginationLink link)
+{
+    var liBuilder = new TagBuilder("li");
+
+    var aBuilder = new TagBuilder("a");
+    if (link.PageIndex == null || link.IsCurrent)
+    {
+        aBuilder.MergeAttribute("href", "#");
+    }
+    else
+    {
+        aBuilder.MergeAttribute("href", string.Format("{0}?s={1}&page={2}",Request.Path, Request.QueryString["s"], link.PageIndex.Value.ToString()));
+    }
+
+    if (link.IsCurrent)
+    {
+        aBuilder.MergeAttribute("class", "pagination-active");
+    }
+    if (!link.Active)
+    {
+        aBuilder.MergeAttribute("class", "");
+    }
+
+    // Ajax support
+    if (Model.AjaxOptions != null)
+    {
+        foreach (var ajaxOption in Model.AjaxOptions.ToUnobtrusiveHtmlAttributes())
+        {
+            aBuilder.MergeAttribute(ajaxOption.Key, ajaxOption.Value.ToString(), true);
+        }
+    }
+
+    if (link.DisplayText == "«")
+    {
+        aBuilder.InnerHtml = "&laquo;";
+    }
+    else if (link.DisplayText == "»")
+    {
+        aBuilder.InnerHtml = "&raquo;";
+    }
+    else
+    {
+        aBuilder.SetInnerText(link.DisplayText);
+    }
+    liBuilder.InnerHtml = aBuilder.ToString();
+
+    @Html.Raw(liBuilder.ToString())
+}

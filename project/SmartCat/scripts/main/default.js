@@ -46,6 +46,12 @@ $(document).ready(function () {
 		return false;
 	});
 
+	$('#searchForm > input').on('keyup', function (e) {
+	    if (e.keyCode === 13) {
+	        $('#searchForm').submit();
+	    }
+	});
+
 });
 
 

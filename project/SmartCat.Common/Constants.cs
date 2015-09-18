@@ -26,6 +26,7 @@
         public static class DefaultValues
         {
             public const string SiteName = "SmartCat";
+            public const int DefaultSearchItemsPerPage = 5;
         }
 
         #endregion

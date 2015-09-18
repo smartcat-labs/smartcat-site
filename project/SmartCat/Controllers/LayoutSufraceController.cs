@@ -18,6 +18,7 @@ namespace SmartCat.Controllers
             var headerModel = new Header();
 
             headerModel = ContentHelper.GetByNodeId<Header>(NodeHelper.Settings.Header.Value);
+            headerModel.SearchUrl = ContentHelper.GetByNodeId(NodeHelper.Settings.Search.Value).NiceUrl;
 
             return PartialView("_Header", headerModel);
         }

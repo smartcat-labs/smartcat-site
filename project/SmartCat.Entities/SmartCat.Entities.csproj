@@ -69,6 +69,7 @@
     <Compile Include="DocumentTypes\Repository\Header.cs" />
     <Compile Include="DocumentTypes\Repository\Repository.cs" />
     <Compile Include="DocumentTypes\Repository\Settings.cs" />
+    <Compile Include="DocumentTypes\Search.cs" />
     <Compile Include="DocumentTypes\ServiceItem.cs" />
     <Compile Include="DocumentTypes\Services.cs" />
     <Compile Include="DocumentTypes\Team.cs" />

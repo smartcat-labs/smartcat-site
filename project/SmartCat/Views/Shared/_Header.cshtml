@@ -15,10 +15,12 @@
                 
         <div class="search-desktop">
             <div class="search-wrapper">
-                <a href="javascript:;" class="btn-search">
+                <a href="javascript:;" class="btn-search" onclick="$('#searchForm').submit();">
                     <i class="ico"></i>
                 </a>
-                <input type="search" placeholder="Search">
+                <form id="searchForm" method="get" action="@Model.SearchUrl" name="searchForm">
+                    <input id="s" name="s" type="search" placeholder="Search">
+                </form>
             </div>
 
             <a href="javascript:;" class="open-search">
@@ -107,34 +109,6 @@
                                 </li>
                             }
                         }
-
-                        @*<li>
-                            <a href="services.html">Services</a>
-                        </li>
-                        <li>
-                            <a href="technologies.html">
-                                <span class="t-desktop">Technologies</span>
-                                <span class="t-desktop-small">Techs</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="process.html" class="active">Process</a>
-                        </li>
-                        <li>
-                            <a href="team.html">Team</a>
-                        </li>
-                        <li>
-                            <a href="blog.html">
-                                <i class="ico cat"></i>
-                                <strong>Blog</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="news.html">News</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">Contact</a>
-                        </li>*@
 
                     </ul>
                 }

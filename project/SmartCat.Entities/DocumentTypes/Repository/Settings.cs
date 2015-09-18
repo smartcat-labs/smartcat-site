@@ -19,6 +19,13 @@ namespace SmartCat.Entities.DocumentTypes.Repository
                               Mandatory = true)]
         public virtual int? Home { get; set; }
 
+        [DocumentTypeProperty(UmbracoPropertyType.ContentPicker,
+                              Tab = TabNames.Nodes,
+                              Name = "Search",
+                              Description = "Search.",
+                              Mandatory = true)]
+        public virtual int? Search { get; set; }
+
         #endregion
 
         #region NODES

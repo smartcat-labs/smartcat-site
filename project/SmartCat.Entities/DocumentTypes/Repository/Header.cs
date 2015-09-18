@@ -38,5 +38,11 @@ namespace SmartCat.Entities.DocumentTypes.Repository
 
         #endregion
 
+        #region SUPPORT
+
+        public string SearchUrl { get; set; }
+
+        #endregion
+
     }
 }
