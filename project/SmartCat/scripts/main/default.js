@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+	//sticky header
+	$(".header").sticky({
+		topSpacing: 0
+	});
+
 	//accordion
 	if ($('.accordion').length > 0) {
 		var heading = '.accordion .item .accordion-head a';
@@ -52,23 +57,40 @@ $(document).ready(function () {
 	    }
 	});
 
+	$('#msearchForm > input').on('keyup', function (e) {
+	    if (e.keyCode === 13) {
+	        $('#msearchForm').submit();
+	    }
+	});
+
+
 });
 
+var theForm = document.getElementById('theForm');
 
-var theForm = document.getElementById( 'theForm' );
-new stepsForm( theForm, {
-	onSubmit : function( form ) {
-		// hide form
-		classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
-		/*
-		form.submit()
-		or
-		AJAX request (maybe show loading indicator while we don't have an answer..)
-		*/
+if (theForm !== null && theForm !== undefined)
+{
 
-		// let's just simulate something...
-		var messageEl = theForm.querySelector( '.final-message' );
-		messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
-		classie.addClass( messageEl, 'show' );
-	}
-});
+    var stepsForm = new stepsForm(theForm, {
+        onSubmit: function (form) {
+            // hide form
+            classie.addClass(theForm.querySelector('.simform-inner'), 'hide');
+
+            /*
+            form.submit();
+            or
+            AJAX request (maybe show loading indicator while we don't have an answer..)
+            */
+
+            contactUs();
+
+            // let's just simulate something...
+            var messageEl = theForm.querySelector('.final-message');
+            messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
+            classie.addClass(messageEl, 'show');
+        }
+
+    });
+}
+
+

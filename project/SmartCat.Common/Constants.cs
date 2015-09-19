@@ -72,6 +72,9 @@
 
             public const string MultipleNewsPostPicker = "Multiple News Post Picker";
             public const string MultipleServicePicker = "Multiple Service Picker";
+            public const string MultipleProcessPicker = "Multiple Process Picker";
+            public const string MultipleTestimonialsPicker = "Multiple Testimonials Picker";
+            public const string MultiplePartnerPicker = "Multiple Partner Picker";
         }
 
         #endregion
@@ -106,6 +109,8 @@
         public static class CacheKeys
         {
             public const string Settings = "CACHE_SETTINGS";
+            public const string LastTweet = "LAST_TWEET";
+            public const string LastTweets = "LAST_TWEETS";
         }
 
         #endregion

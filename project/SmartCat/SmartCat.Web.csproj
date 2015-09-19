@@ -108,6 +108,10 @@
       <HintPath>..\packages\uSync.2.5.0\lib\net45\jumps.umbraco.usync.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="LinqToTwitter, Version=2.1.11.0, Culture=neutral, PublicKeyToken=957107be965c25d9, processorArchitecture=MSIL">
+      <HintPath>..\packages\linqtotwitter.2.1.11\lib\net45\LinqToTwitter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.2.8\lib\log4net.dll</HintPath>
       <Private>True</Private>
@@ -262,6 +266,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="scripts\libs\jquery.sticky.js" />
+    <Content Include="scripts\pages\error.js" />
     <Content Include="Views\Shared\DisplayTemplates\_PagingTemplate.cshtml">
       <SubType>Code</SubType>
     </Content>
@@ -339,6 +345,7 @@
     <Content Include="Views\NewsPost.cshtml" />
     <Content Include="Views\Error404.cshtml" />
     <Content Include="Views\Search.cshtml" />
+    <Content Include="Views\Contact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

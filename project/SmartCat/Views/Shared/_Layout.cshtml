@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="/rs-plugin/css/settings.css" media="screen" />
 
     <script type="text/javascript" src="/scripts/libs/modernizr-2.6.2.min.js"></script>
+    @Html.Raw(SmartCat.Business.Helpers.NodeHelper.Settings.GoogleAnalyticsScript)
 
     @RenderSection("additionalHeaderSection",false)
 
@@ -30,25 +31,19 @@
      
         @{Html.RenderAction("GetHeader", "LayoutSufrace");}
 
-        <div class="page-title">
-            <div class="wrapper">
-                <h1>@ViewBag.HeadSectionTitle</h1>
-            </div>
-        </div>
-
-        <div class="content">
-           @RenderBody()
-        </div>
+        @RenderBody()
 
         @{Html.RenderAction("GetFooter", "LayoutSufrace");}
+        
 
-    </div>
+</div>
 
     <!-- javascript -->
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript">window.jQuery || document.write("<script src='assets/scripts/main/jquery-1.8.3.min.js'>\x3C/script>")</script>
     <script type="text/javascript" src="/scripts/libs/classie.js"></script>
+    <script type="text/javascript" src="/scripts/libs/jquery.sticky.js"></script>
     <script type="text/javascript" src="/scripts/libs/stepsForm.js"></script>
     <script type="text/javascript" src="/scripts/libs/jquery.flexslider-min.js"></script>
     <script type="text/javascript" src="/scripts/libs/grayscale.js"></script>

@@ -4,7 +4,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     ViewBag.Title = string.IsNullOrEmpty(Model.Title) ? Model.Name : Model.Title;
-    ViewBag.HeadSectionTitle = Model.Name;
 
     ViewBag.SeoDescription = Model.SeoDescription;
     ViewBag.SeoKeywords = Model.SeoKeywords;
@@ -16,14 +15,22 @@
 
 }
 
-<div class="wrapper">
-    <div class="main">
-        <div class="rte-content">
-            @Html.Raw(Model.RteContent)
-        </div>
+<div class="page-title">
+    <div class="wrapper">
+        <h1>@Model.Name</h1>
     </div>
 </div>
 
+<div class="content">
+
+    <div class="wrapper">
+        <div class="main">
+            <div class="rte-content">
+                @Html.Raw(Model.RteContent)
+            </div>
+        </div>
+    </div>
+</div>
 
 @section additionalFooterSection
 {

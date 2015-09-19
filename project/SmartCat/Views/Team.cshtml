@@ -9,8 +9,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     ViewBag.Title = string.IsNullOrEmpty(Model.Title) ? Model.Name : Model.Title;
-    ViewBag.HeadSectionTitle = Model.Name;
-    
+
     ViewBag.SeoDescription = Model.SeoDescription;
     ViewBag.SeoKeywords = Model.SeoKeywords;
     ViewBag.SeoAuthor = Model.SeoAuthor;
@@ -18,83 +17,89 @@
 
 @section additionalHeaderSection
 {
-   
+
 }
 
-
-<div class="wrapper centered">
-
-    @Html.Raw(Model.MainContent)
-
-    @{
-        var teamMembers = ContentHelper.GetChildren<TeamMember>(Model.Id).ToList();
-    }
-
-    @if (teamMembers != null && teamMembers.Any())
-    {
-        foreach (var member in teamMembers)
-        {
-            <div class="employee-block @(teamMembers.IndexOf(member) % 2 != 0 ? "right-aligned" : string.Empty)">
-                <div class="img-wrap">
-                    @if (!string.IsNullOrEmpty(member.ProfileImage))
-                    {
-                        <img src="@Umbraco.TypedContent(member.Id).GetCropUrl(SmartCat.Common.Constants.Media.CropNames.ProfileImageAlias, SmartCat.Common.Constants.Media.CropNames.Team)" alt="" />
-                    }  
-                </div>
-                <div class="info">
-                    <h2>@member.FirstName</h2>
-                    <span class="position">@member.WorkPosition</span>
-                    <div class="col">
-                        <p>
-                            @member.ShortDescription
-                        </p>
-                        <div class="contact-box">
-                            <a href="mailto: @member.EmailAddress" class="mail">
-                                <i class="ico"></i>
-                                Contact @member.FirstName
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <blockquote>
-                            @member.Quote
-                        </blockquote>
-                        <ul class="social-links">
-                            @if (!string.IsNullOrEmpty(member.Facebook))
-                            {
-                                <li>
-                                    <a href="@member.Facebook" target="_blank" class="facebook"><i class="ico"></i></a>
-                                </li>
-                            }
-                            @if (!string.IsNullOrEmpty(member.Twitter))
-                            {
-                                <li>
-                                    <a href="@member.Twitter" target="_blank" class="twitter"><i class="ico"></i></a>
-                                </li>
-                            }
-                            @if (!string.IsNullOrEmpty(member.GitHub))
-                            {
-                                <li>
-                                    <a href="@member.GitHub" target="_blank" class="git"><i class="ico"></i></a>
-                                </li>
-                            }
-                            @if (!string.IsNullOrEmpty(member.LinkedIn))
-                            {
-                                <li>
-                                    <a href="@member.LinkedIn" target="_blank" class="linked"><i class="ico"></i></a>
-                                </li>
-                            }
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        }
-
-    }
-
+<div class="page-title">
+    <div class="wrapper">
+        <h1>@Model.Name</h1>
+    </div>
 </div>
 
+<div class="content">
 
+    <div class="wrapper centered">
+
+        @Html.Raw(Model.MainContent)
+
+        @{
+            var teamMembers = ContentHelper.GetChildren<TeamMember>(Model.Id).ToList();
+        }
+
+        @if (teamMembers != null && teamMembers.Any())
+        {
+            foreach (var member in teamMembers)
+            {
+                <div class="employee-block @(teamMembers.IndexOf(member) % 2 != 0 ? "right-aligned" : string.Empty)">
+                    <div class="img-wrap">
+                        @if (!string.IsNullOrEmpty(member.ProfileImage))
+                        {
+                            <img src="@Umbraco.TypedContent(member.Id).GetCropUrl(SmartCat.Common.Constants.Media.CropNames.ProfileImageAlias, SmartCat.Common.Constants.Media.CropNames.Team)" alt="" />
+                        }
+                    </div>
+                    <div class="info">
+                        <h2>@member.FirstName @member.LastName</h2>
+                        <span class="position">@member.WorkPosition</span>
+                        <div class="col">
+                            <p>
+                                @member.ShortDescription
+                            </p>
+                            <div class="contact-box">
+                                <a href="mailto: @member.EmailAddress" class="mail">
+                                    <i class="ico"></i>
+                                    Contact @member.FirstName
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <blockquote>
+                                @member.Quote
+                            </blockquote>
+                            <ul class="social-links">
+                                @if (!string.IsNullOrEmpty(member.Facebook))
+                                {
+                                    <li>
+                                        <a href="@member.Facebook" target="_blank" class="facebook"><i class="ico"></i></a>
+                                    </li>
+                                }
+                                @if (!string.IsNullOrEmpty(member.Twitter))
+                                {
+                                    <li>
+                                        <a href="@member.Twitter" target="_blank" class="twitter"><i class="ico"></i></a>
+                                    </li>
+                                }
+                                @if (!string.IsNullOrEmpty(member.GitHub))
+                                {
+                                    <li>
+                                        <a href="@member.GitHub" target="_blank" class="git"><i class="ico"></i></a>
+                                    </li>
+                                }
+                                @if (!string.IsNullOrEmpty(member.LinkedIn))
+                                {
+                                    <li>
+                                        <a href="@member.LinkedIn" target="_blank" class="linked"><i class="ico"></i></a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        }
+
+    </div>
+</div>
 
 @section additionalFooterSection
 {

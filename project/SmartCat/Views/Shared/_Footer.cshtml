@@ -15,9 +15,10 @@
 
     <div class="contact-block">
         <div class="wrapper">
-            <h4>Contact us</h4>
+            @*<h4>Contact us</h4>
 
-            <form id="theForm" class="simform" autocomplete="off">
+          
+            <form method="post" action="/search/" id="" name="theForm" class="simform" autocomplete="off">
                 <div class="simform-inner">
                     <ol class="questions">
                         <li>
@@ -57,36 +58,37 @@
                     </div><!-- / controls -->
                 </div><!-- /simform-inner -->
                 <span class="final-message"></span>
-            </form>
+              </form>*@
 
-            <ul class="social show-on-mobile">
-                @if (!string.IsNullOrEmpty(Model.GitHub))
-                {
-                    <li>
-                        <a href="@Model.GitHub" class="ico github" target="_blank"></a>
-                    </li>
-                }
-                @if (!string.IsNullOrEmpty(Model.Twitter))
-                {
-                    <li>
-                        <a href="@Model.Twitter" class="ico twitter" target="_blank"></a>
-                    </li>
-                }
-                @if (!string.IsNullOrEmpty(Model.Stackoverflow))
-                {
-                    <li>
-                        <a href="@Model.Stackoverflow" class="ico stackoverflow" target="_blank"></a>
-                    </li>
-                }
-                @if (!string.IsNullOrEmpty(Model.LinkedIn))
-                {
-                    <li>
-                        <a href="@Model.LinkedIn" class="ico linked" target="_blank"></a>
-                    </li>
-                }
-            </ul>
-            <a href="javascript:;" class="scroll-top show-on-mobile"></a>
-        </div>
+
+                <ul class="social show-on-mobile">
+                    @if (!string.IsNullOrEmpty(Model.GitHub))
+                    {
+                        <li>
+                            <a href="@Model.GitHub" class="ico github" target="_blank"></a>
+                        </li>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.Twitter))
+                    {
+                        <li>
+                            <a href="@Model.Twitter" class="ico twitter" target="_blank"></a>
+                        </li>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.Stackoverflow))
+                    {
+                        <li>
+                            <a href="@Model.Stackoverflow" class="ico stackoverflow" target="_blank"></a>
+                        </li>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.LinkedIn))
+                    {
+                        <li>
+                            <a href="@Model.LinkedIn" class="ico linked" target="_blank"></a>
+                        </li>
+                    }
+                </ul>
+                <a href="javascript:;" class="scroll-top show-on-mobile"></a>
+</div>
     </div>
 
     <div class="bottom">

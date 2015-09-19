@@ -30,15 +30,11 @@ namespace SmartCat.Entities.DocumentTypes.Repository
 
         #region NODES
 
-        #endregion
-
-        #region SETTINGS
-
         [DocumentTypeProperty(UmbracoPropertyType.ContentPicker,
-                             Tab = TabNames.Nodes,
-                             Name = "Header",
-                             Description = "Header.",
-                             Mandatory = true)]
+                     Tab = TabNames.Nodes,
+                     Name = "Header",
+                     Description = "Header.",
+                     Mandatory = true)]
         public virtual int? Header { get; set; }
 
         [DocumentTypeProperty(UmbracoPropertyType.ContentPicker,
@@ -47,6 +43,16 @@ namespace SmartCat.Entities.DocumentTypes.Repository
                               Description = "Footer.",
                               Mandatory = true)]
         public virtual int? Footer { get; set; }
+
+        #endregion
+
+        #region SETTINGS
+
+        [DocumentTypeProperty(UmbracoPropertyType.TextboxMultiple,
+                            Tab = TabNames.Settings,
+                            Name = "Google Analytics Script",
+                            Description = "Set google analytics script, including script tags.")]
+        public virtual string GoogleAnalyticsScript { get; set; }
 
         #endregion
     }

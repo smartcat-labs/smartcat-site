@@ -7,8 +7,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     ViewBag.Title = string.IsNullOrEmpty(Model.Title) ? Model.Name : Model.Title;
-    ViewBag.HeadSectionTitle = Model.Title;
-    
+
     ViewBag.SeoDescription = Model.SeoDescription;
     ViewBag.SeoKeywords = Model.SeoKeywords;
     ViewBag.SeoAuthor = Model.SeoAuthor;
@@ -19,37 +18,43 @@
 
 }
 
+<div class="page-title">
+    <div class="wrapper">
+        <h1>@Model.Title</h1>
+    </div>
+</div>
 
+<div class="content">
 
-<div class="wrapper centered">
-    <ul class="items-list search-list full">
+    <div class="wrapper centered">
+        <ul class="items-list search-list full">
+
+            @if (Model.searchResults != null && Model.searchResults.Any())
+            {
+                foreach (var result in Model.searchResults)
+                {
+                    <li>
+                        <div class="text">
+                            <h2><a href="@result.Url">@result.Title</a></h2>
+                            <p>
+                                @result.Description ...
+                            </p>
+                            <a href="@result.Url" class="read-more-link">@uQuery.GetDictionaryItem("Common.ReadMore","Read more") <i></i></a>
+                        </div>
+                    </li>
+                }
+            }
+            else
+            {
+                <h1>@uQuery.GetDictionaryItem("Search.NoSearchResults","No search results")</h1>
+                <p>@uQuery.GetDictionaryItem("Search.NoResultsFound", "No results found. Please adjust your search and try again.")</p>
+            }
+
+        </ul>
 
         @if (Model.searchResults != null && Model.searchResults.Any())
         {
-            foreach (var result in Model.searchResults)
-            {
-                <li>
-                    <div class="text">
-                        <h2><a href="@result.Url">@result.Title</a></h2>
-                        <p>
-                            @result.Description ...
-                        </p>
-                        <a href="@result.Url" class="read-more-link">Read more <i></i></a>
-                    </div>
-                </li>
-            }
-        }
-        else
-        { 
-            <h1>No search results</h1>
-            <p>No results found. Please adjust your search and try again.</p>
-        }
-
-    </ul>
-
-    @if (Model.searchResults != null && Model.searchResults.Any())
-    {
-        @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount).Options(o => o
+            @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount).Options(o => o
             .DisplayTemplate("_PagingTemplate")
             .AddRouteValue("s", Model.Query)
             .AlwaysAddFirstPageNumber()
@@ -57,7 +62,9 @@
             .SetNextPageText("")
 
         )
-    }
+        }
+
+    </div>
 
 </div>
 

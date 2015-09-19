@@ -57,11 +57,14 @@
     <Compile Include="DocumentTypes\BlogPost.cs" />
     <Compile Include="DocumentTypes\CertificateContainer.cs" />
     <Compile Include="DocumentTypes\CertificateItem.cs" />
+    <Compile Include="DocumentTypes\Contact.cs" />
     <Compile Include="DocumentTypes\Home.cs" />
     <Compile Include="DocumentTypes\Main.cs" />
     <Compile Include="DocumentTypes\News.cs" />
     <Compile Include="DocumentTypes\NewsPost.cs" />
     <Compile Include="DocumentTypes\Page.cs" />
+    <Compile Include="DocumentTypes\PartnerItem.cs" />
+    <Compile Include="DocumentTypes\PartnersContainer.cs" />
     <Compile Include="DocumentTypes\Process.cs" />
     <Compile Include="DocumentTypes\ProcessItem.cs" />
     <Compile Include="DocumentTypes\Repository\Error404.cs" />
@@ -76,6 +79,8 @@
     <Compile Include="DocumentTypes\TeamMember.cs" />
     <Compile Include="DocumentTypes\Technologies.cs" />
     <Compile Include="DocumentTypes\TechnologyItem.cs" />
+    <Compile Include="DocumentTypes\TestimonialContainer.cs" />
+    <Compile Include="DocumentTypes\TestimonialItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TabNames.cs" />
   </ItemGroup>

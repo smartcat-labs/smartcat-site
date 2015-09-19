@@ -20,6 +20,30 @@ namespace SmartCat.Entities
 
         SEO,
 
+        [TabName("Home Banner")]
+        HomeBanner,
+
+        [TabName("Featured Services")]
+        FeaturedServices,
+
+        [TabName("About Us")]
+        AboutUs,
+
+        [TabName("Featured Processes")]
+        FeaturedProcesses,
+
+        [TabName("Featured News")]
+        FeaturedNews,
+
+        [TabName("Featured Members")]
+        FeaturedMembers,
+
+        [TabName("Testimonials")]
+        Testimonials,
+
+        [TabName("Partner Network")]
+        PartnerNetwork,
+
         Settings,
 
         Sidebar,

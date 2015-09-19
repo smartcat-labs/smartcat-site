@@ -41,7 +41,7 @@ namespace SmartCat.Entities.DocumentTypes.Repository
         #region SUPPORT
 
         public string SearchUrl { get; set; }
-
+      
         #endregion
 
     }
