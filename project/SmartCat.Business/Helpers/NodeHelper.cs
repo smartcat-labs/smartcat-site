@@ -54,21 +54,6 @@ namespace SmartCat.Business.Helpers
                 return retVal;
             }
 
-            //get
-            //{
-            //    Settings retVal = (Settings)HttpCacheHandler.GetValue(Constants.CacheKeys.Settings);
-
-            //    if (retVal == null)
-            //    {
-            //        retVal = ContentHelper.GetByNodeId<Settings>(Configuration.SettingsNodeId);
-            //        if (retVal != null)
-            //        {
-            //            HttpCacheHandler.SetValue(Constants.CacheKeys.Settings, retVal);
-            //        }
-            //    }
-
-            //    return retVal;
-            //}
         }
 
         #region PAGES

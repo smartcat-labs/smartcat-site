@@ -70,26 +70,27 @@ var theForm = document.getElementById('theForm');
 
 if (theForm !== null && theForm !== undefined)
 {
-
     var stepsForm = new stepsForm(theForm, {
         onSubmit: function (form) {
+
             // hide form
             classie.addClass(theForm.querySelector('.simform-inner'), 'hide');
 
-            /*
-            form.submit();
-            or
-            AJAX request (maybe show loading indicator while we don't have an answer..)
-            */
+            $.post("/umbraco/surface/email/processstepsform", $('form').serialize(), function (data, textStatus, jqXHR) {
 
-            contactUs();
+                if (textStatus === "success")
+                {
+                    var messageEl = theForm.querySelector('.final-message');
+                    messageEl.innerHTML = data;
+                    classie.addClass(messageEl, 'show');
+                }
 
-            // let's just simulate something...
-            var messageEl = theForm.querySelector('.final-message');
-            messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
-            classie.addClass(messageEl, 'show');
+            }, "text").fail(function() {
+                  var messageEl = theForm.querySelector('.final-message');
+                  messageEl.innerHTML = "We're having trouble processing your request, please try again later.";
+                  classie.addClass(messageEl, 'show');
+            });
         }
-
     });
 }
 
