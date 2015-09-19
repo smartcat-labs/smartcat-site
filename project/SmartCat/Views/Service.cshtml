@@ -38,7 +38,7 @@
                     }
                     @Model.Name
                 </h2>
-                <a href="@ContentHelper.GetByNodeId(Model.ParentId).NiceUrl" class="go-back hidden-on-mobile">@uQuery.GetDictionaryItem("Common.Back","Back")</a>
+                <a href="@ContentHelper.GetByNodeId(Model.ParentId).NiceUrl" class="go-back hidden-on-mobile">@Umbraco.GetDictionaryValue("Common.Back")</a>
             </div>
             <div class="rte-content">
                 @Html.Raw(Model.ServiceContent)
@@ -51,7 +51,7 @@
             @if (otherServices != null && otherServices.Any())
             {
                 <section class="full-width what-we-do-block">
-                    <h3>@uQuery.GetDictionaryItem("Service.OtherServices","Other services")</h3>
+                    <h3>@Umbraco.GetDictionaryValue("Service.OtherServices")</h3>
 
                     @foreach (var service in otherServices)
                     {
@@ -77,7 +77,7 @@
                                     @Html.Raw(service.ServiceContent != null ? service.ServiceContent.Substring(0, 170) + "..." : string.Empty)
                                     <a href="@service.NiceUrl" class="ico arrow-more hidden-on-mobile"></a>
                                 </p>
-                                <a href="@service.NiceUrl" class="btn show-on-mobile">@uQuery.GetDictionaryItem("Common.ReadMore","read more")</a>
+                                <a href="@service.NiceUrl" class="btn show-on-mobile">@Umbraco.GetDictionaryValue("Common.ReadMore")</a>
                             </div>
                         </div>
                     }

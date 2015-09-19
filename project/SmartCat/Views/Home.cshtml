@@ -18,7 +18,7 @@
 
 @section additionalHeaderSection
 {
-
+    
 }
 
 
@@ -64,7 +64,7 @@
                     var tweet = latestTweets.First();
 
                     <div class="twitter-box">
-                        <h3>@uQuery.GetDictionaryItem("Home.LatestTweet","LatestTweet")</h3>
+                        <h3>@Umbraco.GetDictionaryValue("Home.LatestTweet")</h3>
                         <p>
                             @Html.Raw(tweet.Text)
                         </p>
@@ -94,7 +94,7 @@
 {
     <section class="full-width what-we-do-block">
         <div class="wrapper centered">
-            <h2><i class="ico title-ico hidden-on-mobile"></i>@uQuery.GetDictionaryItem("Home.WhatWeDo","What we do")</h2>
+            <h2><i class="ico title-ico hidden-on-mobile"></i>@Umbraco.GetDictionaryValue("Home.WhatWeDo")</h2>
             <div class="swiper-container">
                 <div class="swiper-wrapper">
 
@@ -119,7 +119,7 @@
                                     @Html.Raw(typedService.ServiceContent != null ? typedService.ServiceContent.Substring(0, 170) + "..." : string.Empty)
                                     <a href="@typedService.NiceUrl" class="ico arrow-more hidden-on-mobile"></a>
                                 </p>
-                                <a href="@typedService.NiceUrl" class="btn show-on-mobile">@uQuery.GetDictionaryItem("Common.ReadMore","read more")</a>
+                                <a href="@typedService.NiceUrl" class="btn show-on-mobile">@Umbraco.GetDictionaryValue("Common.ReadMore")</a>
                             </div>
                         </div>
                     }
@@ -135,7 +135,7 @@
 {
     <section class="full-width about-us-block">
         <div class="wrapper centered">
-            <h2><i class="ico title-ico hidden-on-mobile"></i>@uQuery.GetDictionaryItem("Home.AboutUs","About us")</h2>
+            <h2><i class="ico title-ico hidden-on-mobile"></i>@Umbraco.GetDictionaryValue("Home.AboutUs")</h2>
             <div class="rte-content">
                 @Html.Raw(Model.AboutText)
             </div>
@@ -154,7 +154,7 @@
 {
     <section class="full-width process-block">
         <div class="wrapper centered">
-            <h2><i class="ico title-ico hidden-on-mobile"></i>@uQuery.GetDictionaryItem("Home.OurProcess","Our process")</h2>
+            <h2><i class="ico title-ico hidden-on-mobile"></i>@Umbraco.GetDictionaryValue("Home.OurProcess")</h2>
             <div class="swiper-container">
                 <ul class="swiper-wrapper">
 
@@ -188,9 +188,9 @@
     
     <section class="full-width news-block">
         <div class="wrapper">
-            <h2>@uQuery.GetDictionaryItem("Home.WhatIsNew","What's new?")</h2>
+            <h2>@Umbraco.GetDictionaryValue("Home.WhatIsNew")</h2>
             <a href="@parentUrl" class="btn arrow">
-                <span>@uQuery.GetDictionaryItem("News.AllNews","All news")</span><i class="ico"></i>
+                <span>@Umbraco.GetDictionaryValue("News.AllNews")</span><i class="ico"></i>
             </a>
             <div class="one-three">
 

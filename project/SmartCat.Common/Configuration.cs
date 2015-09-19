@@ -71,5 +71,21 @@ namespace SmartCat.Common
                 return ConfigurationManager.AppSettings["TwitterUserID"];
             }
         }
+
+        public static int LanguageEN
+        {
+            get 
+            {
+                return int.Parse(ConfigurationManager.AppSettings["LanguageEN"]);
+            }
+        }
+
+        public static int LanguageNL
+        {
+            get
+            {
+                return int.Parse(ConfigurationManager.AppSettings["LanguageNL"]);
+            }
+        }
     }
 }

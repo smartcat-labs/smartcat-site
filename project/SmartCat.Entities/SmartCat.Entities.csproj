@@ -59,6 +59,7 @@
     <Compile Include="DocumentTypes\CertificateItem.cs" />
     <Compile Include="DocumentTypes\Contact.cs" />
     <Compile Include="DocumentTypes\Home.cs" />
+    <Compile Include="DocumentTypes\Language.cs" />
     <Compile Include="DocumentTypes\Main.cs" />
     <Compile Include="DocumentTypes\News.cs" />
     <Compile Include="DocumentTypes\NewsPost.cs" />

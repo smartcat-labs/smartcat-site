@@ -119,7 +119,7 @@
 
                 <div class="search-box">
                     <form id="msearchForm" method="get" action="@Model.SearchUrl" name="searchForm">
-                        <input id="s" name="s" type="text" placeholder="@uQuery.GetDictionaryItem("Common.Search","Search")">
+                        <input id="s" name="s" type="text" placeholder="@umbracoHelper.GetDictionaryValue("Common.Search")">
                     </form>
                     <a href="javascript:;" class="search-btn" onclick="$('#msearchForm').submit();">
                         <i class="ico"></i>

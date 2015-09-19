@@ -32,7 +32,7 @@
         <div class="main article">
             <div class="title">
                 <h2>@Model.BlogTitle</h2>
-                <a href="@ContentHelper.GetByNodeId(Model.ParentId).NiceUrl" class="go-back">@uQuery.GetDictionaryItem("Common.Back","Back")</a>
+                <a href="@ContentHelper.GetByNodeId(Model.ParentId).NiceUrl" class="go-back">@Umbraco.GetDictionaryValue("Common.Back")</a>
                 <span class="date">@Model.PostDate.ToString("MM/dd/yy")</span>
             </div>
             <div class="img-wrap">
@@ -54,7 +54,7 @@
                 {
                     <a href="@precedingsSiblings.NiceUrl" class="prev-post">
                         <i></i>
-                        @uQuery.GetDictionaryItem("Blog.PreviousPost","Previous post")
+                        @Umbraco.GetDictionaryValue("Blog.PreviousPost")
                     </a>
                 }
 
@@ -65,14 +65,14 @@
                 @if (followingSiblings != null)
                 {
                     <a href="@followingSiblings.NiceUrl" class="next-post">
-                        @uQuery.GetDictionaryItem("Blog.NextPost", "Next post")
+                        @Umbraco.GetDictionaryValue("Blog.NextPost")
                         <i></i>
                     </a>
                 }
             </div>
             <div class="article-footer">
                 <div class="share-box">
-                    <span>@uQuery.GetDictionaryItem("Common.Share","Share")</span>
+                    <span>@Umbraco.GetDictionaryValue("Common.Share")</span>
                     <ul>
                         <li>
                             <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsmartcat.io&t=" target="_blank" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;">FB</a>

@@ -1,33 +1,74 @@
 ﻿using SmartCat.Common;
+using SmartCat.Entities.DocumentTypes;
 using SmartCat.Entities.DocumentTypes.Repository;
 using System;
+using System.Linq;
 using System.Collections.Generic;
+using System.Threading;
 using umbraco;
 using umbraco.NodeFactory;
+using Umbraco.Web;
 using Vega.USiteBuilder;
 
 namespace SmartCat.Business.Helpers
 {
     public static class NodeHelper
     {
+
         #region PUBLIC PROPERTIES
 
         public static Settings Settings
         {
             get
             {
-                Settings retVal = (Settings)HttpCacheHandler.GetValue(Constants.CacheKeys.Settings);
-                if (retVal == null)
+                var umbracoHelper = new UmbracoHelper();
+
+                var currentLanguageCulture = Thread.CurrentThread.CurrentCulture.Name;
+                
+                Settings retVal = new Settings();
+               
+
+                switch (currentLanguageCulture)
                 {
-                    retVal = ContentHelper.GetByNodeId<Settings>(Configuration.SettingsNodeId);
-                    if (retVal != null)
-                    {
-                        HttpCacheHandler.SetValue(Constants.CacheKeys.Settings, retVal);
-                    }
+                    case "en-US":
+                        var settingsNodeEn = ContentHelper.GetChildren<Settings>(Configuration.LanguageEN, true).FirstOrDefault();
+                        if (settingsNodeEn != null)
+                        {
+                            retVal = settingsNodeEn;
+                        }
+                        break;
+
+                    case "nl-NL":
+                        var settingsNodeNl = ContentHelper.GetChildren<Settings>(Configuration.LanguageNL, true).FirstOrDefault();
+                        if (settingsNodeNl != null)
+                        {
+                            retVal = settingsNodeNl;
+                        }
+                        break;
+                    default:
+                        //default en settings node
+                        retVal = ContentHelper.GetByNodeId<Settings>(Configuration.SettingsNodeId);
+                        break;
                 }
 
                 return retVal;
             }
+
+            //get
+            //{
+            //    Settings retVal = (Settings)HttpCacheHandler.GetValue(Constants.CacheKeys.Settings);
+
+            //    if (retVal == null)
+            //    {
+            //        retVal = ContentHelper.GetByNodeId<Settings>(Configuration.SettingsNodeId);
+            //        if (retVal != null)
+            //        {
+            //            HttpCacheHandler.SetValue(Constants.CacheKeys.Settings, retVal);
+            //        }
+            //    }
+
+            //    return retVal;
+            //}
         }
 
         #region PAGES

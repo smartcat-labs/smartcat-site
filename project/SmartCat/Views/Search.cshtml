@@ -46,8 +46,8 @@
             }
             else
             {
-                <h1>@uQuery.GetDictionaryItem("Search.NoSearchResults","No search results")</h1>
-                <p>@uQuery.GetDictionaryItem("Search.NoResultsFound", "No results found. Please adjust your search and try again.")</p>
+                <h1>@Umbraco.GetDictionaryValue("Search.NoSearchResults")</h1>
+                <p>@Umbraco.GetDictionaryValue("Search.NoResultsFound")</p>
             }
 
         </ul>

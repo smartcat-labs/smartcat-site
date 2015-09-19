@@ -59,7 +59,7 @@
                                 <p>
                                     <a href="@service.NiceUrl">@Html.Raw(!string.IsNullOrEmpty(service.ServiceContent) ? service.ServiceContent.Substring(0, 445) : string.Empty)</a>
                                 </p>
-                                <a href="@service.NiceUrl" class="read-more-link">@uQuery.GetDictionaryItem("Common.ReadMore","Read more")<i></i></a>
+                                <a href="@service.NiceUrl" class="read-more-link">@Umbraco.GetDictionaryValue("Common.ReadMore")<i></i></a>
                             </div>
                         </li>
                     }
