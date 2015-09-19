@@ -15,50 +15,45 @@
 
     <div class="contact-block">
         <div class="wrapper">
-            @*<h4>Contact us</h4>
+            <h4>Contact us</h4>
 
           
-            <form method="post" action="/search/" id="" name="theForm" class="simform" autocomplete="off">
-                <div class="simform-inner">
-                    <ol class="questions">
-                        <li>
-                            <span><label for="q1">What's your name? <span>(Please fill the field before continuing)</span></label></span>
-                            <input id="q1" name="q1" type="text" />
-                        </li>
-                        <li>
-                            <span><label for="q2">Where do you live?</label></span>
-                            <input id="q2" name="q2" type="text" />
-                        </li>
-                        <li>
-                            <span><label for="q3">What time do you got to work?</label></span>
-                            <input id="q3" name="q3" type="text" />
-                        </li>
-                        <li>
-                            <span><label for="q4">How do you like your veggies?</label></span>
-                            <input id="q4" name="q4" type="text" />
-                        </li>
-                        <li>
-                            <span><label for="q5">What book inspires you?</label></span>
-                            <input id="q5" name="q5" type="text" />
-                        </li>
-                        <li>
-                            <span><label for="q6">What's your profession?</label></span>
-                            <input id="q6" name="q6" type="text" />
-                        </li>
-                    </ol><!-- /questions -->
-                    <button class="submit" type="submit">Send answers</button>
-                    <div class="controls">
-                        <button class="next"></button>
-                        <div class="progress"></div>
-                        <span class="number">
-                            <span class="number-current"></span>
-                            <span class="number-total"></span>
-                        </span>
-                        <span class="error-message"></span>
-                    </div><!-- / controls -->
-                </div><!-- /simform-inner -->
-                <span class="final-message"></span>
-              </form>*@
+            <form id="theForm" name="theForm" class="simform" autocomplete="off">
+                <div class="simform">
+                    <div class="simform-inner">
+                        <ol class="questions">
+                            <li>
+                                <span><label for="SenderName">What's your name? <span>(Please fill the field before continuing)</span></label></span>
+                                <input id="SenderName" name="SenderName" type="text" />
+                            </li>
+                            <li>
+                                <span><label for="SenderEmail">What's your email?</label></span>
+                                <input id="SenderEmail" name="SenderEmail" type="text" />
+                            </li>
+                            <li>
+                                <span><label for="Subject">What would you like to contact us about?</label></span>
+                                <input id="Subject" name="Subject" type="text" />
+                            </li>
+                            <li>
+                                <span><label for="Message">Write your message</label></span>
+                                <input id="Message" name="Message" type="text" />
+                            </li>
+                        </ol><!-- /questions -->
+                        <button class="submit" type="submit" onclick="OnContactUsClick()">Send answers</button>
+                        
+                        <div class="controls">
+                            <button class="next"></button>
+                            <div class="progress"></div>
+                            <span class="number">
+                                <span class="number-current"></span>
+                                <span class="number-total"></span>
+                            </span>
+                            <span class="error-message"></span>
+                        </div><!-- / controls -->
+                    </div><!-- /simform-inner -->
+                    <span class="final-message"></span>
+                </div>
+            </form>
 
 
                 <ul class="social show-on-mobile">
