@@ -37,9 +37,26 @@ namespace SmartCat.Controllers
         }
 
         [HttpPost]
-        public void ProcessContactForm()
+        public string ProcessContactForm(string senderName, string senderEmail, string senderNumber, string subject, string message, string contactMemberId)
         {
-            
+            var contactDetails = ContentHelper.GetByNodeId<Contact>(NodeHelper.Settings.Contact.Value);
+            var emailMessage = contactDetails.MainMessageTemplate.FormatWith(new { senderName = senderName, senderEmail = senderEmail, senderNumber = senderNumber, subject = subject, message = message });
+
+            var contactEmailTo = contactMemberId == "1" ? contactDetails.OfficeEmail : ContentHelper.GetByNodeId<TeamMember>(int.Parse(contactMemberId)).EmailAddress;
+
+            // replace line breaks with html new line
+            emailMessage = Regex.Replace(emailMessage, "\r?\n", "<br/>");
+
+            var isSuccessfullySent = MailHandler.Instance.SendMail(subject, emailMessage, senderEmail, contactEmailTo);
+
+            if (isSuccessfullySent)
+            {
+                return contactDetails.SuccessfullyEmailMessage;
+            }
+            else
+            {
+                return contactDetails.FailedEmailMessage;
+            }
         }
     }
 }

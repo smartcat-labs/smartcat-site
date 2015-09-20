@@ -20,23 +20,6 @@
 
 }
 
-<script type="text/javascript">
-    function whoSelected(ctrl) {
-        var info = document.getElementById('info');
-        var bk = document.getElementById('bk');
-        var mg = document.getElementById('mg');
-        var nb = document.getElementById('nb');
-
-        info.classList.remove('active');
-        bk.classList.remove('active');
-        mg.classList.remove('active');
-        nb.classList.remove('active');
-
-        ctrl.classList.add('active');
-    }
-</script>
-
-
 
 <div class="page-title">
     <div class="wrapper">
@@ -47,121 +30,115 @@
 <div class="content">
     <div class="wrapper centered">
         <div class="contact-us">
-            <ol class="contact-questions">
-                <li>
-                    <ol class="main-questions">
-                        <li>
-                            <span>
-                                <label for="SenderName">*What's your name?</label>
-                            </span>
-                            <div class="contact-info">
-                                <input id="SenderName" name="SenderName" type="text" />
-                            </div>
-                        </li>
-                        <li>
-                            <span>
-                                <label for="SenderEmail">*Email?</label>
-                            </span>
-                            <div class="contact-info">
-                                <input id="SenderEmail" name="SenderEmail" type="email" />
-                            </div>
-                        </li>
-                        <li>
-                            <span>
-                                <label for="SenderContact">Contact number?</label>
-                            </span>
-                            <div class="contact-info">
-                                <input id="SenderContact" name="SenderContact" type="text" />
-                            </div>
-                        </li>
-                    </ol>
-                    <!-- / main-questions -->
-                </li>
-                <li class="contact-who-block">
-                    <p>*Who do you want to contact?</p>
-                    <div class="contacts-wrapper">
-                        <div class="one-contact active" id="info" onclick="whoSelected(this)">
-                            <div class="contact-romb-wrap contact-office-img">
-                                <div class="contact-who romb">
-                                    <div class="img-wrap">
-                                        <img src="/img/content/contact-office.png" alt="" class="contact-img" />
+            <form id="mainContactForm" name="mainContactForm" method="post">
+                <ol class="contact-questions">
+                    <li>
+                        <ol class="main-questions">
+                            <li>
+                                <span>
+                                    <label for="SenderName">*What's your name?</label>
+                                </span>
+                                <div class="contact-info">
+                                    <input id="senderName" name="senderName" type="text" />
+                                </div>
+                            </li>
+                            <li>
+                                <span>
+                                    <label for="SenderEmail">*Email?</label>
+                                </span>
+                                <div class="contact-info">
+                                    <input id="senderEmail" name="senderEmail" type="email" />
+                                </div>
+                            </li>
+                            <li>
+                                <span>
+                                    <label for="SenderContact">Contact number?</label>
+                                </span>
+                                <div class="contact-info">
+                                    <input id="senderNumber" name="senderNumber" type="text" />
+                                </div>
+                            </li>
+                        </ol>
+                        <!-- / main-questions -->
+                    </li>
+                    <li class="contact-who-block">
+                        <p>*Who do you want to contact?</p>
+                        <div class="contacts-wrapper">
+                            <div class="one-contact active" id="1" onclick="whoSelected(this)">
+                                <div class="contact-romb-wrap contact-office-img">
+                                    <div class="contact-who romb">
+                                        <div class="img-wrap">
+                                            <img src="/img/content/contact-office.png" alt="" class="contact-img" />
+                                        </div>
+                                    </div>
+                                    <div class="contact-who-name hidden-on-mobile">
+                                        <p>Our office</p>
                                     </div>
                                 </div>
-                                <div class="contact-who-name hidden-on-mobile">
-                                    <p>Our office</p>
-                                </div>
                             </div>
-                        </div>
-                        <div class="one-contact hidden-on-mobile" id="bk" onclick="whoSelected(this)">
-                            <div class="contact-romb-wrap">
-                                <div class="contact-who romb">
-                                    <div class="img-wrap">
-                                        <img src="/img/content/contact-bojan.png" alt="" class="contact-img" />
+
+                            @if (Model.ContactTeamMembers != null && Model.ContactTeamMembers.Any())
+                            {
+                                foreach (var memberId in Model.ContactTeamMembers)
+                                {
+                                    var contactMember = ContentHelper.GetByNodeId<TeamMember>(memberId);
+
+                                    <div class="one-contact hidden-on-mobile" id="@contactMember.Id" onclick="whoSelected(this)">
+                                        <div class="contact-romb-wrap">
+                                            <div class="contact-who romb">
+                                                <div class="img-wrap">
+                                                    <img src="@(contactMember.ContactImage.HasValue ? MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(contactMember.ContactImage.Value)) : string.Empty)" alt="" class="contact-img" />
+                                                </div>
+                                            </div>
+                                            <div class="contact-who-name">
+                                                <p>@contactMember.FirstName @contactMember.LastName, @contactMember.WorkPosition</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="contact-who-name">
-                                    <p>Bojan Kovac, Co-founder</p>
-                                </div>
+                                }
+                            }
+
+                            <div class="select-contact-form show-on-mobile">
+                                <select id="contactMemberId" name="contactMemberId">
+                                    <option value="1" selected>Our office</option>
+                                    @if (Model.ContactTeamMembers != null && Model.ContactTeamMembers.Any())
+                                    {
+                                        foreach (var memberId in Model.ContactTeamMembers)
+                                        {
+                                            var contactMember = ContentHelper.GetByNodeId<TeamMember>(memberId);
+
+                                            <option value="@contactMember.Id">@contactMember.FirstName @contactMember.LastName, @contactMember.WorkPosition</option>
+                                        }
+                                    }
+                                </select>
                             </div>
                         </div>
-                        <div class="one-contact hidden-on-mobile" id="mg" onclick="whoSelected(this)">
-                            <div class="contact-romb-wrap">
-                                <div class="contact-who romb">
-                                    <div class="img-wrap">
-                                        <img src="/img/content/contact-matija.png" alt="" class="contact-img" />
-                                    </div>
-                                </div>
-                                <div class="contact-who-name">
-                                    <p>Matija Gobec, Co-founder</p>
-                                </div>
-                            </div>
+                    </li>
+                    <li>
+                        <span>
+                            <label for="Subject">*Subject</label>
+                        </span>
+                        <div class="contact-info">
+                            <input id="subject" name="subject" type="text" />
                         </div>
-                        <div class="one-contact hidden-on-mobile" id="nb" onclick="whoSelected(this)">
-                            <div class="contact-romb-wrap">
-                                <div class="contact-who romb">
-                                    <div class="img-wrap">
-                                        <img src="/img/content/contact-nenad.png" alt="" class="contact-img" />
-                                    </div>
-                                </div>
-                                <div class="contact-who-name">
-                                    <p>Nenad Bozic, Co-founder</p>
-                                </div>
-                            </div>
+                    </li>
+                    <li class="contact-message">
+                        <span>
+                            <label for="Message">*Message?</label>
+                        </span>
+                        <div class="contact-info">
+                            <textarea id="message" name="message"></textarea>
                         </div>
-                        <div class="select-contact-form show-on-mobile">
-                            <select>
-                                <option value="">Our office</option>
-                                <option value="">Bojan Kovac, Co-Founder</option>
-                                <option value="">Matija Gobec, Co-Founder</option>
-                                <option value="">Nenad Bozic, Co-Founder</option>
-                            </select>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <span>
-                        <label for="Subject">*Subject</label>
-                    </span>
-                    <div class="contact-info">
-                        <input id="Subject" name="Subject" type="text" />
-                    </div>
-                </li>
-                <li class="contact-message">
-                    <span>
-                        <label for="Message">*Message?</label>
-                    </span>
-                    <div class="contact-info">
-                        <textarea id="Message" name="Message"></textarea>
-                    </div>
-                </li>
-            </ol>
-            <a href="javascript:;" class="btn arrow" onclick="OnContactClick()"><span>Send</span> <i class="ico"></i></a>
-            
+                    </li>
+                </ol>
+                <a href="javascript:;" class="btn arrow js_mainContactFormSubmit"><span>Send</span> <i class="ico"></i></a>
+            </form>
         </div>
     </div>
 </div>
 
 @section additionalFooterSection
 {
-
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/scripts/pages/contact.js"></script>
 }

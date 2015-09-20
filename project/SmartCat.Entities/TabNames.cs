@@ -11,14 +11,14 @@ namespace SmartCat.Entities
     {
         Page = 1,
 
+        SEO,
+
         Nodes,
 
         Content,
 
         [TabName("Contact us")]
         ContactUs,
-
-        SEO,
 
         [TabName("Home Banner")]
         HomeBanner,
@@ -45,6 +45,12 @@ namespace SmartCat.Entities
         PartnerNetwork,
 
         Settings,
+
+        [TabName("Steps Form")]
+        StepsForm,
+
+        [TabName("Main Form")]
+        MainForm,
 
         Sidebar,
 
