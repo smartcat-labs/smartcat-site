@@ -88,10 +88,12 @@
 
                         @foreach (var menuItem in menuItems)
                         {
+                            var activeClass = menuItem.Id == umbraco.presentation.nodeFactory.Node.GetCurrent().Id ? "active" : string.Empty;
+                            
                             if (menuItem.NodeTypeAlias == "Blog")
                             {
                                 <li>
-                                    <a href="@menuItem.NiceUrl">
+                                    <a href="@menuItem.NiceUrl" class="@activeClass">
                                         <i class="ico cat"></i>
                                         <strong>@menuItem.Name</strong>
                                     </a>
@@ -100,7 +102,7 @@
                             else if (menuItem.NodeTypeAlias == "Technologies")
                             {
                                 <li>
-                                    <a href="@menuItem.NiceUrl">
+                                    <a href="@menuItem.NiceUrl" class="@activeClass">
                                         <span class="t-desktop">@menuItem.Name</span>
                                         <span class="t-desktop-small">Techs</span>
                                     </a>
@@ -109,7 +111,7 @@
                             else
                             {
                                 <li>
-                                    <a href="@menuItem.NiceUrl">@menuItem.Name</a>
+                                    <a href="@menuItem.NiceUrl" class="@activeClass">@menuItem.Name</a>
                                 </li>
                             }
                         }
