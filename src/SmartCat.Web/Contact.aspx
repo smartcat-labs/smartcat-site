@@ -42,22 +42,20 @@
                     <li>
                         <ol class="main-questions">
                             <li>
-                                <span>
-                                    <label for="SenderName">*What's your name?</label></span>
+                                <label for="SenderName">*What's your name?</label>
                                 <div class="contact-info">
                                     <input id="SenderName" name="SenderName" type="text" />
                                 </div>
+								<label class="message-error">This is an error message</label>	
                             </li>
                             <li>
-                                <span>
-                                    <label for="SenderEmail">*Email?</label></span>
+                                <label for="SenderEmail">*Email?</label>
                                 <div class="contact-info">
                                     <input id="SenderEmail" name="SenderEmail" type="email" />
                                 </div>
                             </li>
                             <li>
-                                <span>
-                                    <label for="SenderContact">Contact number?</label></span>
+                                <label for="SenderContact">Contact number?</label>
                                 <div class="contact-info">
                                     <input id="SenderContact" name="SenderContact" type="text" />
                                 </div>
