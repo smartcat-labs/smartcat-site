@@ -73,12 +73,12 @@
                             </li>
                         }
                     }
-                    -
+                    
                 </ul>
                 <div class="swiper-pagination show-on-mobile"></div>
             </div>
             <div class="certificate-block hidden-on-mobile">
-                <span>Umbraco.GetDictionaryValue("Service.Associations") / @Umbraco.GetDictionaryValue("Service.Certificates")</span>
+                <span>@Umbraco.GetDictionaryValue("Service.Associations") / @Umbraco.GetDictionaryValue("Service.Certificates")</span>
 
                 @{
                     var certificateContainer = ContentHelper.GetChildren<CertificateContainer>(Model.Id).FirstOrDefault();

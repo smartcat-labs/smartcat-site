@@ -46,14 +46,14 @@
         public static string AddLinksToTweets(string inputText)
         {
             string replacedText = inputText;
-            string replacePattern1 = @"(http:\/\/[^ ]+)";
+            string replacePattern1 = @"(https?:\/\/[^ ]+)";
             replacedText = Regex.Replace(replacedText, replacePattern1, "<a href=\"$1\" target=\"_blank\">$1</a>", RegexOptions.Compiled);
 
-            string replacePattern2 = @"@([a-z0-9_]+)";
+            string replacePattern2 = @"@([a-zA-Z0-9_]*)";
             replacedText = Regex.Replace(replacedText, replacePattern2, "<a href=\"http://twitter.com/@$1\" target=\"_blank\">@$1</a>", RegexOptions.Compiled);
 
             string replacePattern3 = @"#([a-zA-Z0-9_]*)";
-            replacedText = Regex.Replace(replacedText, replacePattern3, "<a href=\"http://search.twitter.com/search?q=%23$1\" target=\"_blank\">#$1</a>", RegexOptions.Compiled);
+            replacedText = Regex.Replace(replacedText, replacePattern3, "<a href=\"http://twitter.com/search?q=%23$1\" target=\"_blank\">#$1</a>", RegexOptions.Compiled);
 
             return replacedText;
         }

@@ -1,6 +1,7 @@
 ﻿@using Vega.USiteBuilder;
 @using SmartCat.Entities.DocumentTypes;
 @using SmartCat.Business.Helpers;
+@using System.Text.RegularExpressions;
 
 @inherits Vega.USiteBuilder.UmbracoTemplatePageBase<SmartCat.Entities.DocumentTypes.News>
 
@@ -67,23 +68,33 @@
                                     <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(post.BoxImage.Value))" alt="@MediaHelper.GetImageAlternateText(MediaHelper.GetMediaById(post.BoxImage.Value))" />
                                 }
 
-                                <span class="color-overlay"></span>
+                                <a href="@post.NiceUrl"><span class="color-overlay"></span></a> 
                                 <span class="blue-overlay"></span>
                                 <a href="@post.NiceUrl" class="read-more"><i></i></a>
                                 <span class="@spanClass"></span>
                             </div>
-                            <div class="text hidden-on-mobile">
-                                <h3>@post.NewsTitle</h3>
-                                <span class="date">@post.PostDate.ToString("MM/dd/yy")</span>
-                            </div>
-                            <div class="text show-on-mobile">
+                            @if(postClass == "stamp")
+                            { 
+                                <div class="text hidden-on-mobile">
+                                    <h3>@post.NewsTitle</h3>
+                                    <span class="date">@post.PostDate.ToString("MM/dd/yy")</span>
+                                </div>
+                            }
+                            <div class="text @(postClass == "stamp" ? "show-on-mobile" : string.Empty)">
                                 <span class="date">@post.PostDate.ToString("MM/dd/yy")</span>
                                 <h3>
                                     <a href="@post.NiceUrl">@post.NewsTitle</a>
                                 </h3>
-
+                                @if(postClass != "stamp")
+                                { 
+                                    <p>
+                                        <a href="@post.NiceUrl">
+                                            @Regex.Replace(post.RteContent, @"<(.|\n)*?>", string.Empty).Substring(0, 80) ...
+                                        </a>
+                                    </p>
+                                }
                                 @{
-                        var postAuthor = post.Author.HasValue ? ContentHelper.GetByNodeId<TeamMember>(post.Author.Value) : null;
+                                    var postAuthor = post.Author.HasValue ? ContentHelper.GetByNodeId<TeamMember>(post.Author.Value) : null;
                                 }
                                 @if (postAuthor != null)
                                 {
