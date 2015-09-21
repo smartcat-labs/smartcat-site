@@ -946,10 +946,17 @@
 		li {
 			margin-left: 4px;
 		}
-		span {
+		label {
 			font-size: 16px;
 			font-family: $din-font-bold;
 			color: $blue-dark;
+		}
+		.message-error {
+			color: #FF3737;
+			display: block;
+			margin-top: 10px;
+			font-size: 13px;
+			font-family: $din-font;
 		}
 		.contact-info {
 			position: relative;
