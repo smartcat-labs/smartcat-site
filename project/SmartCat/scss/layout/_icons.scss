@@ -1,0 +1,51 @@
+/*----------  icons
+------------------------------------------------------------------------------*/
+
+.ico {
+	display: inline-block;
+	&.phone {
+		@include sprite(ico-phone);
+	}
+	&.github {
+		@include sprite(ico-github);
+	}
+	&.linked {
+		@include sprite(ico-linked);
+	}
+	&.facebook {
+		@include sprite(ico-facebook);
+	}
+	&.stackoverflow {
+		@include sprite(ico-stackoverflow);
+	}
+	&.twitter {
+		@include sprite(ico-twitter);
+	}
+	&.mail {
+		@include sprite(ico-mail);
+	}
+	&.telephone {
+		@include sprite(ico-telephone);
+	}
+	&.pin {
+		@include sprite(ico-pin);
+	}
+	&.title-ico {
+		@include sprite(ico-logo);
+		margin: 0 10px -4px 0;
+	}
+	&.arrow-acc-down {
+		@include sprite(arrow-acc-down);
+	}
+	&.arrow-more {
+		@include sprite(ico-arrow-more);		
+	}
+	&.cat {
+		@include sprite(ico-cat);
+	}
+	@include breakpoint(touch){
+		&.cat {
+			@include sprite(ico-cat-mobile);
+		}
+	}
+}
