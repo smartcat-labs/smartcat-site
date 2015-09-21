@@ -951,13 +951,6 @@
 			font-family: $din-font-bold;
 			color: $blue-dark;
 		}
-		.message-error {
-			color: #FF3737;
-			display: block;
-			margin-top: 10px;
-			font-size: 13px;
-			font-family: $din-font;
-		}
 		.contact-info {
 			position: relative;
 			input {
@@ -978,8 +971,20 @@
 				width: 90px;
 				height: 3px;
 				background: $blue-light;
-				bottom: 0px;
+				bottom: 0;
 				left: 0;
+			}		
+			.error {
+				color: #FF3737;
+				display: block;
+				margin-top: 10px;
+				font-size: 13px;
+				font-family: $din-font;
+			}
+			&.has-error {
+				&:after {
+					bottom: 28px;
+				}	
 			}
 		}		
 		.main-questions {
