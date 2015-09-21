@@ -17,3 +17,4 @@ _ReSharper*/
 *.user
 project/SmartCat/App_Data/Logs/
 project/SmartCat/App_Data/TEMP/
+project/SmartCat/App_Data/cache/
