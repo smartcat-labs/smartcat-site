@@ -46,16 +46,16 @@
                     <a href="@Model.Twitter" target="_blank"><i class="ico twitter"></i></a>
                 </li>
             }
-            @if (!string.IsNullOrEmpty(Model.Stackoverflow))
-            {
-                <li>
-                    <a href="@Model.Stackoverflow" target="_blank"><i class="ico stackoverflow"></i></a>
-                </li>
-            }
             @if (!string.IsNullOrEmpty(Model.LinkedIn))
             {
                 <li>
                     <a href="@Model.LinkedIn" target="_blank"><i class="ico linked"></i></a>
+                </li>
+            }
+            @if (!string.IsNullOrEmpty(Model.Facebook))
+            {
+                <li>
+                    <a href="@Model.Facebook" target="_blank"><i class="ico facebook"></i></a>
                 </li>
             }
         </ul>
@@ -88,7 +88,7 @@
 
                         @foreach (var menuItem in menuItems)
                         {
-                            var activeClass = menuItem.Id == umbraco.presentation.nodeFactory.Node.GetCurrent().Id ? "active" : string.Empty;
+                            var activeClass = menuItem.Id == umbraco.presentation.nodeFactory.Node.GetCurrent().Id || menuItem.ChildrenAsList.Any(x => x.Id == umbraco.presentation.nodeFactory.Node.GetCurrent().Id) ? "active" : string.Empty;
                             
                             if (menuItem.NodeTypeAlias == "Blog")
                             {

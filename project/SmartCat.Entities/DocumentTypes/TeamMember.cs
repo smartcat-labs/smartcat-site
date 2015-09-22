@@ -11,12 +11,30 @@ namespace SmartCat.Entities.DocumentTypes
     [DocumentType(IconUrl = "icon-tie-business.png", Name = "Team member", Description = "Team member document type.", AllowAtRoot = false)]
     public class TeamMember : Main
     {
-        [DocumentTypeProperty(UmbracoPropertyType.Other,
-                           OtherTypeName = Constants.CustomDataTypes.TeamMemberImageCropper,
-                           Name = "Profile Image",
-                           Tab = TabNames.Content,
-                           Description = "Member profile image.")]
-        public virtual string ProfileImage { get; set; }
+        //[DocumentTypeProperty(UmbracoPropertyType.Other,
+        //                   OtherTypeName = Constants.CustomDataTypes.TeamMemberImageCropper,
+        //                   Name = "Profile Image",
+        //                   Tab = TabNames.Content,
+        //                   Description = "Member profile image.")]
+        //public virtual string ProfileImage { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.MediaPicker,
+                          Name = "Home Image",
+                          Tab = TabNames.Content,
+                          Description = "Home slider image.")]
+        public virtual int? HomeImage { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.MediaPicker,
+                          Name = "Team Image",
+                          Tab = TabNames.Content,
+                          Description = "Team member image.")]
+        public virtual int? TeamImage { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.MediaPicker,
+                          Name = "Sidebar Image",
+                          Tab = TabNames.Content,
+                          Description = "Sidebar widget image.")]
+        public virtual int? SidebarImage { get; set; }
 
         [DocumentTypeProperty(UmbracoPropertyType.MediaPicker,
                            Name = "Technology Image",
