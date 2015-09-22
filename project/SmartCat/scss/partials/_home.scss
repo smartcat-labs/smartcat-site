@@ -746,6 +746,9 @@
 				bottom: 10%;
 				a {
 					color: $blue-light;
+					&:hover {
+						text-decoration: underline;
+					}
 				}
 			}
 			h3 {
