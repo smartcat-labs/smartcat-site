@@ -20,7 +20,17 @@ $('#mainContactForm').validate({
         message: {
             required: true
         }
+    },
+
+    showErrors: function (errorMap, errorList) {
+       
+        $.each(errorList, function (index, value) {
+            $(value.element).parent('div.contact-info').addClass('has-error');
+        });
+
+        this.defaultShowErrors();
     }
+
 });
 
 $('.js_mainContactFormSubmit').click(function (e) {
