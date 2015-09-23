@@ -62,7 +62,7 @@
 				.text {
 					background: $blue-dark;
 					h3 {
-						color: $white;
+						color: $white;						
 						a {
 							color: $white;
 						}
@@ -256,6 +256,7 @@
 				color: #2f2f2f;
 				font-family: $din-font-bold;
 				text-transform: uppercase;
+				@include clip-text(61px, 3);
 				a {
 					color: #2f2f2f;
 				}
@@ -266,6 +267,7 @@
 				color: $grey-light;
 				@include base-float;
 				margin-bottom: 30px;
+				@include clip-text(48px, 3);
 				a {
 					color: $grey-light;
 					&:visited,
