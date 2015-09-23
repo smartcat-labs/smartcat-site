@@ -42,9 +42,9 @@
             {
                 <div class="employee-block @(teamMembers.IndexOf(member) % 2 != 0 ? "right-aligned" : string.Empty)">
                     <div class="img-wrap">
-                        @if (!string.IsNullOrEmpty(member.ProfileImage))
+                        @if (member.TeamImage.HasValue)
                         {
-                            <img src="@Umbraco.TypedContent(member.Id).GetCropUrl(SmartCat.Common.Constants.Media.CropNames.ProfileImageAlias, SmartCat.Common.Constants.Media.CropNames.Team)" alt="" />
+                            <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(member.TeamImage.Value))" alt="" />
                         }
                     </div>
                     <div class="info">

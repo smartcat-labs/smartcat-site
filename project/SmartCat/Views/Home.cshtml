@@ -72,19 +72,6 @@
                         <span class="date">@tweet.Date.ToString("MM/dd/yy")</span>
                     </div>
                 }
-                else 
-                {
-                    // TODO: remove this after defining your twitter account
-                    <div class="twitter-box">
-                        <h3>Latest tweet</h3>
-                        <p>
-                            SmartCat is going to be at Cassandra Summit 2015, in September, San Francisco, California. Let's meet-up! #CassandraSummit
-                        </p>
-                        <span class="author">@@SmartCat_io</span>
-                        <span class="date">26/08/2015</span>
-                    </div>
-                }
-
             </div>
         </div>
     </div>
@@ -248,9 +235,9 @@
 
                         <li>
                             <div class="left-block">
-                                @if (!string.IsNullOrEmpty(typedMember.ProfileImage))
+                                @if(typedMember.HomeImage.HasValue)
                                 {
-                                    <img src="@Umbraco.TypedContent(typedMember.Id).GetCropUrl(SmartCat.Common.Constants.Media.CropNames.ProfileImageAlias, SmartCat.Common.Constants.Media.CropNames.Home)" alt="" />
+                                    <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(typedMember.HomeImage.Value))" alt="" />
                                 }
                             </div>
                             <div class="right-block">

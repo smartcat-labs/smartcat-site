@@ -35,7 +35,7 @@ namespace SmartCat.Controllers
             // take social for mobile view into footer
             footerModel.Twitter = headerModel.Twitter;
             footerModel.LinkedIn = headerModel.LinkedIn;
-            footerModel.Stackoverflow = headerModel.Stackoverflow;
+            footerModel.Facebook = headerModel.Facebook;
             footerModel.GitHub = headerModel.GitHub;
 
             return PartialView("_Footer", footerModel);

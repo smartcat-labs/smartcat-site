@@ -11,16 +11,28 @@ $('#mainContactForm').validate({
             required: true,
             email: true
         },
-        senderNumber: {
-            required: true
-        },
         subject: {
             required: true,
         },
         message: {
             required: true
         }
+    },
+
+    showErrors: function (errorMap, errorList) {
+       
+        if (errorList.length > 0) {
+            $.each(errorList, function (index, value) {
+                $(value.element).parent('div.contact-info').addClass('has-error');
+            });
+        }
+        else {
+            $(this.currentElements[0]).parent('div.contact-info').removeClass('has-error');
+        }
+
+        this.defaultShowErrors();
     }
+
 });
 
 $('.js_mainContactFormSubmit').click(function (e) {
