@@ -19,3 +19,5 @@ project/SmartCat/App_Data/Logs/
 project/SmartCat/App_Data/TEMP/
 project/SmartCat/App_Data/cache/
 project/.nuget/NuGet.exe
+project/SmartCat/uSync.Archive/
+

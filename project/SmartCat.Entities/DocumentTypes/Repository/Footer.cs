@@ -54,7 +54,7 @@ namespace SmartCat.Entities.DocumentTypes.Repository
         
         public virtual string GitHub { get; set; }
         public virtual string Twitter { get; set; }
-        public virtual string Stackoverflow { get; set; }
+        public virtual string Facebook { get; set; }
         public virtual string LinkedIn { get; set; }
 
         #endregion

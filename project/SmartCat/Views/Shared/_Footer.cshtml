@@ -69,16 +69,16 @@
                             <a href="@Model.Twitter" class="ico twitter" target="_blank"></a>
                         </li>
                     }
-                    @if (!string.IsNullOrEmpty(Model.Stackoverflow))
-                    {
-                        <li>
-                            <a href="@Model.Stackoverflow" class="ico stackoverflow" target="_blank"></a>
-                        </li>
-                    }
                     @if (!string.IsNullOrEmpty(Model.LinkedIn))
                     {
                         <li>
                             <a href="@Model.LinkedIn" class="ico linked" target="_blank"></a>
+                        </li>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.Facebook))
+                    {
+                        <li>
+                            <a href="@Model.Facebook" class="ico facebook" target="_blank"></a>
                         </li>
                     }
                 </ul>

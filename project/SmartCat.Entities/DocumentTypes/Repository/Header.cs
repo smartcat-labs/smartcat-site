@@ -30,8 +30,8 @@ namespace SmartCat.Entities.DocumentTypes.Repository
         [DocumentTypeProperty(UmbracoPropertyType.Textstring, Name = "Twitter", Description = "Twitter url, including http://", Tab = TabNames.SocialLinks)]
         public virtual string Twitter { get; set; }
 
-        [DocumentTypeProperty(UmbracoPropertyType.Textstring, Name = "Stackoverflow", Description = "Stackoverflow url, including http://", Tab = TabNames.SocialLinks)]
-        public virtual string Stackoverflow { get; set; }
+        [DocumentTypeProperty(UmbracoPropertyType.Textstring, Name = "Facebook", Description = "Facebook url, including http://", Tab = TabNames.SocialLinks)]
+        public virtual string Facebook { get; set; }
 
         [DocumentTypeProperty(UmbracoPropertyType.Textstring, Name = "LinkedIn", Description = "LinkedIn url, including http://", Tab = TabNames.SocialLinks)]
         public virtual string LinkedIn { get; set; }
