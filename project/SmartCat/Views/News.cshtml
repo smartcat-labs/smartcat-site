@@ -35,7 +35,7 @@
 
     @if (newsPosts != null && newsPosts.Any())
     {
-        newsPosts.OrderBy(x => x.PostDate);
+       newsPosts = newsPosts.OrderByDescending(x => x.PostDate).ToList();
 
         <div class="wrapper centered">
             <div class="blog-landing">

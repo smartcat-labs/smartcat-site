@@ -22,6 +22,12 @@ namespace SmartCat.Entities.DocumentTypes
                            Description = "Service title image.")]
         public virtual int? ServiceTitleImage { get; set; }
 
+           [DocumentTypeProperty(UmbracoPropertyType.TextboxMultiple,
+                            Name = "Featured Text",
+                            Description = "Set featured text that will be shown when you reference this service to other pages.",
+                            Tab = TabNames.Content)]
+        public virtual string FeaturedText { get; set; }
+
         [DocumentTypeProperty(UmbracoPropertyType.RichtextEditor,
                             Alias = "rteContent",
                             Name = "Main body",
