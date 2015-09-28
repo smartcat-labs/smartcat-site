@@ -11,9 +11,6 @@ $('#mainContactForm').validate({
             required: true,
             email: true
         },
-        senderNumber: {
-            required: true
-        },
         subject: {
             required: true,
         },
@@ -24,9 +21,14 @@ $('#mainContactForm').validate({
 
     showErrors: function (errorMap, errorList) {
        
-        $.each(errorList, function (index, value) {
-            $(value.element).parent('div.contact-info').addClass('has-error');
-        });
+        if (errorList.length > 0) {
+            $.each(errorList, function (index, value) {
+                $(value.element).parent('div.contact-info').addClass('has-error');
+            });
+        }
+        else {
+            $(this.currentElements[0]).parent('div.contact-info').removeClass('has-error');
+        }
 
         this.defaultShowErrors();
     }

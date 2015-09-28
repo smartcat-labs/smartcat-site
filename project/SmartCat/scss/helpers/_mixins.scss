@@ -141,3 +141,14 @@
 @mixin rotate ($deg) {
   @include transform(rotate(#{$deg}deg));
 }
+
+/*----------  clip text
+------------------------------------------------------------------------------*/
+@mixin clip-text ($height, $line-number) {
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	height: $height;
+	-webkit-line-clamp: $line-number;
+}
