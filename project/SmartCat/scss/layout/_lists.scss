@@ -134,10 +134,10 @@
 					h3 {
 						color: $white;
 						font-family: $bold-font;
-						font-size: 47px;
-						line-height: 56px;
-						margin-bottom: 33px;
+						font-size: 40px;
+						line-height: 43px;
 						text-transform: none;
+						@include clip-text(133px, 3);
 					}
 					.date {
 						color: $white;
@@ -412,6 +412,7 @@
 							font-size: 27px;
 							line-height: 30px;
 							margin-bottom: 10px;
+							@include clip-text(160px, 3);
 							a {
 								color: $blue-dark;
 							}
