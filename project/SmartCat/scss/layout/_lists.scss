@@ -135,9 +135,15 @@
 						color: $white;
 						font-family: $bold-font;
 						font-size: 40px;
-						line-height: 43px;
+						line-height: 44px;
 						text-transform: none;
 						@include clip-text(133px, 3);
+						position: relative;
+						display: block;
+						span {
+							position: absolute;
+							bottom: 5px;
+						}
 					}
 					.date {
 						color: $white;
