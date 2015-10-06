@@ -19,9 +19,9 @@
         public static string StripHtml(string text)
         {
             string retVal = text;
-            if (!String.IsNullOrEmpty(text))
+            if (!string.IsNullOrEmpty(text))
             {
-                retVal = Regex.Replace(text, @"<(.|\n)*?>", String.Empty);
+                retVal = Regex.Replace(text, @"<(.|\n)*?>", string.Empty);
             }
 
             return retVal;
@@ -45,14 +45,14 @@
         /// <returns>Replaced text</returns>
         public static string AddLinksToTweets(string inputText)
         {
-            string replacedText = inputText;
-            string replacePattern1 = @"(https?:\/\/[^ ]+)";
+            var replacedText = inputText;
+            var replacePattern1 = @"(https?:\/\/[^ ]+)";
             replacedText = Regex.Replace(replacedText, replacePattern1, "<a href=\"$1\" target=\"_blank\">$1</a>", RegexOptions.Compiled);
 
-            string replacePattern2 = @"@([a-zA-Z0-9_]*)";
+            var replacePattern2 = @"@([a-zA-Z0-9_]*)";
             replacedText = Regex.Replace(replacedText, replacePattern2, "<a href=\"http://twitter.com/@$1\" target=\"_blank\">@$1</a>", RegexOptions.Compiled);
 
-            string replacePattern3 = @"#([a-zA-Z0-9_]*)";
+            var replacePattern3 = @"#([a-zA-Z0-9_]*)";
             replacedText = Regex.Replace(replacedText, replacePattern3, "<a href=\"http://twitter.com/search?q=%23$1\" target=\"_blank\">#$1</a>", RegexOptions.Compiled);
 
             return replacedText;
@@ -69,8 +69,8 @@
         /// </returns>
         public static string GetShorterText(string text, int numberOfChars, bool roundLastWord, bool addThreeDots)
         {
-            string retVal = String.Empty;
-            if (!String.IsNullOrEmpty(text))
+            var retVal = string.Empty;
+            if (!string.IsNullOrEmpty(text))
             {
                 retVal = Utility.StripHtml(text);
                 if (retVal.Length > numberOfChars)
@@ -104,9 +104,9 @@
         public static string GetUrlWithouthHTTP(string url)
         {
             //Remove http and https
-            string retVal = url;
-            int iIndex1 = retVal.IndexOf("http://");
-            int iIndex2 = retVal.IndexOf("https://");
+            var retVal = url;
+            var iIndex1 = retVal.IndexOf("http://");
+            var iIndex2 = retVal.IndexOf("https://");
             if (iIndex1 != -1)
             {
                 retVal = retVal.Substring(iIndex1 + 7, retVal.Length - 7);
@@ -129,8 +129,8 @@
         /// <returns>Gets inner text.</returns>
         public static string GetInBetweenSubstring(string text, string markerStart, string markerEnd)
         {
-            int start = text.IndexOf(markerStart);
-            int end = text.LastIndexOf(markerEnd);
+            var start = text.IndexOf(markerStart);
+            var end = text.LastIndexOf(markerEnd);
 
             if (start == -1)
             {
@@ -149,9 +149,7 @@
 
             start += markerStart.Length;
 
-            string retVal = text.Substring(start, end - start);
-
-            return retVal;
+            return text.Substring(start, end - start);
         }
 
         /// <summary>
@@ -161,7 +159,7 @@
         /// <returns></returns>
         public static string GetSourceFromIframe(string iframe)
         {
-            string retVal = string.Empty;
+            var retVal = string.Empty;
 
             try
             {
@@ -201,16 +199,16 @@
             if (format == null)
                 throw new ArgumentNullException("format");
 
-            Regex r = new Regex(@"(?<start>\{)+(?<property>[\w\.\[\]]+)(?<format>:[^}]+)?(?<end>\})+",
+            var r = new Regex(@"(?<start>\{)+(?<property>[\w\.\[\]]+)(?<format>:[^}]+)?(?<end>\})+",
               RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
 
-            List<object> values = new List<object>();
-            string rewrittenFormat = r.Replace(format, delegate(Match m)
+            var values = new List<object>();
+            string rewrittenFormat = r.Replace(format, delegate (Match m)
             {
-                Group startGroup = m.Groups["start"];
-                Group propertyGroup = m.Groups["property"];
-                Group formatGroup = m.Groups["format"];
-                Group endGroup = m.Groups["end"];
+                var startGroup = m.Groups["start"];
+                var propertyGroup = m.Groups["property"];
+                var formatGroup = m.Groups["format"];
+                var endGroup = m.Groups["end"];
 
                 values.Add((propertyGroup.Value == "0")
                   ? source

@@ -1,16 +1,10 @@
-﻿using SmartCat.Business.Helpers;
-using SmartCat.Common;
-using SmartCat.Entities.DocumentTypes.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Web;
-using System.Web.Mvc;
-using Vega.USiteBuilder;
-
-namespace SmartCat.Controllers
+﻿namespace SmartCat.Controllers
 {
+    using Business.Helpers;
+    using Entities.DocumentTypes.Repository;
+    using System.Web.Mvc;
+    using Vega.USiteBuilder;
+
     public class LayoutSufraceController : Umbraco.Web.Mvc.SurfaceController
     {
         [ChildActionOnly]

@@ -1,8 +1,8 @@
-﻿using System;
-using umbraco.BusinessLogic;
-
-namespace SmartCat.Common
+﻿namespace SmartCat.Common
 {
+    using System;
+    using umbraco.BusinessLogic;
+
     public static class Logger
     {
         #region PROPERTIES

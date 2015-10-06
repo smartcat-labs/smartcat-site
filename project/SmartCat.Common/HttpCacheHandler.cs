@@ -1,9 +1,9 @@
-﻿using System;
-using System.Web;
-using System.Web.Caching;
-
-namespace SmartCat.Common
+﻿namespace SmartCat.Common
 {
+    using System;
+    using System.Web;
+    using System.Web.Caching;
+
     /// <summary>
     /// Contains methods for cache handling
     /// </summary>

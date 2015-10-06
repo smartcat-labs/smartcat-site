@@ -1,19 +1,15 @@
-﻿using SmartCat.Entities.DocumentTypes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Umbraco.Web.Models;
-using Umbraco.Web.Mvc;
-using Examine;
-using Examine.LuceneEngine.SearchCriteria;
-using Examine.SearchCriteria;
-using SmartCat.Common;
-using Vega.USiteBuilder;
-
-namespace SmartCat.Controllers
+﻿namespace SmartCat.Controllers
 {
+    using Common;
+    using Entities.DocumentTypes;
+    using Examine;
+    using Examine.LuceneEngine.SearchCriteria;
+    using System.Linq;
+    using System.Web.Mvc;
+    using Umbraco.Web.Models;
+    using Umbraco.Web.Mvc;
+    using Vega.USiteBuilder;
+
     public class SearchController : RenderMvcController
     {
         public ActionResult Search(RenderModel model, string s, string page)
@@ -51,7 +47,7 @@ namespace SmartCat.Controllers
                         search.searchResults = searchResults.Select(x => new SearchResults
                         {
                             Title = x.Fields.Where(y => y.Key == "title").First().Value,
-                            Description = x.Fields.Where(z => z.Key == "rteContent").FirstOrDefault().Value != null ?x.Fields.Where(z => z.Key == "rteContent").FirstOrDefault().Value.Substring(0, 260) : string.Empty,
+                            Description = x.Fields.Where(z => z.Key == "rteContent").FirstOrDefault().Value != null ? x.Fields.Where(z => z.Key == "rteContent").FirstOrDefault().Value.Substring(0, 260) : string.Empty,
                             Url = ContentHelper.GetByNodeId(int.Parse(x.Fields.Where(t => t.Key == "id").First().Value)).NiceUrl
 
                         }).ToList();

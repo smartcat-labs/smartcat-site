@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Configuration;
-
-namespace SmartCat.Common
+﻿namespace SmartCat.Common
 {
+    using System;
+    using System.Configuration;
+
     public static class Configuration
     {
         public static int SettingsNodeId
@@ -18,17 +15,17 @@ namespace SmartCat.Common
 
         public static bool TwitterEnabled
         {
-            get 
+            get
             {
-                return Convert.ToBoolean(ConfigurationManager.AppSettings["TwitterEnabled"]);
+                return Convert.ToBoolean(ConfigurationManager.AppSettings["twitter.enabled"]);
             }
         }
 
         public static string TwitterScreenName
         {
-            get 
+            get
             {
-                return ConfigurationManager.AppSettings["TwitterScreenName"];          
+                return ConfigurationManager.AppSettings["twitter.screen.name"];
             }
         }
 
@@ -36,7 +33,7 @@ namespace SmartCat.Common
         {
             get
             {
-                return ConfigurationManager.AppSettings["TwitterConsumerKey"];
+                return ConfigurationManager.AppSettings["twitter.consumer.key"];
             }
         }
 
@@ -44,23 +41,23 @@ namespace SmartCat.Common
         {
             get
             {
-                return ConfigurationManager.AppSettings["TwitterConsumerSecret"];
+                return ConfigurationManager.AppSettings["twitter.consumer.secret"];
             }
         }
 
-        public static string OAuthToken
+        public static string TwitterOAuthToken
         {
             get
             {
-                return ConfigurationManager.AppSettings["OAuthToken"];
+                return ConfigurationManager.AppSettings["twitter.oauth.token"];
             }
         }
 
-        public static string AccessTokenSecret
+        public static string TwitterAccessTokenSecret
         {
             get
             {
-                return ConfigurationManager.AppSettings["AccessTokenSecret"];
+                return ConfigurationManager.AppSettings["twitter.access.token.secret"];
             }
         }
 
@@ -68,13 +65,13 @@ namespace SmartCat.Common
         {
             get
             {
-                return ConfigurationManager.AppSettings["TwitterUserID"];
+                return ConfigurationManager.AppSettings["twitter.userid"];
             }
         }
 
         public static int LanguageEN
         {
-            get 
+            get
             {
                 return int.Parse(ConfigurationManager.AppSettings["LanguageEN"]);
             }

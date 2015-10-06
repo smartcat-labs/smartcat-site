@@ -2,7 +2,6 @@
 {
     public static class Constants
     {
-
         #region WEBSITE
 
         public static class Website
@@ -16,7 +15,7 @@
 
         public static class NodeIDs
         {
-           
+
         }
 
         #endregion
@@ -36,7 +35,7 @@
         public static class DocumentTypes
         {
             public const string Settings = "Settings";
-        } 
+        }
 
         #endregion
 

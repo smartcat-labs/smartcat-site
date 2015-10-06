@@ -1,15 +1,15 @@
 ﻿namespace SmartCat.Business.Twitter
 {
+    using Common;
+    using Common.Utility;
+    using LinqToTwitter;
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using LinqToTwitter;
-    using SmartCat.Common;
-    using SmartCat.Common.Utility;
 
     public static class TwitterHandler
-    {   
-        private static IOAuthCredentials _credentials = new InMemoryCredentials();
+    {
+        private static IOAuthCredentials _credentials;
 
         /// <summary>
         /// Gets the twitter username.
@@ -22,20 +22,23 @@
 
         private static IOAuthCredentials GetCredentials()
         {
-            if (_credentials.ConsumerKey == null || _credentials.ConsumerSecret == null)
+            if (_credentials == null)
             {
-                //Twitter Consumer Key
-                _credentials.ConsumerKey = SmartCat.Common.Configuration.TwitterConsumerKey;
-                //Twitter Consumer Secret
-                _credentials.ConsumerSecret = SmartCat.Common.Configuration.TwitterConsumerSecret;
-                //OAuth Token
-                _credentials.OAuthToken = SmartCat.Common.Configuration.OAuthToken;
-                //Access Token
-                _credentials.AccessToken = SmartCat.Common.Configuration.AccessTokenSecret;
-                //Screen Name
-                _credentials.ScreenName = SmartCat.Common.Configuration.TwitterScreenName;
-                //User ID
-                _credentials.UserId = SmartCat.Common.Configuration.TwitterUserID;
+                _credentials = new InMemoryCredentials
+                {
+                    //Twitter Consumer Key
+                    ConsumerKey = SmartCat.Common.Configuration.TwitterConsumerKey,
+                    //Twitter Consumer Secret
+                    ConsumerSecret = SmartCat.Common.Configuration.TwitterConsumerSecret,
+                    //OAuth Token
+                    OAuthToken = SmartCat.Common.Configuration.TwitterOAuthToken,
+                    //Access Token
+                    AccessToken = SmartCat.Common.Configuration.TwitterAccessTokenSecret,
+                    //Screen Name
+                    ScreenName = SmartCat.Common.Configuration.TwitterScreenName,
+                    //User ID
+                    UserId = SmartCat.Common.Configuration.TwitterUserID
+                };
             }
 
             return _credentials;

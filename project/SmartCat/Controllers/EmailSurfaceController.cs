@@ -1,18 +1,14 @@
-﻿using SmartCat.Business.Helpers;
-using SmartCat.Common;
-using SmartCat.Entities.DocumentTypes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Umbraco.Web.Mvc;
-using Vega.USiteBuilder;
-using SmartCat.Common.Utility;
-using System.Text.RegularExpressions;
-
-namespace SmartCat.Controllers
+﻿namespace SmartCat.Controllers
 {
+    using Business.Helpers;
+    using Common;
+    using Common.Utility;
+    using Entities.DocumentTypes;
+    using System.Text.RegularExpressions;
+    using System.Web.Mvc;
+    using Umbraco.Web.Mvc;
+    using Vega.USiteBuilder;
+
     public class EmailController : SurfaceController
     {
         [HttpPost]
