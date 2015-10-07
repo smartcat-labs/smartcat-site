@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCat.Web", "SmartCat\SmartCat.Web.csproj", "{59A34A13-0101-456C-BBD6-9743A309C3CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCat.Web", "SmartCat.Web\SmartCat.Web.csproj", "{59A34A13-0101-456C-BBD6-9743A309C3CF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCat.Entities", "SmartCat.Entities\SmartCat.Entities.csproj", "{86842206-0202-40D7-AFB4-3209036C3B73}"
 EndProject
