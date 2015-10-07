@@ -1,0 +1,48 @@
+/*----------  button
+------------------------------------------------------------------------------*/
+
+.btn {
+	height: 66px;
+	line-height: 66px;
+	color: #efefef;
+	text-transform: uppercase;
+	background: #141b23;
+	display: inline-block;
+	font-size: 14px;
+	&.arrow {
+		width: 240px;
+		position: relative;
+		text-align: center;
+		span {
+			display: inline-block;
+		}
+		.ico {
+			@include sprite(ico-arrow-link);
+			@include transition(all 0.25s ease);
+			width: 0 !important;
+			position: relative;
+			top: 3px;
+			margin-left: 0;
+		}
+		&:hover {
+			.ico {
+				margin-left: 20px;
+				width: 70px !important;
+				display: inline-block;
+			}
+		}
+	}
+	@include breakpoint(phone) {
+		height: 40px;
+		line-height: 40px;
+		font-size: 12px;
+		padding: 0 20px;
+		&.arrow {
+			width: auto;
+			.ico {
+				display: none;
+			}
+		}
+	}
+}
+
