@@ -2,12 +2,11 @@
 using SmartCat.Entities.DocumentTypes;
 using SmartCat.Entities.DocumentTypes.Repository;
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using umbraco;
 using umbraco.NodeFactory;
-using Umbraco.Web;
 using Vega.USiteBuilder;
 
 namespace SmartCat.Business.Helpers
@@ -21,12 +20,10 @@ namespace SmartCat.Business.Helpers
         {
             get
             {
-                var umbracoHelper = new UmbracoHelper();
-
                 var currentLanguageCulture = Thread.CurrentThread.CurrentCulture.Name;
-                
+
+                // TODO: Why create an instance when we need the actual one from the tree ?
                 Settings retVal = new Settings();
-               
 
                 switch (currentLanguageCulture)
                 {
@@ -58,6 +55,40 @@ namespace SmartCat.Business.Helpers
 
         #region PAGES
 
+        public static Home Home
+        {
+            get
+            {
+                var currentLanguageCulture = Thread.CurrentThread.CurrentCulture.Name;
+
+                Home retVal = null;
+
+                switch (currentLanguageCulture)
+                {
+                    case "en-US":
+                        var settingsNodeEn = ContentHelper.GetChildren<Home>(Configuration.LanguageEN, true).FirstOrDefault();
+                        if (settingsNodeEn != null)
+                        {
+                            retVal = settingsNodeEn;
+                        }
+                        break;
+
+                    case "nl-NL":
+                        var settingsNodeNl = ContentHelper.GetChildren<Home>(Configuration.LanguageNL, true).FirstOrDefault();
+                        if (settingsNodeNl != null)
+                        {
+                            retVal = settingsNodeNl;
+                        }
+                        break;
+                    default:
+                        //default en settings node
+                        retVal = null; // TODO: Do we need a default home node defined from app settings ?
+                        break;
+                }
+
+                return retVal;
+            }
+        }
 
         #endregion
 

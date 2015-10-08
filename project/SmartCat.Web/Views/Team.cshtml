@@ -34,12 +34,15 @@
 
         @{
             var teamMembers = ContentHelper.GetChildren<TeamMember>(Model.Id).ToList();
+            var contactsPage = ContentHelper.GetChildren<Contact>(NodeHelper.Home.Id).FirstOrDefault();
         }
 
         @if (teamMembers != null && teamMembers.Any())
         {
             foreach (var member in teamMembers)
             {
+                var contactUrl = string.Format("{0}?{1}={2}", contactsPage.NiceUrl, SmartCat.Common.Constants.RequestParameters.ContactMemberId, member.Id);
+
                 <div class="employee-block @(teamMembers.IndexOf(member) % 2 != 0 ? "right-aligned" : string.Empty)">
                     <div class="img-wrap">
                         @if (member.TeamImage.HasValue)
@@ -55,7 +58,7 @@
                                 @member.ShortDescription
                             </p>
                             <div class="contact-box">
-                                <a href="mailto: @member.EmailAddress" class="mail">
+                                <a href="@contactUrl" class="mail">
                                     <i class="ico"></i>
                                     Contact @member.FirstName
                                 </a>

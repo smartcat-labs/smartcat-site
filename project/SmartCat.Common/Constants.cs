@@ -52,7 +52,7 @@
 
         public static class RequestParameters
         {
-
+            public const string ContactMemberId = "cid";
         }
 
         #endregion

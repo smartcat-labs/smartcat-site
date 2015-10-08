@@ -1,7 +1,6 @@
 ﻿@using Vega.USiteBuilder;
 @using SmartCat.Entities.DocumentTypes;
 @using SmartCat.Business.Helpers;
-@using System.Text.RegularExpressions;
 
 @inherits Vega.USiteBuilder.UmbracoTemplatePageBase<SmartCat.Entities.DocumentTypes.Contact>
 
@@ -13,13 +12,23 @@
     ViewBag.SeoDescription = Model.SeoDescription;
     ViewBag.SeoKeywords = Model.SeoKeywords;
     ViewBag.SeoAuthor = Model.SeoAuthor;
+
+    ViewBag.ContactId = 1; // Set default to office
+    var cid = Request.QueryString.Get(SmartCat.Common.Constants.RequestParameters.ContactMemberId);
+    if (!string.IsNullOrEmpty(cid))
+    {
+        int value;
+        if (int.TryParse(cid, out value))
+        {
+            ViewBag.ContactId = value;
+        }
+    }
 }
 
 @section additionalHeaderSection
 {
 
 }
-
 
 <div class="page-title">
     <div class="wrapper">
@@ -58,7 +67,9 @@
                     <li class="contact-who-block">
                         <p>*Who do you want to contact?</p>
                         <div class="contacts-wrapper">
-                            <div class="one-contact active" id="1" onclick="whoSelected(this)">
+                            <input type="hidden" name="ContactId" id="ContactId" value="@ViewBag.ContactId" />
+
+                            <div class="one-contact" id="1" onclick="whoSelected(this)">
                                 <div class="contact-romb-wrap contact-office-img">
                                     <div class="contact-who romb">
                                         <div class="img-wrap">

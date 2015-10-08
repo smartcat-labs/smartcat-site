@@ -20,3 +20,5 @@ _ReSharper*/
 **/.nuget/NuGet.exe
 **/uSync.Archive/
 **/.vs/
+*umbraco.config
+**/media
