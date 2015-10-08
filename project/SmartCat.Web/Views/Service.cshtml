@@ -74,7 +74,7 @@
                             <div class="text">
                                 <h2><a href="@service.NiceUrl">@service.Name</a></h2>
                                 <p>
-                                    @Html.Raw(service.FeaturedText != null service.FeaturedText : string.Empty)
+                                    @Html.Raw(service.FeaturedText != null ? service.FeaturedText : string.Empty)
                                     <a href="@service.NiceUrl" class="ico arrow-more hidden-on-mobile"></a>
                                 </p>
                                 <a href="@service.NiceUrl" class="btn show-on-mobile">@Umbraco.GetDictionaryValue("Common.ReadMore")</a>
