@@ -68,14 +68,18 @@
 
         </div>
 
+        @{ 
+            var newsWidget = WidgetsHelper.NewsWidget;
+            var teamWidget = WidgetsHelper.TeamWidget;
+        }
         <aside class="sidebar">
-            @if (Model.NewsWidget != null && Model.NewsWidget.Any())
+            @if (newsWidget != null && newsWidget.Any())
             {
                 <div class="widget slider">
-                    <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(Model.NewsWidget.First()).ParentId).NiceUrl">@Umbraco.GetDictionaryValue("Service.WhatIsNew")</a></h3>
+                    <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(newsWidget.First()).ParentId).NiceUrl">@Umbraco.GetDictionaryValue("Service.WhatIsNew")</a></h3>
                     <div class="flexslider">
                         <ul class="slides">
-                            @foreach (var newsId in Model.NewsWidget)
+                            @foreach (var newsId in newsWidget)
                             {
                                 var newsPost = ContentHelper.GetByNodeId<NewsPost>(newsId);
 
@@ -102,14 +106,14 @@
                 </div>
             }
 
-            @if (Model.TeamWidget != null && Model.TeamWidget.Any())
+            @if (teamWidget != null && teamWidget.Any())
             {
                 <div class="widget slider">
-                    <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(Model.TeamWidget.First()).ParentId).NiceUrl">@Umbraco.GetDictionaryValue("Service.Challengers")</a></h3>
+                    <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(teamWidget.First()).ParentId).NiceUrl">@Umbraco.GetDictionaryValue("Service.Challengers")</a></h3>
                     <div class="flexslider challengers">
                         <ul class="slides">
 
-                            @foreach (var memberId in Model.TeamWidget)
+                            @foreach (var memberId in teamWidget)
                             {
                                 var teamMember = ContentHelper.GetByNodeId<TeamMember>(memberId);
 

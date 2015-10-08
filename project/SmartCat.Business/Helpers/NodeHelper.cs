@@ -13,7 +13,6 @@ namespace SmartCat.Business.Helpers
 {
     public static class NodeHelper
     {
-
         #region PUBLIC PROPERTIES
 
         public static Settings Settings
@@ -53,6 +52,41 @@ namespace SmartCat.Business.Helpers
 
         }
 
+        public static Widgets Widgets
+        {
+            get
+            {
+                var currentLanguageCulture = Thread.CurrentThread.CurrentCulture.Name;
+
+                Widgets retVal = null;
+
+                switch (currentLanguageCulture)
+                {
+                    case "en-US":
+                        var widgetsNodeEn = ContentHelper.GetChildren<Widgets>(Configuration.LanguageEN, true).FirstOrDefault();
+                        if (widgetsNodeEn != null)
+                        {
+                            retVal = widgetsNodeEn;
+                        }
+                        break;
+
+                    case "nl-NL":
+                        var widgetsNodeNl = ContentHelper.GetChildren<Widgets>(Configuration.LanguageNL, true).FirstOrDefault();
+                        if (widgetsNodeNl != null)
+                        {
+                            retVal = widgetsNodeNl;
+                        }
+                        break;
+                    default:
+                        //default en settings node
+                        retVal = null; // TODO: Do we need a default home node defined from app settings ?
+                        break;
+                }
+
+                return retVal;
+            }
+        }
+
         #region PAGES
 
         public static Home Home
@@ -66,18 +100,18 @@ namespace SmartCat.Business.Helpers
                 switch (currentLanguageCulture)
                 {
                     case "en-US":
-                        var settingsNodeEn = ContentHelper.GetChildren<Home>(Configuration.LanguageEN, true).FirstOrDefault();
-                        if (settingsNodeEn != null)
+                        var homeNodeEn = ContentHelper.GetChildren<Home>(Configuration.LanguageEN, true).FirstOrDefault();
+                        if (homeNodeEn != null)
                         {
-                            retVal = settingsNodeEn;
+                            retVal = homeNodeEn;
                         }
                         break;
 
                     case "nl-NL":
-                        var settingsNodeNl = ContentHelper.GetChildren<Home>(Configuration.LanguageNL, true).FirstOrDefault();
-                        if (settingsNodeNl != null)
+                        var homeNodeNl = ContentHelper.GetChildren<Home>(Configuration.LanguageNL, true).FirstOrDefault();
+                        if (homeNodeNl != null)
                         {
-                            retVal = settingsNodeNl;
+                            retVal = homeNodeNl;
                         }
                         break;
                     default:

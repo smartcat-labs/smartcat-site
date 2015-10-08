@@ -163,15 +163,18 @@
 
             @{
                 var newsContainer = ContentHelper.GetByNodeId<News>(Model.ParentId);
+                var newsWidget = WidgetsHelper.NewsWidget;
+                var teamWidget = WidgetsHelper.TeamWidget;
+                var serviceWidget = WidgetsHelper.ServiceWidget;
             }
 
-            @if (newsContainer.NewsWidget != null && newsContainer.NewsWidget.Any())
+            @if (newsWidget != null && newsWidget.Any())
             {
                 <div class="widget slider">
-                    <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(newsContainer.NewsWidget.First()).ParentId).NiceUrl">@Umbraco.GetDictionaryValue("News.WhatIsNew")</a></h3>
+                    <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(newsWidget.First()).ParentId).NiceUrl">@Umbraco.GetDictionaryValue("News.WhatIsNew")</a></h3>
                     <div class="flexslider">
                         <ul class="slides">
-                            @foreach (var newsId in newsContainer.NewsWidget)
+                            @foreach (var newsId in newsWidget)
                             {
                                 var newsPost = ContentHelper.GetByNodeId<NewsPost>(newsId);
 
@@ -198,14 +201,14 @@
                 </div>
             }
 
-            @if (newsContainer.TeamWidget != null && newsContainer.TeamWidget.Any())
+            @if (teamWidget != null && teamWidget.Any())
             {
                 <div class="widget slider">
-                    <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(newsContainer.TeamWidget.First()).ParentId).NiceUrl">@Umbraco.GetDictionaryValue("News.Challengers")</a></h3>
+                    <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(teamWidget.First()).ParentId).NiceUrl">@Umbraco.GetDictionaryValue("News.Challengers")</a></h3>
                     <div class="flexslider challengers">
                         <ul class="slides">
 
-                            @foreach (var memberId in newsContainer.TeamWidget)
+                            @foreach (var memberId in teamWidget)
                             {
                                 var teamMember = ContentHelper.GetByNodeId<TeamMember>(memberId);
 
@@ -228,14 +231,14 @@
                 </div>
             }
 
-            @if (newsContainer.ServiceWidget != null && newsContainer.ServiceWidget.Any())
+            @if (serviceWidget != null && serviceWidget.Any())
             {
                 <div class="widget slider">
-                    <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(newsContainer.ServiceWidget.First()).ParentId).NiceUrl">@Umbraco.GetDictionaryValue("News.WhatWeDo")</a></h3>
+                    <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(serviceWidget.First()).ParentId).NiceUrl">@Umbraco.GetDictionaryValue("News.WhatWeDo")</a></h3>
                     <div class="flexslider small">
                         <ul class="slides">
 
-                            @foreach (var serviceId in newsContainer.ServiceWidget)
+                            @foreach (var serviceId in serviceWidget)
                             {
                                 var service = ContentHelper.GetByNodeId<ServiceItem>(serviceId);
 
