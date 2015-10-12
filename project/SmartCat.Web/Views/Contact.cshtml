@@ -5,13 +5,16 @@
 @inherits Vega.USiteBuilder.UmbracoTemplatePageBase<SmartCat.Entities.DocumentTypes.Contact>
 
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
 
+    ViewBag.HideContactFooter = true;
     ViewBag.Title = string.IsNullOrEmpty(Model.Title) ? Model.Name : Model.Title;
 
     ViewBag.SeoDescription = Model.SeoDescription;
     ViewBag.SeoKeywords = Model.SeoKeywords;
     ViewBag.SeoAuthor = Model.SeoAuthor;
+    ViewBag.HideFooterContactForm = Model.HideFooterContactForm;
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
 
     ViewBag.ContactId = 1; // Set default to office
     var cid = Request.QueryString.Get(SmartCat.Common.Constants.RequestParameters.ContactMemberId);

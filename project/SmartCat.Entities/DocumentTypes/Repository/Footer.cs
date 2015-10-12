@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vega.USiteBuilder;
-
-namespace SmartCat.Entities.DocumentTypes.Repository
+﻿namespace SmartCat.Entities.DocumentTypes.Repository
 {
+    using Vega.USiteBuilder;
+
     [DocumentType(IconUrl = "icon-arrow-down.png", Name = "Footer", Description = "Footer document type", AllowAtRoot = false)]
     public class Footer : Repository
     {
@@ -51,12 +46,14 @@ namespace SmartCat.Entities.DocumentTypes.Repository
         #endregion
 
         #region SOCIAL
-        
+
         public virtual string GitHub { get; set; }
         public virtual string Twitter { get; set; }
         public virtual string Facebook { get; set; }
         public virtual string LinkedIn { get; set; }
 
         #endregion
+
+        public bool HideContactForm { get; set; }
     }
 }

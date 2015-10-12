@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vega.USiteBuilder;
-
-namespace SmartCat.Entities.DocumentTypes
+﻿namespace SmartCat.Entities.DocumentTypes
 {
+    using Vega.USiteBuilder;
+
     [DocumentType(Name = "Page", Description = "This document type used as a master document type for all pages, should not be used for creating content.")]
     public class Page : Main
     {
@@ -18,6 +13,12 @@ namespace SmartCat.Entities.DocumentTypes
                               Description = "Page title.",
                               Mandatory = true)]
         public virtual string Title { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.TrueFalse,
+                            Name = "Hide Footer Contact Form",
+                            Tab = TabNames.Page,
+                            Description = "Hide footer contact form on this page.")]
+        public virtual bool HideFooterContactForm { get; set; }
 
         #endregion
 
