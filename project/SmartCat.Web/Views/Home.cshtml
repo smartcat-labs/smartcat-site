@@ -232,6 +232,7 @@
                     @foreach (var memeberId in Model.FeaturedMembers)
                     {
                         var typedMember = ContentHelper.GetByNodeId<TeamMember>(memeberId);
+                        var contactUrl = ContactHelper.GetContactUrl(typedMember.Id);
 
                         <li>
                             <div class="left-block">
@@ -248,7 +249,7 @@
                                         @typedMember.ShortDescription
                                     </p>
                                     <div class="contact-box">
-                                        <a href="mailto: @typedMember.EmailAddress" class="mail">
+                                        <a href="@contactUrl" class="mail">
                                             <i class="ico"></i>
                                             Contact @typedMember.FirstName
                                         </a>

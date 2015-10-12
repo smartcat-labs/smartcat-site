@@ -16,6 +16,12 @@
                           Description = "Choose news posts for sidebar widget.")]
         public virtual List<int> NewsWidget { get; set; }
 
+        [DocumentTypeProperty(UmbracoPropertyType.Numeric,
+                        Name = "Number Of News Items",
+                        Tab = TabNames.Sidebar,
+                        Description = "Number of news items shown in sidebar widget.")]
+        public virtual int NumberOfNewsItems { get; set; }
+
         [DocumentTypeProperty(UmbracoPropertyType.Other,
                           OtherTypeName = Constants.CustomDataTypes.MultipleTeamMemberPicker,
                           Name = "Team Sidebar Widget",

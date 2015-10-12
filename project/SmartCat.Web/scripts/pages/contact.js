@@ -2,6 +2,7 @@
 
     var $contact = document.getElementById('ContactId')
     var $selectedContact = document.getElementById($contact.value)
+    if ($selectedContact == null) $selectedContact = document.getElementById(1);
     whoSelected($selectedContact)
 
     // contact form
@@ -68,13 +69,13 @@
             });
         }
     });
-
-    function whoSelected(ctrl) {
-
-        $(ctrl).siblings().removeClass('active');
-        $(ctrl).addClass('active');
-
-        $('#contactMemberId option').removeAttr('selected');
-        $('#contactMemberId option[value=' + ctrl.id + ']').attr('selected', 'selected');
-    }
 });
+
+function whoSelected(ctrl) {
+
+    $(ctrl).siblings().removeClass('active');
+    $(ctrl).addClass('active');
+
+    $('#contactMemberId option').removeAttr('selected');
+    $('#contactMemberId option[value=' + ctrl.id + ']').attr('selected', 'selected');
+}
