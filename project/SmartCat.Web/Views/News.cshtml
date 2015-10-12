@@ -61,50 +61,49 @@
                                 break;
                         }
 
-                        <div class="item @postClass">
-                            <div class="img-wrap">
-                                @if (post.BoxImage.HasValue)
-                                {
-                                    <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(post.BoxImage.Value))" alt="@MediaHelper.GetImageAlternateText(MediaHelper.GetMediaById(post.BoxImage.Value))" />
-                                }
+                        <a href="@post.NiceUrl">
+                            <div class="item @postClass">
+                                <div class="img-wrap">
+                                    @if (post.BoxImage.HasValue)
+                                    {
+                                        <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(post.BoxImage.Value))" alt="@MediaHelper.GetImageAlternateText(MediaHelper.GetMediaById(post.BoxImage.Value))" />
+                                    }
 
-                                <a href="@post.NiceUrl"><span class="color-overlay"></span></a> 
-                                <span class="blue-overlay"></span>
-                                <a href="@post.NiceUrl" class="read-more"><i></i></a>
-                                <span class="@spanClass"></span>
-                            </div>
-                            @if(postClass == "stamp")
-                            { 
-                                <div class="text hidden-on-mobile">
-                                    <h3><span>@post.NewsTitle</span></h3>
-                                    <span class="date">@post.PostDate.ToString("MM/dd/yy")</span>
+                                    <span class="blue-overlay"></span>
+                                    <span class="read-more"><i></i></span>
+                                    <span class="@spanClass"></span>
                                 </div>
-                            }
-                            <div class="text @(postClass == "stamp" ? "show-on-mobile" : string.Empty)">
-                                <span class="date">@post.PostDate.ToString("MM/dd/yy")</span>
-                                <h3>
-                                    <a href="@post.NiceUrl">@post.NewsTitle</a>
-                                </h3>
-                                @if(postClass != "stamp")
-                                { 
-                                    <p>
-                                        <a href="@post.NiceUrl">
-                                            @Regex.Replace(post.RteContent, @"<(.|\n)*?>", string.Empty).Substring(0, 80) ...
-                                        </a>
-                                    </p>
-                                }
-                                @{
-                                    var postAuthor = post.Author.HasValue ? ContentHelper.GetByNodeId<TeamMember>(post.Author.Value) : null;
-                                }
-                                @if (postAuthor != null)
+
+                                @if (postClass == "stamp")
                                 {
-                                    <span class="author">
-                                        By @postAuthor.FirstName @postAuthor.LastName
-                                    </span>
+                                    <div class="text hidden-on-mobile">
+                                        <h3><span>@post.NewsTitle</span></h3>
+                                        <span class="date">@post.PostDate.ToShortDateString()</span>
+                                    </div>
                                 }
 
+                                <div class="text @(postClass == "stamp" ? "show-on-mobile" : string.Empty)">
+                                    <span class="date">@post.PostDate.ToShortDateString()</span>
+                                    <h3>@post.NewsTitle</h3>
+                                    @if (postClass != "stamp")
+                                    {
+                                        <p>
+                                            @Regex.Replace(post.RteContent, @"<(.|\n)*?>", string.Empty).Substring(0, 80) ...
+                                        </p>
+                                    }
+                                    @{
+                                        var postAuthor = post.Author.HasValue ? ContentHelper.GetByNodeId<TeamMember>(post.Author.Value) : null;
+                                    }
+                                    @if (postAuthor != null)
+                                    {
+                                        <span class="author">
+                                            By @postAuthor.FirstName @postAuthor.LastName
+                                        </span>
+                                    }
+
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     }
                 </div>
             </div>
