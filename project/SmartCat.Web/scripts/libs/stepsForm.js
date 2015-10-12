@@ -8,229 +8,237 @@
  * Copyright 2014, Codrops
  * http://www.codrops.com
  */
-;( function( window ) {
-	
-	'use strict';
+; (function (window) {
 
-	var transEndEventNames = {
-			'WebkitTransition': 'webkitTransitionEnd',
-			'MozTransition': 'transitionend',
-			'OTransition': 'oTransitionEnd',
-			'msTransition': 'MSTransitionEnd',
-			'transition': 'transitionend'
-		},
-		transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
-		support = { transitions : Modernizr.csstransitions };
+    'use strict';
 
-	function extend( a, b ) {
-		for( var key in b ) { 
-			if( b.hasOwnProperty( key ) ) {
-				a[key] = b[key];
-			}
-		}
-		return a;
-	}
+    var transEndEventNames = {
+        'WebkitTransition': 'webkitTransitionEnd',
+        'MozTransition': 'transitionend',
+        'OTransition': 'oTransitionEnd',
+        'msTransition': 'MSTransitionEnd',
+        'transition': 'transitionend'
+    },
+        transEndEventName = transEndEventNames[Modernizr.prefixed('transition')],
+        support = { transitions: Modernizr.csstransitions };
 
-	function stepsForm( el, options ) {
-		this.el = el;
-		this.options = extend( {}, this.options );
-  		extend( this.options, options );
-  		this._init();
-	}
+    function extend(a, b) {
+        for (var key in b) {
+            if (b.hasOwnProperty(key)) {
+                a[key] = b[key];
+            }
+        }
+        return a;
+    }
 
-	stepsForm.prototype.options = {
-		onSubmit : function() { return false; }
-	};
+    function stepsForm(el, options) {
+        this.el = el;
+        this.options = extend({}, this.options);
+        extend(this.options, options);
+        this._init();
+    }
 
-	stepsForm.prototype._init = function() {
-		// current question
-		this.current = 0;
+    stepsForm.prototype.options = {
+        onSubmit: function () { return false; }
+    };
 
-		// questions
-		this.questions = [].slice.call( this.el.querySelectorAll( 'ol.questions > li' ) );
-		// total questions
-		this.questionsCount = this.questions.length;
-		// show first question
-		classie.addClass( this.questions[0], 'current' );
-		
-		// next question control
-		this.ctrlNext = this.el.querySelector( 'button.next' );
+    stepsForm.prototype._init = function () {
+        // current question
+        this.current = 0;
 
-		// progress bar
-		this.progress = this.el.querySelector( 'div.progress' );
-		
-		// question number status
-		this.questionStatus = this.el.querySelector( 'span.number' );
-		// current question placeholder
-		this.currentNum = this.questionStatus.querySelector( 'span.number-current' );
-		this.currentNum.innerHTML = Number( this.current + 1 );
-		// total questions placeholder
-		this.totalQuestionNum = this.questionStatus.querySelector( 'span.number-total' );
-		this.totalQuestionNum.innerHTML = this.questionsCount;
+        // questions
+        this.questions = [].slice.call(this.el.querySelectorAll('ol.questions > li'));
+        // total questions
+        this.questionsCount = this.questions.length;
+        // show first question
+        classie.addClass(this.questions[0], 'current');
 
-		// error message
-		this.error = this.el.querySelector( 'span.error-message' );
-		
-		// init events
-		this._initEvents();
-	};
+        // next question control
+        this.ctrlNext = this.el.querySelector('button.next');
 
-	stepsForm.prototype._initEvents = function() {
-		var self = this,
-			// first input
-			firstElInput = this.questions[ this.current ].querySelector( 'input' ),
-			// focus
-			onFocusStartFn = function() {
-				firstElInput.removeEventListener( 'focus', onFocusStartFn );
-				classie.addClass( self.ctrlNext, 'show' );
-			};
+        // progress bar
+        this.progress = this.el.querySelector('div.progress');
 
-		// show the next question control first time the input gets focused
-		firstElInput.addEventListener( 'focus', onFocusStartFn );
+        // question number status
+        this.questionStatus = this.el.querySelector('span.number');
+        // current question placeholder
+        this.currentNum = this.questionStatus.querySelector('span.number-current');
+        this.currentNum.innerHTML = Number(this.current + 1);
+        // total questions placeholder
+        this.totalQuestionNum = this.questionStatus.querySelector('span.number-total');
+        this.totalQuestionNum.innerHTML = this.questionsCount;
 
-		// show next question
-		this.ctrlNext.addEventListener( 'click', function( ev ) { 
-			ev.preventDefault();
-			self._nextQuestion(); 
-		} );
+        // error message
+        this.error = this.el.querySelector('span.error-message');
 
-		// pressing enter will jump to next question
-		document.addEventListener( 'keydown', function( ev ) {
-			var keyCode = ev.keyCode || ev.which;
-			// enter
-			if( keyCode === 13 ) {
-				ev.preventDefault();
-				self._nextQuestion();
-			}
-		} );
+        // init events
+        this._initEvents();
+    };
 
-		// disable tab
-		this.el.addEventListener( 'keydown', function( ev ) {
-			var keyCode = ev.keyCode || ev.which;
-			// tab
-			if( keyCode === 9 ) {
-				ev.preventDefault();
-			} 
-		} );
-	};
+    stepsForm.prototype._initEvents = function () {
+        var self = this,
+            // first input
+            firstElInput = this.questions[this.current].querySelector('input'),
+            // focus
+            onFocusStartFn = function () {
+                firstElInput.removeEventListener('focus', onFocusStartFn);
+                classie.addClass(self.ctrlNext, 'show');
+            };
 
-	stepsForm.prototype._nextQuestion = function() {
-		if( !this._validade() ) {
-			return false;
-		}
+        // show the next question control first time the input gets focused
+        firstElInput.addEventListener('focus', onFocusStartFn);
 
-		// check if form is filled
-		if( this.current === this.questionsCount - 1 ) {
-			this.isFilled = true;
-		}
+        // show next question
+        this.ctrlNext.addEventListener('click', function (ev) {
+            ev.preventDefault();
+            self._nextQuestion();
+        });
 
-		// clear any previous error messages
-		this._clearError();
+        // pressing enter will jump to next question
+        document.addEventListener('keydown', function (ev) {
+            var keyCode = ev.keyCode || ev.which;
+            // enter
+            if (keyCode === 13) {
+                ev.preventDefault();
+                self._nextQuestion();
+            }
+        });
 
-		// current question
-		var currentQuestion = this.questions[ this.current ];
+        // disable tab
+        this.el.addEventListener('keydown', function (ev) {
+            var keyCode = ev.keyCode || ev.which;
+            // tab
+            if (keyCode === 9) {
+                ev.preventDefault();
+            }
+        });
+    };
 
-		// increment current question iterator
-		++this.current;
+    stepsForm.prototype._nextQuestion = function () {
+        if (!this._validade()) {
+            return false;
+        }
 
-		// update progress bar
-		this._progress();
+        // check if form is filled
+        if (this.current === this.questionsCount - 1) {
+            this.isFilled = true;
+        }
 
-		if( !this.isFilled ) {
-			// change the current question number/status
-			this._updateQuestionNumber();
+        // clear any previous error messages
+        this._clearError();
 
-			// add class "show-next" to form element (start animations)
-			classie.addClass( this.el, 'show-next' );
+        // current question
+        var currentQuestion = this.questions[this.current];
 
-			// remove class "current" from current question and add it to the next one
-			// current question
-			var nextQuestion = this.questions[ this.current ];
-			classie.removeClass( currentQuestion, 'current' );
-			classie.addClass( nextQuestion, 'current' );
-		}
+        // increment current question iterator
+        ++this.current;
 
-		// after animation ends, remove class "show-next" from form element and change current question placeholder
-		var self = this,
-			onEndTransitionFn = function( ev ) {
-				if( support.transitions ) {
-					this.removeEventListener( transEndEventName, onEndTransitionFn );
-				}
-				if( self.isFilled ) {
-					self._submit();
-				}
-				else {
-					classie.removeClass( self.el, 'show-next' );
-					self.currentNum.innerHTML = self.nextQuestionNum.innerHTML;
-					self.questionStatus.removeChild( self.nextQuestionNum );
-					// force the focus on the next input
-					nextQuestion.querySelector( 'input' ).focus();
-				}
-			};
+        // update progress bar
+        this._progress();
 
-		if( support.transitions ) {
-			this.progress.addEventListener( transEndEventName, onEndTransitionFn );
-		}
-		else {
-			onEndTransitionFn();
-		}
-	}
+        if (!this.isFilled) {
+            // change the current question number/status
+            this._updateQuestionNumber();
 
-	// updates the progress bar by setting its width
-	stepsForm.prototype._progress = function() {
-		this.progress.style.width = this.current * ( 100 / this.questionsCount ) + '%';
-	}
+            // add class "show-next" to form element (start animations)
+            classie.addClass(this.el, 'show-next');
 
-	// changes the current question number
-	stepsForm.prototype._updateQuestionNumber = function() {
-		// first, create next question number placeholder
-		this.nextQuestionNum = document.createElement( 'span' );
-		this.nextQuestionNum.className = 'number-next';
-		this.nextQuestionNum.innerHTML = Number( this.current + 1 );
-		// insert it in the DOM
-		this.questionStatus.appendChild( this.nextQuestionNum );
-	}
+            // remove class "current" from current question and add it to the next one
+            // current question
+            var nextQuestion = this.questions[this.current];
+            classie.removeClass(currentQuestion, 'current');
+            classie.addClass(nextQuestion, 'current');
+        }
 
-	// submits the form
-	stepsForm.prototype._submit = function() {
-		this.options.onSubmit( this.el );
-	}
+        // after animation ends, remove class "show-next" from form element and change current question placeholder
+        var self = this,
+            onEndTransitionFn = function (ev) {
+                if (support.transitions) {
+                    this.removeEventListener(transEndEventName, onEndTransitionFn);
+                }
+                if (self.isFilled) {
+                    self._submit();
+                }
+                else {
+                    classie.removeClass(self.el, 'show-next');
+                    self.currentNum.innerHTML = self.nextQuestionNum.innerHTML;
+                    self.questionStatus.removeChild(self.nextQuestionNum);
+                    // force the focus on the next input
+                    nextQuestion.querySelector('input').focus();
+                }
+            };
 
-	// TODO (next version..)
-	// the validation function
-	stepsForm.prototype._validade = function() {
-		// current question´s input
-		var input = this.questions[ this.current ].querySelector( 'input' ).value;
-		if( input === '' ) {
-			this._showError( 'EMPTYSTR' );
-			return false;
-		}
+        if (support.transitions) {
+            this.progress.addEventListener(transEndEventName, onEndTransitionFn);
+        }
+        else {
+            onEndTransitionFn();
+        }
+    }
 
-		return true;
-	}
+    // updates the progress bar by setting its width
+    stepsForm.prototype._progress = function () {
+        this.progress.style.width = this.current * (100 / this.questionsCount) + '%';
+    }
 
-	// TODO (next version..)
-	stepsForm.prototype._showError = function( err ) {
-		var message = '';
-		switch( err ) {
-			case 'EMPTYSTR' : 
-				message = 'Please fill the field before continuing';
-				break;
-			case 'INVALIDEMAIL' : 
-				message = 'Please fill a valid email address';
-				break;
-			// ...
-		};
-		this.error.innerHTML = message;
-		classie.addClass( this.error, 'show' );
-	}
+    // changes the current question number
+    stepsForm.prototype._updateQuestionNumber = function () {
+        // first, create next question number placeholder
+        this.nextQuestionNum = document.createElement('span');
+        this.nextQuestionNum.className = 'number-next';
+        this.nextQuestionNum.innerHTML = Number(this.current + 1);
+        // insert it in the DOM
+        this.questionStatus.appendChild(this.nextQuestionNum);
+    }
 
-	// clears/hides the current error message
-	stepsForm.prototype._clearError = function() {
-		classie.removeClass( this.error, 'show' );
-	}
+    // submits the form
+    stepsForm.prototype._submit = function () {
+        this.options.onSubmit(this.el);
+    }
 
-	// add to global namespace
-	window.stepsForm = stepsForm;
+    // TODO (next version..)
+    // the validation function
+    stepsForm.prototype._validade = function () {
+        // current question´s input
+        var input = this.questions[this.current].querySelector('input').value.trim();
+        var type = this.questions[this.current].querySelector('input').type;
+        var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
-})( window );
+        if (input === '') {
+            this._showError('EMPTYSTR');
+            return false;
+        } else if (type === 'email') {
+            if (regex.test(input)) return true;
+
+            this._showError('INVALIDEMAIL');
+            return false;
+        }
+
+        return true;
+    }
+
+    // TODO (next version..)
+    stepsForm.prototype._showError = function (err) {
+        var message = '';
+        switch (err) {
+            case 'EMPTYSTR':
+                message = 'Please fill the field before continuing';
+                break;
+            case 'INVALIDEMAIL':
+                message = 'Please fill a valid email address';
+                break;
+                // ...
+        };
+        this.error.innerHTML = message;
+        classie.addClass(this.error, 'show');
+    }
+
+    // clears/hides the current error message
+    stepsForm.prototype._clearError = function () {
+        classie.removeClass(this.error, 'show');
+    }
+
+    // add to global namespace
+    window.stepsForm = stepsForm;
+
+})(window);

@@ -33,10 +33,14 @@
 
         @RenderBody()
 
-        @{Html.RenderAction("GetFooter", "LayoutSufrace");}
+        @{ 
+            var hide = ViewBag.HideFooterContactForm != null ? ViewBag.HideFooterContactForm : false;
+        }
+
+        @{Html.RenderAction("GetFooter", "LayoutSufrace", new { hideFooterContactForm = hide });}
         
 
-</div>
+    </div>
 
     <!-- javascript -->
 
