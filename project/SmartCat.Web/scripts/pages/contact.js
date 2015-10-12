@@ -68,13 +68,13 @@
             });
         }
     });
-
-    function whoSelected(ctrl) {
-
-        $(ctrl).siblings().removeClass('active');
-        $(ctrl).addClass('active');
-
-        $('#contactMemberId option').removeAttr('selected');
-        $('#contactMemberId option[value=' + ctrl.id + ']').attr('selected', 'selected');
-    }
 });
+
+function whoSelected(ctrl) {
+
+    $(ctrl).siblings().removeClass('active');
+    $(ctrl).addClass('active');
+
+    $('#contactMemberId option').removeAttr('selected');
+    $('#contactMemberId option[value=' + ctrl.id + ']').attr('selected', 'selected');
+}
