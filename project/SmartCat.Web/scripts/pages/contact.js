@@ -2,6 +2,7 @@
 
     var $contact = document.getElementById('ContactId')
     var $selectedContact = document.getElementById($contact.value)
+    if ($selectedContact == null) $selectedContact = document.getElementById(1);
     whoSelected($selectedContact)
 
     // contact form

@@ -95,6 +95,7 @@
             {
 
                 var typedAuthor = ContentHelper.GetByNodeId<TeamMember>(Model.Author.Value);
+                var contactUrl = ContactHelper.GetContactUrl(typedAuthor.Id);
 
                 <div class="author-box">
                     @if (typedAuthor.HomeImage.HasValue)
@@ -108,7 +109,7 @@
                             @typedAuthor.ShortDescription
                         </p>
                         <div class="bottom">
-                            <a href="mailto: @typedAuthor.EmailAddress" class="contact-link">
+                            <a href="@contactUrl" class="contact-link">
                                 <i class="ico ico-mail"></i> Contact @typedAuthor.FirstName
                             </a>
                             <ul class="social-links">
