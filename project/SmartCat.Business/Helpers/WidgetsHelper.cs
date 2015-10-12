@@ -21,7 +21,7 @@
                 var newsNode = ContentHelper.GetChildren<News>(NodeHelper.Home.Id).FirstOrDefault();
                 if (newsNode == null) return null;
 
-                var news = ContentHelper.GetChildren<NewsPost>(newsNode.Id).OrderByDescending(post => post.PostDate).Take(5);
+                var news = ContentHelper.GetChildren<NewsPost>(newsNode.Id).OrderByDescending(post => post.PostDate).Take(NodeHelper.Widgets.NumberOfNewsItems);
 
                 if (news != null && news.Any())
                 {
