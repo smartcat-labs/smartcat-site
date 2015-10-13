@@ -209,7 +209,7 @@
                                     <span class="date">@typedNewsItem.PostDate.ToString("MM/dd/yy")</span>
                                     <h4><a href="@typedNewsItem.NiceUrl">@typedNewsItem.NewsTitle</a></h4>
                                     <p>
-                                        @Regex.Replace(typedNewsItem.RteContent, @"<(.|\n)*?>", string.Empty).Substring(0, 160) ...
+                                        @Utility.GetShorterText(Regex.Replace(typedNewsItem.RteContent, @"<(.|\n)*?>", string.Empty), 140, true, true)
                                     </p>
                                     @if (typedNewsItem.Author.HasValue)
                                     {

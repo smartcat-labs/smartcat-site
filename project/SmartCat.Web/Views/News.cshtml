@@ -78,12 +78,12 @@
                                 {
                                     <div class="text hidden-on-mobile">
                                         <h3><span>@post.NewsTitle</span></h3>
-                                        <span class="date">@post.PostDate.ToShortDateString()</span>
+                                        <span class="date">@post.PostDate.ToString("MM/dd/yy")</span>
                                     </div>
                                 }
 
                                 <div class="text @(postClass == "stamp" ? "show-on-mobile" : string.Empty)">
-                                    <span class="date">@post.PostDate.ToShortDateString()</span>
+                                    <span class="date">@post.PostDate.ToString("MM/dd/yy")</span>
                                     <h3>@post.NewsTitle</h3>
                                     @if (postClass != "stamp")
                                     {
