@@ -149,9 +149,10 @@
                     {
                         var typedProcess = ContentHelper.GetByNodeId<ProcessItem>(processId);
                         var parentUrl = ContentHelper.GetByNodeId(typedProcess.ParentId).NiceUrl;
+                        var numbering = (Model.FeaturedProcesses.IndexOf(processId) + 1).ToString("D2");
 
                         <li class="swiper-slide">
-                            <h3><a href="@parentUrl"><span>@("0" + (Model.FeaturedProcesses.IndexOf(processId)+1))</span>@typedProcess.Name</a></h3>
+                            <h3><a href="@parentUrl"><span>@numbering</span>@typedProcess.Name</a></h3>
                             <p>
                                 <a href="@parentUrl">
                                     @Html.Raw(typedProcess.ProcessDescription != null ? typedProcess.ProcessDescription.Substring(0,230) + "..." : string.Empty)
