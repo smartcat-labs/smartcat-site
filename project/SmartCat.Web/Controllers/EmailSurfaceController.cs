@@ -2,7 +2,6 @@
 {
     using Business.Helpers;
     using Common;
-    using Common.Utility;
     using Entities.DocumentTypes;
     using System.Text.RegularExpressions;
     using System.Web.Mvc;

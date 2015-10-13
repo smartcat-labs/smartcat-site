@@ -1,8 +1,9 @@
-﻿@using SmartCat.Business.Helpers;
+﻿@using SmartCat.Common;
+@using SmartCat.Business.Helpers;
 @using SmartCat.Business.Twitter;
-@using Vega.USiteBuilder;
 @using SmartCat.Entities.DocumentTypes;
 @using System.Text.RegularExpressions;
+@using Vega.USiteBuilder;
 
 @inherits Vega.USiteBuilder.UmbracoTemplatePageBase<SmartCat.Entities.DocumentTypes.Home>
 
@@ -155,7 +156,10 @@
                             <h3><a href="@parentUrl"><span>@numbering</span>@typedProcess.Name</a></h3>
                             <p>
                                 <a href="@parentUrl">
-                                    @Html.Raw(typedProcess.ProcessDescription != null ? typedProcess.ProcessDescription.Substring(0,230) + "..." : string.Empty)
+                                    @if (typedProcess.ProcessDescription != null)
+                                    {
+                                        @Html.Raw(Utility.GetShorterText(typedProcess.ProcessDescription, 240, true, true));
+                                    }
                                     <i class="ico arrow-more"></i>
                                 </a>
                             </p>

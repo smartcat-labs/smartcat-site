@@ -1,7 +1,6 @@
 ﻿namespace SmartCat.Business.Twitter
 {
     using Common;
-    using Common.Utility;
     using LinqToTwitter;
     using System;
     using System.Collections.Generic;

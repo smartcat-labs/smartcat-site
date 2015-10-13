@@ -1,4 +1,4 @@
-﻿namespace SmartCat.Common.Utility
+﻿namespace SmartCat.Common
 {
     using System;
     using System.Collections.Generic;
