@@ -73,6 +73,8 @@
     <Compile Include="DocumentTypes\Repository\Header.cs" />
     <Compile Include="DocumentTypes\Repository\Repository.cs" />
     <Compile Include="DocumentTypes\Repository\Settings.cs" />
+    <Compile Include="DocumentTypes\Repository\TagItem.cs" />
+    <Compile Include="DocumentTypes\Repository\TagsContainer.cs" />
     <Compile Include="DocumentTypes\Repository\Widgets.cs" />
     <Compile Include="DocumentTypes\Search.cs" />
     <Compile Include="DocumentTypes\ServiceItem.cs" />

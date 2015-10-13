@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using Vega.USiteBuilder;
 
-    [DocumentType(IconUrl = "ico-pin.png", Name = "Widgets", Description = "For defining widgets content", AllowAtRoot = false)]
+    [DocumentType(IconUrl = "icon-switchoff.png", Name = "Widgets", Description = "For defining widgets content", AllowAtRoot = false)]
     public class Widgets : Repository
     {
         #region SIDEBAR WIDGETS

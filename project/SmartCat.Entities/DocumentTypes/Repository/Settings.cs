@@ -8,21 +8,21 @@ namespace SmartCat.Entities.DocumentTypes.Repository
         #region PAGES
 
         [DocumentTypeProperty(UmbracoPropertyType.ContentPicker,
-                              Tab = TabNames.Nodes,
+                              Tab = TabNames.Page,
                               Name = "Home",
                               Description = "Home.",
                               Mandatory = true)]
         public virtual int? Home { get; set; }
 
         [DocumentTypeProperty(UmbracoPropertyType.ContentPicker,
-                              Tab = TabNames.Nodes,
+                              Tab = TabNames.Page,
                               Name = "Search",
                               Description = "Search.",
                               Mandatory = true)]
         public virtual int? Search { get; set; }
 
         [DocumentTypeProperty(UmbracoPropertyType.ContentPicker,
-                             Tab = TabNames.Nodes,
+                             Tab = TabNames.Page,
                              Name = "Contact",
                              Description = "Contact.",
                              Mandatory = true)]
@@ -45,6 +45,14 @@ namespace SmartCat.Entities.DocumentTypes.Repository
                               Description = "Footer.",
                               Mandatory = true)]
         public virtual int? Footer { get; set; }
+
+
+        [DocumentTypeProperty(UmbracoPropertyType.ContentPicker,
+                              Tab = TabNames.Nodes,
+                              Name = "Tags Container",
+                              Description = "Tags Container.",
+                              Mandatory = true)]
+        public virtual int? TagsContainer { get; set; }
 
         #endregion
 

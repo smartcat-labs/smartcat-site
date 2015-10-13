@@ -42,5 +42,12 @@ namespace SmartCat.Entities.DocumentTypes
                          Tab = TabNames.Content,
                          Description = "Choose blog author.")]
         public virtual int? Author { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.Other,
+                          OtherTypeName = Constants.CustomDataTypes.TagsPicker,
+                          Name = "Tags",
+                          Tab = TabNames.Content,
+                          Description = "Choose blog tags.")]
+        public virtual List<int> BlogTags { get; set; }
     }
 }

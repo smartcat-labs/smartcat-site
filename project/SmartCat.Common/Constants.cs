@@ -66,6 +66,7 @@
             public const string MultipleTeamMemberPicker = "Multiple Team Member Picker";
             public const string UrlPicker = "Url Picker";
             public const string MultiUrlPicker = "Multi Url Picker";
+            public const string TagsPicker = "Tags Picker"; 
 
             public const string BlogImageCropper = "Blog Image Cropper";
 

@@ -1,6 +1,8 @@
 ﻿@using Vega.USiteBuilder;
 @using SmartCat.Entities.DocumentTypes;
 @using System.Text.RegularExpressions;
+@using SmartCat.Business.Helpers;
+@using SmartCat.Entities.DocumentTypes.Repository;
 
 @inherits Vega.USiteBuilder.UmbracoTemplatePageBase<SmartCat.Entities.DocumentTypes.Blog>
 
@@ -29,15 +31,64 @@
 <div class="content">
 
     @{
-        var blogPosts = ContentHelper.GetChildren<BlogPost>(Model.Id).ToList();
+        var selectedTag = Request.QueryString["tag"];
+        var searchText = Request.QueryString["search"];
+
+        var blogPosts = new List<BlogPost>();
+
+        if (!string.IsNullOrEmpty(selectedTag) && !string.IsNullOrEmpty(searchText))
+        {
+            blogPosts = ContentHelper.GetChildren<BlogPost>(Model.Id).Where(x => x.BlogTags != null && x.BlogTags.Contains(Convert.ToInt32(selectedTag)) && x.BlogTitle.ToLower().Contains(searchText.ToLower())).ToList();
+        }
+        else if (!string.IsNullOrEmpty(selectedTag))
+        {
+            blogPosts = ContentHelper.GetChildren<BlogPost>(Model.Id).Where(x => x.BlogTags != null && x.BlogTags.Contains(Convert.ToInt32(selectedTag))).ToList();
+        }
+        else if (!string.IsNullOrEmpty(searchText))
+        {
+            blogPosts = ContentHelper.GetChildren<BlogPost>(Model.Id).Where(x => x.BlogTitle.ToLower().Contains(searchText.ToLower())).ToList();
+        }
+        else
+        {
+            blogPosts = ContentHelper.GetChildren<BlogPost>(Model.Id).ToList();
+        }
+
     }
 
-    @if (blogPosts != null && blogPosts.Any())
-    {
-       blogPosts = blogPosts.OrderByDescending(x => x.PostDate).ToList();
+    <div class="wrapper centered">
+        <div class="blog-landing">
+            <form name="blogForm" id="blogForm" action="@Umbraco.AssignedContentItem.Url" method="get">
+                <div class="filter-wrapper">
+                    @if (NodeHelper.Settings.TagsContainer.HasValue)
+                    {
+                        var blogTags = ContentHelper.GetChildren<TagItem>(NodeHelper.Settings.TagsContainer.Value);
 
-        <div class="wrapper centered">
-            <div class="blog-landing">
+                        if (blogTags != null && blogTags.Any())
+                        {
+                            <div class="item">
+                                <select name="tag" id="tag">
+                                    <option value="">Select Tag</option>
+                                    @foreach (var tag in blogTags)
+                                    {
+                                        <option @(tag.Id.ToString() == selectedTag ? "selected" : string.Empty) value="@tag.Id">@tag.Name</option>
+                                    }
+                                </select>
+                            </div>
+                        }
+                    }
+                    <div class="item">
+                        <div class="search-filter">
+                            <input name="search" id="search" type="text" placeholder="Search" value="@searchText" />
+                            <a href="javascript:;" onclick="$('#blogForm').submit();">Search</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            @if (blogPosts != null && blogPosts.Any())
+            {
+                blogPosts = blogPosts.OrderByDescending(x => x.PostDate).ToList();
+
                 <div class="blog-inner-wrap">
 
                     @foreach (var post in blogPosts)
@@ -86,7 +137,7 @@
                                         </p>
                                     }
                                     @{
-                                        var postAuthor = post.Author.HasValue ? ContentHelper.GetByNodeId<TeamMember>(post.Author.Value) : null;
+                        var postAuthor = post.Author.HasValue ? ContentHelper.GetByNodeId<TeamMember>(post.Author.Value) : null;
                                     }
                                     @if (postAuthor != null)
                                     {
@@ -100,10 +151,13 @@
                         </a>
                     }
                 </div>
-            </div>
+            }
+            else
+            {
+               <h2>No results, please refine your search criteria.</h2>
+            }
         </div>
-    }
-
+    </div>
 </div>
 
 
