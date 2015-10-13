@@ -67,10 +67,10 @@
                                 @member.Quote
                             </blockquote>
                             <ul class="social-links">
-                                @if (!string.IsNullOrEmpty(member.Facebook))
+                                @if (!string.IsNullOrEmpty(member.LinkedIn))
                                 {
                                     <li>
-                                        <a href="@member.Facebook" target="_blank" class="facebook"><i class="ico"></i></a>
+                                        <a href="@member.LinkedIn" target="_blank" class="linked"><i class="ico"></i></a>
                                     </li>
                                 }
                                 @if (!string.IsNullOrEmpty(member.Twitter))
@@ -85,10 +85,16 @@
                                         <a href="@member.GitHub" target="_blank" class="git"><i class="ico"></i></a>
                                     </li>
                                 }
-                                @if (!string.IsNullOrEmpty(member.LinkedIn))
+                                @if (!string.IsNullOrEmpty(member.Stackoverflow))
                                 {
                                     <li>
-                                        <a href="@member.LinkedIn" target="_blank" class="linked"><i class="ico"></i></a>
+                                        <a href="@member.LinkedIn" target="_blank" class="stack"><i class="ico"></i></a>
+                                    </li>
+                                }
+                                @if (!string.IsNullOrEmpty(member.Facebook))
+                                {
+                                    <li>
+                                        <a href="@member.Facebook" target="_blank" class="facebook"><i class="ico"></i></a>
                                     </li>
                                 }
                             </ul>

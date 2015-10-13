@@ -1,13 +1,7 @@
-﻿using SmartCat.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vega.USiteBuilder;
-
-namespace SmartCat.Entities.DocumentTypes
+﻿namespace SmartCat.Entities.DocumentTypes
 {
+    using Vega.USiteBuilder;
+
     [DocumentType(IconUrl = "icon-tie-business.png", Name = "Team member", Description = "Team member document type.", AllowAtRoot = false)]
     public class TeamMember : Main
     {
@@ -97,6 +91,9 @@ namespace SmartCat.Entities.DocumentTypes
 
         [DocumentTypeProperty(UmbracoPropertyType.Textstring, Name = "LinkedIn", Description = "LinkedIn url, including http://", Tab = TabNames.SocialLinks)]
         public virtual string LinkedIn { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.Textstring, Name = "Stackoverflow", Description = "Stackoverflow url, including http://", Tab = TabNames.SocialLinks)]
+        public virtual string Stackoverflow { get; set; }
 
         #endregion
     }
