@@ -1,20 +1,28 @@
-﻿using SmartCat.Common;
-using SmartCat.Entities.DataTypes;
-using SmartCat.Entities.DocumentTypes.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vega.USiteBuilder;
-
-namespace SmartCat.Entities.DocumentTypes
+﻿namespace SmartCat.Entities.DocumentTypes
 {
+    using Common;
+    using DataTypes;
+    using Repository;
+    using System.Collections.Generic;
+    using Vega.USiteBuilder;
+
     [DocumentType(IconUrl = "icon-house.png",
         Name = "Home page",
         Description = "Home page document type.",
         AllowAtRoot = true,
-        AllowedChildNodeTypes = new[] { typeof(Services), typeof(Team), typeof(Technologies), typeof(Process), typeof(Blog), typeof(News), typeof(Error404), typeof(Search), typeof(TestimonialContainer), typeof(PartnersContainer), typeof(Contact) })]
+        AllowedChildNodeTypes = new[]
+        {
+            typeof(Services),
+            typeof(Team),
+            typeof(Technologies),
+            typeof(Process),
+            typeof(Blog),
+            typeof(News),
+            typeof(Error404),
+            typeof(Search),
+            typeof(TestimonialContainer),
+            typeof(PartnersContainer),
+            typeof(Contact) })]
     public class Home : Page
     {
         #region HOME BANNER
