@@ -137,7 +137,7 @@
                                         </p>
                                     }
                                     @{
-                        var postAuthor = post.Author.HasValue ? ContentHelper.GetByNodeId<TeamMember>(post.Author.Value) : null;
+                                        var postAuthor = post.Author.HasValue ? ContentHelper.GetByNodeId<TeamMember>(post.Author.Value) : null;
                                     }
                                     @if (postAuthor != null)
                                     {
