@@ -63,6 +63,19 @@ $(document).ready(function () {
         }
     });
 
+    equalHeight($('.one-half-list.technologies li'), 4);
+
+    if ($(window).width() < 1024) {
+       equalHeight($('.one-half-list.technologies li'), 2);
+    }
+
+});
+
+$(window).resize(function () {
+    equalHeight($('.one-half-list.technologies li'), 4);
+    if ($(window).width() < 1024) {
+       equalHeight($('.one-half-list.technologies li'), 2);
+    }
 });
 
 // steps form
@@ -92,4 +105,42 @@ if (theForm !== null && theForm !== undefined) {
     });
 }
 
+function equalHeight (arrayItems, count) {
+    if (arrayItems != undefined && arrayItems.length > 0) {
+
+        arrayItems.height('');
+
+        var maxH = 0;
+
+        if (count) {
+            var arrays = [];
+            while (arrayItems.length > 0)
+                arrays.push(arrayItems.splice(0, count));
+
+            for (var i = 0; i < arrays.length; i++) {
+                var data = arrays[i];
+                maxH = 0;
+                for (var j = 0; j < data.length; j++) {
+                    var currentH = $(data[j]).outerHeight(true);
+                    if (currentH > maxH) {
+                        maxH = currentH;
+                    }
+                };
+
+                for (var j = 0; j < data.length; j++) {
+                    $(data[j]).css('height', maxH);
+                }
+            };
+        } else {
+            arrayItems.each(function () {
+                var currentH = $(this).outerHeight(true);
+                if (currentH > maxH) {
+                    maxH = currentH;
+                }
+            });
+
+            arrayItems.css('height', maxH);
+        }
+    }
+}
 

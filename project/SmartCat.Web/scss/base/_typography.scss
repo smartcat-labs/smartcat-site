@@ -72,7 +72,12 @@ h3 {
 }
 
 h4 {
-	
+	&.category-title {
+		font-family: $bold-font;
+		margin-bottom: 20px;
+		font-size: 20px;
+		line-height: 20px;
+	}
 }
 
 h5 {
