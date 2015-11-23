@@ -22,7 +22,8 @@
             typeof(Search),
             typeof(TestimonialContainer),
             typeof(PartnersContainer),
-            typeof(Contact) })]
+            typeof(Contact)
+        })]
     public class Home : Page
     {
         #region HOME BANNER

@@ -1,13 +1,10 @@
-﻿using SmartCat.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vega.USiteBuilder;
-
-namespace SmartCat.Entities.DocumentTypes
+﻿namespace SmartCat.Entities.DocumentTypes
 {
+    using SmartCat.Common;
+    using System;
+    using System.Collections.Generic;
+    using Vega.USiteBuilder;
+
     [DocumentType(IconUrl = "icon-magazine.png", Name = "Blog Post", Description = "Blog post document type.", AllowAtRoot = false)]
     public class BlogPost : Page
     {

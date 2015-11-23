@@ -692,7 +692,9 @@
     <Content Include="scripts\main\jquery-1.8.3.min.js" />
     <Content Include="scripts\pages\blog.js" />
     <Content Include="scripts\pages\home.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\EmailSurfaceController.cs" />

@@ -112,16 +112,16 @@
                                 <i class="ico ico-mail"></i> Contact @typedAuthor.FirstName
                             </a>
                             <ul class="social-links">
-                                @if (!string.IsNullOrEmpty(typedAuthor.Facebook))
-                                {
-                                    <li>
-                                        <a href="@typedAuthor.Facebook" target="_blank" class="facebook"><i class="ico"></i></a>
-                                    </li>
-                                }
                                 @if (!string.IsNullOrEmpty(typedAuthor.Twitter))
                                 {
                                     <li>
                                         <a href="@typedAuthor.Twitter" target="_blank" class="twitter"><i class="ico"></i></a>
+                                    </li>
+                                }
+                                @if (!string.IsNullOrEmpty(typedAuthor.LinkedIn))
+                                {
+                                    <li>
+                                        <a href="@typedAuthor.LinkedIn" target="_blank" class="linked"><i class="ico"></i></a>
                                     </li>
                                 }
                                 @if (!string.IsNullOrEmpty(typedAuthor.GitHub))
@@ -130,10 +130,16 @@
                                         <a href="@typedAuthor.GitHub" target="_blank" class="git"><i class="ico"></i></a>
                                     </li>
                                 }
-                                @if (!string.IsNullOrEmpty(typedAuthor.LinkedIn))
+                                @if (!string.IsNullOrEmpty(typedAuthor.Stackoverflow))
                                 {
                                     <li>
-                                        <a href="@typedAuthor.LinkedIn" target="_blank" class="linked"><i class="ico"></i></a>
+                                        <a href="@typedAuthor.Stackoverflow" target="_blank" class="stack"><i class="ico"></i></a>
+                                    </li>
+                                }
+                                @if (!string.IsNullOrEmpty(typedAuthor.Facebook))
+                                {
+                                    <li>
+                                        <a href="@typedAuthor.Facebook" target="_blank" class="facebook"><i class="ico"></i></a>
                                     </li>
                                 }
                             </ul>

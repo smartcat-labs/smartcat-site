@@ -102,21 +102,28 @@
         /// <returns>Collection of <see cref="Tweet"/>.</returns>
         private static List<Tweet> GetSpecificNumberOfLastTweets(int tweetCount)
         {
-            WebAuthorizer auth = new WebAuthorizer();
-            auth.Credentials = GetCredentials();
+            try
+            {
+                WebAuthorizer auth = new WebAuthorizer();
+                auth.Credentials = GetCredentials();
 
-            var twitterCtx = new TwitterContext(auth);
-            var statusTweets = (from tweet in twitterCtx.Status
-                                where tweet.Type == StatusType.User &&
-                                      tweet.ScreenName == GetTwitterUsername()
-                                select new Tweet
-                                {
-                                    Id = tweet.StatusID,
-                                    Text = Utility.AddLinksToTweets(tweet.Text),
-                                    Date = tweet.CreatedAt
-                                }).Take(tweetCount);
+                var twitterCtx = new TwitterContext(auth);
+                var statusTweets = (from tweet in twitterCtx.Status
+                                    where tweet.Type == StatusType.User &&
+                                          tweet.ScreenName == GetTwitterUsername()
+                                    select new Tweet
+                                    {
+                                        Id = tweet.StatusID,
+                                        Text = Utility.AddLinksToTweets(tweet.Text),
+                                        Date = tweet.CreatedAt
+                                    }).Take(tweetCount);
 
-            return statusTweets.ToList();
+                return statusTweets.ToList();
+            }
+            catch (Exception ex)
+            {
+                return new List<Tweet>();
+            }
         }
     }
 }

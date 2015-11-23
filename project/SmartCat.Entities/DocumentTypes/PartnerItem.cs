@@ -1,14 +1,9 @@
-﻿using SmartCat.Common;
-using SmartCat.Entities.DataTypes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vega.USiteBuilder;
-
-namespace SmartCat.Entities.DocumentTypes
+﻿namespace SmartCat.Entities.DocumentTypes
 {
+    using SmartCat.Common;
+    using SmartCat.Entities.DataTypes;
+    using Vega.USiteBuilder;
+
     [DocumentType(IconUrl = "icon-briefcase.png", Name = "Partner Item", Description = "Partner item document type.", AllowAtRoot = false)]
     public class PartnerItem : Main
     {

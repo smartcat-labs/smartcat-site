@@ -1,9 +1,9 @@
-﻿using SmartCat.Common;
-using System.Collections.Generic;
-using Vega.USiteBuilder;
-
-namespace SmartCat.Entities.DocumentTypes
+﻿namespace SmartCat.Entities.DocumentTypes
 {
+    using SmartCat.Common;
+    using System.Collections.Generic;
+    using Vega.USiteBuilder;
+
     [DocumentType(IconUrl = "icon-contact-businesscard.png", Name = "Contact", Description = "Contact document type.", AllowAtRoot = false)]
     public class Contact : Page
     {

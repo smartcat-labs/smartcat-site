@@ -1,20 +1,16 @@
-﻿using SmartCat.Common;
-using System;
-using System.Collections.Generic;
-using Vega.USiteBuilder;
-
-namespace SmartCat.Entities.DocumentTypes
+﻿namespace SmartCat.Entities.DocumentTypes
 {
-    [DocumentType(IconUrl = "icon-buttonb.png",
-        Name = "Blog Container",
-        Description = "Blog container document type.",
+    using SmartCat.Common;
+    using System;
+    using System.Collections.Generic;
+    using Vega.USiteBuilder;
+
+    [DocumentType(IconUrl = "icon-bullhorn.png",
+        Name = "News Container",
+        Description = "News container document type.",
         AllowAtRoot = false,
-        AllowedChildNodeTypes = new[]
-        {
-            typeof(BlogPost),
-            typeof(BlogContainer)
-        })]
-    public class Blog : Page
+        AllowedChildNodeTypes = new[] { typeof(NewsPost) })]
+    public class NewsContainer : Page
     {
         #region SIDEBAR WIDGETS
 

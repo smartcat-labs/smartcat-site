@@ -31,17 +31,14 @@
 
         @Html.Raw(Model.MainContent)
 
-        @{
-            var teamMembers = ContentHelper.GetChildren<TeamMember>(Model.Id).ToList();
-        }
-
-        @if (teamMembers != null && teamMembers.Any())
+        @if (Model.DisplayTeamMembers != null && Model.DisplayTeamMembers.Any())
         {
-            foreach (var member in teamMembers)
+            foreach (var memberId in Model.DisplayTeamMembers)
             {
+                var member = ContentHelper.GetByNodeId<TeamMember>(memberId);
                 var contactUrl = ContactHelper.GetContactUrl(member.Id);
 
-                <div class="employee-block @(teamMembers.IndexOf(member) % 2 != 0 ? "right-aligned" : string.Empty)">
+                <div class="employee-block @(Model.DisplayTeamMembers.IndexOf(memberId) % 2 != 0 ? "right-aligned" : string.Empty)">
                     <div class="img-wrap">
                         @if (member.TeamImage.HasValue)
                         {
@@ -88,7 +85,7 @@
                                 @if (!string.IsNullOrEmpty(member.Stackoverflow))
                                 {
                                     <li>
-                                        <a href="@member.LinkedIn" target="_blank" class="stack"><i class="ico"></i></a>
+                                        <a href="@member.Stackoverflow" target="_blank" class="stack"><i class="ico"></i></a>
                                     </li>
                                 }
                                 @if (!string.IsNullOrEmpty(member.Facebook))

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vega.USiteBuilder;
-
-namespace SmartCat.Entities.DocumentTypes
+﻿namespace SmartCat.Entities.DocumentTypes
 {
-    [DocumentType(IconUrl = "icon-workshirt.png", Name = "Team", Description = "Team document type.", AllowAtRoot = false, AllowedChildNodeTypes = new [] {typeof(TeamMember)})]
+    using SmartCat.Common;
+    using System.Collections.Generic;
+    using Vega.USiteBuilder;
+
+    [DocumentType(IconUrl = "icon-workshirt.png", Name = "Team", Description = "Team document type.", AllowAtRoot = false, AllowedChildNodeTypes = new[] { typeof(TeamMember) })]
     public class Team : Page
     {
         [DocumentTypeProperty(UmbracoPropertyType.RichtextEditor,
@@ -15,5 +12,12 @@ namespace SmartCat.Entities.DocumentTypes
                             Description = "Define main content using RTE.",
                             Tab = TabNames.Content)]
         public virtual string MainContent { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.Other,
+                              OtherTypeName = Constants.CustomDataTypes.MultipleTeamMemberPicker,
+                              Name = "Display Team Members",
+                              Tab = TabNames.Content,
+                              Description = "Choose team members to display on page.")]
+        public virtual List<int> DisplayTeamMembers { get; set; }
     }
 }
