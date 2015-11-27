@@ -30,50 +30,56 @@
 
     <div class="wrapper">
         <div class="main">
-			<h4 class="category-title">Example title</h4>
-            <ul class="one-half-list technologies">
-                @{
-                    var technologyItems = ContentHelper.GetChildren<TechnologyItem>(Model.Id).ToList();
-                    var contactsPage = ContentHelper.GetChildren<Contact>(NodeHelper.Home.Id).FirstOrDefault();
-                }
+            @{
+                var technologyCategories = ContentHelper.GetChildren<TechnologyContainer>(Model.Id).ToList();
+                var contactsPage = ContentHelper.GetChildren<Contact>(NodeHelper.Home.Id).FirstOrDefault();
 
-                @if (technologyItems != null && technologyItems.Any())
+                if (technologyCategories != null && technologyCategories.Any())
                 {
-                    foreach (var technology in technologyItems)
+                    foreach (var techCategory in technologyCategories)
                     {
-                        var typedTeamMember = ContentHelper.GetByNodeId<TeamMember>(technology.MemberContact.Value);
-                        var contactUrl = string.Format("{0}?{1}={2}", contactsPage.NiceUrl, SmartCat.Common.Constants.RequestParameters.ContactMemberId, typedTeamMember.Id);
+                        var technologyItems = ContentHelper.GetChildren<TechnologyItem>(techCategory.Id).ToList();
+                        
+                        <h4 class="category-title">@(techCategory.Name)</h4>
 
-                        <li>
-                            <div class="box">
-                                <div class="img-wrap">
-                                    @if (technology.TechnologyImage.HasValue)
-                                    {
-                                        <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(technology.TechnologyImage.Value))" alt="@MediaHelper.GetImageAlternateText(MediaHelper.GetMediaById(technology.TechnologyImage.Value))" class="greyscale" />
-                                    }
+                
+                        <ul class="one-half-list technologies">
+                        @foreach (var technology in technologyItems)
+                        {
+                            var typedTeamMember = ContentHelper.GetByNodeId<TeamMember>(technology.MemberContact.Value);
+                            var contactUrl = string.Format("{0}?{1}={2}", contactsPage.NiceUrl, SmartCat.Common.Constants.RequestParameters.ContactMemberId, typedTeamMember.Id);
+                            
+                            <li>
+                                <div class="box">
+                                    <div class="img-wrap">
+                                        @if (technology.TechnologyImage.HasValue)
+                                        {
+                                            <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(technology.TechnologyImage.Value))" alt="@MediaHelper.GetImageAlternateText(MediaHelper.GetMediaById(technology.TechnologyImage.Value))" class="greyscale" />
+                                        }
 
-                                </div>
-                                <div class="contact-box hidden-on-mobile">
-                                    <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(typedTeamMember.TechnologyImage.Value))" alt="@MediaHelper.GetImageAlternateText(MediaHelper.GetMediaById(typedTeamMember.TechnologyImage.Value))" />
+                                    </div>
+                                    <div class="contact-box hidden-on-mobile">
+                                        <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(typedTeamMember.TechnologyImage.Value))" alt="@MediaHelper.GetImageAlternateText(MediaHelper.GetMediaById(typedTeamMember.TechnologyImage.Value))" />
 
-                                    <span>@Umbraco.GetDictionaryValue("Common.HaveQuestions")?</span>
-                                    <a href="@contactUrl">Contact @typedTeamMember.FirstName</a>
+                                        <span>@Umbraco.GetDictionaryValue("Common.HaveQuestions")?</span>
+                                        <a href="@contactUrl">Contact @typedTeamMember.FirstName</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="text">
-                                <p>
-                                    @technology.TechnologyDescription
-                                </p>
-                                <div class="contact-box">
-                                    <span>@Umbraco.GetDictionaryValue("Common.HaveQuestions")?</span>
-                                    <a href="@contactUrl">Contact @typedTeamMember.FirstName</a>
+                                <div class="text">
+                                    <p>
+                                        @technology.TechnologyDescription
+                                    </p>
+                                    <div class="contact-box">
+                                        <span>@Umbraco.GetDictionaryValue("Common.HaveQuestions")?</span>
+                                        <a href="@contactUrl">Contact @typedTeamMember.FirstName</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
+                            </li>
+                        }
+                        </ul>
                     }
                 }
-
-            </ul>
+            }
             <div class="certificate-block hidden-on-mobile">
                 <span>@Umbraco.GetDictionaryValue("Service.Associations") / @Umbraco.GetDictionaryValue("Service.Certificates")</span>
 

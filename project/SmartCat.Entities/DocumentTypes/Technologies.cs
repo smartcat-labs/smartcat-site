@@ -5,7 +5,15 @@ using Vega.USiteBuilder;
 
 namespace SmartCat.Entities.DocumentTypes
 {
-    [DocumentType(IconUrl = "icon-servers.png", Name = "Technologies", Description = "Technologies document type.", AllowAtRoot = false, AllowedChildNodeTypes = new[] { typeof(TechnologyItem), typeof(CertificateContainer) })]
+    [DocumentType(IconUrl = "icon-servers.png",
+        Name = "Technologies",
+        Description = "Technologies document type.",
+        AllowAtRoot = false,
+        AllowedChildNodeTypes = new[]
+        {
+            typeof(CertificateContainer),
+            typeof(TechnologyContainer)
+        })]
     public class Technologies : Page
     {
         #region SIDEBAR WIDGETS

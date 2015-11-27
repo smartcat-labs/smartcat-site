@@ -84,6 +84,7 @@
     <Compile Include="DocumentTypes\Team.cs" />
     <Compile Include="DocumentTypes\TeamMember.cs" />
     <Compile Include="DocumentTypes\Technologies.cs" />
+    <Compile Include="DocumentTypes\TechnologyContainer.cs" />
     <Compile Include="DocumentTypes\TechnologyItem.cs" />
     <Compile Include="DocumentTypes\TestimonialContainer.cs" />
     <Compile Include="DocumentTypes\TestimonialItem.cs" />
