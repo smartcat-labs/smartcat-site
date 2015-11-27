@@ -707,6 +707,7 @@
 	&.technologies {
 		li {
 			width: 24%;
+			margin-bottom: 15px;
 			margin-right: 1.333333333333333%;
 			&:nth-child(4n+4) {
 				margin-right: 0;
@@ -719,6 +720,9 @@
 			.text {
 			    width: 100%;
 			    padding-top: 0;
+			    p {
+			    	margin-bottom: 0;
+			    }
 			}
 		}
 	}
