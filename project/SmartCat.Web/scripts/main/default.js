@@ -63,18 +63,27 @@ $(document).ready(function () {
         }
     });
 
-    equalHeight($('.one-half-list.technologies li'), 4);
+    $('.one-half-list.technologies').each(function(){
+        equalHeight($(this).find('li'), 4);
+    });
+
 
     if ($(window).width() < 1024) {
-       equalHeight($('.one-half-list.technologies li'), 2);
+       $('.one-half-list.technologies').each(function(){
+            equalHeight($(this).find('li'), 2);
+        });
     }
 
 });
 
 $(window).resize(function () {
-    equalHeight($('.one-half-list.technologies li'), 4);
+    $('.one-half-list.technologies').each(function(){
+        equalHeight($(this).find('li'), 4);
+    });
     if ($(window).width() < 1024) {
-       equalHeight($('.one-half-list.technologies li'), 2);
+        $('.one-half-list.technologies').each(function(){
+            equalHeight($(this).find('li'), 2);
+        });
     }
 });
 
