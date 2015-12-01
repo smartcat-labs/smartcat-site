@@ -262,32 +262,9 @@
                                     <blockquote>
                                         @typedMember.Quote
                                     </blockquote>
-                                    <ul class="social-links">
-                                        @if (!string.IsNullOrEmpty(typedMember.Facebook))
-                                        {
-                                            <li>
-                                                <a href="@typedMember.Facebook" target="_blank" class="facebook"><i class="ico"></i></a>
-                                            </li>
-                                        }
-                                        @if (!string.IsNullOrEmpty(typedMember.Twitter))
-                                        {
-                                            <li>
-                                                <a href="@typedMember.Twitter" target="_blank" class="twitter"><i class="ico"></i></a>
-                                            </li>
-                                        }
-                                        @if (!string.IsNullOrEmpty(typedMember.GitHub))
-                                        {
-                                            <li>
-                                                <a href="@typedMember.GitHub" target="_blank" class="git"><i class="ico"></i></a>
-                                            </li>
-                                        }
-                                        @if (!string.IsNullOrEmpty(typedMember.LinkedIn))
-                                        {
-                                            <li>
-                                                <a href="@typedMember.LinkedIn" target="_blank" class="linked"><i class="ico"></i></a>
-                                            </li>
-                                        }
-                                    </ul>
+                                    @{
+                                        Html.RenderPartial("~/Views/Partials/_TeamMemberSocialLinks.cshtml", typedMember);
+                                    }
                                 </div>
                             </div>
                         </li>

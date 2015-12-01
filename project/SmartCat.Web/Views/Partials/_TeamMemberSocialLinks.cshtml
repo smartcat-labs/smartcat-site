@@ -1,0 +1,38 @@
+﻿@model SmartCat.Entities.DocumentTypes.TeamMember
+
+@{
+    Layout = null;
+
+    <ul class="social-links">
+        @if (!string.IsNullOrEmpty(Model.Twitter))
+        {
+            <li>
+                <a href="@Model.Twitter" target="_blank" class="twitter"><i class="ico"></i></a>
+            </li>
+        }
+        @if (!string.IsNullOrEmpty(Model.LinkedIn))
+        {
+            <li>
+                <a href="@Model.LinkedIn" target="_blank" class="linked"><i class="ico"></i></a>
+            </li>
+        }
+        @if (!string.IsNullOrEmpty(Model.GitHub))
+        {
+            <li>
+                <a href="@Model.GitHub" target="_blank" class="git"><i class="ico"></i></a>
+            </li>
+        }
+        @if (!string.IsNullOrEmpty(Model.Stackoverflow))
+        {
+            <li>
+                <a href="@Model.Stackoverflow" target="_blank" class="stack"><i class="ico"></i></a>
+            </li>
+        }
+        @if (!string.IsNullOrEmpty(Model.Facebook))
+        {
+            <li>
+                <a href="@Model.Facebook" target="_blank" class="facebook"><i class="ico"></i></a>
+            </li>
+        }
+    </ul>
+}

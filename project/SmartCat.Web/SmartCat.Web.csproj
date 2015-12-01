@@ -352,6 +352,7 @@
     <Content Include="Views\Search.cshtml" />
     <Content Include="Views\Contact.cshtml" />
     <None Include="Properties\PublishProfiles\ExportToDisk.pubxml" />
+    <Content Include="Views\Partials\_TeamMemberSocialLinks.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
