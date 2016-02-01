@@ -47,6 +47,7 @@ body {
 .content {
 	@include base-float;
 	padding: 90px 0 60px;
+    min-height: 500px;
 	.main {
 		width: calc(100% - 340px);
 		float: left;

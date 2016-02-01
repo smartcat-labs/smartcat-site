@@ -62,7 +62,7 @@
 				.text {
 					background: $blue-dark;
 					h3 {
-						color: $white;						
+						color: $white;
 						a {
 							color: $white;
 						}
@@ -97,7 +97,7 @@
 						left: 50%;
 						margin-left: -28px;
 						border-left: 28px solid transparent;
-						border-right: 28px solid transparent; 
+						border-right: 28px solid transparent;
 						border-bottom: 28px solid $white;
 						border-top: 0;
 					}
@@ -151,7 +151,7 @@
 						margin-bottom: 0;
 					}
 				}
-			}				
+			}
 			.link-overlay {
 				width: 100%;
 				height: 100%;
@@ -181,7 +181,7 @@
 				left: 0;
 				@include rgba-background(rgba(20, 27, 35, 0.28));
 				z-index: 3;
-			}		
+			}
 			.blue-overlay {
 				position: absolute;
 				width: 1px;
@@ -218,10 +218,10 @@
 				top: 50%;
 				right: 0;
 				margin-top: -28px;
-				width: 0; 
-				height: 0; 
+				width: 0;
+				height: 0;
 				border-top: 28px solid transparent;
-				border-bottom: 28px solid transparent; 
+				border-bottom: 28px solid transparent;
 				border-right: 28px solid $white;
 				z-index: 6;
 				@include transition(all .25s ease-in-out);
@@ -350,7 +350,7 @@
 						left: 50% !important;
 						margin: 0 0 0 -28px !important;
 						border-left: 28px solid transparent !important;
-						border-right: 28px solid transparent !important; 
+						border-right: 28px solid transparent !important;
 						border-bottom: 28px solid $white !important;
 						border-top: 0 !important;
 					}
@@ -431,81 +431,5 @@
 				}
 			}
 		}
-	}
-}
-
-			
-
-			
-
-/*----------  custom select
-------------------------------------------------------------------------------*/
-.newListSelected {
-	@include base-float;
-	height: 67px;
-	cursor: pointer;
-	position: relative;
-	.selectedTxt {
-		@include base-float;
-		height: 67px;
-		line-height: 65px;
-		background: $white;
-		padding: 0 60px 0 26px;
-		color: $blue-dark;
-		font-size: 21px;
-		font-family: $bold-font;
-		@include text-truncate;
-		position: relative;
-		border: 1px solid #c7c7c7;
-		text-align: left;
-		&:before {
-			content: "";
-			position: absolute;
-			top: 29px;
-			right: 34px;
-			@include sprite(arrow-acc-down);
-		}
-		&.active {
-			&:before {
-				@include sprite(arrow-acc-up);
-			}
-		}
-	}
-	
-	.newList {
-		width: 100%;
-		position: absolute;
-		overflow: auto;
-		z-index: 9999;
-		background: $white;
-		float: none;
-		li {
-			width: 100%;
-			border-left: 1px solid #c7c7c7;
-			border-right: 1px solid #c7c7c7;
-			border-bottom: 1px solid #c7c7c7;
-			display: block;
-			float: left;
-			margin-bottom: 0;
-			a {
-				width: 100%;
-				float: left;
-				color: $blue-dark;
-				padding: 15px 26px;
-				font-size: 21px;
-				font-weight: normal;
-				font-family: $bold-font;
-				display: block;
-				line-height: 24px;
-				text-align: left;
-				height: auto;
-				&.newListHover  {
-					color: $grey;
-				}
-			}
-		}
-	}
-	&.newListSelFocus {
-		outline: none !important;
 	}
 }
