@@ -6,10 +6,7 @@
         Name = "Blog Container",
         Description = "Blog container document type.",
         AllowAtRoot = false,
-        AllowedChildNodeTypes = new[]
-        {
-            typeof(BlogPost)
-        })]
+        AllowedChildNodeTypes = new[] { typeof(BlogPost) })]
     public class BlogContainer : Main
     {
     }
