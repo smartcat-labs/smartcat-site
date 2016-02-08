@@ -200,7 +200,7 @@
 			font-size: 12px;
 			margin-bottom: 5px;
 		}
-		.contact-box { 
+		.contact-box {
 			height: auto;
 			text-align: center;
 			margin-bottom: 10px;
@@ -372,7 +372,10 @@
 
 .article-footer {
 	@include base-float;
-	padding: 16px;
+	padding: 10px 0;
+    margin: 10px 0 30px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 	.share-box {
 		float: left;
 		span, ul li a {
@@ -380,18 +383,29 @@
 			color: $grey-light;
 		}
 		span {
-			margin-right: 16px;
+			margin: 7px 16px 0 0;
 			float: left;
 		}
 		ul {
 			float: left;
 			li {
 				float: left;
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                background: $blue-light;
 				margin-right: 6px;
-				a {
-					&:hover {
-						color: #e52d15;
-					}
+                @include transition(background 0.3s);
+                &:hover {
+                    background: #c7c7c7;
+                }
+                a {
+                    width: 30px;
+                    height: 30px;
+                    display: block;
+                }
+				i {
+                    @include vertical-align;
 				}
 			}
 		}
@@ -400,7 +414,7 @@
 		float: right;
 		text-transform: uppercase;
 		a {
-			color: #00a1e4;
+			color: $blue-light;
 			margin-right: 3px;
 			display: inline-block;
 		}
@@ -428,7 +442,7 @@
 			span {
 				background: $white;
 				padding: 4px 12px;
-			}	
+			}
 		}
 		h5 {
 			font-size: 18px;
@@ -640,8 +654,8 @@
 				> img {
 					max-width: 75%;
 					filter: grayscale(100%);
-					-webkit-filter: grayscale(100%); 
-					filter: gray; 
+					-webkit-filter: grayscale(100%);
+					filter: gray;
 				}
 			}
 			.contact-box {
@@ -821,7 +835,7 @@
 				}
 			}
 		}
-	}		
+	}
 }
 
 .certificate-block {
@@ -912,7 +926,7 @@
 			&:hover {
 				h2 a {
 					color: $blue-light;
-					@include transition(color 0.3s);					
+					@include transition(color 0.3s);
 				}
 				.read-more-link {
 					color: $blue-light;
@@ -1016,7 +1030,7 @@
 				background: $blue-light;
 				bottom: 0;
 				left: 0;
-			}		
+			}
 			.error {
 				color: #FF3737;
 				display: block;
@@ -1027,14 +1041,14 @@
 			&.has-error {
 				&:after {
 					bottom: 28px;
-				}	
+				}
 			}
-		}		
+		}
 		.main-questions {
 			overflow: hidden;
 			li {
 				width: 32.1%;
-				float: left; 
+				float: left;
 				margin-right: 17px;
 				padding-bottom: 0 !important;
 				margin-left: 0 !important;
@@ -1141,7 +1155,7 @@
 				}
 			}
 		}
-	}	
+	}
 	@include breakpoint(tablet) {
 		.contact-questions {
 			.main-questions {
@@ -1157,11 +1171,11 @@
 					.contact-who-name {
 						margin-left: -5%;
 					}
-				}				
+				}
 			}
 		}
 	}
-	@include breakpoint(phone) {	
+	@include breakpoint(phone) {
 		.contact-questions {
 			margin-top: 50px;
 			span {

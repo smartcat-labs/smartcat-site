@@ -21,6 +21,9 @@
 	&.twitter {
 		@include sprite(ico-twitter);
 	}
+    &.gplus {
+		@include sprite(ico-gplus);
+	}
 	&.mail {
 		@include sprite(ico-mail);
 	}
@@ -38,7 +41,7 @@
 		@include sprite(arrow-acc-down);
 	}
 	&.arrow-more {
-		@include sprite(ico-arrow-more);		
+		@include sprite(ico-arrow-more);
 	}
 	&.cat {
 		@include sprite(ico-cat);
@@ -47,5 +50,17 @@
 		&.cat {
 			@include sprite(ico-cat-mobile);
 		}
+	}
+    &.tw-blue {
+		@include sprite(twitter-black-hover);
+	}
+    &.google-blue {
+		@include sprite(gplus-black-hover);
+	}
+    &.fb-blue {
+		@include sprite(facebook-black-hover);
+	}
+    &.in-blue {
+		@include sprite(linked-black-hover);
 	}
 }
