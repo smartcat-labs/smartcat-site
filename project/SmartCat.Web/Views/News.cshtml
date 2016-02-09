@@ -30,7 +30,7 @@
 <div class="content">
 
     @{
-        var newsPosts = ContentHelper.GetChildren<NewsPost>(Model.Id).ToList();
+        var newsPosts = ContentHelper.GetChildren<NewsPost>(Model.Id, true).ToList();
     }
 
     @if (newsPosts != null && newsPosts.Any())
@@ -46,7 +46,8 @@
                         var postIndex = newsPosts.IndexOf(post);
                         var postClass = string.Empty;
                         var spanClass = string.Empty;
-                        var postClasses = new string[3] { "vertical", "right", "" };
+                        //var postClasses = new string[3] { "vertical", "right", "" };
+                        var postClasses = new string[1] { "vertical" };
 
                         switch (postIndex)
                         {
