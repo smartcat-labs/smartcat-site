@@ -22,7 +22,10 @@
 
 <div class="page-title">
     <div class="wrapper">
-        <h1>@ContentHelper.GetByNodeId(Model.ParentId).Name</h1>
+        @{
+            var blogContainer = ContentHelper.GetChildren<News>(NodeHelper.Home.Id).First();
+        }
+        <h1>@blogContainer.Name</h1>
     </div>
 </div>
 
