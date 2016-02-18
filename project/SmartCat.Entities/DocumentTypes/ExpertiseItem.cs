@@ -2,8 +2,12 @@
 {
     using Vega.USiteBuilder;
 
-    [DocumentType(IconUrl = "icon-databaseadd.png", Name = "Expertise Item", Description = "Expertise item document type", AllowAtRoot = false)]
-    public class ExpertiseItem
+    [DocumentType(IconUrl = "icon-databaseadd.png",
+        Name = "Expertise Item",
+        Description = "Expertise item document type",
+        AllowAtRoot = false,
+        AllowedChildNodeTypes = new[] { typeof(TechnologyItem) })]
+    public class ExpertiseItem : Main
     {
         [DocumentTypeProperty(UmbracoPropertyType.MediaPicker,
                            Name = "Image",

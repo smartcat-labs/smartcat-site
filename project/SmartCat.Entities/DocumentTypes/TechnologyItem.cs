@@ -1,13 +1,9 @@
-﻿using SmartCat.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vega.USiteBuilder;
-
-namespace SmartCat.Entities.DocumentTypes
+﻿namespace SmartCat.Entities.DocumentTypes
 {
+    using SmartCat.Common;
+    using SmartCat.Entities.DataTypes;
+    using Vega.USiteBuilder;
+
     [DocumentType(IconUrl = "icon-database.png", Name = "Technology Item", Description = "Technology item document type.", AllowAtRoot = false)]
     public class TechnologyItem : Main
     {
@@ -24,9 +20,16 @@ namespace SmartCat.Entities.DocumentTypes
         public virtual string TechnologyDescription { get; set; }
 
         [DocumentTypeProperty(UmbracoPropertyType.Other,
+                   OtherTypeName = Constants.CustomDataTypes.UrlPicker,
+                   Name = "Technology link",
+                   Tab = TabNames.Content,
+                   Mandatory = true,
+                   Description = "External or internal technology url.")]
+        public virtual UrlPicker TechnologyLink { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.Other,
                           OtherTypeName = Constants.CustomDataTypes.TeamMemberPicker,
                           Name = "Contact Member",
-                          Mandatory = true,
                           Tab = TabNames.Content,
                           Description = "Choose team member for this technology.")]
         public virtual int? MemberContact { get; set; }

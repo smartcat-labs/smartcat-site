@@ -59,6 +59,8 @@
     <Compile Include="DocumentTypes\CertificateContainer.cs" />
     <Compile Include="DocumentTypes\CertificateItem.cs" />
     <Compile Include="DocumentTypes\Contact.cs" />
+    <Compile Include="DocumentTypes\Expertise.cs" />
+    <Compile Include="DocumentTypes\ExpertiseItem.cs" />
     <Compile Include="DocumentTypes\Home.cs" />
     <Compile Include="DocumentTypes\Language.cs" />
     <Compile Include="DocumentTypes\Main.cs" />

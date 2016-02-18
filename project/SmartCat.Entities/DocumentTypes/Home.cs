@@ -22,7 +22,8 @@
             typeof(Search),
             typeof(TestimonialContainer),
             typeof(PartnersContainer),
-            typeof(Contact)
+            typeof(Contact),
+            typeof(Expertise)
         })]
     public class Home : Page
     {

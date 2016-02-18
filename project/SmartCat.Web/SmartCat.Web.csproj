@@ -269,6 +269,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="scripts\libs\jquery.sticky.js" />
+    <Content Include="scripts\pages\carousel.js" />
     <Content Include="scripts\pages\contact.js" />
     <Content Include="scripts\pages\error.js" />
     <Content Include="Views\Shared\DisplayTemplates\_PagingTemplate.cshtml">
@@ -353,6 +354,7 @@
     <Content Include="Views\Contact.cshtml" />
     <None Include="Properties\PublishProfiles\ExportToDisk.pubxml" />
     <Content Include="Views\Partials\_TeamMemberSocialLinks.cshtml" />
+    <Content Include="Views\Expertise.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
