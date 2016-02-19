@@ -78,7 +78,7 @@
     </div>
 </section>
 
-@if (Model.FeaturedServices != null && Model.FeaturedServices.Any())
+@if (Model.FeaturedExpertise != null && Model.FeaturedExpertise.Any())
 {
     <section class="full-width what-we-do-block">
         <div class="wrapper centered">
@@ -86,28 +86,29 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
 
-                    @foreach (var serviceId in Model.FeaturedServices)
+                    @foreach (var expertiseId in Model.FeaturedExpertise)
                     {
-                        var typedService = ContentHelper.GetByNodeId<ServiceItem>(serviceId);
+                        var typedExpertise = ContentHelper.GetByNodeId<ExpertiseItem>(expertiseId);
 
-                        <div class="one-fourth swiper-slide @(Model.FeaturedServices.IndexOf(serviceId) % 2 != 0 ? "right-aligned" : string.Empty)">
+                        var index = Model.FeaturedExpertise.IndexOf(expertiseId);
+                        <div class="one-fourth swiper-slide @(index % 2 != 0 ? "right-aligned" : string.Empty)" style="@(index == 4 ? "clear: both" : string.Empty)">
                             <div class="romb-wrap">
                                 <div class="top romb">
                                     <div class="box-title">
-                                        <h4>@typedService.Name</h4>
+                                        <h4 style="font-size:12px">@typedExpertise.Name</h4>
                                     </div>
                                     <div class="img-wrap">
-                                        <a href="@typedService.NiceUrl"><img src="@(typedService.ServiceImage.HasValue ? MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(typedService.ServiceImage.Value)) : string.Empty)" alt="@(typedService.ServiceImage.HasValue ? MediaHelper.GetImageAlternateText(MediaHelper.GetMediaById(typedService.ServiceImage.Value)) : string.Empty)" class="icon-img" /></a>
+                                        <a href="@typedExpertise.NiceUrl"><img src="@(typedExpertise.ServiceImage.HasValue ? MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(typedExpertise.ServiceImage.Value)) : string.Empty)" alt="@(typedExpertise.ServiceImage.HasValue ? MediaHelper.GetImageAlternateText(MediaHelper.GetMediaById(typedExpertise.ServiceImage.Value)) : string.Empty)" class="icon-img" /></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="text">
-                                <h2><a href="@typedService.NiceUrl">@typedService.Name</a></h2>
+                                <h2><a href="@typedExpertise.NiceUrl">@typedExpertise.Name</a></h2>
                                 <p>
-                                    @typedService.FeaturedText
-                                    <a href="@typedService.NiceUrl" class="ico arrow-more hidden-on-mobile"></a>
+                                    @typedExpertise.FeaturedText
+                                    <a href="@typedExpertise.NiceUrl" class="ico arrow-more hidden-on-mobile"></a>
                                 </p>
-                                <a href="@typedService.NiceUrl" class="btn show-on-mobile">@Umbraco.GetDictionaryValue("Common.ReadMore")</a>
+                                <a href="@typedExpertise.NiceUrl" class="btn show-on-mobile">@Umbraco.GetDictionaryValue("Common.ReadMore")</a>
                             </div>
                         </div>
                     }
@@ -119,7 +120,7 @@
     </section>
 }
 
-@if (!string.IsNullOrEmpty(Model.AboutText))
+@*@if (!string.IsNullOrEmpty(Model.AboutText))
 {
     <section class="full-width about-us-block">
         <div class="wrapper centered">
@@ -136,7 +137,7 @@
             }
         </div>
     </section>
-}
+}*@
 
 @if (Model.FeaturedProcesses != null && Model.FeaturedProcesses.Any())
 {
@@ -174,99 +175,22 @@
     </section>
 }
 
-@if (Model.FeaturedNews != null && Model.FeaturedNews.Any())
+
+@if (Model.FeaturedTechnologies != null && Model.FeaturedTechnologies.Any())
 {
-    var parentUrl = ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(Model.FeaturedNews.First()).ParentId).NiceUrl;
-    
-    <section class="full-width news-block">
-        <div class="wrapper">
-            <h2>@Umbraco.GetDictionaryValue("Home.WhatIsNew")</h2>
-            <a href="@parentUrl" class="btn arrow">
-                <span>@Umbraco.GetDictionaryValue("News.AllNews")</span><i class="ico"></i>
-            </a>
-            <div class="one-three">
-
-                @foreach (var newsId in Model.FeaturedNews)
-                {
-                    var typedNewsItem = ContentHelper.GetByNodeId<NewsPost>(newsId);
-
-                    <div class="column">
-                        <div class="item romb">
-                            <div class="top ">
-                                <div class="box-title">
-                                    <h4>@typedNewsItem.PostDate.ToString("MM/dd/yy")</h4>
-                                </div>
-                                <a href="@typedNewsItem.NiceUrl" class="img-container">
-                                    <img src="@(typedNewsItem.BoxImage.HasValue ? MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(typedNewsItem.BoxImage.Value)) : string.Empty)" alt="" class="reset-inner" />
-                                    <span class="overlay"></span>
-                                    <div class="badge-holder">
-                                        <span class="reset-inner">N.</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="text">
-                                <div class="inner reset-inner">
-                                    <span class="date">@typedNewsItem.PostDate.ToString("MM/dd/yy")</span>
-                                    <h4><a href="@typedNewsItem.NiceUrl">@typedNewsItem.NewsTitle</a></h4>
-                                    <p>
-                                        @Utility.GetShorterText(Regex.Replace(typedNewsItem.RteContent, @"<(.|\n)*?>", string.Empty), 140, true, true)
-                                    </p>
-                                    @if (typedNewsItem.Author.HasValue)
-                                    {
-                                        var author = ContentHelper.GetByNodeId<TeamMember>(typedNewsItem.Author.Value);
-                                        <span>By @author.FirstName @author.LastName</span>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                }
-
-            </div>
-        </div>
-    </section>
-}
-
-@if (Model.FeaturedMembers != null && Model.FeaturedMembers.Any())
-{
-    <section class="full-width people-slider">
-        <div class="wrapper">
+    <section class="full-width carousel-block">
+        <div class="wrapper ">
             <div class="flexslider">
                 <ul class="slides">
 
-                    @foreach (var memeberId in Model.FeaturedMembers)
+                    @foreach (var techId in Model.FeaturedTechnologies)
                     {
-                        var typedMember = ContentHelper.GetByNodeId<TeamMember>(memeberId);
-                        var contactUrl = ContactHelper.GetContactUrl(typedMember.Id);
-
+                        var technology = ContentHelper.GetByNodeId<TechnologyItem>(techId);
+                        
                         <li>
-                            <div class="left-block">
-                                @if(typedMember.HomeImage.HasValue)
-                                {
-                                    <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(typedMember.HomeImage.Value))" alt="" />
-                                }
-                            </div>
-                            <div class="right-block">
-                                <div class="info">
-                                    <h2>@typedMember.FirstName @typedMember.LastName</h2>
-                                    <span class="position">@typedMember.WorkPosition</span>
-                                    <p>
-                                        @typedMember.ShortDescription
-                                    </p>
-                                    <div class="contact-box">
-                                        <a href="@contactUrl" class="mail">
-                                            <i class="ico"></i>
-                                            Contact @typedMember.FirstName
-                                        </a>
-                                    </div>
-                                    <blockquote>
-                                        @typedMember.Quote
-                                    </blockquote>
-                                    @{
-                                        Html.RenderPartial("~/Views/Partials/_TeamMemberSocialLinks.cshtml", typedMember);
-                                    }
-                                </div>
-                            </div>
+                            <a href="@(technology.TechnologyLink != null ? technology.TechnologyLink.Url : string.Empty)" target="@(technology.TechnologyLink != null ? technology.TechnologyLink.Target : string.Empty)">
+                                <img src="@(technology.TechnologyImage.HasValue ? MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(technology.TechnologyImage.Value)) : string.Empty)" />
+                            </a>
                         </li>
                     }
 
@@ -305,7 +229,7 @@
 }
 
 
-@if (Model.PartnerNetwork != null && Model.PartnerNetwork.Any())
+@*@if (Model.PartnerNetwork != null && Model.PartnerNetwork.Any())
 {
     <section class="full-width carousel-block">
         <div class="wrapper">
@@ -329,7 +253,7 @@
         </div>
     </section>
 
-}
+}*@
 
 
 

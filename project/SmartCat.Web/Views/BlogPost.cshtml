@@ -23,7 +23,7 @@
 <div class="page-title">
     <div class="wrapper">
         @{
-            var blogContainer = ContentHelper.GetChildren<News>(NodeHelper.Home.Id).First();
+            var blogContainer = ContentHelper.GetChildren<Blog>(NodeHelper.Home.Id).First();
         }
         <h1>@blogContainer.Name</h1>
     </div>

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vega.USiteBuilder;
-
-namespace SmartCat.Entities
+﻿namespace SmartCat.Entities
 {
+    using Vega.USiteBuilder;
+
     public enum TabNames
     {
         Page = 1,
@@ -25,6 +20,12 @@ namespace SmartCat.Entities
 
         [TabName("Featured Services")]
         FeaturedServices,
+
+        [TabName("Featured Technologies")]
+        FeaturedTechnologies,
+
+        [TabName("Featured Expertise")]
+        FeaturedExpertise,
 
         [TabName("About Us")]
         AboutUs,

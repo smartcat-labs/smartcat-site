@@ -66,15 +66,17 @@
             public const string MultipleTeamMemberPicker = "Multiple Team Member Picker";
             public const string UrlPicker = "Url Picker";
             public const string MultiUrlPicker = "Multi Url Picker";
-            public const string TagsPicker = "Tags Picker"; 
+            public const string TagsPicker = "Tags Picker";
 
             public const string BlogImageCropper = "Blog Image Cropper";
 
             public const string MultipleNewsPostPicker = "Multiple News Post Picker";
             public const string MultipleServicePicker = "Multiple Service Picker";
+            public const string MultipleExpertisePicker = "Multiple Expertise Picker";
             public const string MultipleProcessPicker = "Multiple Process Picker";
             public const string MultipleTestimonialsPicker = "Multiple Testimonials Picker";
             public const string MultiplePartnerPicker = "Multiple Partner Picker";
+            public const string MultipleTechnologyPicker = "Multiple Technology Picker";
         }
 
         #endregion

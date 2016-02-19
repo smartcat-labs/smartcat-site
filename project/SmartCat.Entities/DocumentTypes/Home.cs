@@ -3,6 +3,7 @@
     using Common;
     using DataTypes;
     using Repository;
+    using System;
     using System.Collections.Generic;
     using Vega.USiteBuilder;
 
@@ -57,8 +58,16 @@
 
         #endregion
 
-        #region FEATURED SERVICES
+        #region FEATURED EXPERTISE
 
+        [DocumentTypeProperty(UmbracoPropertyType.Other,
+                 OtherTypeName = Constants.CustomDataTypes.MultipleExpertisePicker,
+                 Name = "Featured Expertise",
+                 Tab = TabNames.FeaturedExpertise,
+                 Description = "Choose featured expertise.")]
+        public virtual List<int> FeaturedExpertise { get; set; }
+
+        [Obsolete]
         [DocumentTypeProperty(UmbracoPropertyType.Other,
                  OtherTypeName = Constants.CustomDataTypes.MultipleServicePicker,
                  Name = "Featured Services",
@@ -104,6 +113,17 @@
                   Tab = TabNames.FeaturedNews,
                   Description = "Choose featured news posts.")]
         public virtual List<int> FeaturedNews { get; set; }
+
+        #endregion
+
+        #region TECHNOLOGIES SLIDER
+
+        [DocumentTypeProperty(UmbracoPropertyType.Other,
+              OtherTypeName = Constants.CustomDataTypes.MultipleTechnologyPicker,
+              Name = "Featured Technologies",
+              Tab = TabNames.FeaturedTechnologies,
+              Description = "Choose featured technologies.")]
+        public virtual List<int> FeaturedTechnologies { get; set; }
 
         #endregion
 

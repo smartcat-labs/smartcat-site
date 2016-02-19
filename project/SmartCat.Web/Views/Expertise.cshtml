@@ -27,6 +27,7 @@
 </div>
 
 <div class="content">
+
     <div class="wrapper">
         <div class="main centered">
             <div class="rte-content">
@@ -34,52 +35,35 @@
             </div>
 
             @{
-                var expertises = ContentHelper.GetChildren<ExpertiseItem>(Model.Id).ToList();
+                var services = ContentHelper.GetChildren<ExpertiseItem>(Model.Id).ToList();
             }
 
-            @if (expertises != null && expertises.Any())
+            @if (services != null && services.Any())
             {
-                foreach (var expertise in expertises)
-                {
-                    <div class="title">
-                        <h2>
-                            @if (expertise.ServiceTitleImage.HasValue)
-                            {
-                                <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(expertise.ServiceTitleImage.Value))" alt="@MediaHelper.GetImageAlternateText(MediaHelper.GetMediaById(expertise.ServiceTitleImage.Value))" class="shape" />
-                            }
-                            @expertise.Name
-                        </h2>
-                    </div>
-                
-                    <div class="rte-content">
-                        <p>
-                            @Html.Raw(!string.IsNullOrEmpty(expertise.ServiceContent) ? expertise.ServiceContent : string.Empty)
-                        </p>
-                    </div>
-                    
-                    var technologies = ContentHelper.GetChildren<TechnologyItem>(expertise.Id);
-                    if (technologies != null && technologies.Any())
+                <ul class="items-list has-hover">
+                    @foreach (var service in services)
                     {
-                        <div class="full-width carousel-block">
-                            <div class="wrapper">
-                                <div class="flexslider">
-                                    <ul class="slides">
-
-                                        @foreach (var technology in technologies)
+                        <li class="@(services.IndexOf(service) % 2 != 0 ? "right-aligned" : string.Empty)">
+                            <div class="img-box">
+                                <div class="romb blue-romb">
+                                    <a href="@service.NiceUrl">
+                                        @if (service.ServiceImage.HasValue)
                                         {
-                                            <li>
-                                                <a href="@(technology.TechnologyLink != null ? technology.TechnologyLink.Url : string.Empty)" target="@(technology.TechnologyLink != null ? technology.TechnologyLink.Target : string.Empty)">
-                                                    <img src="@(technology.TechnologyImage.HasValue ? MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(technology.TechnologyImage.Value)) : string.Empty)" />
-                                                </a>
-                                            </li>
+                                            <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(service.ServiceImage.Value))" alt="@MediaHelper.GetImageAlternateText(MediaHelper.GetMediaById(service.ServiceImage.Value))" class="icon-img" />
                                         }
-
-                                    </ul>
+                                    </a>
                                 </div>
                             </div>
-                        </div>
+                            <div class="text">
+                                <h2><a href="@service.NiceUrl">@service.Name</a></h2>
+                                <p>
+                                    <a href="@service.NiceUrl">@Html.Raw(!string.IsNullOrEmpty(service.FeaturedText) ? service.FeaturedText : string.Empty)</a>
+                                </p>
+                                <a href="@service.NiceUrl" class="read-more-link">@Umbraco.GetDictionaryValue("Common.ReadMore")<i></i></a>
+                            </div>
+                        </li>
                     }
-                }
+                </ul>
             }
 
         </div>
@@ -158,7 +142,7 @@
 </div>
 @section additionalFooterSection
 {
-    <script type="text/javascript" src="~/scripts/pages/carousel.js"></script>
+    
 }
 
 

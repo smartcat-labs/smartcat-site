@@ -7,7 +7,7 @@
         Description = "Expertise item document type",
         AllowAtRoot = false,
         AllowedChildNodeTypes = new[] { typeof(TechnologyItem) })]
-    public class ExpertiseItem : Main
+    public class ExpertiseItem : Page
     {
         [DocumentTypeProperty(UmbracoPropertyType.MediaPicker,
                            Name = "Image",
@@ -20,6 +20,12 @@
                            Tab = TabNames.Content,
                            Description = "Expertise title image.")]
         public virtual int? ServiceTitleImage { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.TextboxMultiple,
+                         Name = "Home Page Text",
+                         Description = "Set home page text that will be shown on home page.",
+                         Tab = TabNames.Content)]
+        public virtual string HomePageText { get; set; }
 
         [DocumentTypeProperty(UmbracoPropertyType.TextboxMultiple,
                          Name = "Featured Text",

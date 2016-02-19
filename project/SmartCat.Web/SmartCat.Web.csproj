@@ -355,6 +355,7 @@
     <None Include="Properties\PublishProfiles\ExportToDisk.pubxml" />
     <Content Include="Views\Partials\_TeamMemberSocialLinks.cshtml" />
     <Content Include="Views\Expertise.cshtml" />
+    <Content Include="Views\ExpertiseItem.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
