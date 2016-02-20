@@ -40,7 +40,7 @@
         
         if (!string.IsNullOrEmpty(selectedTag))
         {
-            query = query.Where(b => b.BlogTags != null && b.BlogTags.Contains(Convert.ToInt32(selectedTag)));
+            query = query.Where(b => b.TechnologyTags != null && b.TechnologyTags.Contains(Convert.ToInt32(selectedTag)));
         }
         
         if (!string.IsNullOrEmpty(searchText))

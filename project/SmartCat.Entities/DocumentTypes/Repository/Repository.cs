@@ -2,8 +2,19 @@
 {
     using Vega.USiteBuilder;
 
-    [DocumentType(IconUrl = "icon-equalizer.png", Description = "Repository.", AllowAtRoot = true,
-        AllowedChildNodeTypes = new[] { typeof(Settings), typeof(Footer), typeof(Header), typeof(Widgets), typeof(TagsContainer) })]
+    [DocumentType(
+        IconUrl = "icon-equalizer.png",
+        Description = "Repository.",
+        AllowAtRoot = true,
+        AllowedChildNodeTypes = new[]
+        {
+            typeof(Settings),
+            typeof(Footer),
+            typeof(Header),
+            typeof(Widgets),
+            typeof(TagsContainer),
+            typeof(Technologies)
+        })]
     public class Repository : Main
     {
     }

@@ -1,6 +1,7 @@
 ﻿@using SmartCat.Business.Helpers;
 @using Vega.USiteBuilder;
 @using SmartCat.Entities.DocumentTypes;
+@using SmartCat.Entities.DocumentTypes.Repository;
 @using System.Text.RegularExpressions;
 
 @inherits Vega.USiteBuilder.UmbracoTemplatePageBase<ExpertiseItem>
@@ -44,11 +45,7 @@
                 @Html.Raw(Model.ServiceContent)
             </div>
 
-            @{
-                var technologies = ContentHelper.GetChildren<TechnologyItem>(Model.Id);
-            }
-
-            @if (technologies != null && technologies.Any())
+            @if (Model.FeaturedTechnologies != null && Model.FeaturedTechnologies.Any())
             {
                 // TODO: Build this into css
                 <div class="full-width carousel-block" style="padding:0">
@@ -56,8 +53,10 @@
                         <div class="flexslider">
                             <ul class="slides">
 
-                                @foreach (var technology in technologies)
+                                @foreach (var techId in Model.FeaturedTechnologies)
                                 {
+                                    var technology = ContentHelper.GetByNodeId<TechnologyItem>(techId);
+                                    
                                     <li>
                                         <a href="@(technology.TechnologyLink != null ? technology.TechnologyLink.Url : string.Empty)" target="@(technology.TechnologyLink != null ? technology.TechnologyLink.Target : string.Empty)">
                                             <img src="@(technology.TechnologyImage.HasValue ? MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(technology.TechnologyImage.Value)) : string.Empty)" />

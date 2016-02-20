@@ -65,6 +65,9 @@
         ThirdColumn,
 
         [TabName("Social Links")]
-        SocialLinks
+        SocialLinks,
+
+        [TabName("Tags")]
+        Tags
     }
 }

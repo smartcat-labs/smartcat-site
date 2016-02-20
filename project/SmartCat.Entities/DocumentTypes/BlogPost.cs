@@ -43,8 +43,8 @@
         [DocumentTypeProperty(UmbracoPropertyType.Other,
                           OtherTypeName = Constants.CustomDataTypes.TagsPicker,
                           Name = "Tags",
-                          Tab = TabNames.Content,
-                          Description = "Choose blog tags.")]
-        public virtual List<int> BlogTags { get; set; }
+                          Tab = TabNames.Tags,
+                          Description = "Choose technology tags.")]
+        public virtual List<int> TechnologyTags { get; set; }
     }
 }

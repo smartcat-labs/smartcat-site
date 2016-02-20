@@ -1,5 +1,7 @@
 ﻿namespace SmartCat.Entities.DocumentTypes
 {
+    using SmartCat.Common;
+    using System.Collections.Generic;
     using Vega.USiteBuilder;
 
     [DocumentType(IconUrl = "icon-tie-business.png", Name = "Team member", Description = "Team member document type.", AllowAtRoot = false)]
@@ -77,6 +79,13 @@
                           Tab = TabNames.Content,
                           Description = "Member's email address.")]
         public virtual string EmailAddress { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.Other,
+                          OtherTypeName = Constants.CustomDataTypes.TagsPicker,
+                          Name = "Tags",
+                          Tab = TabNames.Tags,
+                          Description = "Choose technology tags.")]
+        public virtual List<int> TechnologyTags { get; set; }
 
         #region SOCIAL
 

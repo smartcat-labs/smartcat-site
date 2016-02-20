@@ -1,12 +1,13 @@
 ﻿namespace SmartCat.Entities.DocumentTypes
 {
+    using SmartCat.Common;
+    using System.Collections.Generic;
     using Vega.USiteBuilder;
 
     [DocumentType(IconUrl = "icon-databaseadd.png",
         Name = "Expertise Item",
         Description = "Expertise item document type",
-        AllowAtRoot = false,
-        AllowedChildNodeTypes = new[] { typeof(TechnologyItem) })]
+        AllowAtRoot = false)]
     public class ExpertiseItem : Page
     {
         [DocumentTypeProperty(UmbracoPropertyType.MediaPicker,
@@ -39,5 +40,12 @@
                             Description = "Define main content using RTE.",
                             Tab = TabNames.Content)]
         public virtual string ServiceContent { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.Other,
+              OtherTypeName = Constants.CustomDataTypes.MultipleTechnologyPicker,
+              Name = "Featured Technologies",
+              Tab = TabNames.FeaturedTechnologies,
+              Description = "Choose featured technologies.")]
+        public virtual List<int> FeaturedTechnologies { get; set; }
     }
 }

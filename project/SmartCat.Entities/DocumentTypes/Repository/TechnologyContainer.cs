@@ -1,4 +1,4 @@
-﻿namespace SmartCat.Entities.DocumentTypes
+﻿namespace SmartCat.Entities.DocumentTypes.Repository
 {
     using Vega.USiteBuilder;
 

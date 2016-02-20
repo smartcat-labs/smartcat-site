@@ -1,7 +1,8 @@
-﻿namespace SmartCat.Entities.DocumentTypes
+﻿namespace SmartCat.Entities.DocumentTypes.Repository
 {
     using SmartCat.Common;
     using SmartCat.Entities.DataTypes;
+    using System.Collections.Generic;
     using Vega.USiteBuilder;
 
     [DocumentType(IconUrl = "icon-database.png", Name = "Technology Item", Description = "Technology item document type.", AllowAtRoot = false)]
@@ -33,5 +34,12 @@
                           Tab = TabNames.Content,
                           Description = "Choose team member for this technology.")]
         public virtual int? MemberContact { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.Other,
+                          OtherTypeName = Constants.CustomDataTypes.TagsPicker,
+                          Name = "Tags",
+                          Tab = TabNames.Tags,
+                          Description = "Choose technology tags.")]
+        public virtual List<int> TechnologyTags { get; set; }
     }
 }

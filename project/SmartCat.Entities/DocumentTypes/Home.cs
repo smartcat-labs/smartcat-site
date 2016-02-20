@@ -15,7 +15,6 @@
         {
             typeof(Services),
             typeof(Team),
-            typeof(Technologies),
             typeof(Process),
             typeof(Blog),
             typeof(News),

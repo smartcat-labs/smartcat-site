@@ -85,9 +85,9 @@
     <Compile Include="DocumentTypes\Services.cs" />
     <Compile Include="DocumentTypes\Team.cs" />
     <Compile Include="DocumentTypes\TeamMember.cs" />
-    <Compile Include="DocumentTypes\Technologies.cs" />
-    <Compile Include="DocumentTypes\TechnologyContainer.cs" />
-    <Compile Include="DocumentTypes\TechnologyItem.cs" />
+    <Compile Include="DocumentTypes\Repository\Technologies.cs" />
+    <Compile Include="DocumentTypes\Repository\TechnologyContainer.cs" />
+    <Compile Include="DocumentTypes\Repository\TechnologyItem.cs" />
     <Compile Include="DocumentTypes\TestimonialContainer.cs" />
     <Compile Include="DocumentTypes\TestimonialItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
