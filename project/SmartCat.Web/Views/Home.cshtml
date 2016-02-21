@@ -176,6 +176,60 @@
     </section>
 }
 
+@{
+    var blogContainer = ContentHelper.GetChildren<Blog>(Model.Id).FirstOrDefault();
+    var blogs = ContentHelper.GetChildren<BlogPost>(blogContainer.Id, true).OrderByDescending(b => b.PostDate).Take(3);
+
+    if (blogs != null && blogs.Any())
+    {
+        <section class="full-width news-block">
+            <div class="wrapper">
+                <h2>@Umbraco.GetDictionaryValue("Home.WhatIsNew")</h2>
+                <a href="@blogContainer.NiceUrl" class="btn arrow">
+                    <span>@Umbraco.GetDictionaryValue("Blog.AllBlogs")</span><i class="ico"></i>
+                </a>
+                <div class="one-three">
+
+                    @foreach (var blog in blogs)
+                    {
+                        <div class="column">
+                            <div class="item romb">
+                                <div class="top ">
+                                    <div class="box-title">
+                                        <h4>@blog.PostDate.ToString("MM/dd/yy")</h4>
+                                    </div>
+                                    <a href="@blog.NiceUrl" class="img-container">
+                                        <img src="@Umbraco.TypedContent(blog.Id).GetCropUrl(SmartCat.Common.Constants.Media.CropNames.BlogHeaderImageAlias, SmartCat.Common.Constants.Media.CropNames.Box)" alt="" class="reset-inner" />
+                                        <span class="overlay"></span>
+                                        <div class="badge-holder">
+                                            <span class="reset-inner">B.</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="text">
+                                    <div class="inner reset-inner">
+                                        <span class="date">@blog.PostDate.ToString("MM/dd/yy")</span>
+                                        <h4><a href="@blog.NiceUrl">@blog.BlogTitle</a></h4>
+                                        <p>
+                                            @Utility.GetShorterText(Regex.Replace(blog.RteContent, @"<(.|\n)*?>", string.Empty), 140, true, true)
+                                        </p>
+                                        @if (blog.Author.HasValue)
+                                        {
+                                            var author = ContentHelper.GetByNodeId<TeamMember>(blog.Author.Value);
+                                            <span>By @author.FirstName @author.LastName</span>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </section>
+    }
+}
+
 
 @if (Model.Testimonials != null && Model.Testimonials.Any())
 {
