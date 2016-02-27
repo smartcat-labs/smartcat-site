@@ -69,80 +69,13 @@
         </div>
 
         @{
-            var newsWidget = WidgetsHelper.NewsWidget;
-            var teamWidget = WidgetsHelper.TeamWidget;
+            Html.RenderPartial("~/Views/Partials/_WidgetsContainer.cshtml", Model);
         }
-        <aside class="sidebar">
-            @if (newsWidget != null && newsWidget.Any())
-            {
-                <div class="widget slider">
-                    <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(newsWidget.First()).ParentId).NiceUrl">@Umbraco.GetDictionaryValue("Service.WhatIsNew")</a></h3>
-                    <div class="flexslider">
-                        <ul class="slides">
-                            @foreach (var newsId in newsWidget)
-                            {
-                                var newsPost = ContentHelper.GetByNodeId<NewsPost>(newsId);
-
-                                <li>
-                                    <div class="text-item">
-                                        <div class="romb badge">
-                                            <span class="reset-inner">N.</span>
-                                        </div>
-                                        <h4><a href="@newsPost.NiceUrl">@newsPost.Name</a></h4>
-                                        <p>
-                                            @Regex.Replace(newsPost.RteContent, @"<(.|\n)*?>", string.Empty).Substring(0, 160) ...
-                                        </p>
-                                        @if (newsPost.Author.HasValue)
-                                        {
-                                            var author = ContentHelper.GetByNodeId<TeamMember>(newsPost.Author.Value);
-                                            <span class="author">@author.FirstName @author.LastName</span>
-                                        }
-                                        <span class="date">@newsPost.PostDate.ToString("MM/dd/yy")</span>
-                                    </div>
-                                </li>
-                            }
-                        </ul>
-                    </div>
-                </div>
-            }
-
-            @if (teamWidget != null && teamWidget.Any())
-            {
-                <div class="widget slider">
-                    <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(teamWidget.First()).ParentId).NiceUrl">@Umbraco.GetDictionaryValue("Service.Challengers")</a></h3>
-                    <div class="flexslider challengers">
-                        <ul class="slides">
-
-                            @foreach (var memberId in teamWidget)
-                            {
-                                var teamMember = ContentHelper.GetByNodeId<TeamMember>(memberId);
-
-                                <li>
-                                    <div class="inner">
-                                        @if (teamMember.SidebarImage.HasValue)
-                                        {
-                                            <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(teamMember.SidebarImage.Value))" alt="" />
-                                        }
-                                        <div class="author-info">
-                                            <h4>@teamMember.FirstName @teamMember.LastName</h4>
-                                            <span>@teamMember.WorkPosition</span>
-                                        </div>
-                                    </div>
-                                </li>
-                            }
-
-                        </ul>
-                    </div>
-                </div>
-            }
-
-        </aside>
     </div>
 
 </div>
+
 @section additionalFooterSection
 {
     
 }
-
-

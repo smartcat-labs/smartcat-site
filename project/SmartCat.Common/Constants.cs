@@ -71,6 +71,7 @@
             public const string BlogImageCropper = "Blog Image Cropper";
 
             public const string MultipleNewsPostPicker = "Multiple News Post Picker";
+            public const string MultipleBlogPostPicker = "Multiple Blog Post Picker";
             public const string MultipleServicePicker = "Multiple Service Picker";
             public const string MultipleExpertisePicker = "Multiple Expertise Picker";
             public const string MultipleProcessPicker = "Multiple Process Picker";

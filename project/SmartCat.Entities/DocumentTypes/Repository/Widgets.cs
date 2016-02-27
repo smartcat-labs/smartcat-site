@@ -10,6 +10,20 @@
         #region SIDEBAR WIDGETS
 
         [DocumentTypeProperty(UmbracoPropertyType.Other,
+            OtherTypeName = Constants.CustomDataTypes.MultipleBlogPostPicker,
+            Name = "Blogs Sidebar Widget",
+            Tab = TabNames.Sidebar,
+            Description = "Choose blog posts for sidebar widget.")]
+        public virtual List<int> BlogsWidget { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.Numeric,
+                        Name = "Number Of Blog Items",
+                        Tab = TabNames.Sidebar,
+                        Description = "Number of blog items shown in sidebar widget.",
+                        Mandatory = true)]
+        public virtual int NumberOfBlogItems { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.Other,
                           OtherTypeName = Constants.CustomDataTypes.MultipleNewsPostPicker,
                           Name = "News Sidebar Widget",
                           Tab = TabNames.Sidebar,
@@ -21,6 +35,21 @@
                         Tab = TabNames.Sidebar,
                         Description = "Number of news items shown in sidebar widget.")]
         public virtual int NumberOfNewsItems { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.Other,
+                          OtherTypeName = Constants.CustomDataTypes.MultipleExpertisePicker,
+                          Name = "Expertise Sidebar Widget",
+                          Tab = TabNames.Sidebar,
+                          Description = "Choose expertises for sidebar widget.",
+                          Mandatory = true)]
+        public virtual List<int> ExpertiseWidget { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.Numeric,
+                        Name = "Number Of Expertise Items",
+                        Tab = TabNames.Sidebar,
+                        Description = "Number of expertise items shown in sidebar widget.",
+                        Mandatory = true)]
+        public virtual int NumberOfExpertiseItems { get; set; }
 
         [DocumentTypeProperty(UmbracoPropertyType.Other,
                           OtherTypeName = Constants.CustomDataTypes.MultipleTeamMemberPicker,

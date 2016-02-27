@@ -7,6 +7,31 @@
 
     public static class WidgetsHelper
     {
+        public static List<int> BlogsWidget
+        {
+            get
+            {
+                var widgets = NodeHelper.Widgets;
+
+                if (widgets.BlogsWidget != null && widgets.BlogsWidget.Any())
+                {
+                    return widgets.BlogsWidget;
+                }
+
+                var blogsNode = ContentHelper.GetChildren<Blog>(NodeHelper.Home.Id).FirstOrDefault();
+                if (blogsNode == null) return null;
+
+                var blogs = ContentHelper.GetChildren<BlogPost>(blogsNode.Id, true).OrderByDescending(post => post.PostDate).Take(NodeHelper.Widgets.NumberOfBlogItems);
+
+                if (blogs != null && blogs.Any())
+                {
+                    return blogs.Select(item => item.Id).ToList();
+                }
+
+                return null;
+            }
+        }
+
         public static List<int> NewsWidget
         {
             get
@@ -21,11 +46,36 @@
                 var newsNode = ContentHelper.GetChildren<News>(NodeHelper.Home.Id).FirstOrDefault();
                 if (newsNode == null) return null;
 
-                var news = ContentHelper.GetChildren<NewsPost>(newsNode.Id).OrderByDescending(post => post.PostDate).Take(NodeHelper.Widgets.NumberOfNewsItems);
+                var news = ContentHelper.GetChildren<NewsPost>(newsNode.Id, true).OrderByDescending(post => post.PostDate).Take(NodeHelper.Widgets.NumberOfNewsItems);
 
                 if (news != null && news.Any())
                 {
                     return news.Select(item => item.Id).ToList();
+                }
+
+                return null;
+            }
+        }
+
+        public static List<int> ExpertiseWidget
+        {
+            get
+            {
+                var widgets = NodeHelper.Widgets;
+
+                if (widgets.ExpertiseWidget != null && widgets.ExpertiseWidget.Any())
+                {
+                    return widgets.ExpertiseWidget;
+                }
+
+                var expertiseNode = ContentHelper.GetChildren<Expertise>(NodeHelper.Home.Id).FirstOrDefault();
+                if (expertiseNode == null) return null;
+
+                var expertises = ContentHelper.GetChildren<ExpertiseItem>(expertiseNode.Id, true).Take(NodeHelper.Widgets.NumberOfExpertiseItems);
+
+                if (expertises != null && expertises.Any())
+                {
+                    return expertises.Select(item => item.Id).ToList();
                 }
 
                 return null;

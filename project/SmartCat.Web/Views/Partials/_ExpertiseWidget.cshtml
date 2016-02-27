@@ -1,0 +1,37 @@
+﻿@using Vega.USiteBuilder;
+@using SmartCat.Business.Helpers;
+@using SmartCat.Entities.DocumentTypes;
+
+@model SmartCat.Entities.DocumentTypes.Page
+
+@{
+    Layout = null;
+
+    var expertiseWidget = WidgetsHelper.ExpertiseWidget;
+
+    if (expertiseWidget != null && expertiseWidget.Any())
+    {
+        <div class="widget slider">
+            <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(expertiseWidget.First()).ParentId).NiceUrl">@umbraco.library.GetDictionaryItem("Widgets.ExpertiseTitle")</a></h3>
+            <div class="flexslider challengers">
+                <ul class="slides">
+
+                    @foreach (var expertiseId in expertiseWidget)
+                    {
+                        var expertise = ContentHelper.GetByNodeId<ExpertiseItem>(expertiseId);
+
+                        <li>
+                            <div class="inner">
+                                <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(expertise.ServiceImage.Value))" alt="" />
+                                <div class="author-info">
+                                    <h4>@expertise.Name</h4>
+                                </div>
+                            </div>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    }
+}

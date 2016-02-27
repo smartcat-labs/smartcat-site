@@ -356,6 +356,11 @@
     <Content Include="Views\Partials\_TeamMemberSocialLinks.cshtml" />
     <Content Include="Views\Expertise.cshtml" />
     <Content Include="Views\ExpertiseItem.cshtml" />
+    <Content Include="Views\Partials\_TeamWidget.cshtml" />
+    <Content Include="Views\Partials\_NewsWidget.cshtml" />
+    <Content Include="Views\Partials\_BlogsWidget.cshtml" />
+    <Content Include="Views\TechnologyDetails.cshtml" />
+    <Content Include="Views\Partials\_ExpertiseWidget.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

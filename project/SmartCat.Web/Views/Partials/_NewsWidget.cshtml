@@ -1,0 +1,45 @@
+﻿@using Vega.USiteBuilder;
+@using SmartCat.Business.Helpers;
+@using SmartCat.Entities.DocumentTypes;
+@using System.Text.RegularExpressions;
+
+@model SmartCat.Entities.DocumentTypes.Page
+
+@{
+    Layout = null;
+
+    var newsWidget = WidgetsHelper.NewsWidget;
+    
+    if (newsWidget != null && newsWidget.Any())
+    {
+        <div class="widget slider">
+            <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(newsWidget.First()).ParentId).NiceUrl">@umbraco.library.GetDictionaryItem("Widgets.NewsTitle")</a></h3>
+            <div class="flexslider">
+                <ul class="slides">
+                    @foreach (var newsId in newsWidget)
+                    {
+                        var newsPost = ContentHelper.GetByNodeId<NewsPost>(newsId);
+
+                        <li>
+                            <div class="text-item">
+                                <div class="romb badge">
+                                    <span class="reset-inner">N.</span>
+                                </div>
+                                <h4><a href="@newsPost.NiceUrl">@newsPost.Name</a></h4>
+                                <p>
+                                    @Regex.Replace(newsPost.RteContent, @"<(.|\n)*?>", string.Empty).Substring(0, 160) ...
+                                </p>
+                                @if (newsPost.Author.HasValue)
+                                {
+                                    var author = ContentHelper.GetByNodeId<TeamMember>(newsPost.Author.Value);
+                                    <span class="author">@author.FirstName @author.LastName</span>
+                                }
+                                <span class="date">@newsPost.PostDate.ToString("MM/dd/yy")</span>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+}

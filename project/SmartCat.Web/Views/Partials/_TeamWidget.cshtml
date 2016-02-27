@@ -1,0 +1,38 @@
+﻿@using Vega.USiteBuilder;
+@using SmartCat.Business.Helpers;
+@using SmartCat.Entities.DocumentTypes;
+
+@model SmartCat.Entities.DocumentTypes.Page
+
+@{
+    Layout = null;
+
+    var teamWidget = WidgetsHelper.TeamWidget;
+
+    if (teamWidget != null && teamWidget.Any())
+    {
+        <div class="widget slider">
+            <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(teamWidget.First()).ParentId).NiceUrl">@umbraco.library.GetDictionaryItem("Widgets.TeamTitle")</a></h3>
+            <div class="flexslider challengers">
+                <ul class="slides">
+
+                    @foreach (var memberId in teamWidget)
+                    {
+                        var teamMember = ContentHelper.GetByNodeId<TeamMember>(memberId);
+
+                        <li>
+                            <div class="inner">
+                                <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(teamMember.SidebarImage.Value))" alt="" />
+                                <div class="author-info">
+                                    <h4>@teamMember.FirstName @teamMember.LastName</h4>
+                                    <span>@teamMember.WorkPosition</span>
+                                </div>
+                            </div>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    }
+}

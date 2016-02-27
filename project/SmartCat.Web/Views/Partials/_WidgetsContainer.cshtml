@@ -1,0 +1,15 @@
+﻿@using Vega.USiteBuilder;
+
+@model SmartCat.Entities.DocumentTypes.Page
+
+<aside class="sidebar">
+    @{
+        Html.RenderPartial("~/Views/Partials/_BlogsWidget.cshtml", Model);
+        
+        Html.RenderPartial("~/Views/Partials/_NewsWidget.cshtml", Model);
+
+        Html.RenderPartial("~/Views/Partials/_ExpertiseWidget.cshtml", Model);
+        
+        Html.RenderPartial("~/Views/Partials/_TeamWidget.cshtml", Model);
+    }
+</aside>
