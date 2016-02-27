@@ -361,6 +361,7 @@
     <Content Include="Views\Partials\_BlogsWidget.cshtml" />
     <Content Include="Views\TechnologyDetails.cshtml" />
     <Content Include="Views\Partials\_ExpertiseWidget.cshtml" />
+    <Content Include="Views\Partials\_WidgetsContainer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -68,6 +68,9 @@
         SocialLinks,
 
         [TabName("Tags")]
-        Tags
+        Tags,
+
+        [TabName("Widgets")]
+        Widgets
     }
 }

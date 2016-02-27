@@ -2,14 +2,29 @@
 
 @model SmartCat.Entities.DocumentTypes.Page
 
-<aside class="sidebar">
-    @{
-        Html.RenderPartial("~/Views/Partials/_BlogsWidget.cshtml", Model);
-        
-        Html.RenderPartial("~/Views/Partials/_NewsWidget.cshtml", Model);
+@if (Model.BlogsWidget || Model.NewsWidget || Model.ExpertiseWidget || Model.TeamWidget)
+{
+    <aside class="sidebar">
+        @{
+            if (Model.BlogsWidget)
+            {
+                Html.RenderPartial("~/Views/Partials/_BlogsWidget.cshtml", Model);
+            }
 
-        Html.RenderPartial("~/Views/Partials/_ExpertiseWidget.cshtml", Model);
-        
-        Html.RenderPartial("~/Views/Partials/_TeamWidget.cshtml", Model);
-    }
-</aside>
+            if (Model.NewsWidget)
+            {
+                Html.RenderPartial("~/Views/Partials/_NewsWidget.cshtml", Model);
+            }
+
+            if (Model.ExpertiseWidget)
+            {
+                Html.RenderPartial("~/Views/Partials/_ExpertiseWidget.cshtml", Model);
+            }
+
+            if (Model.TeamWidget)
+            {
+                Html.RenderPartial("~/Views/Partials/_TeamWidget.cshtml", Model);
+            }
+        }
+    </aside>
+}

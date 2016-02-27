@@ -22,6 +22,34 @@
 
         #endregion
 
+        #region WIDGETS
+
+        [DocumentTypeProperty(UmbracoPropertyType.TrueFalse,
+            Name = "News Widget",
+            Tab = TabNames.Widgets,
+            Description = "Display news widget")]
+        public virtual bool NewsWidget { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.TrueFalse,
+            Name = "Blogs Widget",
+            Tab = TabNames.Widgets,
+            Description = "Display blogs widget")]
+        public virtual bool BlogsWidget { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.TrueFalse,
+            Name = "Team Widget",
+            Tab = TabNames.Widgets,
+            Description = "Display team widget")]
+        public virtual bool TeamWidget { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.TrueFalse,
+            Name = "Experties Widget",
+            Tab = TabNames.Widgets,
+            Description = "Display expertise widget")]
+        public virtual bool ExpertiseWidget { get; set; }
+
+        #endregion
+
         #region SEO
 
         [DocumentTypeProperty(UmbracoPropertyType.Textstring,
