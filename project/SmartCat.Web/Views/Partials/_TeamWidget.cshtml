@@ -2,24 +2,22 @@
 @using SmartCat.Business.Helpers;
 @using SmartCat.Entities.DocumentTypes;
 
-@model SmartCat.Entities.DocumentTypes.Page
+@model List<int>
 
 @{
     Layout = null;
 
-    var teamWidget = WidgetsHelper.TeamWidget;
+    var teamMembers = WidgetsHelper.TeamWidget(Model);
 
-    if (teamWidget != null && teamWidget.Any())
+    if (teamMembers != null && teamMembers.Any())
     {
         <div class="widget slider">
-            <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(teamWidget.First()).ParentId).NiceUrl">@umbraco.library.GetDictionaryItem("Widgets.TeamTitle")</a></h3>
+            <h3><a href="@ContentHelper.GetByNodeId(teamMembers.First().ParentId).NiceUrl">@umbraco.library.GetDictionaryItem("Widgets.TeamTitle")</a></h3>
             <div class="flexslider challengers">
                 <ul class="slides">
 
-                    @foreach (var memberId in teamWidget)
+                    @foreach (var teamMember in teamMembers)
                     {
-                        var teamMember = ContentHelper.GetByNodeId<TeamMember>(memberId);
-
                         <li>
                             <div class="inner">
                                 <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(teamMember.SidebarImage.Value))" alt="" />

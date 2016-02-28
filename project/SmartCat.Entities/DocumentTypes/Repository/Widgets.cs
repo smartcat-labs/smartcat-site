@@ -33,15 +33,15 @@
         [DocumentTypeProperty(UmbracoPropertyType.Numeric,
                         Name = "Number Of News Items",
                         Tab = TabNames.Sidebar,
-                        Description = "Number of news items shown in sidebar widget.")]
+                        Description = "Number of news items shown in sidebar widget.",
+                        Mandatory = true)]
         public virtual int NumberOfNewsItems { get; set; }
 
         [DocumentTypeProperty(UmbracoPropertyType.Other,
                           OtherTypeName = Constants.CustomDataTypes.MultipleExpertisePicker,
                           Name = "Expertise Sidebar Widget",
                           Tab = TabNames.Sidebar,
-                          Description = "Choose expertises for sidebar widget.",
-                          Mandatory = true)]
+                          Description = "Choose expertises for sidebar widget.")]
         public virtual List<int> ExpertiseWidget { get; set; }
 
         [DocumentTypeProperty(UmbracoPropertyType.Numeric,
@@ -57,6 +57,13 @@
                           Tab = TabNames.Sidebar,
                           Description = "Choose team members for sidebar widget.")]
         public virtual List<int> TeamWidget { get; set; }
+
+        [DocumentTypeProperty(UmbracoPropertyType.Numeric,
+                        Name = "Number Of Team Member Items",
+                        Tab = TabNames.Sidebar,
+                        Description = "Number of team member items shown in sidebar widget.",
+                        Mandatory = true)]
+        public virtual int NumberOfTeamMemberItems { get; set; }
 
         [DocumentTypeProperty(UmbracoPropertyType.Other,
                          OtherTypeName = Constants.CustomDataTypes.MultipleServicePicker,

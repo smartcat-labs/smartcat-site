@@ -1,3 +1,108 @@
-﻿@{
-    Layout = null;
+﻿@using SmartCat.Business.Helpers;
+@using Vega.USiteBuilder;
+@using SmartCat.Entities.DocumentTypes;
+@using SmartCat.Entities.DocumentTypes.Repository;
+@using System.Text.RegularExpressions;
+
+@inherits UmbracoTemplatePageBase<TechnologyDetails>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = string.IsNullOrEmpty(Model.Title) ? Model.Name : Model.Title;
+
+    ViewBag.SeoDescription = Model.SeoDescription;
+    ViewBag.SeoKeywords = Model.SeoKeywords;
+    ViewBag.SeoAuthor = Model.SeoAuthor;
+}
+
+@section additionalHeaderSection
+{
+
+}
+
+@*<div class="page-title">
+    <div class="wrapper">
+        <h1>@ContentHelper.GetByNodeId(Model.ParentId).Name</h1>
+    </div>
+</div>*@
+
+@{
+    var technology = ContentHelper.GetByNodeId<TechnologyItem>(Model.Technology);
+}
+<div class="content">
+    <div class="wrapper">
+        <div class="main centered">
+            <div class="title">
+                <h2>
+                    @if (technology.TechnologyImage.HasValue)
+                    {
+                        <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(technology.TechnologyImage.Value))" alt="@MediaHelper.GetImageAlternateText(MediaHelper.GetMediaById(technology.TechnologyImage.Value))" class="shape" />
+                    }
+                    @Model.Name
+                </h2>
+                @*<a href="@ContentHelper.GetByNodeId(Model.ParentId).NiceUrl" class="go-back hidden-on-mobile">@Umbraco.GetDictionaryValue("Common.Back")</a>*@
+            </div>
+            <div class="rte-content">
+                @Html.Raw(technology.TechnologyDescription)
+            </div>
+
+            @*@{
+                var otherServices = ContentHelper.GetChildren<ServiceItem>(Model.ParentId).Where(x => x.Id != Model.Id).ToList();
+            }
+
+            @if (otherServices != null && otherServices.Any())
+            {
+                <section class="full-width what-we-do-block">
+                    <h3>@Umbraco.GetDictionaryValue("Service.OtherServices")</h3>
+
+                    @foreach (var service in otherServices)
+                    {
+                        <div class="one-third @(otherServices.IndexOf(service) % 2 != 0 ? "right-aligned" : string.Empty)">
+                            <div class="romb-wrap">
+                                <div class="top romb">
+                                    <div class="box-title">
+                                        <h4>@service.Name</h4>
+                                    </div>
+                                    <div class="img-wrap">
+                                        <a href="@service.NiceUrl">
+                                            @if (service.ServiceImage.HasValue)
+                                            {
+                                                <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(Model.ServiceImage.Value))" alt="@MediaHelper.GetImageAlternateText(MediaHelper.GetMediaById(Model.ServiceImage.Value))" class="icon-img" />
+                                            }
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <h2><a href="@service.NiceUrl">@service.Name</a></h2>
+                                <p>
+                                    @Html.Raw(service.FeaturedText != null ? service.FeaturedText : string.Empty)
+                                    <a href="@service.NiceUrl" class="ico arrow-more hidden-on-mobile"></a>
+                                </p>
+                                <a href="@service.NiceUrl" class="btn show-on-mobile">@Umbraco.GetDictionaryValue("Common.ReadMore")</a>
+                            </div>
+                        </div>
+                    }
+                </section>
+            }*@
+
+        </div>
+        <aside class="sidebar">
+            @{
+                var tags = technology.TechnologyTags;
+
+                Html.RenderPartial("~/Views/Partials/_BlogsWidget.cshtml", tags);
+                //Html.RenderPartial("~/Views/Partials/_NewsWidget.cshtml", Model);
+                //Html.RenderPartial("~/Views/Partials/_TechnologyWidget.cshtml", Model);
+                //Html.RenderPartial("~/Views/Partials/_ExpertiseWidget.cshtml", Model);
+                Html.RenderPartial("~/Views/Partials/_TeamWidget.cshtml", tags);
+            }
+        </aside>
+    </div>
+</div>
+
+@section additionalFooterSection
+{
+
 }

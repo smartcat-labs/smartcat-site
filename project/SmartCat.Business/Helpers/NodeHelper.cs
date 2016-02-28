@@ -15,14 +15,43 @@ namespace SmartCat.Business.Helpers
     {
         #region PUBLIC PROPERTIES
 
+        public static Repository Repository
+        {
+            get
+            {
+                var currentLanguageCulture = Thread.CurrentThread.CurrentCulture.Name;
+
+                Repository repository = null;
+
+                switch (currentLanguageCulture)
+                {
+                    case "en-US":
+                        var repositoryNodeEn = ContentHelper.GetChildren<Repository>(Configuration.LanguageEN, true).FirstOrDefault();
+                        if (repositoryNodeEn != null)
+                        {
+                            repository = repositoryNodeEn;
+                        }
+                        break;
+                    case "nl-NL":
+                        var repositoryNodeNl = ContentHelper.GetChildren<Settings>(Configuration.LanguageNL, true).FirstOrDefault();
+                        if (repositoryNodeNl != null)
+                        {
+                            repository = repositoryNodeNl;
+                        }
+                        break;
+                }
+
+                return repository;
+            }
+        }
+
         public static Settings Settings
         {
             get
             {
                 var currentLanguageCulture = Thread.CurrentThread.CurrentCulture.Name;
 
-                // TODO: Why create an instance when we need the actual one from the tree ?
-                Settings retVal = new Settings();
+                Settings retVal = null;
 
                 switch (currentLanguageCulture)
                 {
@@ -40,10 +69,6 @@ namespace SmartCat.Business.Helpers
                         {
                             retVal = settingsNodeNl;
                         }
-                        break;
-                    default:
-                        //default en settings node
-                        retVal = ContentHelper.GetByNodeId<Settings>(Configuration.SettingsNodeId);
                         break;
                 }
 
@@ -76,10 +101,6 @@ namespace SmartCat.Business.Helpers
                         {
                             retVal = widgetsNodeNl;
                         }
-                        break;
-                    default:
-                        //default en settings node
-                        retVal = null; // TODO: Do we need a default home node defined from app settings ?
                         break;
                 }
 

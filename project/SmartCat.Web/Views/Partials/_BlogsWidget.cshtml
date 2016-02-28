@@ -3,23 +3,21 @@
 @using SmartCat.Entities.DocumentTypes;
 @using System.Text.RegularExpressions;
 
-@model SmartCat.Entities.DocumentTypes.Page
+@model List<int>
 
 @{
     Layout = null;
 
-    var blogsWidget = WidgetsHelper.BlogsWidget;
+    var blogPosts = WidgetsHelper.BlogsWidget(Model);
 
-    if (blogsWidget != null && blogsWidget.Any())
+    if (blogPosts != null && blogPosts.Any())
     {
         <div class="widget slider">
-            <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(blogsWidget.First()).ParentId).NiceUrl">@umbraco.library.GetDictionaryItem("Widgets.BlogsTitle")</a></h3>
+            <h3><a href="@ContentHelper.GetByNodeId(blogPosts.First().ParentId).NiceUrl">@umbraco.library.GetDictionaryItem("Widgets.BlogsTitle")</a></h3>
             <div class="flexslider">
                 <ul class="slides">
-                    @foreach (var blogId in blogsWidget)
+                    @foreach (var blogPost in blogPosts)
                     {
-                        var blogPost = ContentHelper.GetByNodeId<BlogPost>(blogId);
-
                         <li>
                             <div class="text-item">
                                 <div class="romb badge">

@@ -1,7 +1,7 @@
-﻿using Vega.USiteBuilder;
-
-namespace SmartCat.Entities.DocumentTypes
+﻿namespace SmartCat.Entities.DocumentTypes
 {
+    using Vega.USiteBuilder;
+
     [DocumentType(IconUrl = "icon-websitebuilder.png", Name = "Services", Description = "Services document type.", AllowAtRoot = false, AllowedChildNodeTypes = new[] { typeof(ServiceItem) })]
     public class Services : Page
     {

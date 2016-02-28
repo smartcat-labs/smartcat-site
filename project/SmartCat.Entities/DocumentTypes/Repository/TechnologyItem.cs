@@ -14,7 +14,7 @@
                            Description = "Technology image. Dimensions are 115x76 px.")]
         public virtual int? TechnologyImage { get; set; }
 
-        [DocumentTypeProperty(UmbracoPropertyType.TextboxMultiple,
+        [DocumentTypeProperty(UmbracoPropertyType.RichtextEditor,
                           Name = "Technology description",
                           Tab = TabNames.Content,
                           Description = "Short description about technology.")]

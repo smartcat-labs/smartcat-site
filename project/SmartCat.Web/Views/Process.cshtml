@@ -66,75 +66,16 @@
             }
 
         </div>
-
-        @{
-            var newsWidget = WidgetsHelper.NewsWidget;
-            var teamWidget = WidgetsHelper.TeamWidget;
-        }
         <aside class="sidebar">
-            @if (newsWidget != null && newsWidget.Any())
-            {
-                <div class="widget slider">
-                    <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(newsWidget.First()).ParentId).NiceUrl">@Umbraco.GetDictionaryValue("Process.WhatIsNew")</a></h3>
-                    <div class="flexslider">
-                        <ul class="slides">
-                            @foreach (var newsId in newsWidget)
-                            {
-                                var newsPost = ContentHelper.GetByNodeId<NewsPost>(newsId);
+            @{
+                var tags = new List<int>();
 
-                                <li>
-                                    <div class="text-item">
-                                        <div class="romb badge">
-                                            <span class="reset-inner">N.</span>
-                                        </div>
-                                        <h4><a href="@newsPost.NiceUrl">@newsPost.Name</a></h4>
-                                        <p>
-                                            @Regex.Replace(newsPost.RteContent, @"<(.|\n)*?>", string.Empty).Substring(0, 160) ...
-                                        </p>
-                                        @if (newsPost.Author.HasValue)
-                                        {
-                                            var author = ContentHelper.GetByNodeId<TeamMember>(newsPost.Author.Value);
-                                            <span class="author">@author.FirstName @author.LastName</span>
-                                        }
-                                        <span class="date">@newsPost.PostDate.ToString("MM/dd/yy")</span>
-                                    </div>
-                                </li>
-                            }
-                        </ul>
-                    </div>
-                </div>
+                Html.RenderPartial("~/Views/Partials/_BlogsWidget.cshtml", tags);
+                Html.RenderPartial("~/Views/Partials/_NewsWidget.cshtml", Model);
+                Html.RenderPartial("~/Views/Partials/_TechnologyWidget.cshtml", tags);
+                Html.RenderPartial("~/Views/Partials/_ExpertiseWidget.cshtml", Model);
+                //Html.RenderPartial("~/Views/Partials/_TeamWidget.cshtml", Model);
             }
-
-            @if (teamWidget != null && teamWidget.Any())
-            {
-                <div class="widget slider">
-                    <h3><a href="@ContentHelper.GetByNodeId(ContentHelper.GetByNodeId(teamWidget.First()).ParentId).NiceUrl">@Umbraco.GetDictionaryValue("Process.Challengers")</a></h3>
-                    <div class="flexslider challengers">
-                        <ul class="slides">
-
-                            @foreach (var memberId in teamWidget)
-                            {
-                                var teamMember = ContentHelper.GetByNodeId<TeamMember>(memberId);
-
-                                <li>
-                                    <div class="inner">
-                                        @if(teamMember.SidebarImage.HasValue)
-                                        { 
-                                           <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(teamMember.SidebarImage.Value))" alt="" />
-                                        }
-                                        <div class="author-info">
-                                            <h4>@teamMember.FirstName @teamMember.LastName</h4>
-                                            <span>@teamMember.WorkPosition</span>
-                                        </div>
-                                    </div>
-                                </li>
-                            }
-
-                        </ul>
-                    </div>
-                </div>
-            }
-
         </aside>
     </div>
 </div>

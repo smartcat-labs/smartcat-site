@@ -1,10 +1,7 @@
-﻿using SmartCat.Common;
-using System;
-using System.Collections.Generic;
-using Vega.USiteBuilder;
-
-namespace SmartCat.Entities.DocumentTypes
+﻿namespace SmartCat.Entities.DocumentTypes
 {
+    using Vega.USiteBuilder;
+
     [DocumentType(IconUrl = "icon-buttonb.png",
         Name = "Blog Container",
         Description = "Blog container document type.",
@@ -16,32 +13,6 @@ namespace SmartCat.Entities.DocumentTypes
         })]
     public class Blog : Page
     {
-        #region SIDEBAR WIDGETS
 
-        [Obsolete]
-        [DocumentTypeProperty(UmbracoPropertyType.Other,
-                          OtherTypeName = Constants.CustomDataTypes.MultipleNewsPostPicker,
-                          Name = "News Sidebar Widget",
-                          Tab = TabNames.Sidebar,
-                          Description = "Choose news posts for sidebar widget.")]
-        private List<int> NewsWidget { get; set; }
-
-        [Obsolete]
-        [DocumentTypeProperty(UmbracoPropertyType.Other,
-                          OtherTypeName = Constants.CustomDataTypes.MultipleTeamMemberPicker,
-                          Name = "Team Sidebar Widget",
-                          Tab = TabNames.Sidebar,
-                          Description = "Choose team members for sidebar widget.")]
-        private List<int> TeamWidget { get; set; }
-
-        [Obsolete]
-        [DocumentTypeProperty(UmbracoPropertyType.Other,
-                         OtherTypeName = Constants.CustomDataTypes.MultipleServicePicker,
-                         Name = "Service Sidebar Widget",
-                         Tab = TabNames.Sidebar,
-                         Description = "Choose services for sidebar widget.")]
-        private List<int> ServiceWidget { get; set; }
-
-        #endregion
     }
 }

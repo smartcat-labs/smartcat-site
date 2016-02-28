@@ -88,6 +88,9 @@
     <Compile Include="DocumentTypes\Repository\Technologies.cs" />
     <Compile Include="DocumentTypes\Repository\TechnologyContainer.cs" />
     <Compile Include="DocumentTypes\Repository\TechnologyItem.cs" />
+    <Compile Include="DocumentTypes\TechnologyDetailsContainer.cs" />
+    <Compile Include="DocumentTypes\TechnologyDetails.cs" />
+    <Compile Include="DocumentTypes\TechnologyUseCase.cs" />
     <Compile Include="DocumentTypes\TestimonialContainer.cs" />
     <Compile Include="DocumentTypes\TestimonialItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
