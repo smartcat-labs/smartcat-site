@@ -92,3 +92,20 @@ function setImgHeight(){
 	$('.one-three .img-container').outerHeight(divWidth);
 	$('.one-three .text').outerHeight(divWidth);
 };
+
+function redirect() {
+    $('body').css('visibility', 'hidden');
+    geoip2.country(function (location) {
+        console.log('maxmind location', location);
+        if (location.registered_country.iso_code === "NL") {
+            window.location = "http://nl.smartcat.io";
+        } else {
+            $('body').css('visibility', 'inherit');
+        };
+    }, function (err) {
+        console.log(err);
+        $('body').css('visibility', 'inherit');
+    });
+}
+
+redirect();
