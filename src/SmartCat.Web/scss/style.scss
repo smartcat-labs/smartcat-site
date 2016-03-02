@@ -1157,4 +1157,21 @@
 			}
 		}
 	}
+
+}
+
+.blog-post-widget {
+    position: relative;
+    height: 290px;
+
+    h4.blog-post-title {
+        padding-top: 10px !important;
+    }
+
+    .blog-post-details {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+    }
 }

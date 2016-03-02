@@ -19,20 +19,25 @@
                     @foreach (var blogPost in blogPosts)
                     {
                         <li>
-                            <div class="text-item">
-                                <div class="romb badge">
-                                    <span class="reset-inner">B.</span>
+                            <div class="text-item blog-post-widget">
+                                <div class="img-wrap">
+                                    <img src="/media/2775/gray-box-testing_detailed.png?anchor=center&mode=crop&width=511&height=300&rnd=131003729420000000" alt="" />
+                                    <span class="color-overlay"></span>
+                                    <span class="blue-overlay"></span>
                                 </div>
-                                <h4><a href="@blogPost.NiceUrl">@blogPost.Name</a></h4>
+
+                                <h4 class="blog-post-title"><a href="@blogPost.NiceUrl">@blogPost.Name</a></h4>
                                 @*<p>
                                     @Regex.Replace(blogPost.RteContent, @"<(.|\n)*?>", string.Empty).Substring(0, 120) ...
                                 </p>*@
-                                @if (blogPost.Author.HasValue)
-                                {
-                                    var author = ContentHelper.GetByNodeId<TeamMember>(blogPost.Author.Value);
-                                    <span class="author">@author.FirstName @author.LastName</span>
-                                }
-                                <span class="date">@blogPost.PostDate.ToString("MM/dd/yy")</span>
+                                <div class="blog-post-details">
+                                    @if (blogPost.Author.HasValue)
+                                    {
+                                        var author = ContentHelper.GetByNodeId<TeamMember>(blogPost.Author.Value);
+                                        <span class="author">@author.FirstName @author.LastName</span>
+                                    }
+                                    <span class="date">@blogPost.PostDate.ToString("MM/dd/yy")</span>
+                                </div>
                             </div>
                         </li>
                     }
