@@ -2276,7 +2276,7 @@ textarea {
         margin-top: 2px; }
         @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
           .social-links li a.twitter .ico {
-            background: url('../img/icons2x-scbf5af05e5.png') no-repeat 0 -1555px;
+            background: url('../img/icons2x-scbf5af05e5.png') no-repeat 0 -1556px;
             background-size: 71px 1569.5px;
             height: 14px;
             width: 19px; } }
@@ -2336,7 +2336,7 @@ textarea {
         width: 20px; }
         @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
           .social-links li a:hover.twitter .ico {
-            background: url('../img/icons2x-scbf5af05e5.png') no-repeat 0 -1531px;
+            background: url('../img/icons2x-scbf5af05e5.png') no-repeat 0 -1532px;
             background-size: 71px 1569.5px;
             height: 14px;
             width: 19px; } }
@@ -3503,7 +3503,7 @@ textarea {
         border-bottom-color: #efefef;
         border-width: 30px;
         margin-left: -30px;
-        z-index: 30; }
+        z-index: -1; }
     .one-three .column .text {
       background: #efefef;
       width: 100%;
@@ -5217,7 +5217,7 @@ html[xmlns] .slides {
       margin-right: 10px; }
       @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
         .article-nav .prev-post i {
-          background: url('../img/icons2x-scbf5af05e5.png') no-repeat 0 -305px;
+          background: url('../img/icons2x-scbf5af05e5.png') no-repeat 0 -306px;
           background-size: 71px 1569.5px;
           height: 17.5px;
           width: 70px; } }
@@ -5242,7 +5242,7 @@ html[xmlns] .slides {
       margin-left: 10px; }
       @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 2) {
         .article-nav .next-post i {
-          background: url('../img/icons2x-scbf5af05e5.png') no-repeat 0 -360px;
+          background: url('../img/icons2x-scbf5af05e5.png') no-repeat 0 -361px;
           background-size: 71px 1569.5px;
           height: 17.5px;
           width: 70px; } }
