@@ -21,8 +21,10 @@
                         var expertise = ContentHelper.GetByNodeId<ExpertiseItem>(expertiseId);
 
                         <li>
-                            <div class="inner">
-                                <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(expertise.ServiceImage.Value))" alt="" />
+                            <div class="expertise-block">
+                                <div class="expertise-img-container">
+                                    <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(expertise.ServiceTitleImage.Value))" alt="" />
+                                </div>
                                 <div class="expertise-info">
                                     <h4>@expertise.Name</h4>
                                 </div>
