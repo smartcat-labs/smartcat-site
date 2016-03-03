@@ -9,19 +9,23 @@
     Layout = null;
 
     var blogPosts = WidgetsHelper.BlogsWidget(Model);
+    var umbracoHelper = new Umbraco.Web.UmbracoHelper(Umbraco.Web.UmbracoContext.Current);
 
     if (blogPosts != null && blogPosts.Any())
     {
         <div class="widget slider">
-            <h3><a href="@ContentHelper.GetByNodeId(blogPosts.First().ParentId).NiceUrl">@umbraco.library.GetDictionaryItem("Widgets.BlogsTitle")</a></h3>
+            <h3><a href="@ContentHelper.GetByNodeId(blogPosts.First().ParentId).NiceUrl">@umbracoHelper.GetDictionaryValue("Widgets.BlogsTitle")</a></h3>
             <div class="flexslider">
                 <ul class="slides">
                     @foreach (var blogPost in blogPosts)
                     {
+                        var image = @umbracoHelper.TypedContent(blogPost.Id).GetCropUrl(SmartCat.Common.Constants.Media.CropNames.BlogHeaderImageAlias, SmartCat.Common.Constants.Media.CropNames.Header);
+                        
                         <li>
                             <div class="text-item blog-post-widget">
                                 <div class="img-wrap">
-                                    <img src="/media/2775/gray-box-testing_detailed.png?anchor=center&mode=crop&width=511&height=300&rnd=131003729420000000" alt="" />
+                                    <img src="@(image)" />
+                                    @*<img src="/media/2775/gray-box-testing_detailed.png?anchor=center&mode=crop&width=511&height=300&rnd=131003729420000000" alt="" />*@
                                     <span class="color-overlay"></span>
                                     <span class="blue-overlay"></span>
                                 </div>
