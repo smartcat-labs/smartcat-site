@@ -1026,3 +1026,49 @@
 		}
 	}
 }
+
+.blog-post-widget {
+    position: relative;
+    height: 290px;
+
+    h4.blog-post-title {
+        padding-top: 10px !important;
+    }
+
+    .blog-post-details {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+    }
+}
+
+.expertise-block {
+    width: 100%;
+    padding: 0 12px;
+    position: relative;
+    height: 290px;
+
+    .expertise-img-container {
+        padding: 0 20px;
+        position: relative;
+        height: 100%;
+
+        img {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+        }
+    }
+
+    .expertise-info {
+        text-align: center;
+        position: absolute;
+        left: 12px;
+        right: 12px;
+        bottom: 0px;
+    }
+
+}
