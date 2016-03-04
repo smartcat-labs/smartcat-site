@@ -22,11 +22,16 @@
                         @foreach (var technology in technologies)
                         {
                             <li>
-                                <div class="inner">
-                                    <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(technology.TechnologyImage.Value))" alt="" />
-                                    <div class="author-info">
-                                        <h4>@technology.Name</h4>
+                                <div class="text-item technology-widget">
+                                    <div class="img-wrap">
+                                        <a href="@technology.TechnologyLink.Url">
+                                            <img src="@MediaHelper.GetMediaUrl(MediaHelper.GetMediaById(technology.TechnologyImage.Value))" alt="" />
+                                        </a>
                                     </div>
+                                    <div class="title">
+                                        <h4><a href="@technology.TechnologyLink.Url">@technology.Name</a></h4>
+                                    </div>
+                                    <p>@technology.TechnologyDescription</p>
                                 </div>
                             </li>
                         }

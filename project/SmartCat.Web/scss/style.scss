@@ -1266,3 +1266,22 @@
     }
 
 }
+
+.technology-widget {
+    .img-wrap {
+        width: 100%;
+        margin-bottom: 30px;
+        margin-top: 15px;
+        text-align: center;
+
+        img {
+            float: none !important;
+            width: 115px !important;
+            display: inline-block !important;
+        }
+    }
+
+    .title {
+        margin-bottom: 5px;
+    }
+}
