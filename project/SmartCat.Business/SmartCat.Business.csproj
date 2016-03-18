@@ -72,6 +72,7 @@
     <Compile Include="Helpers\ContactHelper.cs" />
     <Compile Include="Helpers\MediaHelper.cs" />
     <Compile Include="Helpers\NodeHelper.cs" />
+    <Compile Include="Helpers\RedirectHelper.cs" />
     <Compile Include="Helpers\WidgetsHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Twitter\Tweet.cs" />
