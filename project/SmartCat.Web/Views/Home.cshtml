@@ -9,6 +9,14 @@
 @inherits Vega.USiteBuilder.UmbracoTemplatePageBase<SmartCat.Entities.DocumentTypes.Home>
 
 @{
+    if (SmartCat.Business.Helpers.RedirectHelper.IsNL(Request))
+    {
+        Response.Redirect("http://nl.smartcat.io");
+    }
+}
+
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     ViewBag.Title = string.IsNullOrEmpty(Model.Title) ? Model.Name : Model.Title;

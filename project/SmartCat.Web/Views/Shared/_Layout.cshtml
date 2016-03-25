@@ -28,13 +28,6 @@
 <body>
 
     <div class="container">
-
-        @{
-            if (SmartCat.Business.Helpers.RedirectHelper.IsNL(Request))
-            {
-                Response.Redirect("http://nl.smartcat.io");
-            }
-        }
         
         @{Html.RenderAction("GetHeader", "LayoutSufrace");}
 
